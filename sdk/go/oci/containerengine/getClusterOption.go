@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -110,12 +109,6 @@ func (o GetClusterOptionResultOutput) ToGetClusterOptionResultOutput() GetCluste
 
 func (o GetClusterOptionResultOutput) ToGetClusterOptionResultOutputWithContext(ctx context.Context) GetClusterOptionResultOutput {
 	return o
-}
-
-func (o GetClusterOptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetClusterOptionResult] {
-	return pulumix.Output[GetClusterOptionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetClusterOptionResultOutput) ClusterOptionId() pulumi.StringOutput {

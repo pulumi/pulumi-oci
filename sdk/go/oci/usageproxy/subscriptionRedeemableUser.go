@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Subscription Redeemable User resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -199,12 +198,6 @@ func (i *SubscriptionRedeemableUser) ToSubscriptionRedeemableUserOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionRedeemableUserOutput)
 }
 
-func (i *SubscriptionRedeemableUser) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionRedeemableUser] {
-	return pulumix.Output[*SubscriptionRedeemableUser]{
-		OutputState: i.ToSubscriptionRedeemableUserOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SubscriptionRedeemableUserArrayInput is an input type that accepts SubscriptionRedeemableUserArray and SubscriptionRedeemableUserArrayOutput values.
 // You can construct a concrete instance of `SubscriptionRedeemableUserArrayInput` via:
 //
@@ -228,12 +221,6 @@ func (i SubscriptionRedeemableUserArray) ToSubscriptionRedeemableUserArrayOutput
 
 func (i SubscriptionRedeemableUserArray) ToSubscriptionRedeemableUserArrayOutputWithContext(ctx context.Context) SubscriptionRedeemableUserArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionRedeemableUserArrayOutput)
-}
-
-func (i SubscriptionRedeemableUserArray) ToOutput(ctx context.Context) pulumix.Output[[]*SubscriptionRedeemableUser] {
-	return pulumix.Output[[]*SubscriptionRedeemableUser]{
-		OutputState: i.ToSubscriptionRedeemableUserArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SubscriptionRedeemableUserMapInput is an input type that accepts SubscriptionRedeemableUserMap and SubscriptionRedeemableUserMapOutput values.
@@ -261,12 +248,6 @@ func (i SubscriptionRedeemableUserMap) ToSubscriptionRedeemableUserMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(SubscriptionRedeemableUserMapOutput)
 }
 
-func (i SubscriptionRedeemableUserMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SubscriptionRedeemableUser] {
-	return pulumix.Output[map[string]*SubscriptionRedeemableUser]{
-		OutputState: i.ToSubscriptionRedeemableUserMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SubscriptionRedeemableUserOutput struct{ *pulumi.OutputState }
 
 func (SubscriptionRedeemableUserOutput) ElementType() reflect.Type {
@@ -279,12 +260,6 @@ func (o SubscriptionRedeemableUserOutput) ToSubscriptionRedeemableUserOutput() S
 
 func (o SubscriptionRedeemableUserOutput) ToSubscriptionRedeemableUserOutputWithContext(ctx context.Context) SubscriptionRedeemableUserOutput {
 	return o
-}
-
-func (o SubscriptionRedeemableUserOutput) ToOutput(ctx context.Context) pulumix.Output[*SubscriptionRedeemableUser] {
-	return pulumix.Output[*SubscriptionRedeemableUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of new user to be added to the list of user that can redeem rewards.
@@ -324,12 +299,6 @@ func (o SubscriptionRedeemableUserArrayOutput) ToSubscriptionRedeemableUserArray
 	return o
 }
 
-func (o SubscriptionRedeemableUserArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SubscriptionRedeemableUser] {
-	return pulumix.Output[[]*SubscriptionRedeemableUser]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SubscriptionRedeemableUserArrayOutput) Index(i pulumi.IntInput) SubscriptionRedeemableUserOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SubscriptionRedeemableUser {
 		return vs[0].([]*SubscriptionRedeemableUser)[vs[1].(int)]
@@ -348,12 +317,6 @@ func (o SubscriptionRedeemableUserMapOutput) ToSubscriptionRedeemableUserMapOutp
 
 func (o SubscriptionRedeemableUserMapOutput) ToSubscriptionRedeemableUserMapOutputWithContext(ctx context.Context) SubscriptionRedeemableUserMapOutput {
 	return o
-}
-
-func (o SubscriptionRedeemableUserMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SubscriptionRedeemableUser] {
-	return pulumix.Output[map[string]*SubscriptionRedeemableUser]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SubscriptionRedeemableUserMapOutput) MapIndex(k pulumi.StringInput) SubscriptionRedeemableUserOutput {

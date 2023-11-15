@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
@@ -119,12 +118,6 @@ func (o GetDedicatedVmHostInstancesResultOutput) ToGetDedicatedVmHostInstancesRe
 
 func (o GetDedicatedVmHostInstancesResultOutput) ToGetDedicatedVmHostInstancesResultOutputWithContext(ctx context.Context) GetDedicatedVmHostInstancesResultOutput {
 	return o
-}
-
-func (o GetDedicatedVmHostInstancesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDedicatedVmHostInstancesResult] {
-	return pulumix.Output[GetDedicatedVmHostInstancesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domain the virtual machine instance is running in.  Example: `Uocm:PHX-AD-1`

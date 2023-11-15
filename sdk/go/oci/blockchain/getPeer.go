@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
@@ -119,12 +118,6 @@ func (o LookupPeerResultOutput) ToLookupPeerResultOutput() LookupPeerResultOutpu
 
 func (o LookupPeerResultOutput) ToLookupPeerResultOutputWithContext(ctx context.Context) LookupPeerResultOutput {
 	return o
-}
-
-func (o LookupPeerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPeerResult] {
-	return pulumix.Output[LookupPeerResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability Domain of peer

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Monitored Resource Task resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -122,12 +121,6 @@ func (o LookupMonitoredResourceTaskResultOutput) ToLookupMonitoredResourceTaskRe
 
 func (o LookupMonitoredResourceTaskResultOutput) ToLookupMonitoredResourceTaskResultOutputWithContext(ctx context.Context) LookupMonitoredResourceTaskResultOutput {
 	return o
-}
-
-func (o LookupMonitoredResourceTaskResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMonitoredResourceTaskResult] {
-	return pulumix.Output[LookupMonitoredResourceTaskResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.

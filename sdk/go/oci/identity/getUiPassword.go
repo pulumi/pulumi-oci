@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
@@ -107,12 +106,6 @@ func (o LookupUiPasswordResultOutput) ToLookupUiPasswordResultOutput() LookupUiP
 
 func (o LookupUiPasswordResultOutput) ToLookupUiPasswordResultOutputWithContext(ctx context.Context) LookupUiPasswordResultOutput {
 	return o
-}
-
-func (o LookupUiPasswordResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUiPasswordResult] {
-	return pulumix.Output[LookupUiPasswordResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupUiPasswordResultOutput) Id() pulumi.StringOutput {

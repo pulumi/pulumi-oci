@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type SqlFirewallPolicyManagement struct {
@@ -184,12 +183,6 @@ func (i *SqlFirewallPolicyManagement) ToSqlFirewallPolicyManagementOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyManagementOutput)
 }
 
-func (i *SqlFirewallPolicyManagement) ToOutput(ctx context.Context) pulumix.Output[*SqlFirewallPolicyManagement] {
-	return pulumix.Output[*SqlFirewallPolicyManagement]{
-		OutputState: i.ToSqlFirewallPolicyManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlFirewallPolicyManagementArrayInput is an input type that accepts SqlFirewallPolicyManagementArray and SqlFirewallPolicyManagementArrayOutput values.
 // You can construct a concrete instance of `SqlFirewallPolicyManagementArrayInput` via:
 //
@@ -213,12 +206,6 @@ func (i SqlFirewallPolicyManagementArray) ToSqlFirewallPolicyManagementArrayOutp
 
 func (i SqlFirewallPolicyManagementArray) ToSqlFirewallPolicyManagementArrayOutputWithContext(ctx context.Context) SqlFirewallPolicyManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyManagementArrayOutput)
-}
-
-func (i SqlFirewallPolicyManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[[]*SqlFirewallPolicyManagement]{
-		OutputState: i.ToSqlFirewallPolicyManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SqlFirewallPolicyManagementMapInput is an input type that accepts SqlFirewallPolicyManagementMap and SqlFirewallPolicyManagementMapOutput values.
@@ -246,12 +233,6 @@ func (i SqlFirewallPolicyManagementMap) ToSqlFirewallPolicyManagementMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyManagementMapOutput)
 }
 
-func (i SqlFirewallPolicyManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[map[string]*SqlFirewallPolicyManagement]{
-		OutputState: i.ToSqlFirewallPolicyManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlFirewallPolicyManagementOutput struct{ *pulumi.OutputState }
 
 func (SqlFirewallPolicyManagementOutput) ElementType() reflect.Type {
@@ -264,12 +245,6 @@ func (o SqlFirewallPolicyManagementOutput) ToSqlFirewallPolicyManagementOutput()
 
 func (o SqlFirewallPolicyManagementOutput) ToSqlFirewallPolicyManagementOutputWithContext(ctx context.Context) SqlFirewallPolicyManagementOutput {
 	return o
-}
-
-func (o SqlFirewallPolicyManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlFirewallPolicyManagement] {
-	return pulumix.Output[*SqlFirewallPolicyManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlFirewallPolicyManagementOutput) AllowedClientIps() pulumi.StringArrayOutput {
@@ -374,12 +349,6 @@ func (o SqlFirewallPolicyManagementArrayOutput) ToSqlFirewallPolicyManagementArr
 	return o
 }
 
-func (o SqlFirewallPolicyManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[[]*SqlFirewallPolicyManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SqlFirewallPolicyManagementArrayOutput) Index(i pulumi.IntInput) SqlFirewallPolicyManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SqlFirewallPolicyManagement {
 		return vs[0].([]*SqlFirewallPolicyManagement)[vs[1].(int)]
@@ -398,12 +367,6 @@ func (o SqlFirewallPolicyManagementMapOutput) ToSqlFirewallPolicyManagementMapOu
 
 func (o SqlFirewallPolicyManagementMapOutput) ToSqlFirewallPolicyManagementMapOutputWithContext(ctx context.Context) SqlFirewallPolicyManagementMapOutput {
 	return o
-}
-
-func (o SqlFirewallPolicyManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlFirewallPolicyManagement] {
-	return pulumix.Output[map[string]*SqlFirewallPolicyManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlFirewallPolicyManagementMapOutput) MapIndex(k pulumi.StringInput) SqlFirewallPolicyManagementOutput {

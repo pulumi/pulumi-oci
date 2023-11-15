@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Vm Cluster Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -110,12 +109,6 @@ func (o LookupCloudVmClusterIormConfigResultOutput) ToLookupCloudVmClusterIormCo
 
 func (o LookupCloudVmClusterIormConfigResultOutput) ToLookupCloudVmClusterIormConfigResultOutputWithContext(ctx context.Context) LookupCloudVmClusterIormConfigResultOutput {
 	return o
-}
-
-func (o LookupCloudVmClusterIormConfigResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCloudVmClusterIormConfigResult] {
-	return pulumix.Output[LookupCloudVmClusterIormConfigResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupCloudVmClusterIormConfigResultOutput) CloudVmClusterId() pulumi.StringOutput {

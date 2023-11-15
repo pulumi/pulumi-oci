@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Load Balancer Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -105,12 +104,6 @@ func (o GetPoliciesResultOutput) ToGetPoliciesResultOutput() GetPoliciesResultOu
 
 func (o GetPoliciesResultOutput) ToGetPoliciesResultOutputWithContext(ctx context.Context) GetPoliciesResultOutput {
 	return o
-}
-
-func (o GetPoliciesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPoliciesResult] {
-	return pulumix.Output[GetPoliciesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPoliciesResultOutput) CompartmentId() pulumi.StringOutput {

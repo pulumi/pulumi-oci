@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sign resource in Oracle Cloud Infrastructure Kms service.
@@ -227,12 +226,6 @@ func (i *Sign) ToSignOutputWithContext(ctx context.Context) SignOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SignOutput)
 }
 
-func (i *Sign) ToOutput(ctx context.Context) pulumix.Output[*Sign] {
-	return pulumix.Output[*Sign]{
-		OutputState: i.ToSignOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SignArrayInput is an input type that accepts SignArray and SignArrayOutput values.
 // You can construct a concrete instance of `SignArrayInput` via:
 //
@@ -256,12 +249,6 @@ func (i SignArray) ToSignArrayOutput() SignArrayOutput {
 
 func (i SignArray) ToSignArrayOutputWithContext(ctx context.Context) SignArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SignArrayOutput)
-}
-
-func (i SignArray) ToOutput(ctx context.Context) pulumix.Output[[]*Sign] {
-	return pulumix.Output[[]*Sign]{
-		OutputState: i.ToSignArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SignMapInput is an input type that accepts SignMap and SignMapOutput values.
@@ -289,12 +276,6 @@ func (i SignMap) ToSignMapOutputWithContext(ctx context.Context) SignMapOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SignMapOutput)
 }
 
-func (i SignMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sign] {
-	return pulumix.Output[map[string]*Sign]{
-		OutputState: i.ToSignMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SignOutput struct{ *pulumi.OutputState }
 
 func (SignOutput) ElementType() reflect.Type {
@@ -307,12 +288,6 @@ func (o SignOutput) ToSignOutput() SignOutput {
 
 func (o SignOutput) ToSignOutputWithContext(ctx context.Context) SignOutput {
 	return o
-}
-
-func (o SignOutput) ToOutput(ctx context.Context) pulumix.Output[*Sign] {
-	return pulumix.Output[*Sign]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -367,12 +342,6 @@ func (o SignArrayOutput) ToSignArrayOutputWithContext(ctx context.Context) SignA
 	return o
 }
 
-func (o SignArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Sign] {
-	return pulumix.Output[[]*Sign]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SignArrayOutput) Index(i pulumi.IntInput) SignOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Sign {
 		return vs[0].([]*Sign)[vs[1].(int)]
@@ -391,12 +360,6 @@ func (o SignMapOutput) ToSignMapOutput() SignMapOutput {
 
 func (o SignMapOutput) ToSignMapOutputWithContext(ctx context.Context) SignMapOutput {
 	return o
-}
-
-func (o SignMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Sign] {
-	return pulumix.Output[map[string]*Sign]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SignMapOutput) MapIndex(k pulumi.StringInput) SignOutput {

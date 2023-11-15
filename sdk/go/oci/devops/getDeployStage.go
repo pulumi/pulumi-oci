@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -234,12 +233,6 @@ func (o LookupDeployStageResultOutput) ToLookupDeployStageResultOutput() LookupD
 
 func (o LookupDeployStageResultOutput) ToLookupDeployStageResultOutputWithContext(ctx context.Context) LookupDeployStageResultOutput {
 	return o
-}
-
-func (o LookupDeployStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeployStageResult] {
-	return pulumix.Output[LookupDeployStageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies the approval policy.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -75,12 +74,6 @@ func (i GetEventsAuditEventArgs) ToGetEventsAuditEventOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventOutput)
 }
 
-func (i GetEventsAuditEventArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEvent] {
-	return pulumix.Output[GetEventsAuditEvent]{
-		OutputState: i.ToGetEventsAuditEventOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventArrayInput is an input type that accepts GetEventsAuditEventArray and GetEventsAuditEventArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventArrayInput` via:
 //
@@ -106,12 +99,6 @@ func (i GetEventsAuditEventArray) ToGetEventsAuditEventArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventArrayOutput)
 }
 
-func (i GetEventsAuditEventArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEvent] {
-	return pulumix.Output[[]GetEventsAuditEvent]{
-		OutputState: i.ToGetEventsAuditEventArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o GetEventsAuditEventOutput) ToGetEventsAuditEventOutput() GetEventsAuditE
 
 func (o GetEventsAuditEventOutput) ToGetEventsAuditEventOutputWithContext(ctx context.Context) GetEventsAuditEventOutput {
 	return o
-}
-
-func (o GetEventsAuditEventOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEvent] {
-	return pulumix.Output[GetEventsAuditEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The version of the CloudEvents specification. The structure of the envelope follows the  [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
@@ -184,12 +165,6 @@ func (o GetEventsAuditEventArrayOutput) ToGetEventsAuditEventArrayOutput() GetEv
 
 func (o GetEventsAuditEventArrayOutput) ToGetEventsAuditEventArrayOutputWithContext(ctx context.Context) GetEventsAuditEventArrayOutput {
 	return o
-}
-
-func (o GetEventsAuditEventArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEvent] {
-	return pulumix.Output[[]GetEventsAuditEvent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsAuditEventArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventOutput {
@@ -283,12 +258,6 @@ func (i GetEventsAuditEventDataArgs) ToGetEventsAuditEventDataOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataOutput)
 }
 
-func (i GetEventsAuditEventDataArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventData] {
-	return pulumix.Output[GetEventsAuditEventData]{
-		OutputState: i.ToGetEventsAuditEventDataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventDataArrayInput is an input type that accepts GetEventsAuditEventDataArray and GetEventsAuditEventDataArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataArrayInput` via:
 //
@@ -314,12 +283,6 @@ func (i GetEventsAuditEventDataArray) ToGetEventsAuditEventDataArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataArrayOutput)
 }
 
-func (i GetEventsAuditEventDataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventData] {
-	return pulumix.Output[[]GetEventsAuditEventData]{
-		OutputState: i.ToGetEventsAuditEventDataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataOutput) ElementType() reflect.Type {
@@ -332,12 +295,6 @@ func (o GetEventsAuditEventDataOutput) ToGetEventsAuditEventDataOutput() GetEven
 
 func (o GetEventsAuditEventDataOutput) ToGetEventsAuditEventDataOutputWithContext(ctx context.Context) GetEventsAuditEventDataOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventData] {
-	return pulumix.Output[GetEventsAuditEventData]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A container object for attribues unique to the resource emitting the event.
@@ -424,12 +381,6 @@ func (o GetEventsAuditEventDataArrayOutput) ToGetEventsAuditEventDataArrayOutput
 	return o
 }
 
-func (o GetEventsAuditEventDataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventData] {
-	return pulumix.Output[[]GetEventsAuditEventData]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEventsAuditEventDataArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsAuditEventData {
 		return vs[0].([]GetEventsAuditEventData)[vs[1].(int)]
@@ -505,12 +456,6 @@ func (i GetEventsAuditEventDataIdentityArgs) ToGetEventsAuditEventDataIdentityOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataIdentityOutput)
 }
 
-func (i GetEventsAuditEventDataIdentityArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[GetEventsAuditEventDataIdentity]{
-		OutputState: i.ToGetEventsAuditEventDataIdentityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventDataIdentityArrayInput is an input type that accepts GetEventsAuditEventDataIdentityArray and GetEventsAuditEventDataIdentityArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataIdentityArrayInput` via:
 //
@@ -536,12 +481,6 @@ func (i GetEventsAuditEventDataIdentityArray) ToGetEventsAuditEventDataIdentityA
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataIdentityArrayOutput)
 }
 
-func (i GetEventsAuditEventDataIdentityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[[]GetEventsAuditEventDataIdentity]{
-		OutputState: i.ToGetEventsAuditEventDataIdentityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataIdentityOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataIdentityOutput) ElementType() reflect.Type {
@@ -554,12 +493,6 @@ func (o GetEventsAuditEventDataIdentityOutput) ToGetEventsAuditEventDataIdentity
 
 func (o GetEventsAuditEventDataIdentityOutput) ToGetEventsAuditEventDataIdentityOutputWithContext(ctx context.Context) GetEventsAuditEventDataIdentityOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataIdentityOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[GetEventsAuditEventDataIdentity]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of authentication used.  Example: `natv`
@@ -626,12 +559,6 @@ func (o GetEventsAuditEventDataIdentityArrayOutput) ToGetEventsAuditEventDataIde
 	return o
 }
 
-func (o GetEventsAuditEventDataIdentityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataIdentity] {
-	return pulumix.Output[[]GetEventsAuditEventDataIdentity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEventsAuditEventDataIdentityArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataIdentityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEventsAuditEventDataIdentity {
 		return vs[0].([]GetEventsAuditEventDataIdentity)[vs[1].(int)]
@@ -687,12 +614,6 @@ func (i GetEventsAuditEventDataRequestArgs) ToGetEventsAuditEventDataRequestOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataRequestOutput)
 }
 
-func (i GetEventsAuditEventDataRequestArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataRequest] {
-	return pulumix.Output[GetEventsAuditEventDataRequest]{
-		OutputState: i.ToGetEventsAuditEventDataRequestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventDataRequestArrayInput is an input type that accepts GetEventsAuditEventDataRequestArray and GetEventsAuditEventDataRequestArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataRequestArrayInput` via:
 //
@@ -718,12 +639,6 @@ func (i GetEventsAuditEventDataRequestArray) ToGetEventsAuditEventDataRequestArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataRequestArrayOutput)
 }
 
-func (i GetEventsAuditEventDataRequestArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataRequest] {
-	return pulumix.Output[[]GetEventsAuditEventDataRequest]{
-		OutputState: i.ToGetEventsAuditEventDataRequestArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataRequestOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataRequestOutput) ElementType() reflect.Type {
@@ -736,12 +651,6 @@ func (o GetEventsAuditEventDataRequestOutput) ToGetEventsAuditEventDataRequestOu
 
 func (o GetEventsAuditEventDataRequestOutput) ToGetEventsAuditEventDataRequestOutputWithContext(ctx context.Context) GetEventsAuditEventDataRequestOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataRequestOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataRequest] {
-	return pulumix.Output[GetEventsAuditEventDataRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The HTTP method of the request.  Example: `GET`
@@ -781,12 +690,6 @@ func (o GetEventsAuditEventDataRequestArrayOutput) ToGetEventsAuditEventDataRequ
 
 func (o GetEventsAuditEventDataRequestArrayOutput) ToGetEventsAuditEventDataRequestArrayOutputWithContext(ctx context.Context) GetEventsAuditEventDataRequestArrayOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataRequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataRequest] {
-	return pulumix.Output[[]GetEventsAuditEventDataRequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsAuditEventDataRequestArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataRequestOutput {
@@ -844,12 +747,6 @@ func (i GetEventsAuditEventDataResponseArgs) ToGetEventsAuditEventDataResponseOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataResponseOutput)
 }
 
-func (i GetEventsAuditEventDataResponseArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataResponse] {
-	return pulumix.Output[GetEventsAuditEventDataResponse]{
-		OutputState: i.ToGetEventsAuditEventDataResponseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventDataResponseArrayInput is an input type that accepts GetEventsAuditEventDataResponseArray and GetEventsAuditEventDataResponseArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataResponseArrayInput` via:
 //
@@ -875,12 +772,6 @@ func (i GetEventsAuditEventDataResponseArray) ToGetEventsAuditEventDataResponseA
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataResponseArrayOutput)
 }
 
-func (i GetEventsAuditEventDataResponseArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataResponse] {
-	return pulumix.Output[[]GetEventsAuditEventDataResponse]{
-		OutputState: i.ToGetEventsAuditEventDataResponseArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataResponseOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataResponseOutput) ElementType() reflect.Type {
@@ -893,12 +784,6 @@ func (o GetEventsAuditEventDataResponseOutput) ToGetEventsAuditEventDataResponse
 
 func (o GetEventsAuditEventDataResponseOutput) ToGetEventsAuditEventDataResponseOutputWithContext(ctx context.Context) GetEventsAuditEventDataResponseOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataResponseOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataResponse] {
-	return pulumix.Output[GetEventsAuditEventDataResponse]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The headers of the response.
@@ -938,12 +823,6 @@ func (o GetEventsAuditEventDataResponseArrayOutput) ToGetEventsAuditEventDataRes
 
 func (o GetEventsAuditEventDataResponseArrayOutput) ToGetEventsAuditEventDataResponseArrayOutputWithContext(ctx context.Context) GetEventsAuditEventDataResponseArrayOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataResponseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataResponse] {
-	return pulumix.Output[[]GetEventsAuditEventDataResponse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsAuditEventDataResponseArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataResponseOutput {
@@ -989,12 +868,6 @@ func (i GetEventsAuditEventDataStateChangeArgs) ToGetEventsAuditEventDataStateCh
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataStateChangeOutput)
 }
 
-func (i GetEventsAuditEventDataStateChangeArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[GetEventsAuditEventDataStateChange]{
-		OutputState: i.ToGetEventsAuditEventDataStateChangeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsAuditEventDataStateChangeArrayInput is an input type that accepts GetEventsAuditEventDataStateChangeArray and GetEventsAuditEventDataStateChangeArrayOutput values.
 // You can construct a concrete instance of `GetEventsAuditEventDataStateChangeArrayInput` via:
 //
@@ -1020,12 +893,6 @@ func (i GetEventsAuditEventDataStateChangeArray) ToGetEventsAuditEventDataStateC
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsAuditEventDataStateChangeArrayOutput)
 }
 
-func (i GetEventsAuditEventDataStateChangeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[[]GetEventsAuditEventDataStateChange]{
-		OutputState: i.ToGetEventsAuditEventDataStateChangeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsAuditEventDataStateChangeOutput struct{ *pulumi.OutputState }
 
 func (GetEventsAuditEventDataStateChangeOutput) ElementType() reflect.Type {
@@ -1038,12 +905,6 @@ func (o GetEventsAuditEventDataStateChangeOutput) ToGetEventsAuditEventDataState
 
 func (o GetEventsAuditEventDataStateChangeOutput) ToGetEventsAuditEventDataStateChangeOutputWithContext(ctx context.Context) GetEventsAuditEventDataStateChangeOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataStateChangeOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[GetEventsAuditEventDataStateChange]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
@@ -1068,12 +929,6 @@ func (o GetEventsAuditEventDataStateChangeArrayOutput) ToGetEventsAuditEventData
 
 func (o GetEventsAuditEventDataStateChangeArrayOutput) ToGetEventsAuditEventDataStateChangeArrayOutputWithContext(ctx context.Context) GetEventsAuditEventDataStateChangeArrayOutput {
 	return o
-}
-
-func (o GetEventsAuditEventDataStateChangeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsAuditEventDataStateChange] {
-	return pulumix.Output[[]GetEventsAuditEventDataStateChange]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsAuditEventDataStateChangeArrayOutput) Index(i pulumi.IntInput) GetEventsAuditEventDataStateChangeOutput {
@@ -1117,12 +972,6 @@ func (i GetEventsFilterArgs) ToGetEventsFilterOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsFilterOutput)
 }
 
-func (i GetEventsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEventsFilter] {
-	return pulumix.Output[GetEventsFilter]{
-		OutputState: i.ToGetEventsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEventsFilterArrayInput is an input type that accepts GetEventsFilterArray and GetEventsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEventsFilterArrayInput` via:
 //
@@ -1148,12 +997,6 @@ func (i GetEventsFilterArray) ToGetEventsFilterArrayOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEventsFilterArrayOutput)
 }
 
-func (i GetEventsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsFilter] {
-	return pulumix.Output[[]GetEventsFilter]{
-		OutputState: i.ToGetEventsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEventsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEventsFilterOutput) ElementType() reflect.Type {
@@ -1166,12 +1009,6 @@ func (o GetEventsFilterOutput) ToGetEventsFilterOutput() GetEventsFilterOutput {
 
 func (o GetEventsFilterOutput) ToGetEventsFilterOutputWithContext(ctx context.Context) GetEventsFilterOutput {
 	return o
-}
-
-func (o GetEventsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEventsFilter] {
-	return pulumix.Output[GetEventsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsFilterOutput) Name() pulumi.StringOutput {
@@ -1198,12 +1035,6 @@ func (o GetEventsFilterArrayOutput) ToGetEventsFilterArrayOutput() GetEventsFilt
 
 func (o GetEventsFilterArrayOutput) ToGetEventsFilterArrayOutputWithContext(ctx context.Context) GetEventsFilterArrayOutput {
 	return o
-}
-
-func (o GetEventsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEventsFilter] {
-	return pulumix.Output[[]GetEventsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEventsFilterArrayOutput) Index(i pulumi.IntInput) GetEventsFilterOutput {

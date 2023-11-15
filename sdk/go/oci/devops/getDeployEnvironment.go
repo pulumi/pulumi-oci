@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Deploy Environment resource in Oracle Cloud Infrastructure Devops service.
@@ -132,12 +131,6 @@ func (o LookupDeployEnvironmentResultOutput) ToLookupDeployEnvironmentResultOutp
 
 func (o LookupDeployEnvironmentResultOutput) ToLookupDeployEnvironmentResultOutputWithContext(ctx context.Context) LookupDeployEnvironmentResultOutput {
 	return o
-}
-
-func (o LookupDeployEnvironmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDeployEnvironmentResult] {
-	return pulumix.Output[LookupDeployEnvironmentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the Kubernetes cluster.

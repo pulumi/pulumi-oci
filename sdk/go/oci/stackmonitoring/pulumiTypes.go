@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -71,12 +70,6 @@ func (i DiscoveryJobDiscoveryDetailsArgs) ToDiscoveryJobDiscoveryDetailsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsOutput)
 }
 
-func (i DiscoveryJobDiscoveryDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetails] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetails]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DiscoveryJobDiscoveryDetailsArgs) ToDiscoveryJobDiscoveryDetailsPtrOutput() DiscoveryJobDiscoveryDetailsPtrOutput {
 	return i.ToDiscoveryJobDiscoveryDetailsPtrOutputWithContext(context.Background())
 }
@@ -118,12 +111,6 @@ func (i *discoveryJobDiscoveryDetailsPtrType) ToDiscoveryJobDiscoveryDetailsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsPtrOutput)
 }
 
-func (i *discoveryJobDiscoveryDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetails] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetails]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobDiscoveryDetailsOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsOutput) ElementType() reflect.Type {
@@ -146,12 +133,6 @@ func (o DiscoveryJobDiscoveryDetailsOutput) ToDiscoveryJobDiscoveryDetailsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DiscoveryJobDiscoveryDetails) *DiscoveryJobDiscoveryDetails {
 		return &v
 	}).(DiscoveryJobDiscoveryDetailsPtrOutput)
-}
-
-func (o DiscoveryJobDiscoveryDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetails] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of Management Agent
@@ -201,12 +182,6 @@ func (o DiscoveryJobDiscoveryDetailsPtrOutput) ToDiscoveryJobDiscoveryDetailsPtr
 
 func (o DiscoveryJobDiscoveryDetailsPtrOutput) ToDiscoveryJobDiscoveryDetailsPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsPtrOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetails] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsPtrOutput) Elem() DiscoveryJobDiscoveryDetailsOutput {
@@ -322,12 +297,6 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToDiscoveryJobDiscoveryDeta
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsOutput)
 }
 
-func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DiscoveryJobDiscoveryDetailsCredentialsArgs) ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutput() DiscoveryJobDiscoveryDetailsCredentialsPtrOutput {
 	return i.ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutputWithContext(context.Background())
 }
@@ -369,12 +338,6 @@ func (i *discoveryJobDiscoveryDetailsCredentialsPtrType) ToDiscoveryJobDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsPtrOutput)
 }
 
-func (i *discoveryJobDiscoveryDetailsCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobDiscoveryDetailsCredentialsOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsOutput) ElementType() reflect.Type {
@@ -399,12 +362,6 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsOutput) ToDiscoveryJobDiscoveryDe
 	}).(DiscoveryJobDiscoveryDetailsCredentialsPtrOutput)
 }
 
-func (o DiscoveryJobDiscoveryDetailsCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentials]{
-		OutputState: o.OutputState,
-	}
-}
-
 // List of DiscoveryJob credentials.
 func (o DiscoveryJobDiscoveryDetailsCredentialsOutput) Items() DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsCredentials) []DiscoveryJobDiscoveryDetailsCredentialsItem {
@@ -424,12 +381,6 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) ToDiscoveryJobDiscover
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) ToDiscoveryJobDiscoveryDetailsCredentialsPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsPtrOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetailsCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsPtrOutput) Elem() DiscoveryJobDiscoveryDetailsCredentialsOutput {
@@ -493,12 +444,6 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemArgs) ToDiscoveryJobDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsItemOutput)
 }
 
-func (i DiscoveryJobDiscoveryDetailsCredentialsItemArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsItemArray and DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobDiscoveryDetailsCredentialsItemArrayInput` via:
 //
@@ -524,12 +469,6 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemArray) ToDiscoveryJobDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput)
 }
 
-func (i DiscoveryJobDiscoveryDetailsCredentialsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem] {
-	return pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobDiscoveryDetailsCredentialsItemOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ElementType() reflect.Type {
@@ -542,12 +481,6 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ToDiscoveryJobDiscove
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ToDiscoveryJobDiscoveryDetailsCredentialsItemOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsItemOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsCredentialsItemOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of Credential
@@ -579,12 +512,6 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) ToDiscoveryJobDi
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) ToDiscoveryJobDiscoveryDetailsCredentialsItemArrayOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem] {
-	return pulumix.Output[[]DiscoveryJobDiscoveryDetailsCredentialsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) Index(i pulumi.IntInput) DiscoveryJobDiscoveryDetailsCredentialsItemOutput {
@@ -626,12 +553,6 @@ func (i DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs) ToDiscoveryJo
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput)
 }
 
-func (i DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ElementType() reflect.Type {
@@ -644,12 +565,6 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToDiscovery
 
 func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToDiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsCredentialsItemProperties]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key/Value pair of Property
@@ -690,12 +605,6 @@ func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetai
 
 func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetailsPropertiesOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsPropertiesOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsPropertiesOutput)
-}
-
-func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsProperties] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsProperties]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsPropertiesOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i DiscoveryJobDiscoveryDetailsPropertiesArgs) ToDiscoveryJobDiscoveryDetailsPropertiesPtrOutput() DiscoveryJobDiscoveryDetailsPropertiesPtrOutput {
@@ -739,12 +648,6 @@ func (i *discoveryJobDiscoveryDetailsPropertiesPtrType) ToDiscoveryJobDiscoveryD
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput)
 }
 
-func (i *discoveryJobDiscoveryDetailsPropertiesPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsPropertiesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobDiscoveryDetailsPropertiesOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsPropertiesOutput) ElementType() reflect.Type {
@@ -769,12 +672,6 @@ func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) ToDiscoveryJobDiscoveryDet
 	}).(DiscoveryJobDiscoveryDetailsPropertiesPtrOutput)
 }
 
-func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsProperties] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsProperties]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key/Value pair of Property
 func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) PropertiesMap() pulumi.MapOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsProperties) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
@@ -792,12 +689,6 @@ func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) ToDiscoveryJobDiscovery
 
 func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) ToDiscoveryJobDiscoveryDetailsPropertiesPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsPropertiesPtrOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetailsProperties]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) Elem() DiscoveryJobDiscoveryDetailsPropertiesOutput {
@@ -853,12 +744,6 @@ func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToDiscoveryJobDiscoveryDetailsTags
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsTagsOutput)
 }
 
-func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsTags] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsTags]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsTagsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DiscoveryJobDiscoveryDetailsTagsArgs) ToDiscoveryJobDiscoveryDetailsTagsPtrOutput() DiscoveryJobDiscoveryDetailsTagsPtrOutput {
 	return i.ToDiscoveryJobDiscoveryDetailsTagsPtrOutputWithContext(context.Background())
 }
@@ -900,12 +785,6 @@ func (i *discoveryJobDiscoveryDetailsTagsPtrType) ToDiscoveryJobDiscoveryDetails
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobDiscoveryDetailsTagsPtrOutput)
 }
 
-func (i *discoveryJobDiscoveryDetailsTagsPtrType) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsTags] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetailsTags]{
-		OutputState: i.ToDiscoveryJobDiscoveryDetailsTagsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobDiscoveryDetailsTagsOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobDiscoveryDetailsTagsOutput) ElementType() reflect.Type {
@@ -930,12 +809,6 @@ func (o DiscoveryJobDiscoveryDetailsTagsOutput) ToDiscoveryJobDiscoveryDetailsTa
 	}).(DiscoveryJobDiscoveryDetailsTagsPtrOutput)
 }
 
-func (o DiscoveryJobDiscoveryDetailsTagsOutput) ToOutput(ctx context.Context) pulumix.Output[DiscoveryJobDiscoveryDetailsTags] {
-	return pulumix.Output[DiscoveryJobDiscoveryDetailsTags]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Key/Value pair of Property
 func (o DiscoveryJobDiscoveryDetailsTagsOutput) PropertiesMap() pulumi.MapOutput {
 	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsTags) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
@@ -953,12 +826,6 @@ func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) ToDiscoveryJobDiscoveryDetail
 
 func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) ToDiscoveryJobDiscoveryDetailsTagsPtrOutputWithContext(ctx context.Context) DiscoveryJobDiscoveryDetailsTagsPtrOutput {
 	return o
-}
-
-func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobDiscoveryDetailsTags] {
-	return pulumix.Output[*DiscoveryJobDiscoveryDetailsTags]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) Elem() DiscoveryJobDiscoveryDetailsTagsOutput {
@@ -1014,12 +881,6 @@ func (i MetricExtensionEnabledOnResourceArgs) ToMetricExtensionEnabledOnResource
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionEnabledOnResourceOutput)
 }
 
-func (i MetricExtensionEnabledOnResourceArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionEnabledOnResource] {
-	return pulumix.Output[MetricExtensionEnabledOnResource]{
-		OutputState: i.ToMetricExtensionEnabledOnResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionEnabledOnResourceArrayInput is an input type that accepts MetricExtensionEnabledOnResourceArray and MetricExtensionEnabledOnResourceArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionEnabledOnResourceArrayInput` via:
 //
@@ -1045,12 +906,6 @@ func (i MetricExtensionEnabledOnResourceArray) ToMetricExtensionEnabledOnResourc
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionEnabledOnResourceArrayOutput)
 }
 
-func (i MetricExtensionEnabledOnResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionEnabledOnResource] {
-	return pulumix.Output[[]MetricExtensionEnabledOnResource]{
-		OutputState: i.ToMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionEnabledOnResourceOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionEnabledOnResourceOutput) ElementType() reflect.Type {
@@ -1063,12 +918,6 @@ func (o MetricExtensionEnabledOnResourceOutput) ToMetricExtensionEnabledOnResour
 
 func (o MetricExtensionEnabledOnResourceOutput) ToMetricExtensionEnabledOnResourceOutputWithContext(ctx context.Context) MetricExtensionEnabledOnResourceOutput {
 	return o
-}
-
-func (o MetricExtensionEnabledOnResourceOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionEnabledOnResource] {
-	return pulumix.Output[MetricExtensionEnabledOnResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the resource on which Metric Extension is enabled
@@ -1088,12 +937,6 @@ func (o MetricExtensionEnabledOnResourceArrayOutput) ToMetricExtensionEnabledOnR
 
 func (o MetricExtensionEnabledOnResourceArrayOutput) ToMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx context.Context) MetricExtensionEnabledOnResourceArrayOutput {
 	return o
-}
-
-func (o MetricExtensionEnabledOnResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionEnabledOnResource] {
-	return pulumix.Output[[]MetricExtensionEnabledOnResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionEnabledOnResourceArrayOutput) Index(i pulumi.IntInput) MetricExtensionEnabledOnResourceOutput {
@@ -1163,12 +1006,6 @@ func (i MetricExtensionMetricListArgs) ToMetricExtensionMetricListOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricListOutput)
 }
 
-func (i MetricExtensionMetricListArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionMetricList] {
-	return pulumix.Output[MetricExtensionMetricList]{
-		OutputState: i.ToMetricExtensionMetricListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionMetricListArrayInput is an input type that accepts MetricExtensionMetricListArray and MetricExtensionMetricListArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionMetricListArrayInput` via:
 //
@@ -1194,12 +1031,6 @@ func (i MetricExtensionMetricListArray) ToMetricExtensionMetricListArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionMetricListArrayOutput)
 }
 
-func (i MetricExtensionMetricListArray) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionMetricList] {
-	return pulumix.Output[[]MetricExtensionMetricList]{
-		OutputState: i.ToMetricExtensionMetricListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionMetricListOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionMetricListOutput) ElementType() reflect.Type {
@@ -1212,12 +1043,6 @@ func (o MetricExtensionMetricListOutput) ToMetricExtensionMetricListOutput() Met
 
 func (o MetricExtensionMetricListOutput) ToMetricExtensionMetricListOutputWithContext(ctx context.Context) MetricExtensionMetricListOutput {
 	return o
-}
-
-func (o MetricExtensionMetricListOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionMetricList] {
-	return pulumix.Output[MetricExtensionMetricList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compute Expression to calculate the value of this metric
@@ -1272,12 +1097,6 @@ func (o MetricExtensionMetricListArrayOutput) ToMetricExtensionMetricListArrayOu
 
 func (o MetricExtensionMetricListArrayOutput) ToMetricExtensionMetricListArrayOutputWithContext(ctx context.Context) MetricExtensionMetricListArrayOutput {
 	return o
-}
-
-func (o MetricExtensionMetricListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionMetricList] {
-	return pulumix.Output[[]MetricExtensionMetricList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionMetricListArrayOutput) Index(i pulumi.IntInput) MetricExtensionMetricListOutput {
@@ -1375,12 +1194,6 @@ func (i MetricExtensionQueryPropertiesArgs) ToMetricExtensionQueryPropertiesOutp
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutput)
 }
 
-func (i MetricExtensionQueryPropertiesArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryProperties] {
-	return pulumix.Output[MetricExtensionQueryProperties]{
-		OutputState: i.ToMetricExtensionQueryPropertiesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MetricExtensionQueryPropertiesArgs) ToMetricExtensionQueryPropertiesPtrOutput() MetricExtensionQueryPropertiesPtrOutput {
 	return i.ToMetricExtensionQueryPropertiesPtrOutputWithContext(context.Background())
 }
@@ -1422,12 +1235,6 @@ func (i *metricExtensionQueryPropertiesPtrType) ToMetricExtensionQueryProperties
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesPtrOutput)
 }
 
-func (i *metricExtensionQueryPropertiesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryProperties] {
-	return pulumix.Output[*MetricExtensionQueryProperties]{
-		OutputState: i.ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionQueryPropertiesOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionQueryPropertiesOutput) ElementType() reflect.Type {
@@ -1450,12 +1257,6 @@ func (o MetricExtensionQueryPropertiesOutput) ToMetricExtensionQueryPropertiesPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MetricExtensionQueryProperties) *MetricExtensionQueryProperties {
 		return &v
 	}).(MetricExtensionQueryPropertiesPtrOutput)
-}
-
-func (o MetricExtensionQueryPropertiesOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryProperties] {
-	return pulumix.Output[MetricExtensionQueryProperties]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Arguments required by either command or script
@@ -1551,12 +1352,6 @@ func (o MetricExtensionQueryPropertiesPtrOutput) ToMetricExtensionQueryPropertie
 
 func (o MetricExtensionQueryPropertiesPtrOutput) ToMetricExtensionQueryPropertiesPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesPtrOutput {
 	return o
-}
-
-func (o MetricExtensionQueryPropertiesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryProperties] {
-	return pulumix.Output[*MetricExtensionQueryProperties]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionQueryPropertiesPtrOutput) Elem() MetricExtensionQueryPropertiesOutput {
@@ -1756,12 +1551,6 @@ func (i MetricExtensionQueryPropertiesInParamDetailArgs) ToMetricExtensionQueryP
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesInParamDetailOutput)
 }
 
-func (i MetricExtensionQueryPropertiesInParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesInParamDetail] {
-	return pulumix.Output[MetricExtensionQueryPropertiesInParamDetail]{
-		OutputState: i.ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MetricExtensionQueryPropertiesInParamDetailArrayInput is an input type that accepts MetricExtensionQueryPropertiesInParamDetailArray and MetricExtensionQueryPropertiesInParamDetailArrayOutput values.
 // You can construct a concrete instance of `MetricExtensionQueryPropertiesInParamDetailArrayInput` via:
 //
@@ -1787,12 +1576,6 @@ func (i MetricExtensionQueryPropertiesInParamDetailArray) ToMetricExtensionQuery
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesInParamDetailArrayOutput)
 }
 
-func (i MetricExtensionQueryPropertiesInParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail] {
-	return pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail]{
-		OutputState: i.ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionQueryPropertiesInParamDetailOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionQueryPropertiesInParamDetailOutput) ElementType() reflect.Type {
@@ -1805,12 +1588,6 @@ func (o MetricExtensionQueryPropertiesInParamDetailOutput) ToMetricExtensionQuer
 
 func (o MetricExtensionQueryPropertiesInParamDetailOutput) ToMetricExtensionQueryPropertiesInParamDetailOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesInParamDetailOutput {
 	return o
-}
-
-func (o MetricExtensionQueryPropertiesInParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesInParamDetail] {
-	return pulumix.Output[MetricExtensionQueryPropertiesInParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Position of IN parameter
@@ -1835,12 +1612,6 @@ func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) ToMetricExtensio
 
 func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) ToMetricExtensionQueryPropertiesInParamDetailArrayOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesInParamDetailArrayOutput {
 	return o
-}
-
-func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail] {
-	return pulumix.Output[[]MetricExtensionQueryPropertiesInParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionQueryPropertiesInParamDetailArrayOutput) Index(i pulumi.IntInput) MetricExtensionQueryPropertiesInParamDetailOutput {
@@ -1886,12 +1657,6 @@ func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToMetricExtensionQuer
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutParamDetailsOutput)
 }
 
-func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails] {
-	return pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails]{
-		OutputState: i.ToMetricExtensionQueryPropertiesOutParamDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MetricExtensionQueryPropertiesOutParamDetailsArgs) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutput() MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
 	return i.ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(context.Background())
 }
@@ -1933,12 +1698,6 @@ func (i *metricExtensionQueryPropertiesOutParamDetailsPtrType) ToMetricExtension
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
 }
 
-func (i *metricExtensionQueryPropertiesOutParamDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails] {
-	return pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails]{
-		OutputState: i.ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionQueryPropertiesOutParamDetailsOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionQueryPropertiesOutParamDetailsOutput) ElementType() reflect.Type {
@@ -1963,12 +1722,6 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToMetricExtensionQu
 	}).(MetricExtensionQueryPropertiesOutParamDetailsPtrOutput)
 }
 
-func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails] {
-	return pulumix.Output[MetricExtensionQueryPropertiesOutParamDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Position of PL/SQL procedure OUT parameter
 func (o MetricExtensionQueryPropertiesOutParamDetailsOutput) OutParamPosition() pulumi.IntOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesOutParamDetails) int { return v.OutParamPosition }).(pulumi.IntOutput)
@@ -1991,12 +1744,6 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ToMetricExtensio
 
 func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ToMetricExtensionQueryPropertiesOutParamDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesOutParamDetailsPtrOutput {
 	return o
-}
-
-func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails] {
-	return pulumix.Output[*MetricExtensionQueryPropertiesOutParamDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) Elem() MetricExtensionQueryPropertiesOutParamDetailsOutput {
@@ -2066,12 +1813,6 @@ func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToMetricExtensionQueryP
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesScriptDetailsOutput)
 }
 
-func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesScriptDetails] {
-	return pulumix.Output[MetricExtensionQueryPropertiesScriptDetails]{
-		OutputState: i.ToMetricExtensionQueryPropertiesScriptDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MetricExtensionQueryPropertiesScriptDetailsArgs) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutput() MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
 	return i.ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(context.Background())
 }
@@ -2113,12 +1854,6 @@ func (i *metricExtensionQueryPropertiesScriptDetailsPtrType) ToMetricExtensionQu
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
 }
 
-func (i *metricExtensionQueryPropertiesScriptDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails] {
-	return pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails]{
-		OutputState: i.ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionQueryPropertiesScriptDetailsOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionQueryPropertiesScriptDetailsOutput) ElementType() reflect.Type {
@@ -2143,12 +1878,6 @@ func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQuer
 	}).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
 }
 
-func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesScriptDetails] {
-	return pulumix.Output[MetricExtensionQueryPropertiesScriptDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Sql statement or script file content as base64 encoded string
 func (o MetricExtensionQueryPropertiesScriptDetailsOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesScriptDetails) string { return v.Content }).(pulumi.StringOutput)
@@ -2171,12 +1900,6 @@ func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ToMetricExtensionQ
 
 func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ToMetricExtensionQueryPropertiesScriptDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesScriptDetailsPtrOutput {
 	return o
-}
-
-func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails] {
-	return pulumix.Output[*MetricExtensionQueryPropertiesScriptDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Elem() MetricExtensionQueryPropertiesScriptDetailsOutput {
@@ -2246,12 +1969,6 @@ func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToMetricExtensionQueryProp
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesSqlDetailsOutput)
 }
 
-func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesSqlDetails] {
-	return pulumix.Output[MetricExtensionQueryPropertiesSqlDetails]{
-		OutputState: i.ToMetricExtensionQueryPropertiesSqlDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MetricExtensionQueryPropertiesSqlDetailsArgs) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutput() MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
 	return i.ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(context.Background())
 }
@@ -2293,12 +2010,6 @@ func (i *metricExtensionQueryPropertiesSqlDetailsPtrType) ToMetricExtensionQuery
 	return pulumi.ToOutputWithContext(ctx, i).(MetricExtensionQueryPropertiesSqlDetailsPtrOutput)
 }
 
-func (i *metricExtensionQueryPropertiesSqlDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails] {
-	return pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails]{
-		OutputState: i.ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MetricExtensionQueryPropertiesSqlDetailsOutput struct{ *pulumi.OutputState }
 
 func (MetricExtensionQueryPropertiesSqlDetailsOutput) ElementType() reflect.Type {
@@ -2323,12 +2034,6 @@ func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToMetricExtensionQueryPr
 	}).(MetricExtensionQueryPropertiesSqlDetailsPtrOutput)
 }
 
-func (o MetricExtensionQueryPropertiesSqlDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MetricExtensionQueryPropertiesSqlDetails] {
-	return pulumix.Output[MetricExtensionQueryPropertiesSqlDetails]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Sql statement or script file content as base64 encoded string
 func (o MetricExtensionQueryPropertiesSqlDetailsOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesSqlDetails) string { return v.Content }).(pulumi.StringOutput)
@@ -2351,12 +2056,6 @@ func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ToMetricExtensionQuer
 
 func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ToMetricExtensionQueryPropertiesSqlDetailsPtrOutputWithContext(ctx context.Context) MetricExtensionQueryPropertiesSqlDetailsPtrOutput {
 	return o
-}
-
-func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails] {
-	return pulumix.Output[*MetricExtensionQueryPropertiesSqlDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) Elem() MetricExtensionQueryPropertiesSqlDetailsOutput {
@@ -2430,12 +2129,6 @@ func (i MonitoredResourceAdditionalAliasArgs) ToMonitoredResourceAdditionalAlias
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasOutput)
 }
 
-func (i MonitoredResourceAdditionalAliasArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAlias] {
-	return pulumix.Output[MonitoredResourceAdditionalAlias]{
-		OutputState: i.ToMonitoredResourceAdditionalAliasOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceAdditionalAliasArrayInput is an input type that accepts MonitoredResourceAdditionalAliasArray and MonitoredResourceAdditionalAliasArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceAdditionalAliasArrayInput` via:
 //
@@ -2461,12 +2154,6 @@ func (i MonitoredResourceAdditionalAliasArray) ToMonitoredResourceAdditionalAlia
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasArrayOutput)
 }
 
-func (i MonitoredResourceAdditionalAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalAlias] {
-	return pulumix.Output[[]MonitoredResourceAdditionalAlias]{
-		OutputState: i.ToMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceAdditionalAliasOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalAliasOutput) ElementType() reflect.Type {
@@ -2479,12 +2166,6 @@ func (o MonitoredResourceAdditionalAliasOutput) ToMonitoredResourceAdditionalAli
 
 func (o MonitoredResourceAdditionalAliasOutput) ToMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasOutput {
 	return o
-}
-
-func (o MonitoredResourceAdditionalAliasOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAlias] {
-	return pulumix.Output[MonitoredResourceAdditionalAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Monitored Resource Alias Reference Source Credential.
@@ -2516,12 +2197,6 @@ func (o MonitoredResourceAdditionalAliasArrayOutput) ToMonitoredResourceAddition
 
 func (o MonitoredResourceAdditionalAliasArrayOutput) ToMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasArrayOutput {
 	return o
-}
-
-func (o MonitoredResourceAdditionalAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalAlias] {
-	return pulumix.Output[[]MonitoredResourceAdditionalAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalAliasOutput {
@@ -2571,12 +2246,6 @@ func (i MonitoredResourceAdditionalAliasCredentialArgs) ToMonitoredResourceAddit
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalAliasCredentialOutput)
 }
 
-func (i MonitoredResourceAdditionalAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAliasCredential] {
-	return pulumix.Output[MonitoredResourceAdditionalAliasCredential]{
-		OutputState: i.ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalAliasCredentialOutput) ElementType() reflect.Type {
@@ -2589,12 +2258,6 @@ func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdd
 
 func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalAliasCredentialOutput {
 	return o
-}
-
-func (o MonitoredResourceAdditionalAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalAliasCredential] {
-	return pulumix.Output[MonitoredResourceAdditionalAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Property Name.
@@ -2681,12 +2344,6 @@ func (i MonitoredResourceAdditionalCredentialArgs) ToMonitoredResourceAdditional
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialOutput)
 }
 
-func (i MonitoredResourceAdditionalCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredential] {
-	return pulumix.Output[MonitoredResourceAdditionalCredential]{
-		OutputState: i.ToMonitoredResourceAdditionalCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceAdditionalCredentialArrayInput is an input type that accepts MonitoredResourceAdditionalCredentialArray and MonitoredResourceAdditionalCredentialArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceAdditionalCredentialArrayInput` via:
 //
@@ -2712,12 +2369,6 @@ func (i MonitoredResourceAdditionalCredentialArray) ToMonitoredResourceAdditiona
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialArrayOutput)
 }
 
-func (i MonitoredResourceAdditionalCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredential] {
-	return pulumix.Output[[]MonitoredResourceAdditionalCredential]{
-		OutputState: i.ToMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceAdditionalCredentialOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalCredentialOutput) ElementType() reflect.Type {
@@ -2730,12 +2381,6 @@ func (o MonitoredResourceAdditionalCredentialOutput) ToMonitoredResourceAddition
 
 func (o MonitoredResourceAdditionalCredentialOutput) ToMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialOutput {
 	return o
-}
-
-func (o MonitoredResourceAdditionalCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredential] {
-	return pulumix.Output[MonitoredResourceAdditionalCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -2795,12 +2440,6 @@ func (o MonitoredResourceAdditionalCredentialArrayOutput) ToMonitoredResourceAdd
 	return o
 }
 
-func (o MonitoredResourceAdditionalCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredential] {
-	return pulumix.Output[[]MonitoredResourceAdditionalCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourceAdditionalCredential {
 		return vs[0].([]MonitoredResourceAdditionalCredential)[vs[1].(int)]
@@ -2844,12 +2483,6 @@ func (i MonitoredResourceAdditionalCredentialPropertyArgs) ToMonitoredResourceAd
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialPropertyOutput)
 }
 
-func (i MonitoredResourceAdditionalCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[MonitoredResourceAdditionalCredentialProperty]{
-		OutputState: i.ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceAdditionalCredentialPropertyArrayInput is an input type that accepts MonitoredResourceAdditionalCredentialPropertyArray and MonitoredResourceAdditionalCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceAdditionalCredentialPropertyArrayInput` via:
 //
@@ -2875,12 +2508,6 @@ func (i MonitoredResourceAdditionalCredentialPropertyArray) ToMonitoredResourceA
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAdditionalCredentialPropertyArrayOutput)
 }
 
-func (i MonitoredResourceAdditionalCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty]{
-		OutputState: i.ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
@@ -2893,12 +2520,6 @@ func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResource
 
 func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyOutput {
 	return o
-}
-
-func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[MonitoredResourceAdditionalCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Property Name.
@@ -2923,12 +2544,6 @@ func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToMonitoredRes
 
 func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceAdditionalCredentialPropertyArrayOutput {
 	return o
-}
-
-func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[[]MonitoredResourceAdditionalCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceAdditionalCredentialPropertyOutput {
@@ -2978,12 +2593,6 @@ func (i MonitoredResourceAliasesArgs) ToMonitoredResourceAliasesOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesOutput)
 }
 
-func (i MonitoredResourceAliasesArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliases] {
-	return pulumix.Output[MonitoredResourceAliases]{
-		OutputState: i.ToMonitoredResourceAliasesOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MonitoredResourceAliasesArgs) ToMonitoredResourceAliasesPtrOutput() MonitoredResourceAliasesPtrOutput {
 	return i.ToMonitoredResourceAliasesPtrOutputWithContext(context.Background())
 }
@@ -3025,12 +2634,6 @@ func (i *monitoredResourceAliasesPtrType) ToMonitoredResourceAliasesPtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesPtrOutput)
 }
 
-func (i *monitoredResourceAliasesPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliases] {
-	return pulumix.Output[*MonitoredResourceAliases]{
-		OutputState: i.ToMonitoredResourceAliasesPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceAliasesOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAliasesOutput) ElementType() reflect.Type {
@@ -3053,12 +2656,6 @@ func (o MonitoredResourceAliasesOutput) ToMonitoredResourceAliasesPtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceAliases) *MonitoredResourceAliases {
 		return &v
 	}).(MonitoredResourceAliasesPtrOutput)
-}
-
-func (o MonitoredResourceAliasesOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliases] {
-	return pulumix.Output[MonitoredResourceAliases]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Monitored Resource Alias Reference Source Credential.
@@ -3088,12 +2685,6 @@ func (o MonitoredResourceAliasesPtrOutput) ToMonitoredResourceAliasesPtrOutput()
 
 func (o MonitoredResourceAliasesPtrOutput) ToMonitoredResourceAliasesPtrOutputWithContext(ctx context.Context) MonitoredResourceAliasesPtrOutput {
 	return o
-}
-
-func (o MonitoredResourceAliasesPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliases] {
-	return pulumix.Output[*MonitoredResourceAliases]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceAliasesPtrOutput) Elem() MonitoredResourceAliasesOutput {
@@ -3177,12 +2768,6 @@ func (i MonitoredResourceAliasesCredentialArgs) ToMonitoredResourceAliasesCreden
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesCredentialOutput)
 }
 
-func (i MonitoredResourceAliasesCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliasesCredential] {
-	return pulumix.Output[MonitoredResourceAliasesCredential]{
-		OutputState: i.ToMonitoredResourceAliasesCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MonitoredResourceAliasesCredentialArgs) ToMonitoredResourceAliasesCredentialPtrOutput() MonitoredResourceAliasesCredentialPtrOutput {
 	return i.ToMonitoredResourceAliasesCredentialPtrOutputWithContext(context.Background())
 }
@@ -3224,12 +2809,6 @@ func (i *monitoredResourceAliasesCredentialPtrType) ToMonitoredResourceAliasesCr
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceAliasesCredentialPtrOutput)
 }
 
-func (i *monitoredResourceAliasesCredentialPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliasesCredential] {
-	return pulumix.Output[*MonitoredResourceAliasesCredential]{
-		OutputState: i.ToMonitoredResourceAliasesCredentialPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceAliasesCredentialOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceAliasesCredentialOutput) ElementType() reflect.Type {
@@ -3252,12 +2831,6 @@ func (o MonitoredResourceAliasesCredentialOutput) ToMonitoredResourceAliasesCred
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceAliasesCredential) *MonitoredResourceAliasesCredential {
 		return &v
 	}).(MonitoredResourceAliasesCredentialPtrOutput)
-}
-
-func (o MonitoredResourceAliasesCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceAliasesCredential] {
-	return pulumix.Output[MonitoredResourceAliasesCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Property Name.
@@ -3287,12 +2860,6 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) ToMonitoredResourceAliasesC
 
 func (o MonitoredResourceAliasesCredentialPtrOutput) ToMonitoredResourceAliasesCredentialPtrOutputWithContext(ctx context.Context) MonitoredResourceAliasesCredentialPtrOutput {
 	return o
-}
-
-func (o MonitoredResourceAliasesCredentialPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceAliasesCredential] {
-	return pulumix.Output[*MonitoredResourceAliasesCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceAliasesCredentialPtrOutput) Elem() MonitoredResourceAliasesCredentialOutput {
@@ -3404,12 +2971,6 @@ func (i MonitoredResourceCredentialsArgs) ToMonitoredResourceCredentialsOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsOutput)
 }
 
-func (i MonitoredResourceCredentialsArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentials] {
-	return pulumix.Output[MonitoredResourceCredentials]{
-		OutputState: i.ToMonitoredResourceCredentialsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MonitoredResourceCredentialsArgs) ToMonitoredResourceCredentialsPtrOutput() MonitoredResourceCredentialsPtrOutput {
 	return i.ToMonitoredResourceCredentialsPtrOutputWithContext(context.Background())
 }
@@ -3451,12 +3012,6 @@ func (i *monitoredResourceCredentialsPtrType) ToMonitoredResourceCredentialsPtrO
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsPtrOutput)
 }
 
-func (i *monitoredResourceCredentialsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceCredentials] {
-	return pulumix.Output[*MonitoredResourceCredentials]{
-		OutputState: i.ToMonitoredResourceCredentialsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceCredentialsOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceCredentialsOutput) ElementType() reflect.Type {
@@ -3479,12 +3034,6 @@ func (o MonitoredResourceCredentialsOutput) ToMonitoredResourceCredentialsPtrOut
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceCredentials) *MonitoredResourceCredentials {
 		return &v
 	}).(MonitoredResourceCredentialsPtrOutput)
-}
-
-func (o MonitoredResourceCredentialsOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentials] {
-	return pulumix.Output[MonitoredResourceCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -3540,12 +3089,6 @@ func (o MonitoredResourceCredentialsPtrOutput) ToMonitoredResourceCredentialsPtr
 
 func (o MonitoredResourceCredentialsPtrOutput) ToMonitoredResourceCredentialsPtrOutputWithContext(ctx context.Context) MonitoredResourceCredentialsPtrOutput {
 	return o
-}
-
-func (o MonitoredResourceCredentialsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceCredentials] {
-	return pulumix.Output[*MonitoredResourceCredentials]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceCredentialsPtrOutput) Elem() MonitoredResourceCredentialsOutput {
@@ -3671,12 +3214,6 @@ func (i MonitoredResourceCredentialsPropertyArgs) ToMonitoredResourceCredentials
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsPropertyOutput)
 }
 
-func (i MonitoredResourceCredentialsPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentialsProperty] {
-	return pulumix.Output[MonitoredResourceCredentialsProperty]{
-		OutputState: i.ToMonitoredResourceCredentialsPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceCredentialsPropertyArrayInput is an input type that accepts MonitoredResourceCredentialsPropertyArray and MonitoredResourceCredentialsPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceCredentialsPropertyArrayInput` via:
 //
@@ -3702,12 +3239,6 @@ func (i MonitoredResourceCredentialsPropertyArray) ToMonitoredResourceCredential
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceCredentialsPropertyArrayOutput)
 }
 
-func (i MonitoredResourceCredentialsPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceCredentialsProperty] {
-	return pulumix.Output[[]MonitoredResourceCredentialsProperty]{
-		OutputState: i.ToMonitoredResourceCredentialsPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceCredentialsPropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceCredentialsPropertyOutput) ElementType() reflect.Type {
@@ -3720,12 +3251,6 @@ func (o MonitoredResourceCredentialsPropertyOutput) ToMonitoredResourceCredentia
 
 func (o MonitoredResourceCredentialsPropertyOutput) ToMonitoredResourceCredentialsPropertyOutputWithContext(ctx context.Context) MonitoredResourceCredentialsPropertyOutput {
 	return o
-}
-
-func (o MonitoredResourceCredentialsPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceCredentialsProperty] {
-	return pulumix.Output[MonitoredResourceCredentialsProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Property Name.
@@ -3750,12 +3275,6 @@ func (o MonitoredResourceCredentialsPropertyArrayOutput) ToMonitoredResourceCred
 
 func (o MonitoredResourceCredentialsPropertyArrayOutput) ToMonitoredResourceCredentialsPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourceCredentialsPropertyArrayOutput {
 	return o
-}
-
-func (o MonitoredResourceCredentialsPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceCredentialsProperty] {
-	return pulumix.Output[[]MonitoredResourceCredentialsProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceCredentialsPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourceCredentialsPropertyOutput {
@@ -3821,12 +3340,6 @@ func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToMonitoredResourceDatab
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceDatabaseConnectionDetailsOutput)
 }
 
-func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceDatabaseConnectionDetails] {
-	return pulumix.Output[MonitoredResourceDatabaseConnectionDetails]{
-		OutputState: i.ToMonitoredResourceDatabaseConnectionDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MonitoredResourceDatabaseConnectionDetailsArgs) ToMonitoredResourceDatabaseConnectionDetailsPtrOutput() MonitoredResourceDatabaseConnectionDetailsPtrOutput {
 	return i.ToMonitoredResourceDatabaseConnectionDetailsPtrOutputWithContext(context.Background())
 }
@@ -3868,12 +3381,6 @@ func (i *monitoredResourceDatabaseConnectionDetailsPtrType) ToMonitoredResourceD
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceDatabaseConnectionDetailsPtrOutput)
 }
 
-func (i *monitoredResourceDatabaseConnectionDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceDatabaseConnectionDetails] {
-	return pulumix.Output[*MonitoredResourceDatabaseConnectionDetails]{
-		OutputState: i.ToMonitoredResourceDatabaseConnectionDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceDatabaseConnectionDetailsOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceDatabaseConnectionDetailsOutput) ElementType() reflect.Type {
@@ -3896,12 +3403,6 @@ func (o MonitoredResourceDatabaseConnectionDetailsOutput) ToMonitoredResourceDat
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceDatabaseConnectionDetails) *MonitoredResourceDatabaseConnectionDetails {
 		return &v
 	}).(MonitoredResourceDatabaseConnectionDetailsPtrOutput)
-}
-
-func (o MonitoredResourceDatabaseConnectionDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceDatabaseConnectionDetails] {
-	return pulumix.Output[MonitoredResourceDatabaseConnectionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -3951,12 +3452,6 @@ func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ToMonitoredResource
 
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ToMonitoredResourceDatabaseConnectionDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceDatabaseConnectionDetailsPtrOutput {
 	return o
-}
-
-func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceDatabaseConnectionDetails] {
-	return pulumix.Output[*MonitoredResourceDatabaseConnectionDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceDatabaseConnectionDetailsPtrOutput) Elem() MonitoredResourceDatabaseConnectionDetailsOutput {
@@ -4076,12 +3571,6 @@ func (i MonitoredResourcePropertyArgs) ToMonitoredResourcePropertyOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcePropertyOutput)
 }
 
-func (i MonitoredResourcePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceProperty] {
-	return pulumix.Output[MonitoredResourceProperty]{
-		OutputState: i.ToMonitoredResourcePropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcePropertyArrayInput is an input type that accepts MonitoredResourcePropertyArray and MonitoredResourcePropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcePropertyArrayInput` via:
 //
@@ -4107,12 +3596,6 @@ func (i MonitoredResourcePropertyArray) ToMonitoredResourcePropertyArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcePropertyArrayOutput)
 }
 
-func (i MonitoredResourcePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceProperty] {
-	return pulumix.Output[[]MonitoredResourceProperty]{
-		OutputState: i.ToMonitoredResourcePropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcePropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcePropertyOutput) ElementType() reflect.Type {
@@ -4125,12 +3608,6 @@ func (o MonitoredResourcePropertyOutput) ToMonitoredResourcePropertyOutput() Mon
 
 func (o MonitoredResourcePropertyOutput) ToMonitoredResourcePropertyOutputWithContext(ctx context.Context) MonitoredResourcePropertyOutput {
 	return o
-}
-
-func (o MonitoredResourcePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceProperty] {
-	return pulumix.Output[MonitoredResourceProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Property Name.
@@ -4155,12 +3632,6 @@ func (o MonitoredResourcePropertyArrayOutput) ToMonitoredResourcePropertyArrayOu
 
 func (o MonitoredResourcePropertyArrayOutput) ToMonitoredResourcePropertyArrayOutputWithContext(ctx context.Context) MonitoredResourcePropertyArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceProperty] {
-	return pulumix.Output[[]MonitoredResourceProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourcePropertyOutput {
@@ -4232,12 +3703,6 @@ func (i MonitoredResourceTaskTaskDetailsArgs) ToMonitoredResourceTaskTaskDetails
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsOutput)
 }
 
-func (i MonitoredResourceTaskTaskDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTaskTaskDetails] {
-	return pulumix.Output[MonitoredResourceTaskTaskDetails]{
-		OutputState: i.ToMonitoredResourceTaskTaskDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MonitoredResourceTaskTaskDetailsArgs) ToMonitoredResourceTaskTaskDetailsPtrOutput() MonitoredResourceTaskTaskDetailsPtrOutput {
 	return i.ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(context.Background())
 }
@@ -4279,12 +3744,6 @@ func (i *monitoredResourceTaskTaskDetailsPtrType) ToMonitoredResourceTaskTaskDet
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTaskTaskDetailsPtrOutput)
 }
 
-func (i *monitoredResourceTaskTaskDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTaskTaskDetails] {
-	return pulumix.Output[*MonitoredResourceTaskTaskDetails]{
-		OutputState: i.ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceTaskTaskDetailsOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceTaskTaskDetailsOutput) ElementType() reflect.Type {
@@ -4307,12 +3766,6 @@ func (o MonitoredResourceTaskTaskDetailsOutput) ToMonitoredResourceTaskTaskDetai
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTaskTaskDetails) *MonitoredResourceTaskTaskDetails {
 		return &v
 	}).(MonitoredResourceTaskTaskDetailsPtrOutput)
-}
-
-func (o MonitoredResourceTaskTaskDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTaskTaskDetails] {
-	return pulumix.Output[MonitoredResourceTaskTaskDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
@@ -4362,12 +3815,6 @@ func (o MonitoredResourceTaskTaskDetailsPtrOutput) ToMonitoredResourceTaskTaskDe
 
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) ToMonitoredResourceTaskTaskDetailsPtrOutputWithContext(ctx context.Context) MonitoredResourceTaskTaskDetailsPtrOutput {
 	return o
-}
-
-func (o MonitoredResourceTaskTaskDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTaskTaskDetails] {
-	return pulumix.Output[*MonitoredResourceTaskTaskDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceTaskTaskDetailsPtrOutput) Elem() MonitoredResourceTaskTaskDetailsOutput {
@@ -4504,12 +3951,6 @@ func (i MonitoredResourceTypeMetadataArgs) ToMonitoredResourceTypeMetadataOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataOutput)
 }
 
-func (i MonitoredResourceTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadata] {
-	return pulumix.Output[MonitoredResourceTypeMetadata]{
-		OutputState: i.ToMonitoredResourceTypeMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i MonitoredResourceTypeMetadataArgs) ToMonitoredResourceTypeMetadataPtrOutput() MonitoredResourceTypeMetadataPtrOutput {
 	return i.ToMonitoredResourceTypeMetadataPtrOutputWithContext(context.Background())
 }
@@ -4551,12 +3992,6 @@ func (i *monitoredResourceTypeMetadataPtrType) ToMonitoredResourceTypeMetadataPt
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataPtrOutput)
 }
 
-func (i *monitoredResourceTypeMetadataPtrType) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTypeMetadata] {
-	return pulumix.Output[*MonitoredResourceTypeMetadata]{
-		OutputState: i.ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceTypeMetadataOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceTypeMetadataOutput) ElementType() reflect.Type {
@@ -4579,12 +4014,6 @@ func (o MonitoredResourceTypeMetadataOutput) ToMonitoredResourceTypeMetadataPtrO
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v MonitoredResourceTypeMetadata) *MonitoredResourceTypeMetadata {
 		return &v
 	}).(MonitoredResourceTypeMetadataPtrOutput)
-}
-
-func (o MonitoredResourceTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadata] {
-	return pulumix.Output[MonitoredResourceTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
@@ -4637,12 +4066,6 @@ func (o MonitoredResourceTypeMetadataPtrOutput) ToMonitoredResourceTypeMetadataP
 
 func (o MonitoredResourceTypeMetadataPtrOutput) ToMonitoredResourceTypeMetadataPtrOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataPtrOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeMetadataPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourceTypeMetadata] {
-	return pulumix.Output[*MonitoredResourceTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceTypeMetadataPtrOutput) Elem() MonitoredResourceTypeMetadataOutput {
@@ -4759,12 +4182,6 @@ func (i MonitoredResourceTypeMetadataUniquePropertySetArgs) ToMonitoredResourceT
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataUniquePropertySetOutput)
 }
 
-func (i MonitoredResourceTypeMetadataUniquePropertySetArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: i.ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceTypeMetadataUniquePropertySetArrayInput is an input type that accepts MonitoredResourceTypeMetadataUniquePropertySetArray and MonitoredResourceTypeMetadataUniquePropertySetArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceTypeMetadataUniquePropertySetArrayInput` via:
 //
@@ -4790,12 +4207,6 @@ func (i MonitoredResourceTypeMetadataUniquePropertySetArray) ToMonitoredResource
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
 }
 
-func (i MonitoredResourceTypeMetadataUniquePropertySetArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: i.ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceTypeMetadataUniquePropertySetOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceTypeMetadataUniquePropertySetOutput) ElementType() reflect.Type {
@@ -4808,12 +4219,6 @@ func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) ToMonitoredResourc
 
 func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) ToMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataUniquePropertySetOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeMetadataUniquePropertySetOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[MonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of properties.
@@ -4833,12 +4238,6 @@ func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToMonitoredRe
 
 func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) MonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
 	return o
-}
-
-func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[[]MonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceTypeMetadataUniquePropertySetArrayOutput) Index(i pulumi.IntInput) MonitoredResourceTypeMetadataUniquePropertySetOutput {
@@ -4888,12 +4287,6 @@ func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArg
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput)
 }
 
-func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
-	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray and MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayInput` via:
 //
@@ -4919,12 +4312,6 @@ func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput)
 }
 
-func (i MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) ElementType() reflect.Type {
@@ -4937,12 +4324,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOut
 
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput {
 	return o
-}
-
-func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
-	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -4974,12 +4355,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArr
 
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput) ToMonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailOutput {
@@ -5029,12 +4404,6 @@ func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput)
 }
 
-func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
-	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput is an input type that accepts MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray and MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayInput` via:
 //
@@ -5060,12 +4429,6 @@ func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput)
 }
 
-func (i MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
-		OutputState: i.ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) ElementType() reflect.Type {
@@ -5078,12 +4441,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) 
 
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput {
 	return o
-}
-
-func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
-	return pulumix.Output[MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5115,12 +4472,6 @@ func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOut
 
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput) ToMonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailOutput {
@@ -5210,12 +4561,6 @@ func (i MonitoredResourcesListMemberItemArgs) ToMonitoredResourcesListMemberItem
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberItemOutput)
 }
 
-func (i MonitoredResourcesListMemberItemArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesListMemberItem] {
-	return pulumix.Output[MonitoredResourcesListMemberItem]{
-		OutputState: i.ToMonitoredResourcesListMemberItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesListMemberItemArrayInput is an input type that accepts MonitoredResourcesListMemberItemArray and MonitoredResourcesListMemberItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberItemArrayInput` via:
 //
@@ -5241,12 +4586,6 @@ func (i MonitoredResourcesListMemberItemArray) ToMonitoredResourcesListMemberIte
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberItemArrayOutput)
 }
 
-func (i MonitoredResourcesListMemberItemArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesListMemberItem] {
-	return pulumix.Output[[]MonitoredResourcesListMemberItem]{
-		OutputState: i.ToMonitoredResourcesListMemberItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesListMemberItemOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesListMemberItemOutput) ElementType() reflect.Type {
@@ -5259,12 +4598,6 @@ func (o MonitoredResourcesListMemberItemOutput) ToMonitoredResourcesListMemberIt
 
 func (o MonitoredResourcesListMemberItemOutput) ToMonitoredResourcesListMemberItemOutputWithContext(ctx context.Context) MonitoredResourcesListMemberItemOutput {
 	return o
-}
-
-func (o MonitoredResourcesListMemberItemOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesListMemberItem] {
-	return pulumix.Output[MonitoredResourcesListMemberItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5346,12 +4679,6 @@ func (o MonitoredResourcesListMemberItemArrayOutput) ToMonitoredResourcesListMem
 	return o
 }
 
-func (o MonitoredResourcesListMemberItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesListMemberItem] {
-	return pulumix.Output[[]MonitoredResourcesListMemberItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourcesListMemberItemArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesListMemberItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesListMemberItem {
 		return vs[0].([]MonitoredResourcesListMemberItem)[vs[1].(int)]
@@ -5411,12 +4738,6 @@ func (i MonitoredResourcesSearchAssociationItemArgs) ToMonitoredResourcesSearchA
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemOutput)
 }
 
-func (i MonitoredResourcesSearchAssociationItemArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItem] {
-	return pulumix.Output[MonitoredResourcesSearchAssociationItem]{
-		OutputState: i.ToMonitoredResourcesSearchAssociationItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesSearchAssociationItemArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemArray and MonitoredResourcesSearchAssociationItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemArrayInput` via:
 //
@@ -5442,12 +4763,6 @@ func (i MonitoredResourcesSearchAssociationItemArray) ToMonitoredResourcesSearch
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemArrayOutput)
 }
 
-func (i MonitoredResourcesSearchAssociationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItem] {
-	return pulumix.Output[[]MonitoredResourcesSearchAssociationItem]{
-		OutputState: i.ToMonitoredResourcesSearchAssociationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesSearchAssociationItemOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationItemOutput) ElementType() reflect.Type {
@@ -5460,12 +4775,6 @@ func (o MonitoredResourcesSearchAssociationItemOutput) ToMonitoredResourcesSearc
 
 func (o MonitoredResourcesSearchAssociationItemOutput) ToMonitoredResourcesSearchAssociationItemOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchAssociationItemOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItem] {
-	return pulumix.Output[MonitoredResourcesSearchAssociationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Association type filter to search associated resources.
@@ -5516,12 +4825,6 @@ func (o MonitoredResourcesSearchAssociationItemArrayOutput) ToMonitoredResources
 	return o
 }
 
-func (o MonitoredResourcesSearchAssociationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItem] {
-	return pulumix.Output[[]MonitoredResourcesSearchAssociationItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourcesSearchAssociationItemArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchAssociationItem {
 		return vs[0].([]MonitoredResourcesSearchAssociationItem)[vs[1].(int)]
@@ -5569,12 +4872,6 @@ func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput)
 }
 
-func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
-	return pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
-		OutputState: i.ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray and MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayInput` via:
 //
@@ -5600,12 +4897,6 @@ func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput)
 }
 
-func (i MonitoredResourcesSearchAssociationItemDestinationResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
-		OutputState: i.ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) ElementType() reflect.Type {
@@ -5618,12 +4909,6 @@ func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) 
 
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
-	return pulumix.Output[MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5655,12 +4940,6 @@ func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOut
 
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput) ToMonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemDestinationResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesSearchAssociationItemDestinationResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationItemDestinationResourceDetailOutput {
@@ -5710,12 +4989,6 @@ func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs) ToMonit
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput)
 }
 
-func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
-	return pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
-		OutputState: i.ToMonitoredResourcesSearchAssociationItemSourceResourceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput is an input type that accepts MonitoredResourcesSearchAssociationItemSourceResourceDetailArray and MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayInput` via:
 //
@@ -5741,12 +5014,6 @@ func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArray) ToMoni
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput)
 }
 
-func (i MonitoredResourcesSearchAssociationItemSourceResourceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
-		OutputState: i.ToMonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ElementType() reflect.Type {
@@ -5759,12 +5026,6 @@ func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToMon
 
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToMonitoredResourcesSearchAssociationItemSourceResourceDetailOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
-	return pulumix.Output[MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5794,12 +5055,6 @@ func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) 
 
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) ToMonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail] {
-	return pulumix.Output[[]MonitoredResourcesSearchAssociationItemSourceResourceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesSearchAssociationItemSourceResourceDetailArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchAssociationItemSourceResourceDetailOutput {
@@ -5907,12 +5162,6 @@ func (i MonitoredResourcesSearchItemArgs) ToMonitoredResourcesSearchItemOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemOutput)
 }
 
-func (i MonitoredResourcesSearchItemArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItem] {
-	return pulumix.Output[MonitoredResourcesSearchItem]{
-		OutputState: i.ToMonitoredResourcesSearchItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesSearchItemArrayInput is an input type that accepts MonitoredResourcesSearchItemArray and MonitoredResourcesSearchItemArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchItemArrayInput` via:
 //
@@ -5938,12 +5187,6 @@ func (i MonitoredResourcesSearchItemArray) ToMonitoredResourcesSearchItemArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemArrayOutput)
 }
 
-func (i MonitoredResourcesSearchItemArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItem] {
-	return pulumix.Output[[]MonitoredResourcesSearchItem]{
-		OutputState: i.ToMonitoredResourcesSearchItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesSearchItemOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchItemOutput) ElementType() reflect.Type {
@@ -5956,12 +5199,6 @@ func (o MonitoredResourcesSearchItemOutput) ToMonitoredResourcesSearchItemOutput
 
 func (o MonitoredResourcesSearchItemOutput) ToMonitoredResourcesSearchItemOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchItemOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItem] {
-	return pulumix.Output[MonitoredResourcesSearchItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -6061,12 +5298,6 @@ func (o MonitoredResourcesSearchItemArrayOutput) ToMonitoredResourcesSearchItemA
 	return o
 }
 
-func (o MonitoredResourcesSearchItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItem] {
-	return pulumix.Output[[]MonitoredResourcesSearchItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourcesSearchItemArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MonitoredResourcesSearchItem {
 		return vs[0].([]MonitoredResourcesSearchItem)[vs[1].(int)]
@@ -6110,12 +5341,6 @@ func (i MonitoredResourcesSearchItemPropertyArgs) ToMonitoredResourcesSearchItem
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemPropertyOutput)
 }
 
-func (i MonitoredResourcesSearchItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItemProperty] {
-	return pulumix.Output[MonitoredResourcesSearchItemProperty]{
-		OutputState: i.ToMonitoredResourcesSearchItemPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesSearchItemPropertyArrayInput is an input type that accepts MonitoredResourcesSearchItemPropertyArray and MonitoredResourcesSearchItemPropertyArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesSearchItemPropertyArrayInput` via:
 //
@@ -6141,12 +5366,6 @@ func (i MonitoredResourcesSearchItemPropertyArray) ToMonitoredResourcesSearchIte
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesSearchItemPropertyArrayOutput)
 }
 
-func (i MonitoredResourcesSearchItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItemProperty] {
-	return pulumix.Output[[]MonitoredResourcesSearchItemProperty]{
-		OutputState: i.ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesSearchItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesSearchItemPropertyOutput) ElementType() reflect.Type {
@@ -6159,12 +5378,6 @@ func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchIt
 
 func (o MonitoredResourcesSearchItemPropertyOutput) ToMonitoredResourcesSearchItemPropertyOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[MonitoredResourcesSearchItemProperty] {
-	return pulumix.Output[MonitoredResourcesSearchItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -6189,12 +5402,6 @@ func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToMonitoredResourcesSea
 
 func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToMonitoredResourcesSearchItemPropertyArrayOutputWithContext(ctx context.Context) MonitoredResourcesSearchItemPropertyArrayOutput {
 	return o
-}
-
-func (o MonitoredResourcesSearchItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]MonitoredResourcesSearchItemProperty] {
-	return pulumix.Output[[]MonitoredResourcesSearchItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesSearchItemPropertyArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesSearchItemPropertyOutput {
@@ -6234,12 +5441,6 @@ func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs) ToGetBase
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput)
 }
 
-func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection] {
-	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection]{
-		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput is an input type that accepts GetBaselineableMetricsBaselineableMetricSummaryCollectionArray and GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayInput` via:
 //
@@ -6265,12 +5466,6 @@ func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArray) ToGetBas
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput)
 }
 
-func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection] {
-	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection]{
-		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ElementType() reflect.Type {
@@ -6283,12 +5478,6 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ToGetBa
 
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection] {
-	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput) Items() GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput {
@@ -6309,12 +5498,6 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) To
 
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection] {
-	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsBaselineableMetricSummaryCollectionOutput {
@@ -6416,12 +5599,6 @@ func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput)
 }
 
-func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
-	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
-		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput is an input type that accepts GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray and GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayInput` via:
 //
@@ -6447,12 +5624,6 @@ func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput)
 }
 
-func (i GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
-	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
-		OutputState: i.ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ElementType() reflect.Type {
@@ -6465,12 +5636,6 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ToG
 
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ToGetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutputWithContext(ctx context.Context) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
-	return pulumix.Output[GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // metric column name
@@ -6573,12 +5738,6 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput
 	return o
 }
 
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem] {
-	return pulumix.Output[[]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBaselineableMetricsBaselineableMetricSummaryCollectionItem {
 		return vs[0].([]GetBaselineableMetricsBaselineableMetricSummaryCollectionItem)[vs[1].(int)]
@@ -6634,12 +5793,6 @@ func (i GetBaselineableMetricsEvaluateDataPointArgs) ToGetBaselineableMetricsEva
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateDataPointOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsEvaluateDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateDataPointArray and GetBaselineableMetricsEvaluateDataPointArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsEvaluateDataPointArrayInput` via:
 //
@@ -6665,12 +5818,6 @@ func (i GetBaselineableMetricsEvaluateDataPointArray) ToGetBaselineableMetricsEv
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateDataPointArrayOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsEvaluateDataPointOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsEvaluateDataPointOutput) ElementType() reflect.Type {
@@ -6683,12 +5830,6 @@ func (o GetBaselineableMetricsEvaluateDataPointOutput) ToGetBaselineableMetricsE
 
 func (o GetBaselineableMetricsEvaluateDataPointOutput) ToGetBaselineableMetricsEvaluateDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateDataPointOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
@@ -6728,12 +5869,6 @@ func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) ToGetBaselineableMet
 
 func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) ToGetBaselineableMetricsEvaluateDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateDataPointArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsEvaluateDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateDataPointOutput {
@@ -6787,12 +5922,6 @@ func (i GetBaselineableMetricsEvaluateItemArgs) ToGetBaselineableMetricsEvaluate
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItem] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItem]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsEvaluateItemArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemArray and GetBaselineableMetricsEvaluateItemArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemArrayInput` via:
 //
@@ -6818,12 +5947,6 @@ func (i GetBaselineableMetricsEvaluateItemArray) ToGetBaselineableMetricsEvaluat
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemArrayOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItem] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItem]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsEvaluateItemOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsEvaluateItemOutput) ElementType() reflect.Type {
@@ -6836,12 +5959,6 @@ func (o GetBaselineableMetricsEvaluateItemOutput) ToGetBaselineableMetricsEvalua
 
 func (o GetBaselineableMetricsEvaluateItemOutput) ToGetBaselineableMetricsEvaluateItemOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItem] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // list of anomaly data points for the metric
@@ -6882,12 +5999,6 @@ func (o GetBaselineableMetricsEvaluateItemArrayOutput) ToGetBaselineableMetricsE
 
 func (o GetBaselineableMetricsEvaluateItemArrayOutput) ToGetBaselineableMetricsEvaluateItemArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItem] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsEvaluateItemArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemOutput {
@@ -6945,12 +6056,6 @@ func (i GetBaselineableMetricsEvaluateItemDataPointArgs) ToGetBaselineableMetric
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemDataPointOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsEvaluateItemDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemDataPointArray and GetBaselineableMetricsEvaluateItemDataPointArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemDataPointArrayInput` via:
 //
@@ -6976,12 +6081,6 @@ func (i GetBaselineableMetricsEvaluateItemDataPointArray) ToGetBaselineableMetri
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemDataPointArrayOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsEvaluateItemDataPointOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsEvaluateItemDataPointOutput) ElementType() reflect.Type {
@@ -6994,12 +6093,6 @@ func (o GetBaselineableMetricsEvaluateItemDataPointOutput) ToGetBaselineableMetr
 
 func (o GetBaselineableMetricsEvaluateItemDataPointOutput) ToGetBaselineableMetricsEvaluateItemDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemDataPointOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItemDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if the value is anomaly or not 0 indicates not an anomaly -1 indicates value is below the threshold +1 indicates value is above the threshold
@@ -7039,12 +6132,6 @@ func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ToGetBaselineabl
 
 func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemDataPointArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsEvaluateItemDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemDataPointOutput {
@@ -7090,12 +6177,6 @@ func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs) ToGetBaseline
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemEvaluationDataPointArray and GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput` via:
 //
@@ -7121,12 +6202,6 @@ func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArray) ToGetBaselin
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemEvaluationDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ElementType() reflect.Type {
@@ -7139,12 +6214,6 @@ func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ToGetBaseli
 
 func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // timestamp of when the metric was collected
@@ -7169,12 +6238,6 @@ func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ToGetB
 
 func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemEvaluationDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemEvaluationDataPointOutput {
@@ -7220,12 +6283,6 @@ func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArgs) ToGetBaselineab
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemTrainingDataPointOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput is an input type that accepts GetBaselineableMetricsEvaluateItemTrainingDataPointArray and GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsEvaluateItemTrainingDataPointArrayInput` via:
 //
@@ -7251,12 +6308,6 @@ func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArray) ToGetBaselinea
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput)
 }
 
-func (i GetBaselineableMetricsEvaluateItemTrainingDataPointArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
-		OutputState: i.ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsEvaluateItemTrainingDataPointOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ElementType() reflect.Type {
@@ -7269,12 +6320,6 @@ func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ToGetBaseline
 
 func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ToGetBaselineableMetricsEvaluateItemTrainingDataPointOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemTrainingDataPointOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
-	return pulumix.Output[GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 // timestamp of when the metric was collected
@@ -7299,12 +6344,6 @@ func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ToGetBas
 
 func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ToGetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint] {
-	return pulumix.Output[[]GetBaselineableMetricsEvaluateItemTrainingDataPoint]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsEvaluateItemTrainingDataPointArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsEvaluateItemTrainingDataPointOutput {
@@ -7350,12 +6389,6 @@ func (i GetBaselineableMetricsFilterArgs) ToGetBaselineableMetricsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsFilterOutput)
 }
 
-func (i GetBaselineableMetricsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsFilter] {
-	return pulumix.Output[GetBaselineableMetricsFilter]{
-		OutputState: i.ToGetBaselineableMetricsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetBaselineableMetricsFilterArrayInput is an input type that accepts GetBaselineableMetricsFilterArray and GetBaselineableMetricsFilterArrayOutput values.
 // You can construct a concrete instance of `GetBaselineableMetricsFilterArrayInput` via:
 //
@@ -7381,12 +6414,6 @@ func (i GetBaselineableMetricsFilterArray) ToGetBaselineableMetricsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetBaselineableMetricsFilterArrayOutput)
 }
 
-func (i GetBaselineableMetricsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsFilter] {
-	return pulumix.Output[[]GetBaselineableMetricsFilter]{
-		OutputState: i.ToGetBaselineableMetricsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetBaselineableMetricsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetBaselineableMetricsFilterOutput) ElementType() reflect.Type {
@@ -7399,12 +6426,6 @@ func (o GetBaselineableMetricsFilterOutput) ToGetBaselineableMetricsFilterOutput
 
 func (o GetBaselineableMetricsFilterOutput) ToGetBaselineableMetricsFilterOutputWithContext(ctx context.Context) GetBaselineableMetricsFilterOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetBaselineableMetricsFilter] {
-	return pulumix.Output[GetBaselineableMetricsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Metric Name
@@ -7432,12 +6453,6 @@ func (o GetBaselineableMetricsFilterArrayOutput) ToGetBaselineableMetricsFilterA
 
 func (o GetBaselineableMetricsFilterArrayOutput) ToGetBaselineableMetricsFilterArrayOutputWithContext(ctx context.Context) GetBaselineableMetricsFilterArrayOutput {
 	return o
-}
-
-func (o GetBaselineableMetricsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetBaselineableMetricsFilter] {
-	return pulumix.Output[[]GetBaselineableMetricsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBaselineableMetricsFilterArrayOutput) Index(i pulumi.IntInput) GetBaselineableMetricsFilterOutput {
@@ -7477,12 +6492,6 @@ func (i GetConfigsConfigCollectionArgs) ToGetConfigsConfigCollectionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionOutput)
 }
 
-func (i GetConfigsConfigCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
-	return pulumix.Output[GetConfigsConfigCollection]{
-		OutputState: i.ToGetConfigsConfigCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionArrayInput is an input type that accepts GetConfigsConfigCollectionArray and GetConfigsConfigCollectionArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionArrayInput` via:
 //
@@ -7508,12 +6517,6 @@ func (i GetConfigsConfigCollectionArray) ToGetConfigsConfigCollectionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
-	return pulumix.Output[[]GetConfigsConfigCollection]{
-		OutputState: i.ToGetConfigsConfigCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionOutput) ElementType() reflect.Type {
@@ -7526,12 +6529,6 @@ func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutput() G
 
 func (o GetConfigsConfigCollectionOutput) ToGetConfigsConfigCollectionOutputWithContext(ctx context.Context) GetConfigsConfigCollectionOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollection] {
-	return pulumix.Output[GetConfigsConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionOutput) Items() GetConfigsConfigCollectionItemArrayOutput {
@@ -7550,12 +6547,6 @@ func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArray
 
 func (o GetConfigsConfigCollectionArrayOutput) ToGetConfigsConfigCollectionArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionArrayOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollection] {
-	return pulumix.Output[[]GetConfigsConfigCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionOutput {
@@ -7645,12 +6636,6 @@ func (i GetConfigsConfigCollectionItemArgs) ToGetConfigsConfigCollectionItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOutput)
 }
 
-func (i GetConfigsConfigCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
-	return pulumix.Output[GetConfigsConfigCollectionItem]{
-		OutputState: i.ToGetConfigsConfigCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsConfigCollectionItemArrayInput is an input type that accepts GetConfigsConfigCollectionItemArray and GetConfigsConfigCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetConfigsConfigCollectionItemArrayInput` via:
 //
@@ -7676,12 +6661,6 @@ func (i GetConfigsConfigCollectionItemArray) ToGetConfigsConfigCollectionItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemArrayOutput)
 }
 
-func (i GetConfigsConfigCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
-		OutputState: i.ToGetConfigsConfigCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsConfigCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsConfigCollectionItemOutput) ElementType() reflect.Type {
@@ -7694,12 +6673,6 @@ func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOu
 
 func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOutput {
 	return o
-}
-
-func (o GetConfigsConfigCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsConfigCollectionItem] {
-	return pulumix.Output[GetConfigsConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which data is listed.
@@ -7781,12 +6754,6 @@ func (o GetConfigsConfigCollectionItemArrayOutput) ToGetConfigsConfigCollectionI
 	return o
 }
 
-func (o GetConfigsConfigCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsConfigCollectionItem] {
-	return pulumix.Output[[]GetConfigsConfigCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItem {
 		return vs[0].([]GetConfigsConfigCollectionItem)[vs[1].(int)]
@@ -7828,12 +6795,6 @@ func (i GetConfigsFilterArgs) ToGetConfigsFilterOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterOutput)
 }
 
-func (i GetConfigsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
-	return pulumix.Output[GetConfigsFilter]{
-		OutputState: i.ToGetConfigsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetConfigsFilterArrayInput is an input type that accepts GetConfigsFilterArray and GetConfigsFilterArrayOutput values.
 // You can construct a concrete instance of `GetConfigsFilterArrayInput` via:
 //
@@ -7859,12 +6820,6 @@ func (i GetConfigsFilterArray) ToGetConfigsFilterArrayOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsFilterArrayOutput)
 }
 
-func (i GetConfigsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
-	return pulumix.Output[[]GetConfigsFilter]{
-		OutputState: i.ToGetConfigsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetConfigsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetConfigsFilterOutput) ElementType() reflect.Type {
@@ -7877,12 +6832,6 @@ func (o GetConfigsFilterOutput) ToGetConfigsFilterOutput() GetConfigsFilterOutpu
 
 func (o GetConfigsFilterOutput) ToGetConfigsFilterOutputWithContext(ctx context.Context) GetConfigsFilterOutput {
 	return o
-}
-
-func (o GetConfigsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetConfigsFilter] {
-	return pulumix.Output[GetConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsFilterOutput) Name() pulumi.StringOutput {
@@ -7909,12 +6858,6 @@ func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutput() GetConfigsF
 
 func (o GetConfigsFilterArrayOutput) ToGetConfigsFilterArrayOutputWithContext(ctx context.Context) GetConfigsFilterArrayOutput {
 	return o
-}
-
-func (o GetConfigsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetConfigsFilter] {
-	return pulumix.Output[[]GetConfigsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOutput {
@@ -7980,12 +6923,6 @@ func (i GetDiscoveryJobDiscoveryDetailArgs) ToGetDiscoveryJobDiscoveryDetailOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetail] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetail]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobDiscoveryDetailArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailArray and GetDiscoveryJobDiscoveryDetailArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailArrayInput` via:
 //
@@ -8011,12 +6948,6 @@ func (i GetDiscoveryJobDiscoveryDetailArray) ToGetDiscoveryJobDiscoveryDetailArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailArrayOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetail] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetail]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobDiscoveryDetailOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailOutput) ElementType() reflect.Type {
@@ -8029,12 +6960,6 @@ func (o GetDiscoveryJobDiscoveryDetailOutput) ToGetDiscoveryJobDiscoveryDetailOu
 
 func (o GetDiscoveryJobDiscoveryDetailOutput) ToGetDiscoveryJobDiscoveryDetailOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetail] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of Management Agent
@@ -8088,12 +7013,6 @@ func (o GetDiscoveryJobDiscoveryDetailArrayOutput) ToGetDiscoveryJobDiscoveryDet
 	return o
 }
 
-func (o GetDiscoveryJobDiscoveryDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetail] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDiscoveryJobDiscoveryDetailArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoveryJobDiscoveryDetail {
 		return vs[0].([]GetDiscoveryJobDiscoveryDetail)[vs[1].(int)]
@@ -8133,12 +7052,6 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialArgs) ToGetDiscoveryJobDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobDiscoveryDetailCredentialArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialArray and GetDiscoveryJobDiscoveryDetailCredentialArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialArrayInput` via:
 //
@@ -8164,12 +7077,6 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialArray) ToGetDiscoveryJobDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialArrayOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobDiscoveryDetailCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialOutput) ElementType() reflect.Type {
@@ -8182,12 +7089,6 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialOutput) ToGetDiscoveryJobDiscove
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialOutput) ToGetDiscoveryJobDiscoveryDetailCredentialOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of DiscoveryJob credentials.
@@ -8209,12 +7110,6 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) ToGetDiscoveryJobDi
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) ToGetDiscoveryJobDiscoveryDetailCredentialArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailCredentialOutput {
@@ -8264,12 +7159,6 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemArgs) ToGetDiscoveryJobDisco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailCredentialItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemArray and GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemArrayInput` via:
 //
@@ -8295,12 +7184,6 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemArray) ToGetDiscoveryJobDisc
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailCredentialItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobDiscoveryDetailCredentialItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ElementType() reflect.Type {
@@ -8313,12 +7196,6 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ToGetDiscoveryJobDis
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailCredentialItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of Credential
@@ -8350,12 +7227,6 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) ToGetDiscoveryJ
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailCredentialItemOutput {
@@ -8397,12 +7268,6 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs) ToGetDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray and GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayInput` via:
 //
@@ -8428,12 +7293,6 @@ func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray) ToGetDiscover
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ElementType() reflect.Type {
@@ -8446,12 +7305,6 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToGetDiscove
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key/Value pair of Property
@@ -8473,12 +7326,6 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) ToGetDi
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) ToGetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailCredentialItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput {
@@ -8520,12 +7367,6 @@ func (i GetDiscoveryJobDiscoveryDetailPropertyArgs) ToGetDiscoveryJobDiscoveryDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailPropertyOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobDiscoveryDetailPropertyArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailPropertyArray and GetDiscoveryJobDiscoveryDetailPropertyArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailPropertyArrayInput` via:
 //
@@ -8551,12 +7392,6 @@ func (i GetDiscoveryJobDiscoveryDetailPropertyArray) ToGetDiscoveryJobDiscoveryD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailPropertyArrayOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobDiscoveryDetailPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailPropertyOutput) ElementType() reflect.Type {
@@ -8569,12 +7404,6 @@ func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToGetDiscoveryJobDiscovery
 
 func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToGetDiscoveryJobDiscoveryDetailPropertyOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailPropertyOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key/Value pair of Property
@@ -8594,12 +7423,6 @@ func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) ToGetDiscoveryJobDisc
 
 func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) ToGetDiscoveryJobDiscoveryDetailPropertyArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailPropertyArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailPropertyOutput {
@@ -8641,12 +7464,6 @@ func (i GetDiscoveryJobDiscoveryDetailTagArgs) ToGetDiscoveryJobDiscoveryDetailT
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailTagOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailTag] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailTag]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobDiscoveryDetailTagArrayInput is an input type that accepts GetDiscoveryJobDiscoveryDetailTagArray and GetDiscoveryJobDiscoveryDetailTagArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobDiscoveryDetailTagArrayInput` via:
 //
@@ -8672,12 +7489,6 @@ func (i GetDiscoveryJobDiscoveryDetailTagArray) ToGetDiscoveryJobDiscoveryDetail
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobDiscoveryDetailTagArrayOutput)
 }
 
-func (i GetDiscoveryJobDiscoveryDetailTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag]{
-		OutputState: i.ToGetDiscoveryJobDiscoveryDetailTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobDiscoveryDetailTagOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobDiscoveryDetailTagOutput) ElementType() reflect.Type {
@@ -8690,12 +7501,6 @@ func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToGetDiscoveryJobDiscoveryDetai
 
 func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToGetDiscoveryJobDiscoveryDetailTagOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailTagOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobDiscoveryDetailTag] {
-	return pulumix.Output[GetDiscoveryJobDiscoveryDetailTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Key/Value pair of Property
@@ -8715,12 +7520,6 @@ func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) ToGetDiscoveryJobDiscovery
 
 func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) ToGetDiscoveryJobDiscoveryDetailTagArrayOutputWithContext(ctx context.Context) GetDiscoveryJobDiscoveryDetailTagArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag] {
-	return pulumix.Output[[]GetDiscoveryJobDiscoveryDetailTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobDiscoveryDetailTagArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobDiscoveryDetailTagOutput {
@@ -8762,12 +7561,6 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs) ToGetDiscoveryJobLogsD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput)
 }
 
-func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection] {
-	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection]{
-		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionArray and GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayInput` via:
 //
@@ -8793,12 +7586,6 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArray) ToGetDiscoveryJobLogs
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput)
 }
 
-func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection] {
-	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection]{
-		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ElementType() reflect.Type {
@@ -8811,12 +7598,6 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ToGetDiscoveryJobLog
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput {
 	return o
-}
-
-func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection] {
-	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of logs
@@ -8838,12 +7619,6 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) ToGetDiscoveryJ
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection] {
-	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobLogsDiscoveryJobLogCollectionOutput {
@@ -8897,12 +7672,6 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs) ToGetDiscoveryJobL
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput)
 }
 
-func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
-	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
-		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput is an input type that accepts GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray and GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayInput` via:
 //
@@ -8928,12 +7697,6 @@ func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray) ToGetDiscoveryJob
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput)
 }
 
-func (i GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
-	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
-		OutputState: i.ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ElementType() reflect.Type {
@@ -8946,12 +7709,6 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ToGetDiscoveryJo
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput {
 	return o
-}
-
-func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
-	return pulumix.Output[GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of Discovery job
@@ -8986,12 +7743,6 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) ToGetDiscov
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) ToGetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutputWithContext(ctx context.Context) GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem] {
-	return pulumix.Output[[]GetDiscoveryJobLogsDiscoveryJobLogCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput {
@@ -9035,12 +7786,6 @@ func (i GetDiscoveryJobLogsFilterArgs) ToGetDiscoveryJobLogsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsFilterOutput)
 }
 
-func (i GetDiscoveryJobLogsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsFilter] {
-	return pulumix.Output[GetDiscoveryJobLogsFilter]{
-		OutputState: i.ToGetDiscoveryJobLogsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobLogsFilterArrayInput is an input type that accepts GetDiscoveryJobLogsFilterArray and GetDiscoveryJobLogsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobLogsFilterArrayInput` via:
 //
@@ -9066,12 +7811,6 @@ func (i GetDiscoveryJobLogsFilterArray) ToGetDiscoveryJobLogsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobLogsFilterArrayOutput)
 }
 
-func (i GetDiscoveryJobLogsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsFilter] {
-	return pulumix.Output[[]GetDiscoveryJobLogsFilter]{
-		OutputState: i.ToGetDiscoveryJobLogsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobLogsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobLogsFilterOutput) ElementType() reflect.Type {
@@ -9084,12 +7823,6 @@ func (o GetDiscoveryJobLogsFilterOutput) ToGetDiscoveryJobLogsFilterOutput() Get
 
 func (o GetDiscoveryJobLogsFilterOutput) ToGetDiscoveryJobLogsFilterOutputWithContext(ctx context.Context) GetDiscoveryJobLogsFilterOutput {
 	return o
-}
-
-func (o GetDiscoveryJobLogsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobLogsFilter] {
-	return pulumix.Output[GetDiscoveryJobLogsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobLogsFilterOutput) Name() pulumi.StringOutput {
@@ -9116,12 +7849,6 @@ func (o GetDiscoveryJobLogsFilterArrayOutput) ToGetDiscoveryJobLogsFilterArrayOu
 
 func (o GetDiscoveryJobLogsFilterArrayOutput) ToGetDiscoveryJobLogsFilterArrayOutputWithContext(ctx context.Context) GetDiscoveryJobLogsFilterArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobLogsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobLogsFilter] {
-	return pulumix.Output[[]GetDiscoveryJobLogsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobLogsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobLogsFilterOutput {
@@ -9163,12 +7890,6 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionArgs) ToGetDiscoveryJobsDiscoveryJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionOutput)
 }
 
-func (i GetDiscoveryJobsDiscoveryJobCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection] {
-	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection]{
-		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobsDiscoveryJobCollectionArrayInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionArray and GetDiscoveryJobsDiscoveryJobCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionArrayInput` via:
 //
@@ -9194,12 +7915,6 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionArray) ToGetDiscoveryJobsDiscovery
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionArrayOutput)
 }
 
-func (i GetDiscoveryJobsDiscoveryJobCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection] {
-	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection]{
-		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobsDiscoveryJobCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsDiscoveryJobCollectionOutput) ElementType() reflect.Type {
@@ -9212,12 +7927,6 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionOutput) ToGetDiscoveryJobsDiscover
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionOutput) ToGetDiscoveryJobsDiscoveryJobCollectionOutputWithContext(ctx context.Context) GetDiscoveryJobsDiscoveryJobCollectionOutput {
 	return o
-}
-
-func (o GetDiscoveryJobsDiscoveryJobCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection] {
-	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of DiscoveryJob credentials.
@@ -9239,12 +7948,6 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) ToGetDiscoveryJobsDis
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) ToGetDiscoveryJobsDiscoveryJobCollectionArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsDiscoveryJobCollectionArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection] {
-	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsDiscoveryJobCollectionOutput {
@@ -9338,12 +8041,6 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionItemArgs) ToGetDiscoveryJobsDiscov
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionItemOutput)
 }
 
-func (i GetDiscoveryJobsDiscoveryJobCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem] {
-	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem]{
-		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput is an input type that accepts GetDiscoveryJobsDiscoveryJobCollectionItemArray and GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsDiscoveryJobCollectionItemArrayInput` via:
 //
@@ -9369,12 +8066,6 @@ func (i GetDiscoveryJobsDiscoveryJobCollectionItemArray) ToGetDiscoveryJobsDisco
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput)
 }
 
-func (i GetDiscoveryJobsDiscoveryJobCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem] {
-	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem]{
-		OutputState: i.ToGetDiscoveryJobsDiscoveryJobCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobsDiscoveryJobCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ElementType() reflect.Type {
@@ -9387,12 +8078,6 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ToGetDiscoveryJobsDisc
 
 func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ToGetDiscoveryJobsDiscoveryJobCollectionItemOutputWithContext(ctx context.Context) GetDiscoveryJobsDiscoveryJobCollectionItemOutput {
 	return o
-}
-
-func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem] {
-	return pulumix.Output[GetDiscoveryJobsDiscoveryJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which data is listed.
@@ -9479,12 +8164,6 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput) ToGetDiscoveryJob
 	return o
 }
 
-func (o GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem] {
-	return pulumix.Output[[]GetDiscoveryJobsDiscoveryJobCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDiscoveryJobsDiscoveryJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsDiscoveryJobCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDiscoveryJobsDiscoveryJobCollectionItem {
 		return vs[0].([]GetDiscoveryJobsDiscoveryJobCollectionItem)[vs[1].(int)]
@@ -9528,12 +8207,6 @@ func (i GetDiscoveryJobsFilterArgs) ToGetDiscoveryJobsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsFilterOutput)
 }
 
-func (i GetDiscoveryJobsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsFilter] {
-	return pulumix.Output[GetDiscoveryJobsFilter]{
-		OutputState: i.ToGetDiscoveryJobsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDiscoveryJobsFilterArrayInput is an input type that accepts GetDiscoveryJobsFilterArray and GetDiscoveryJobsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDiscoveryJobsFilterArrayInput` via:
 //
@@ -9559,12 +8232,6 @@ func (i GetDiscoveryJobsFilterArray) ToGetDiscoveryJobsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetDiscoveryJobsFilterArrayOutput)
 }
 
-func (i GetDiscoveryJobsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsFilter] {
-	return pulumix.Output[[]GetDiscoveryJobsFilter]{
-		OutputState: i.ToGetDiscoveryJobsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDiscoveryJobsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDiscoveryJobsFilterOutput) ElementType() reflect.Type {
@@ -9577,12 +8244,6 @@ func (o GetDiscoveryJobsFilterOutput) ToGetDiscoveryJobsFilterOutput() GetDiscov
 
 func (o GetDiscoveryJobsFilterOutput) ToGetDiscoveryJobsFilterOutputWithContext(ctx context.Context) GetDiscoveryJobsFilterOutput {
 	return o
-}
-
-func (o GetDiscoveryJobsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDiscoveryJobsFilter] {
-	return pulumix.Output[GetDiscoveryJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only discovery jobs that match the entire resource name given.
@@ -9610,12 +8271,6 @@ func (o GetDiscoveryJobsFilterArrayOutput) ToGetDiscoveryJobsFilterArrayOutput()
 
 func (o GetDiscoveryJobsFilterArrayOutput) ToGetDiscoveryJobsFilterArrayOutputWithContext(ctx context.Context) GetDiscoveryJobsFilterArrayOutput {
 	return o
-}
-
-func (o GetDiscoveryJobsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDiscoveryJobsFilter] {
-	return pulumix.Output[[]GetDiscoveryJobsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDiscoveryJobsFilterArrayOutput) Index(i pulumi.IntInput) GetDiscoveryJobsFilterOutput {
@@ -9657,12 +8312,6 @@ func (i GetMetricExtensionEnabledOnResourceArgs) ToGetMetricExtensionEnabledOnRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionEnabledOnResourceOutput)
 }
 
-func (i GetMetricExtensionEnabledOnResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionEnabledOnResource] {
-	return pulumix.Output[GetMetricExtensionEnabledOnResource]{
-		OutputState: i.ToGetMetricExtensionEnabledOnResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionEnabledOnResourceArrayInput is an input type that accepts GetMetricExtensionEnabledOnResourceArray and GetMetricExtensionEnabledOnResourceArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionEnabledOnResourceArrayInput` via:
 //
@@ -9688,12 +8337,6 @@ func (i GetMetricExtensionEnabledOnResourceArray) ToGetMetricExtensionEnabledOnR
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionEnabledOnResourceArrayOutput)
 }
 
-func (i GetMetricExtensionEnabledOnResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionEnabledOnResource] {
-	return pulumix.Output[[]GetMetricExtensionEnabledOnResource]{
-		OutputState: i.ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionEnabledOnResourceOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionEnabledOnResourceOutput) ElementType() reflect.Type {
@@ -9706,12 +8349,6 @@ func (o GetMetricExtensionEnabledOnResourceOutput) ToGetMetricExtensionEnabledOn
 
 func (o GetMetricExtensionEnabledOnResourceOutput) ToGetMetricExtensionEnabledOnResourceOutputWithContext(ctx context.Context) GetMetricExtensionEnabledOnResourceOutput {
 	return o
-}
-
-func (o GetMetricExtensionEnabledOnResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionEnabledOnResource] {
-	return pulumix.Output[GetMetricExtensionEnabledOnResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the resource on which Metric Extension is enabled
@@ -9731,12 +8368,6 @@ func (o GetMetricExtensionEnabledOnResourceArrayOutput) ToGetMetricExtensionEnab
 
 func (o GetMetricExtensionEnabledOnResourceArrayOutput) ToGetMetricExtensionEnabledOnResourceArrayOutputWithContext(ctx context.Context) GetMetricExtensionEnabledOnResourceArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionEnabledOnResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionEnabledOnResource] {
-	return pulumix.Output[[]GetMetricExtensionEnabledOnResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionEnabledOnResourceArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionEnabledOnResourceOutput {
@@ -9806,12 +8437,6 @@ func (i GetMetricExtensionMetricListArgs) ToGetMetricExtensionMetricListOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionMetricListOutput)
 }
 
-func (i GetMetricExtensionMetricListArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionMetricList] {
-	return pulumix.Output[GetMetricExtensionMetricList]{
-		OutputState: i.ToGetMetricExtensionMetricListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionMetricListArrayInput is an input type that accepts GetMetricExtensionMetricListArray and GetMetricExtensionMetricListArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionMetricListArrayInput` via:
 //
@@ -9837,12 +8462,6 @@ func (i GetMetricExtensionMetricListArray) ToGetMetricExtensionMetricListArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionMetricListArrayOutput)
 }
 
-func (i GetMetricExtensionMetricListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionMetricList] {
-	return pulumix.Output[[]GetMetricExtensionMetricList]{
-		OutputState: i.ToGetMetricExtensionMetricListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionMetricListOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionMetricListOutput) ElementType() reflect.Type {
@@ -9855,12 +8474,6 @@ func (o GetMetricExtensionMetricListOutput) ToGetMetricExtensionMetricListOutput
 
 func (o GetMetricExtensionMetricListOutput) ToGetMetricExtensionMetricListOutputWithContext(ctx context.Context) GetMetricExtensionMetricListOutput {
 	return o
-}
-
-func (o GetMetricExtensionMetricListOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionMetricList] {
-	return pulumix.Output[GetMetricExtensionMetricList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compute Expression to calculate the value of this metric
@@ -9915,12 +8528,6 @@ func (o GetMetricExtensionMetricListArrayOutput) ToGetMetricExtensionMetricListA
 
 func (o GetMetricExtensionMetricListArrayOutput) ToGetMetricExtensionMetricListArrayOutputWithContext(ctx context.Context) GetMetricExtensionMetricListArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionMetricListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionMetricList] {
-	return pulumix.Output[[]GetMetricExtensionMetricList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionMetricListArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionMetricListOutput {
@@ -10018,12 +8625,6 @@ func (i GetMetricExtensionQueryPropertyArgs) ToGetMetricExtensionQueryPropertyOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryProperty] {
-	return pulumix.Output[GetMetricExtensionQueryProperty]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionQueryPropertyArrayInput is an input type that accepts GetMetricExtensionQueryPropertyArray and GetMetricExtensionQueryPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionQueryPropertyArrayInput` via:
 //
@@ -10049,12 +8650,6 @@ func (i GetMetricExtensionQueryPropertyArray) ToGetMetricExtensionQueryPropertyA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyArrayOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryProperty] {
-	return pulumix.Output[[]GetMetricExtensionQueryProperty]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionQueryPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionQueryPropertyOutput) ElementType() reflect.Type {
@@ -10067,12 +8662,6 @@ func (o GetMetricExtensionQueryPropertyOutput) ToGetMetricExtensionQueryProperty
 
 func (o GetMetricExtensionQueryPropertyOutput) ToGetMetricExtensionQueryPropertyOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryProperty] {
-	return pulumix.Output[GetMetricExtensionQueryProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Arguments required by either command or script
@@ -10172,12 +8761,6 @@ func (o GetMetricExtensionQueryPropertyArrayOutput) ToGetMetricExtensionQueryPro
 	return o
 }
 
-func (o GetMetricExtensionQueryPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryProperty] {
-	return pulumix.Output[[]GetMetricExtensionQueryProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetricExtensionQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionQueryProperty {
 		return vs[0].([]GetMetricExtensionQueryProperty)[vs[1].(int)]
@@ -10221,12 +8804,6 @@ func (i GetMetricExtensionQueryPropertyInParamDetailArgs) ToGetMetricExtensionQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyInParamDetailOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyInParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionQueryPropertyInParamDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertyInParamDetailArray and GetMetricExtensionQueryPropertyInParamDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionQueryPropertyInParamDetailArrayInput` via:
 //
@@ -10252,12 +8829,6 @@ func (i GetMetricExtensionQueryPropertyInParamDetailArray) ToGetMetricExtensionQ
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyInParamDetailArrayOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyInParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionQueryPropertyInParamDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionQueryPropertyInParamDetailOutput) ElementType() reflect.Type {
@@ -10270,12 +8841,6 @@ func (o GetMetricExtensionQueryPropertyInParamDetailOutput) ToGetMetricExtension
 
 func (o GetMetricExtensionQueryPropertyInParamDetailOutput) ToGetMetricExtensionQueryPropertyInParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyInParamDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyInParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertyInParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Position of IN parameter
@@ -10300,12 +8865,6 @@ func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ToGetMetricExte
 
 func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ToGetMetricExtensionQueryPropertyInParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyInParamDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertyInParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionQueryPropertyInParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyInParamDetailOutput {
@@ -10351,12 +8910,6 @@ func (i GetMetricExtensionQueryPropertyOutParamDetailArgs) ToGetMetricExtensionQ
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyOutParamDetailOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyOutParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionQueryPropertyOutParamDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertyOutParamDetailArray and GetMetricExtensionQueryPropertyOutParamDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionQueryPropertyOutParamDetailArrayInput` via:
 //
@@ -10382,12 +8935,6 @@ func (i GetMetricExtensionQueryPropertyOutParamDetailArray) ToGetMetricExtension
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyOutParamDetailArrayOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyOutParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionQueryPropertyOutParamDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionQueryPropertyOutParamDetailOutput) ElementType() reflect.Type {
@@ -10400,12 +8947,6 @@ func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToGetMetricExtensio
 
 func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToGetMetricExtensionQueryPropertyOutParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutParamDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyOutParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertyOutParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Position of PL/SQL procedure OUT parameter
@@ -10430,12 +8971,6 @@ func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ToGetMetricExt
 
 func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ToGetMetricExtensionQueryPropertyOutParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyOutParamDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertyOutParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionQueryPropertyOutParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyOutParamDetailOutput {
@@ -10481,12 +9016,6 @@ func (i GetMetricExtensionQueryPropertyScriptDetailArgs) ToGetMetricExtensionQue
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyScriptDetailOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyScriptDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionQueryPropertyScriptDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertyScriptDetailArray and GetMetricExtensionQueryPropertyScriptDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionQueryPropertyScriptDetailArrayInput` via:
 //
@@ -10512,12 +9041,6 @@ func (i GetMetricExtensionQueryPropertyScriptDetailArray) ToGetMetricExtensionQu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertyScriptDetailArrayOutput)
 }
 
-func (i GetMetricExtensionQueryPropertyScriptDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionQueryPropertyScriptDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionQueryPropertyScriptDetailOutput) ElementType() reflect.Type {
@@ -10530,12 +9053,6 @@ func (o GetMetricExtensionQueryPropertyScriptDetailOutput) ToGetMetricExtensionQ
 
 func (o GetMetricExtensionQueryPropertyScriptDetailOutput) ToGetMetricExtensionQueryPropertyScriptDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyScriptDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyScriptDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertyScriptDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Sql statement or script file content as base64 encoded string
@@ -10560,12 +9077,6 @@ func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ToGetMetricExten
 
 func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ToGetMetricExtensionQueryPropertyScriptDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertyScriptDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertyScriptDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionQueryPropertyScriptDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertyScriptDetailOutput {
@@ -10611,12 +9122,6 @@ func (i GetMetricExtensionQueryPropertySqlDetailArgs) ToGetMetricExtensionQueryP
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertySqlDetailOutput)
 }
 
-func (i GetMetricExtensionQueryPropertySqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertySqlDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertySqlDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionQueryPropertySqlDetailArrayInput is an input type that accepts GetMetricExtensionQueryPropertySqlDetailArray and GetMetricExtensionQueryPropertySqlDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionQueryPropertySqlDetailArrayInput` via:
 //
@@ -10642,12 +9147,6 @@ func (i GetMetricExtensionQueryPropertySqlDetailArray) ToGetMetricExtensionQuery
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionQueryPropertySqlDetailArrayOutput)
 }
 
-func (i GetMetricExtensionQueryPropertySqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail]{
-		OutputState: i.ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionQueryPropertySqlDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionQueryPropertySqlDetailOutput) ElementType() reflect.Type {
@@ -10660,12 +9159,6 @@ func (o GetMetricExtensionQueryPropertySqlDetailOutput) ToGetMetricExtensionQuer
 
 func (o GetMetricExtensionQueryPropertySqlDetailOutput) ToGetMetricExtensionQueryPropertySqlDetailOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertySqlDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertySqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionQueryPropertySqlDetail] {
-	return pulumix.Output[GetMetricExtensionQueryPropertySqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Sql statement or script file content as base64 encoded string
@@ -10690,12 +9183,6 @@ func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) ToGetMetricExtensio
 
 func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) ToGetMetricExtensionQueryPropertySqlDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionQueryPropertySqlDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail] {
-	return pulumix.Output[[]GetMetricExtensionQueryPropertySqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionQueryPropertySqlDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionQueryPropertySqlDetailOutput {
@@ -10741,12 +9228,6 @@ func (i GetMetricExtensionsFilterArgs) ToGetMetricExtensionsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsFilterOutput)
 }
 
-func (i GetMetricExtensionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsFilter] {
-	return pulumix.Output[GetMetricExtensionsFilter]{
-		OutputState: i.ToGetMetricExtensionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsFilterArrayInput is an input type that accepts GetMetricExtensionsFilterArray and GetMetricExtensionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsFilterArrayInput` via:
 //
@@ -10772,12 +9253,6 @@ func (i GetMetricExtensionsFilterArray) ToGetMetricExtensionsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsFilterArrayOutput)
 }
 
-func (i GetMetricExtensionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsFilter] {
-	return pulumix.Output[[]GetMetricExtensionsFilter]{
-		OutputState: i.ToGetMetricExtensionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsFilterOutput) ElementType() reflect.Type {
@@ -10790,12 +9265,6 @@ func (o GetMetricExtensionsFilterOutput) ToGetMetricExtensionsFilterOutput() Get
 
 func (o GetMetricExtensionsFilterOutput) ToGetMetricExtensionsFilterOutputWithContext(ctx context.Context) GetMetricExtensionsFilterOutput {
 	return o
-}
-
-func (o GetMetricExtensionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsFilter] {
-	return pulumix.Output[GetMetricExtensionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources based on name.
@@ -10823,12 +9292,6 @@ func (o GetMetricExtensionsFilterArrayOutput) ToGetMetricExtensionsFilterArrayOu
 
 func (o GetMetricExtensionsFilterArrayOutput) ToGetMetricExtensionsFilterArrayOutputWithContext(ctx context.Context) GetMetricExtensionsFilterArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsFilter] {
-	return pulumix.Output[[]GetMetricExtensionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsFilterArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsFilterOutput {
@@ -10868,12 +9331,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionArgs) ToGetMetricExtensionsM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollection] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollection]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionArray and GetMetricExtensionsMetricExtensionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionArrayInput` via:
 //
@@ -10899,12 +9356,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionArray) ToGetMetricExtensions
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionOutput) ElementType() reflect.Type {
@@ -10917,12 +9368,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionOutput) ToGetMetricExtension
 
 func (o GetMetricExtensionsMetricExtensionCollectionOutput) ToGetMetricExtensionsMetricExtensionCollectionOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollection] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionOutput) Items() GetMetricExtensionsMetricExtensionCollectionItemArrayOutput {
@@ -10943,12 +9388,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) ToGetMetricExte
 
 func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionOutput {
@@ -11068,12 +9507,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemArgs) ToGetMetricExtensi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemArray and GetMetricExtensionsMetricExtensionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemArrayInput` via:
 //
@@ -11099,12 +9532,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemArray) ToGetMetricExtens
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemOutput) ElementType() reflect.Type {
@@ -11117,12 +9544,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ToGetMetricExten
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ToGetMetricExtensionsMetricExtensionCollectionItemOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of possible collection methods.
@@ -11249,12 +9670,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) ToGetMetric
 	return o
 }
 
-func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetricExtensionsMetricExtensionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItem {
 		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItem)[vs[1].(int)]
@@ -11294,12 +9709,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray and GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayInput` via:
 //
@@ -11325,12 +9734,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ElementType() reflect.Type {
@@ -11343,12 +9746,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput)
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the resource on which Metric Extension is enabled
@@ -11368,12 +9765,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOu
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemEnabledOnResourceOutput {
@@ -11443,12 +9834,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs) ToGetMet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemMetricListArray and GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayInput` via:
 //
@@ -11474,12 +9859,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArray) ToGetMe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemMetricListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ElementType() reflect.Type {
@@ -11492,12 +9871,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ToGetM
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compute Expression to calculate the value of this metric
@@ -11552,12 +9925,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) T
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemMetricList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemMetricListArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemMetricListOutput {
@@ -11655,12 +10022,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayInput` via:
 //
@@ -11686,12 +10047,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ElementType() reflect.Type {
@@ -11704,12 +10059,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ToG
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Arguments required by either command or script
@@ -11815,12 +10164,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput
 	return o
 }
 
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetricExtensionsMetricExtensionCollectionItemQueryProperty {
 		return vs[0].([]GetMetricExtensionsMetricExtensionCollectionItemQueryProperty)[vs[1].(int)]
@@ -11864,12 +10207,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayInput` via:
 //
@@ -11895,12 +10232,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDeta
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ElementType() reflect.Type {
@@ -11913,12 +10244,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDeta
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Position of IN parameter
@@ -11947,12 +10272,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDeta
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyInParamDetailOutput {
@@ -11998,12 +10317,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayInput` via:
 //
@@ -12029,12 +10342,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ElementType() reflect.Type {
@@ -12047,12 +10354,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDet
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Position of PL/SQL procedure OUT parameter
@@ -12081,12 +10382,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDet
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyOutParamDetailOutput {
@@ -12132,12 +10427,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayInput` via:
 //
@@ -12163,12 +10452,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetai
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ElementType() reflect.Type {
@@ -12181,12 +10464,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetai
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Sql statement or script file content as base64 encoded string
@@ -12215,12 +10492,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetai
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertyScriptDetailOutput {
@@ -12266,12 +10537,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput is an input type that accepts GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray and GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput values.
 // You can construct a concrete instance of `GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayInput` via:
 //
@@ -12297,12 +10562,6 @@ func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput)
 }
 
-func (i GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
-		OutputState: i.ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ElementType() reflect.Type {
@@ -12315,12 +10574,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOu
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
-	return pulumix.Output[GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Sql statement or script file content as base64 encoded string
@@ -12349,12 +10602,6 @@ func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailAr
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) ToGetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutputWithContext(ctx context.Context) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput {
 	return o
-}
-
-func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail] {
-	return pulumix.Output[[]GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailArrayOutput) Index(i pulumi.IntInput) GetMetricExtensionsMetricExtensionCollectionItemQueryPropertySqlDetailOutput {
@@ -12404,12 +10651,6 @@ func (i GetMonitoredResourceAdditionalAliasArgs) ToGetMonitoredResourceAdditiona
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasOutput)
 }
 
-func (i GetMonitoredResourceAdditionalAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAlias] {
-	return pulumix.Output[GetMonitoredResourceAdditionalAlias]{
-		OutputState: i.ToGetMonitoredResourceAdditionalAliasOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceAdditionalAliasArrayInput is an input type that accepts GetMonitoredResourceAdditionalAliasArray and GetMonitoredResourceAdditionalAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasArrayInput` via:
 //
@@ -12435,12 +10676,6 @@ func (i GetMonitoredResourceAdditionalAliasArray) ToGetMonitoredResourceAddition
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasArrayOutput)
 }
 
-func (i GetMonitoredResourceAdditionalAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAlias] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalAlias]{
-		OutputState: i.ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceAdditionalAliasOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalAliasOutput) ElementType() reflect.Type {
@@ -12453,12 +10688,6 @@ func (o GetMonitoredResourceAdditionalAliasOutput) ToGetMonitoredResourceAdditio
 
 func (o GetMonitoredResourceAdditionalAliasOutput) ToGetMonitoredResourceAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAlias] {
-	return pulumix.Output[GetMonitoredResourceAdditionalAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Monitored Resource Alias Reference Source Credential.
@@ -12490,12 +10719,6 @@ func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToGetMonitoredResourceAd
 
 func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToGetMonitoredResourceAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAlias] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalAliasOutput {
@@ -12545,12 +10768,6 @@ func (i GetMonitoredResourceAdditionalAliasCredentialArgs) ToGetMonitoredResourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasCredentialOutput)
 }
 
-func (i GetMonitoredResourceAdditionalAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAliasCredential] {
-	return pulumix.Output[GetMonitoredResourceAdditionalAliasCredential]{
-		OutputState: i.ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceAdditionalAliasCredentialArrayInput is an input type that accepts GetMonitoredResourceAdditionalAliasCredentialArray and GetMonitoredResourceAdditionalAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalAliasCredentialArrayInput` via:
 //
@@ -12576,12 +10793,6 @@ func (i GetMonitoredResourceAdditionalAliasCredentialArray) ToGetMonitoredResour
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalAliasCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourceAdditionalAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential]{
-		OutputState: i.ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalAliasCredentialOutput) ElementType() reflect.Type {
@@ -12594,12 +10805,6 @@ func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToGetMonitoredResou
 
 func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToGetMonitoredResourceAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalAliasCredential] {
-	return pulumix.Output[GetMonitoredResourceAdditionalAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Property Name.
@@ -12629,12 +10834,6 @@ func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToGetMonitored
 
 func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourceAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalAliasCredentialArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceAdditionalAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalAliasCredentialOutput {
@@ -12706,12 +10905,6 @@ func (i GetMonitoredResourceAdditionalCredentialArgs) ToGetMonitoredResourceAddi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialOutput)
 }
 
-func (i GetMonitoredResourceAdditionalCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredential] {
-	return pulumix.Output[GetMonitoredResourceAdditionalCredential]{
-		OutputState: i.ToGetMonitoredResourceAdditionalCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceAdditionalCredentialArrayInput is an input type that accepts GetMonitoredResourceAdditionalCredentialArray and GetMonitoredResourceAdditionalCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialArrayInput` via:
 //
@@ -12737,12 +10930,6 @@ func (i GetMonitoredResourceAdditionalCredentialArray) ToGetMonitoredResourceAdd
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourceAdditionalCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredential] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalCredential]{
-		OutputState: i.ToGetMonitoredResourceAdditionalCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceAdditionalCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalCredentialOutput) ElementType() reflect.Type {
@@ -12755,12 +10942,6 @@ func (o GetMonitoredResourceAdditionalCredentialOutput) ToGetMonitoredResourceAd
 
 func (o GetMonitoredResourceAdditionalCredentialOutput) ToGetMonitoredResourceAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredential] {
-	return pulumix.Output[GetMonitoredResourceAdditionalCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -12817,12 +10998,6 @@ func (o GetMonitoredResourceAdditionalCredentialArrayOutput) ToGetMonitoredResou
 	return o
 }
 
-func (o GetMonitoredResourceAdditionalCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredential] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceAdditionalCredential {
 		return vs[0].([]GetMonitoredResourceAdditionalCredential)[vs[1].(int)]
@@ -12866,12 +11041,6 @@ func (i GetMonitoredResourceAdditionalCredentialPropertyArgs) ToGetMonitoredReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialPropertyOutput)
 }
 
-func (i GetMonitoredResourceAdditionalCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceAdditionalCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourceAdditionalCredentialPropertyArray and GetMonitoredResourceAdditionalCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAdditionalCredentialPropertyArrayInput` via:
 //
@@ -12897,12 +11066,6 @@ func (i GetMonitoredResourceAdditionalCredentialPropertyArray) ToGetMonitoredRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAdditionalCredentialPropertyArrayOutput)
 }
 
-func (i GetMonitoredResourceAdditionalCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
@@ -12915,12 +11078,6 @@ func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToGetMonitoredRe
 
 func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToGetMonitoredResourceAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourceAdditionalCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Property Name.
@@ -12945,12 +11102,6 @@ func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToGetMonito
 
 func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourceAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAdditionalCredentialPropertyArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourceAdditionalCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAdditionalCredentialPropertyOutput {
@@ -13000,12 +11151,6 @@ func (i GetMonitoredResourceAliasArgs) ToGetMonitoredResourceAliasOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasOutput)
 }
 
-func (i GetMonitoredResourceAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAlias] {
-	return pulumix.Output[GetMonitoredResourceAlias]{
-		OutputState: i.ToGetMonitoredResourceAliasOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceAliasArrayInput is an input type that accepts GetMonitoredResourceAliasArray and GetMonitoredResourceAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasArrayInput` via:
 //
@@ -13031,12 +11176,6 @@ func (i GetMonitoredResourceAliasArray) ToGetMonitoredResourceAliasArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasArrayOutput)
 }
 
-func (i GetMonitoredResourceAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAlias] {
-	return pulumix.Output[[]GetMonitoredResourceAlias]{
-		OutputState: i.ToGetMonitoredResourceAliasArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceAliasOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAliasOutput) ElementType() reflect.Type {
@@ -13049,12 +11188,6 @@ func (o GetMonitoredResourceAliasOutput) ToGetMonitoredResourceAliasOutput() Get
 
 func (o GetMonitoredResourceAliasOutput) ToGetMonitoredResourceAliasOutputWithContext(ctx context.Context) GetMonitoredResourceAliasOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAlias] {
-	return pulumix.Output[GetMonitoredResourceAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Monitored Resource Alias Reference Source Credential.
@@ -13084,12 +11217,6 @@ func (o GetMonitoredResourceAliasArrayOutput) ToGetMonitoredResourceAliasArrayOu
 
 func (o GetMonitoredResourceAliasArrayOutput) ToGetMonitoredResourceAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAliasArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAlias] {
-	return pulumix.Output[[]GetMonitoredResourceAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAliasOutput {
@@ -13139,12 +11266,6 @@ func (i GetMonitoredResourceAliasCredentialArgs) ToGetMonitoredResourceAliasCred
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasCredentialOutput)
 }
 
-func (i GetMonitoredResourceAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAliasCredential] {
-	return pulumix.Output[GetMonitoredResourceAliasCredential]{
-		OutputState: i.ToGetMonitoredResourceAliasCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceAliasCredentialArrayInput is an input type that accepts GetMonitoredResourceAliasCredentialArray and GetMonitoredResourceAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceAliasCredentialArrayInput` via:
 //
@@ -13170,12 +11291,6 @@ func (i GetMonitoredResourceAliasCredentialArray) ToGetMonitoredResourceAliasCre
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceAliasCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourceAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourceAliasCredential]{
-		OutputState: i.ToGetMonitoredResourceAliasCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceAliasCredentialOutput) ElementType() reflect.Type {
@@ -13188,12 +11303,6 @@ func (o GetMonitoredResourceAliasCredentialOutput) ToGetMonitoredResourceAliasCr
 
 func (o GetMonitoredResourceAliasCredentialOutput) ToGetMonitoredResourceAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceAliasCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceAliasCredential] {
-	return pulumix.Output[GetMonitoredResourceAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Property Name.
@@ -13223,12 +11332,6 @@ func (o GetMonitoredResourceAliasCredentialArrayOutput) ToGetMonitoredResourceAl
 
 func (o GetMonitoredResourceAliasCredentialArrayOutput) ToGetMonitoredResourceAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourceAliasCredentialArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourceAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceAliasCredentialOutput {
@@ -13300,12 +11403,6 @@ func (i GetMonitoredResourceCredentialArgs) ToGetMonitoredResourceCredentialOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialOutput)
 }
 
-func (i GetMonitoredResourceCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredential] {
-	return pulumix.Output[GetMonitoredResourceCredential]{
-		OutputState: i.ToGetMonitoredResourceCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceCredentialArrayInput is an input type that accepts GetMonitoredResourceCredentialArray and GetMonitoredResourceCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialArrayInput` via:
 //
@@ -13331,12 +11428,6 @@ func (i GetMonitoredResourceCredentialArray) ToGetMonitoredResourceCredentialArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourceCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredential] {
-	return pulumix.Output[[]GetMonitoredResourceCredential]{
-		OutputState: i.ToGetMonitoredResourceCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceCredentialOutput) ElementType() reflect.Type {
@@ -13349,12 +11440,6 @@ func (o GetMonitoredResourceCredentialOutput) ToGetMonitoredResourceCredentialOu
 
 func (o GetMonitoredResourceCredentialOutput) ToGetMonitoredResourceCredentialOutputWithContext(ctx context.Context) GetMonitoredResourceCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourceCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredential] {
-	return pulumix.Output[GetMonitoredResourceCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -13409,12 +11494,6 @@ func (o GetMonitoredResourceCredentialArrayOutput) ToGetMonitoredResourceCredent
 	return o
 }
 
-func (o GetMonitoredResourceCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredential] {
-	return pulumix.Output[[]GetMonitoredResourceCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceCredential {
 		return vs[0].([]GetMonitoredResourceCredential)[vs[1].(int)]
@@ -13458,12 +11537,6 @@ func (i GetMonitoredResourceCredentialPropertyArgs) ToGetMonitoredResourceCreden
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialPropertyOutput)
 }
 
-func (i GetMonitoredResourceCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourceCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourceCredentialPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourceCredentialPropertyArray and GetMonitoredResourceCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceCredentialPropertyArrayInput` via:
 //
@@ -13489,12 +11562,6 @@ func (i GetMonitoredResourceCredentialPropertyArray) ToGetMonitoredResourceCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceCredentialPropertyArrayOutput)
 }
 
-func (i GetMonitoredResourceCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourceCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourceCredentialPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceCredentialPropertyOutput) ElementType() reflect.Type {
@@ -13507,12 +11574,6 @@ func (o GetMonitoredResourceCredentialPropertyOutput) ToGetMonitoredResourceCred
 
 func (o GetMonitoredResourceCredentialPropertyOutput) ToGetMonitoredResourceCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourceCredentialPropertyOutput {
 	return o
-}
-
-func (o GetMonitoredResourceCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourceCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Property Name.
@@ -13537,12 +11598,6 @@ func (o GetMonitoredResourceCredentialPropertyArrayOutput) ToGetMonitoredResourc
 
 func (o GetMonitoredResourceCredentialPropertyArrayOutput) ToGetMonitoredResourceCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourceCredentialPropertyArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourceCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceCredentialPropertyOutput {
@@ -13608,12 +11663,6 @@ func (i GetMonitoredResourceDatabaseConnectionDetailArgs) ToGetMonitoredResource
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceDatabaseConnectionDetailOutput)
 }
 
-func (i GetMonitoredResourceDatabaseConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail] {
-	return pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail]{
-		OutputState: i.ToGetMonitoredResourceDatabaseConnectionDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceDatabaseConnectionDetailArrayInput is an input type that accepts GetMonitoredResourceDatabaseConnectionDetailArray and GetMonitoredResourceDatabaseConnectionDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceDatabaseConnectionDetailArrayInput` via:
 //
@@ -13639,12 +11688,6 @@ func (i GetMonitoredResourceDatabaseConnectionDetailArray) ToGetMonitoredResourc
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceDatabaseConnectionDetailArrayOutput)
 }
 
-func (i GetMonitoredResourceDatabaseConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail] {
-	return pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail]{
-		OutputState: i.ToGetMonitoredResourceDatabaseConnectionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceDatabaseConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceDatabaseConnectionDetailOutput) ElementType() reflect.Type {
@@ -13657,12 +11700,6 @@ func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToGetMonitoredResour
 
 func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToGetMonitoredResourceDatabaseConnectionDetailOutputWithContext(ctx context.Context) GetMonitoredResourceDatabaseConnectionDetailOutput {
 	return o
-}
-
-func (o GetMonitoredResourceDatabaseConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail] {
-	return pulumix.Output[GetMonitoredResourceDatabaseConnectionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -13714,12 +11751,6 @@ func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) ToGetMonitoredR
 	return o
 }
 
-func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail] {
-	return pulumix.Output[[]GetMonitoredResourceDatabaseConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceDatabaseConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceDatabaseConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceDatabaseConnectionDetail {
 		return vs[0].([]GetMonitoredResourceDatabaseConnectionDetail)[vs[1].(int)]
@@ -13763,12 +11794,6 @@ func (i GetMonitoredResourcePropertyArgs) ToGetMonitoredResourcePropertyOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcePropertyOutput)
 }
 
-func (i GetMonitoredResourcePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceProperty] {
-	return pulumix.Output[GetMonitoredResourceProperty]{
-		OutputState: i.ToGetMonitoredResourcePropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcePropertyArrayInput is an input type that accepts GetMonitoredResourcePropertyArray and GetMonitoredResourcePropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcePropertyArrayInput` via:
 //
@@ -13794,12 +11819,6 @@ func (i GetMonitoredResourcePropertyArray) ToGetMonitoredResourcePropertyArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcePropertyArrayOutput)
 }
 
-func (i GetMonitoredResourcePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceProperty] {
-	return pulumix.Output[[]GetMonitoredResourceProperty]{
-		OutputState: i.ToGetMonitoredResourcePropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcePropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcePropertyOutput) ElementType() reflect.Type {
@@ -13812,12 +11831,6 @@ func (o GetMonitoredResourcePropertyOutput) ToGetMonitoredResourcePropertyOutput
 
 func (o GetMonitoredResourcePropertyOutput) ToGetMonitoredResourcePropertyOutputWithContext(ctx context.Context) GetMonitoredResourcePropertyOutput {
 	return o
-}
-
-func (o GetMonitoredResourcePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceProperty] {
-	return pulumix.Output[GetMonitoredResourceProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Property Name.
@@ -13842,12 +11855,6 @@ func (o GetMonitoredResourcePropertyArrayOutput) ToGetMonitoredResourcePropertyA
 
 func (o GetMonitoredResourcePropertyArrayOutput) ToGetMonitoredResourcePropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcePropertyArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceProperty] {
-	return pulumix.Output[[]GetMonitoredResourceProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcePropertyOutput {
@@ -13913,12 +11920,6 @@ func (i GetMonitoredResourceTaskTaskDetailArgs) ToGetMonitoredResourceTaskTaskDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailOutput)
 }
 
-func (i GetMonitoredResourceTaskTaskDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTaskTaskDetail] {
-	return pulumix.Output[GetMonitoredResourceTaskTaskDetail]{
-		OutputState: i.ToGetMonitoredResourceTaskTaskDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTaskTaskDetailArrayInput is an input type that accepts GetMonitoredResourceTaskTaskDetailArray and GetMonitoredResourceTaskTaskDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTaskTaskDetailArrayInput` via:
 //
@@ -13944,12 +11945,6 @@ func (i GetMonitoredResourceTaskTaskDetailArray) ToGetMonitoredResourceTaskTaskD
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTaskTaskDetailArrayOutput)
 }
 
-func (i GetMonitoredResourceTaskTaskDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTaskTaskDetail] {
-	return pulumix.Output[[]GetMonitoredResourceTaskTaskDetail]{
-		OutputState: i.ToGetMonitoredResourceTaskTaskDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTaskTaskDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTaskTaskDetailOutput) ElementType() reflect.Type {
@@ -13962,12 +11957,6 @@ func (o GetMonitoredResourceTaskTaskDetailOutput) ToGetMonitoredResourceTaskTask
 
 func (o GetMonitoredResourceTaskTaskDetailOutput) ToGetMonitoredResourceTaskTaskDetailOutputWithContext(ctx context.Context) GetMonitoredResourceTaskTaskDetailOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTaskTaskDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTaskTaskDetail] {
-	return pulumix.Output[GetMonitoredResourceTaskTaskDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
@@ -14016,12 +12005,6 @@ func (o GetMonitoredResourceTaskTaskDetailArrayOutput) ToGetMonitoredResourceTas
 	return o
 }
 
-func (o GetMonitoredResourceTaskTaskDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTaskTaskDetail] {
-	return pulumix.Output[[]GetMonitoredResourceTaskTaskDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceTaskTaskDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTaskTaskDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTaskTaskDetail {
 		return vs[0].([]GetMonitoredResourceTaskTaskDetail)[vs[1].(int)]
@@ -14065,12 +12048,6 @@ func (i GetMonitoredResourceTasksFilterArgs) ToGetMonitoredResourceTasksFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksFilterOutput)
 }
 
-func (i GetMonitoredResourceTasksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksFilter] {
-	return pulumix.Output[GetMonitoredResourceTasksFilter]{
-		OutputState: i.ToGetMonitoredResourceTasksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTasksFilterArrayInput is an input type that accepts GetMonitoredResourceTasksFilterArray and GetMonitoredResourceTasksFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTasksFilterArrayInput` via:
 //
@@ -14096,12 +12073,6 @@ func (i GetMonitoredResourceTasksFilterArray) ToGetMonitoredResourceTasksFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksFilterArrayOutput)
 }
 
-func (i GetMonitoredResourceTasksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksFilter] {
-	return pulumix.Output[[]GetMonitoredResourceTasksFilter]{
-		OutputState: i.ToGetMonitoredResourceTasksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTasksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTasksFilterOutput) ElementType() reflect.Type {
@@ -14114,12 +12085,6 @@ func (o GetMonitoredResourceTasksFilterOutput) ToGetMonitoredResourceTasksFilter
 
 func (o GetMonitoredResourceTasksFilterOutput) ToGetMonitoredResourceTasksFilterOutputWithContext(ctx context.Context) GetMonitoredResourceTasksFilterOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksFilter] {
-	return pulumix.Output[GetMonitoredResourceTasksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Name of the task.
@@ -14147,12 +12112,6 @@ func (o GetMonitoredResourceTasksFilterArrayOutput) ToGetMonitoredResourceTasksF
 
 func (o GetMonitoredResourceTasksFilterArrayOutput) ToGetMonitoredResourceTasksFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksFilterArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksFilter] {
-	return pulumix.Output[[]GetMonitoredResourceTasksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTasksFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksFilterOutput {
@@ -14192,12 +12151,6 @@ func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs) ToGetMoni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput)
 }
 
-func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
-	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
-		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayInput` via:
 //
@@ -14223,12 +12176,6 @@ func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray) ToGetMon
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput)
 }
 
-func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
-	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
-		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ElementType() reflect.Type {
@@ -14241,12 +12188,6 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ToGetMo
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
-	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput) Items() GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput {
@@ -14267,12 +12208,6 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) To
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection] {
-	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionOutput {
@@ -14358,12 +12293,6 @@ func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput)
 }
 
-func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
-	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
-		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayInput` via:
 //
@@ -14389,12 +12318,6 @@ func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput)
 }
 
-func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
-	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
-		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ElementType() reflect.Type {
@@ -14407,12 +12330,6 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ToG
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
-	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
@@ -14499,12 +12416,6 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput
 	return o
 }
 
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem] {
-	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem {
 		return vs[0].([]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem)[vs[1].(int)]
@@ -14568,12 +12479,6 @@ func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput)
 }
 
-func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
-	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
-		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput is an input type that accepts GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray and GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput` via:
 //
@@ -14599,12 +12504,6 @@ func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput)
 }
 
-func (i GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
-	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
-		OutputState: i.ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ElementType() reflect.Type {
@@ -14617,12 +12516,6 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailO
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
-	return pulumix.Output[GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Metrics collection interval in seconds used when calculating the availability of the  resource based on metrics specified using the property 'availabilityProxyMetrics'.
@@ -14679,12 +12572,6 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailA
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) ToGetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail] {
-	return pulumix.Output[[]GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailOutput {
@@ -14752,12 +12639,6 @@ func (i GetMonitoredResourceTypeMetadataArgs) ToGetMonitoredResourceTypeMetadata
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataOutput)
 }
 
-func (i GetMonitoredResourceTypeMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadata] {
-	return pulumix.Output[GetMonitoredResourceTypeMetadata]{
-		OutputState: i.ToGetMonitoredResourceTypeMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypeMetadataArrayInput is an input type that accepts GetMonitoredResourceTypeMetadataArray and GetMonitoredResourceTypeMetadataArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypeMetadataArrayInput` via:
 //
@@ -14783,12 +12664,6 @@ func (i GetMonitoredResourceTypeMetadataArray) ToGetMonitoredResourceTypeMetadat
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataArrayOutput)
 }
 
-func (i GetMonitoredResourceTypeMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadata] {
-	return pulumix.Output[[]GetMonitoredResourceTypeMetadata]{
-		OutputState: i.ToGetMonitoredResourceTypeMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypeMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypeMetadataOutput) ElementType() reflect.Type {
@@ -14801,12 +12676,6 @@ func (o GetMonitoredResourceTypeMetadataOutput) ToGetMonitoredResourceTypeMetada
 
 func (o GetMonitoredResourceTypeMetadataOutput) ToGetMonitoredResourceTypeMetadataOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypeMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadata] {
-	return pulumix.Output[GetMonitoredResourceTypeMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
@@ -14861,12 +12730,6 @@ func (o GetMonitoredResourceTypeMetadataArrayOutput) ToGetMonitoredResourceTypeM
 	return o
 }
 
-func (o GetMonitoredResourceTypeMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadata] {
-	return pulumix.Output[[]GetMonitoredResourceTypeMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceTypeMetadataArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypeMetadata {
 		return vs[0].([]GetMonitoredResourceTypeMetadata)[vs[1].(int)]
@@ -14906,12 +12769,6 @@ func (i GetMonitoredResourceTypeMetadataUniquePropertySetArgs) ToGetMonitoredRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataUniquePropertySetOutput)
 }
 
-func (i GetMonitoredResourceTypeMetadataUniquePropertySetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: i.ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput is an input type that accepts GetMonitoredResourceTypeMetadataUniquePropertySetArray and GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypeMetadataUniquePropertySetArrayInput` via:
 //
@@ -14937,12 +12794,6 @@ func (i GetMonitoredResourceTypeMetadataUniquePropertySetArray) ToGetMonitoredRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput)
 }
 
-func (i GetMonitoredResourceTypeMetadataUniquePropertySetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: i.ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypeMetadataUniquePropertySetOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ElementType() reflect.Type {
@@ -14955,12 +12806,6 @@ func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ToGetMonitoredR
 
 func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ToGetMonitoredResourceTypeMetadataUniquePropertySetOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypeMetadataUniquePropertySetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[GetMonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of properties.
@@ -14980,12 +12825,6 @@ func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToGetMonit
 
 func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToGetMonitoredResourceTypeMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet] {
-	return pulumix.Output[[]GetMonitoredResourceTypeMetadataUniquePropertySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTypeMetadataUniquePropertySetArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypeMetadataUniquePropertySetOutput {
@@ -15031,12 +12870,6 @@ func (i GetMonitoredResourceTypesFilterArgs) ToGetMonitoredResourceTypesFilterOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesFilterOutput)
 }
 
-func (i GetMonitoredResourceTypesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesFilter] {
-	return pulumix.Output[GetMonitoredResourceTypesFilter]{
-		OutputState: i.ToGetMonitoredResourceTypesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypesFilterArrayInput is an input type that accepts GetMonitoredResourceTypesFilterArray and GetMonitoredResourceTypesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypesFilterArrayInput` via:
 //
@@ -15062,12 +12895,6 @@ func (i GetMonitoredResourceTypesFilterArray) ToGetMonitoredResourceTypesFilterA
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesFilterArrayOutput)
 }
 
-func (i GetMonitoredResourceTypesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesFilter] {
-	return pulumix.Output[[]GetMonitoredResourceTypesFilter]{
-		OutputState: i.ToGetMonitoredResourceTypesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypesFilterOutput) ElementType() reflect.Type {
@@ -15080,12 +12907,6 @@ func (o GetMonitoredResourceTypesFilterOutput) ToGetMonitoredResourceTypesFilter
 
 func (o GetMonitoredResourceTypesFilterOutput) ToGetMonitoredResourceTypesFilterOutputWithContext(ctx context.Context) GetMonitoredResourceTypesFilterOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesFilter] {
-	return pulumix.Output[GetMonitoredResourceTypesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return monitored resource types that match exactly with the resource type name given.
@@ -15113,12 +12934,6 @@ func (o GetMonitoredResourceTypesFilterArrayOutput) ToGetMonitoredResourceTypesF
 
 func (o GetMonitoredResourceTypesFilterArrayOutput) ToGetMonitoredResourceTypesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesFilterArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesFilter] {
-	return pulumix.Output[[]GetMonitoredResourceTypesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTypesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesFilterOutput {
@@ -15158,12 +12973,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs) ToGetMoni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayInput` via:
 //
@@ -15189,12 +12998,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray) ToGetMon
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ElementType() reflect.Type {
@@ -15207,12 +13010,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ToGetMo
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput) Items() GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput {
@@ -15233,12 +13030,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) To
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionOutput {
@@ -15328,12 +13119,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayInput` via:
 //
@@ -15359,12 +13144,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ElementType() reflect.Type {
@@ -15377,12 +13156,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToG
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
@@ -15472,12 +13245,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput
 	return o
 }
 
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem {
 		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem)[vs[1].(int)]
@@ -15543,12 +13310,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArg
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayInput` via:
 //
@@ -15574,12 +13335,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ElementType() reflect.Type {
@@ -15592,12 +13347,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOut
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
@@ -15662,12 +13411,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArr
 	return o
 }
 
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata {
 		return vs[0].([]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata)[vs[1].(int)]
@@ -15707,12 +13450,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayInput` via:
 //
@@ -15738,12 +13475,6 @@ func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput)
 }
 
-func (i GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
-		OutputState: i.ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ElementType() reflect.Type {
@@ -15756,12 +13487,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUni
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
-	return pulumix.Output[GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of properties.
@@ -15783,12 +13508,6 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUni
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) ToGetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutputWithContext(ctx context.Context) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet] {
-	return pulumix.Output[[]GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetOutput {
@@ -15834,12 +13553,6 @@ func (i GetMonitoredResourcesFilterArgs) ToGetMonitoredResourcesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesFilterOutput)
 }
 
-func (i GetMonitoredResourcesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesFilter] {
-	return pulumix.Output[GetMonitoredResourcesFilter]{
-		OutputState: i.ToGetMonitoredResourcesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesFilterArrayInput is an input type that accepts GetMonitoredResourcesFilterArray and GetMonitoredResourcesFilterArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesFilterArrayInput` via:
 //
@@ -15865,12 +13578,6 @@ func (i GetMonitoredResourcesFilterArray) ToGetMonitoredResourcesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesFilterArrayOutput)
 }
 
-func (i GetMonitoredResourcesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesFilter] {
-	return pulumix.Output[[]GetMonitoredResourcesFilter]{
-		OutputState: i.ToGetMonitoredResourcesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesFilterOutput) ElementType() reflect.Type {
@@ -15883,12 +13590,6 @@ func (o GetMonitoredResourcesFilterOutput) ToGetMonitoredResourcesFilterOutput()
 
 func (o GetMonitoredResourcesFilterOutput) ToGetMonitoredResourcesFilterOutputWithContext(ctx context.Context) GetMonitoredResourcesFilterOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesFilter] {
-	return pulumix.Output[GetMonitoredResourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -15916,12 +13617,6 @@ func (o GetMonitoredResourcesFilterArrayOutput) ToGetMonitoredResourcesFilterArr
 
 func (o GetMonitoredResourcesFilterArrayOutput) ToGetMonitoredResourcesFilterArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesFilterArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesFilter] {
-	return pulumix.Output[[]GetMonitoredResourcesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesFilterOutput {
@@ -15961,12 +13656,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionArgs) ToGetMonitoredReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionArray and GetMonitoredResourcesMonitoredResourceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionArrayInput` via:
 //
@@ -15992,12 +13681,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionArray) ToGetMonitoredRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionOutput) ElementType() reflect.Type {
@@ -16010,12 +13693,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) ToGetMonitoredRe
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) ToGetMonitoredResourcesMonitoredResourceCollectionOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionOutput) Items() GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput {
@@ -16036,12 +13713,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ToGetMonito
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionOutput {
@@ -16167,12 +13838,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemArgs) ToGetMonitored
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemArray and GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemArrayInput` via:
 //
@@ -16198,12 +13863,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemArray) ToGetMonitore
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ElementType() reflect.Type {
@@ -16216,12 +13875,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ToGetMonitor
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) AdditionalAliases() GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
@@ -16372,12 +14025,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) ToGetMo
 	return o
 }
 
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItem {
 		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItem)[vs[1].(int)]
@@ -16425,12 +14072,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayInput` via:
 //
@@ -16456,12 +14097,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ElementType() reflect.Type {
@@ -16474,12 +14109,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutpu
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Monitored Resource Alias Reference Source Credential.
@@ -16511,12 +14140,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArray
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasOutput {
@@ -16566,12 +14189,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayInput` via:
 //
@@ -16597,12 +14214,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCrede
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ElementType() reflect.Type {
@@ -16615,12 +14226,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCrede
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -16656,12 +14261,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCrede
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialOutput {
@@ -16733,12 +14332,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayInput` via:
 //
@@ -16764,12 +14357,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ElementType() reflect.Type {
@@ -16782,12 +14369,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -16852,12 +14433,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 	return o
 }
 
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential {
 		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential)[vs[1].(int)]
@@ -16901,12 +14476,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray and GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayInput` via:
 //
@@ -16932,12 +14501,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ElementType() reflect.Type {
@@ -16950,12 +14513,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -16984,12 +14541,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredential
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalCredentialPropertyOutput {
@@ -17039,12 +14590,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs) ToGetMoni
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray and GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayInput` via:
 //
@@ -17070,12 +14615,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray) ToGetMon
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ElementType() reflect.Type {
@@ -17088,12 +14627,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ToGetMo
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Monitored Resource Alias Reference Source Credential.
@@ -17125,12 +14658,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) To
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAlias]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAliasOutput {
@@ -17180,12 +14707,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayInput` via:
 //
@@ -17211,12 +14732,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ElementType() reflect.Type {
@@ -17229,12 +14744,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutpu
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -17264,12 +14773,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArray
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredentialOutput {
@@ -17341,12 +14844,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray and GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayInput` via:
 //
@@ -17372,12 +14869,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ElementType() reflect.Type {
@@ -17390,12 +14881,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) To
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Type of credentials specified in the credentials element. Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
@@ -17452,12 +14937,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutpu
 	return o
 }
 
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredential]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemCredential {
 		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemCredential)[vs[1].(int)]
@@ -17501,12 +14980,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray and GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayInput` via:
 //
@@ -17532,12 +15005,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ElementType() reflect.Type {
@@ -17550,12 +15017,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOu
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -17580,12 +15041,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyAr
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemCredentialPropertyOutput {
@@ -17651,12 +15106,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray and GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput` via:
 //
@@ -17682,12 +15131,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDe
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ElementType() reflect.Type {
@@ -17700,12 +15143,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDe
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Database connector Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -17771,12 +15208,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDe
 	return o
 }
 
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail {
 		return vs[0].([]GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail)[vs[1].(int)]
@@ -17820,12 +15251,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs) ToGetM
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput is an input type that accepts GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray and GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput values.
 // You can construct a concrete instance of `GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayInput` via:
 //
@@ -17851,12 +15276,6 @@ func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
 }
 
-func (i GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
-		OutputState: i.ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ElementType() reflect.Type {
@@ -17869,12 +15288,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ToGe
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
-	return pulumix.Output[GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return resources that match exact resource name.
@@ -17899,12 +15312,6 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput)
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) ToGetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput {
 	return o
-}
-
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty] {
-	return pulumix.Output[[]GetMonitoredResourcesMonitoredResourceCollectionItemProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetMonitoredResourcesMonitoredResourceCollectionItemPropertyArrayOutput) Index(i pulumi.IntInput) GetMonitoredResourcesMonitoredResourceCollectionItemPropertyOutput {

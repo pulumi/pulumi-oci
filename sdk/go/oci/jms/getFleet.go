@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
@@ -132,12 +131,6 @@ func (o LookupFleetResultOutput) ToLookupFleetResultOutput() LookupFleetResultOu
 
 func (o LookupFleetResultOutput) ToLookupFleetResultOutputWithContext(ctx context.Context) LookupFleetResultOutput {
 	return o
-}
-
-func (o LookupFleetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFleetResult] {
-	return pulumix.Output[LookupFleetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.

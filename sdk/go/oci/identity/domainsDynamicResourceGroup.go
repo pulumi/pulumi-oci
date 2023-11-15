@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -926,12 +925,6 @@ func (i *DomainsDynamicResourceGroup) ToDomainsDynamicResourceGroupOutputWithCon
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsDynamicResourceGroupOutput)
 }
 
-func (i *DomainsDynamicResourceGroup) ToOutput(ctx context.Context) pulumix.Output[*DomainsDynamicResourceGroup] {
-	return pulumix.Output[*DomainsDynamicResourceGroup]{
-		OutputState: i.ToDomainsDynamicResourceGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsDynamicResourceGroupArrayInput is an input type that accepts DomainsDynamicResourceGroupArray and DomainsDynamicResourceGroupArrayOutput values.
 // You can construct a concrete instance of `DomainsDynamicResourceGroupArrayInput` via:
 //
@@ -955,12 +948,6 @@ func (i DomainsDynamicResourceGroupArray) ToDomainsDynamicResourceGroupArrayOutp
 
 func (i DomainsDynamicResourceGroupArray) ToDomainsDynamicResourceGroupArrayOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsDynamicResourceGroupArrayOutput)
-}
-
-func (i DomainsDynamicResourceGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[[]*DomainsDynamicResourceGroup]{
-		OutputState: i.ToDomainsDynamicResourceGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsDynamicResourceGroupMapInput is an input type that accepts DomainsDynamicResourceGroupMap and DomainsDynamicResourceGroupMapOutput values.
@@ -988,12 +975,6 @@ func (i DomainsDynamicResourceGroupMap) ToDomainsDynamicResourceGroupMapOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsDynamicResourceGroupMapOutput)
 }
 
-func (i DomainsDynamicResourceGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[map[string]*DomainsDynamicResourceGroup]{
-		OutputState: i.ToDomainsDynamicResourceGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsDynamicResourceGroupOutput struct{ *pulumi.OutputState }
 
 func (DomainsDynamicResourceGroupOutput) ElementType() reflect.Type {
@@ -1006,12 +987,6 @@ func (o DomainsDynamicResourceGroupOutput) ToDomainsDynamicResourceGroupOutput()
 
 func (o DomainsDynamicResourceGroupOutput) ToDomainsDynamicResourceGroupOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupOutput {
 	return o
-}
-
-func (o DomainsDynamicResourceGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsDynamicResourceGroup] {
-	return pulumix.Output[*DomainsDynamicResourceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1319,12 +1294,6 @@ func (o DomainsDynamicResourceGroupArrayOutput) ToDomainsDynamicResourceGroupArr
 	return o
 }
 
-func (o DomainsDynamicResourceGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[[]*DomainsDynamicResourceGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsDynamicResourceGroupArrayOutput) Index(i pulumi.IntInput) DomainsDynamicResourceGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsDynamicResourceGroup {
 		return vs[0].([]*DomainsDynamicResourceGroup)[vs[1].(int)]
@@ -1343,12 +1312,6 @@ func (o DomainsDynamicResourceGroupMapOutput) ToDomainsDynamicResourceGroupMapOu
 
 func (o DomainsDynamicResourceGroupMapOutput) ToDomainsDynamicResourceGroupMapOutputWithContext(ctx context.Context) DomainsDynamicResourceGroupMapOutput {
 	return o
-}
-
-func (o DomainsDynamicResourceGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsDynamicResourceGroup] {
-	return pulumix.Output[map[string]*DomainsDynamicResourceGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsDynamicResourceGroupMapOutput) MapIndex(k pulumi.StringInput) DomainsDynamicResourceGroupOutput {

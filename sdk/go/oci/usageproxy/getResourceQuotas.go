@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Resource Quotas in Oracle Cloud Infrastructure Usage Proxy service.
@@ -118,12 +117,6 @@ func (o GetResourceQuotasResultOutput) ToGetResourceQuotasResultOutput() GetReso
 
 func (o GetResourceQuotasResultOutput) ToGetResourceQuotasResultOutputWithContext(ctx context.Context) GetResourceQuotasResultOutput {
 	return o
-}
-
-func (o GetResourceQuotasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceQuotasResult] {
-	return pulumix.Output[GetResourceQuotasResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceQuotasResultOutput) CompartmentId() pulumi.StringOutput {

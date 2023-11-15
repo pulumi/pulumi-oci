@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -118,12 +117,6 @@ func (o LookupHttpRedirectResultOutput) ToLookupHttpRedirectResultOutput() Looku
 
 func (o LookupHttpRedirectResultOutput) ToLookupHttpRedirectResultOutputWithContext(ctx context.Context) LookupHttpRedirectResultOutput {
 	return o
-}
-
-func (o LookupHttpRedirectResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupHttpRedirectResult] {
-	return pulumix.Output[LookupHttpRedirectResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.

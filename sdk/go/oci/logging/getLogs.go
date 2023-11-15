@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Logs in Oracle Cloud Infrastructure Logging service.
@@ -139,12 +138,6 @@ func (o GetLogsResultOutput) ToGetLogsResultOutput() GetLogsResultOutput {
 
 func (o GetLogsResultOutput) ToGetLogsResultOutputWithContext(ctx context.Context) GetLogsResultOutput {
 	return o
-}
-
-func (o GetLogsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogsResult] {
-	return pulumix.Output[GetLogsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.

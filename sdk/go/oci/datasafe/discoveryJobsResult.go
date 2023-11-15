@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // **Deprecated. This resource does not support create and update operations.**
@@ -273,12 +272,6 @@ func (i *DiscoveryJobsResult) ToDiscoveryJobsResultOutputWithContext(ctx context
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobsResultOutput)
 }
 
-func (i *DiscoveryJobsResult) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobsResult] {
-	return pulumix.Output[*DiscoveryJobsResult]{
-		OutputState: i.ToDiscoveryJobsResultOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DiscoveryJobsResultArrayInput is an input type that accepts DiscoveryJobsResultArray and DiscoveryJobsResultArrayOutput values.
 // You can construct a concrete instance of `DiscoveryJobsResultArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i DiscoveryJobsResultArray) ToDiscoveryJobsResultArrayOutput() DiscoveryJo
 
 func (i DiscoveryJobsResultArray) ToDiscoveryJobsResultArrayOutputWithContext(ctx context.Context) DiscoveryJobsResultArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobsResultArrayOutput)
-}
-
-func (i DiscoveryJobsResultArray) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryJobsResult] {
-	return pulumix.Output[[]*DiscoveryJobsResult]{
-		OutputState: i.ToDiscoveryJobsResultArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DiscoveryJobsResultMapInput is an input type that accepts DiscoveryJobsResultMap and DiscoveryJobsResultMapOutput values.
@@ -335,12 +322,6 @@ func (i DiscoveryJobsResultMap) ToDiscoveryJobsResultMapOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryJobsResultMapOutput)
 }
 
-func (i DiscoveryJobsResultMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryJobsResult] {
-	return pulumix.Output[map[string]*DiscoveryJobsResult]{
-		OutputState: i.ToDiscoveryJobsResultMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryJobsResultOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryJobsResultOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o DiscoveryJobsResultOutput) ToDiscoveryJobsResultOutput() DiscoveryJobsRe
 
 func (o DiscoveryJobsResultOutput) ToDiscoveryJobsResultOutputWithContext(ctx context.Context) DiscoveryJobsResultOutput {
 	return o
-}
-
-func (o DiscoveryJobsResultOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryJobsResult] {
-	return pulumix.Output[*DiscoveryJobsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -483,12 +458,6 @@ func (o DiscoveryJobsResultArrayOutput) ToDiscoveryJobsResultArrayOutputWithCont
 	return o
 }
 
-func (o DiscoveryJobsResultArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryJobsResult] {
-	return pulumix.Output[[]*DiscoveryJobsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DiscoveryJobsResultArrayOutput) Index(i pulumi.IntInput) DiscoveryJobsResultOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DiscoveryJobsResult {
 		return vs[0].([]*DiscoveryJobsResult)[vs[1].(int)]
@@ -507,12 +476,6 @@ func (o DiscoveryJobsResultMapOutput) ToDiscoveryJobsResultMapOutput() Discovery
 
 func (o DiscoveryJobsResultMapOutput) ToDiscoveryJobsResultMapOutputWithContext(ctx context.Context) DiscoveryJobsResultMapOutput {
 	return o
-}
-
-func (o DiscoveryJobsResultMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryJobsResult] {
-	return pulumix.Output[map[string]*DiscoveryJobsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryJobsResultMapOutput) MapIndex(k pulumi.StringInput) DiscoveryJobsResultOutput {

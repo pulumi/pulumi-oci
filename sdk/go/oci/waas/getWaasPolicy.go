@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Waas Policy resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -126,12 +125,6 @@ func (o GetWaasPolicyResultOutput) ToGetWaasPolicyResultOutput() GetWaasPolicyRe
 
 func (o GetWaasPolicyResultOutput) ToGetWaasPolicyResultOutputWithContext(ctx context.Context) GetWaasPolicyResultOutput {
 	return o
-}
-
-func (o GetWaasPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyResult] {
-	return pulumix.Output[GetWaasPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of additional domains for this web application.

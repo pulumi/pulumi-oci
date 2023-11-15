@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Custom Table resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -195,12 +194,6 @@ func (i *CustomTable) ToCustomTableOutputWithContext(ctx context.Context) Custom
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableOutput)
 }
 
-func (i *CustomTable) ToOutput(ctx context.Context) pulumix.Output[*CustomTable] {
-	return pulumix.Output[*CustomTable]{
-		OutputState: i.ToCustomTableOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CustomTableArrayInput is an input type that accepts CustomTableArray and CustomTableArrayOutput values.
 // You can construct a concrete instance of `CustomTableArrayInput` via:
 //
@@ -224,12 +217,6 @@ func (i CustomTableArray) ToCustomTableArrayOutput() CustomTableArrayOutput {
 
 func (i CustomTableArray) ToCustomTableArrayOutputWithContext(ctx context.Context) CustomTableArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableArrayOutput)
-}
-
-func (i CustomTableArray) ToOutput(ctx context.Context) pulumix.Output[[]*CustomTable] {
-	return pulumix.Output[[]*CustomTable]{
-		OutputState: i.ToCustomTableArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CustomTableMapInput is an input type that accepts CustomTableMap and CustomTableMapOutput values.
@@ -257,12 +244,6 @@ func (i CustomTableMap) ToCustomTableMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CustomTableMapOutput)
 }
 
-func (i CustomTableMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomTable] {
-	return pulumix.Output[map[string]*CustomTable]{
-		OutputState: i.ToCustomTableMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomTableOutput struct{ *pulumi.OutputState }
 
 func (CustomTableOutput) ElementType() reflect.Type {
@@ -275,12 +256,6 @@ func (o CustomTableOutput) ToCustomTableOutput() CustomTableOutput {
 
 func (o CustomTableOutput) ToCustomTableOutputWithContext(ctx context.Context) CustomTableOutput {
 	return o
-}
-
-func (o CustomTableOutput) ToOutput(ctx context.Context) pulumix.Output[*CustomTable] {
-	return pulumix.Output[*CustomTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment OCID.
@@ -315,12 +290,6 @@ func (o CustomTableArrayOutput) ToCustomTableArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o CustomTableArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CustomTable] {
-	return pulumix.Output[[]*CustomTable]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CustomTableArrayOutput) Index(i pulumi.IntInput) CustomTableOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CustomTable {
 		return vs[0].([]*CustomTable)[vs[1].(int)]
@@ -339,12 +308,6 @@ func (o CustomTableMapOutput) ToCustomTableMapOutput() CustomTableMapOutput {
 
 func (o CustomTableMapOutput) ToCustomTableMapOutputWithContext(ctx context.Context) CustomTableMapOutput {
 	return o
-}
-
-func (o CustomTableMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomTable] {
-	return pulumix.Output[map[string]*CustomTable]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomTableMapOutput) MapIndex(k pulumi.StringInput) CustomTableOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
@@ -171,12 +170,6 @@ func (o GetMetricDataResultOutput) ToGetMetricDataResultOutput() GetMetricDataRe
 
 func (o GetMetricDataResultOutput) ToGetMetricDataResultOutputWithContext(ctx context.Context) GetMetricDataResultOutput {
 	return o
-}
-
-func (o GetMetricDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMetricDataResult] {
-	return pulumix.Output[GetMetricDataResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources that the aggregated data was returned from.

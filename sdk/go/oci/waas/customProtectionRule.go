@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -319,12 +318,6 @@ func (i *CustomProtectionRule) ToCustomProtectionRuleOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(CustomProtectionRuleOutput)
 }
 
-func (i *CustomProtectionRule) ToOutput(ctx context.Context) pulumix.Output[*CustomProtectionRule] {
-	return pulumix.Output[*CustomProtectionRule]{
-		OutputState: i.ToCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CustomProtectionRuleArrayInput is an input type that accepts CustomProtectionRuleArray and CustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `CustomProtectionRuleArrayInput` via:
 //
@@ -348,12 +341,6 @@ func (i CustomProtectionRuleArray) ToCustomProtectionRuleArrayOutput() CustomPro
 
 func (i CustomProtectionRuleArray) ToCustomProtectionRuleArrayOutputWithContext(ctx context.Context) CustomProtectionRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CustomProtectionRuleArrayOutput)
-}
-
-func (i CustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*CustomProtectionRule] {
-	return pulumix.Output[[]*CustomProtectionRule]{
-		OutputState: i.ToCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CustomProtectionRuleMapInput is an input type that accepts CustomProtectionRuleMap and CustomProtectionRuleMapOutput values.
@@ -381,12 +368,6 @@ func (i CustomProtectionRuleMap) ToCustomProtectionRuleMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CustomProtectionRuleMapOutput)
 }
 
-func (i CustomProtectionRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomProtectionRule] {
-	return pulumix.Output[map[string]*CustomProtectionRule]{
-		OutputState: i.ToCustomProtectionRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (CustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -399,12 +380,6 @@ func (o CustomProtectionRuleOutput) ToCustomProtectionRuleOutput() CustomProtect
 
 func (o CustomProtectionRuleOutput) ToCustomProtectionRuleOutputWithContext(ctx context.Context) CustomProtectionRuleOutput {
 	return o
-}
-
-func (o CustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*CustomProtectionRule] {
-	return pulumix.Output[*CustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
@@ -485,12 +460,6 @@ func (o CustomProtectionRuleArrayOutput) ToCustomProtectionRuleArrayOutputWithCo
 	return o
 }
 
-func (o CustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CustomProtectionRule] {
-	return pulumix.Output[[]*CustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) CustomProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CustomProtectionRule {
 		return vs[0].([]*CustomProtectionRule)[vs[1].(int)]
@@ -509,12 +478,6 @@ func (o CustomProtectionRuleMapOutput) ToCustomProtectionRuleMapOutput() CustomP
 
 func (o CustomProtectionRuleMapOutput) ToCustomProtectionRuleMapOutputWithContext(ctx context.Context) CustomProtectionRuleMapOutput {
 	return o
-}
-
-func (o CustomProtectionRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CustomProtectionRule] {
-	return pulumix.Output[map[string]*CustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CustomProtectionRuleMapOutput) MapIndex(k pulumi.StringInput) CustomProtectionRuleOutput {

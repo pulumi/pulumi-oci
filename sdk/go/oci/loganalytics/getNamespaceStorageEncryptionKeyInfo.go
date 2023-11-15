@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -102,12 +101,6 @@ func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) ToGetNamespaceStorageE
 
 func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) ToGetNamespaceStorageEncryptionKeyInfoResultOutputWithContext(ctx context.Context) GetNamespaceStorageEncryptionKeyInfoResultOutput {
 	return o
-}
-
-func (o GetNamespaceStorageEncryptionKeyInfoResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceStorageEncryptionKeyInfoResult] {
-	return pulumix.Output[GetNamespaceStorageEncryptionKeyInfoResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

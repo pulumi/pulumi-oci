@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
@@ -130,12 +129,6 @@ func (o LookupExternalClusterInstanceResultOutput) ToLookupExternalClusterInstan
 
 func (o LookupExternalClusterInstanceResultOutput) ToLookupExternalClusterInstanceResultOutputWithContext(ctx context.Context) LookupExternalClusterInstanceResultOutput {
 	return o
-}
-
-func (o LookupExternalClusterInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupExternalClusterInstanceResult] {
-	return pulumix.Output[LookupExternalClusterInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.

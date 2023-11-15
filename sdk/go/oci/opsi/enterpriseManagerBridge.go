@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Enterprise Manager Bridge resource in Oracle Cloud Infrastructure Opsi service.
@@ -261,12 +260,6 @@ func (i *EnterpriseManagerBridge) ToEnterpriseManagerBridgeOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(EnterpriseManagerBridgeOutput)
 }
 
-func (i *EnterpriseManagerBridge) ToOutput(ctx context.Context) pulumix.Output[*EnterpriseManagerBridge] {
-	return pulumix.Output[*EnterpriseManagerBridge]{
-		OutputState: i.ToEnterpriseManagerBridgeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EnterpriseManagerBridgeArrayInput is an input type that accepts EnterpriseManagerBridgeArray and EnterpriseManagerBridgeArrayOutput values.
 // You can construct a concrete instance of `EnterpriseManagerBridgeArrayInput` via:
 //
@@ -290,12 +283,6 @@ func (i EnterpriseManagerBridgeArray) ToEnterpriseManagerBridgeArrayOutput() Ent
 
 func (i EnterpriseManagerBridgeArray) ToEnterpriseManagerBridgeArrayOutputWithContext(ctx context.Context) EnterpriseManagerBridgeArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EnterpriseManagerBridgeArrayOutput)
-}
-
-func (i EnterpriseManagerBridgeArray) ToOutput(ctx context.Context) pulumix.Output[[]*EnterpriseManagerBridge] {
-	return pulumix.Output[[]*EnterpriseManagerBridge]{
-		OutputState: i.ToEnterpriseManagerBridgeArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EnterpriseManagerBridgeMapInput is an input type that accepts EnterpriseManagerBridgeMap and EnterpriseManagerBridgeMapOutput values.
@@ -323,12 +310,6 @@ func (i EnterpriseManagerBridgeMap) ToEnterpriseManagerBridgeMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(EnterpriseManagerBridgeMapOutput)
 }
 
-func (i EnterpriseManagerBridgeMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnterpriseManagerBridge] {
-	return pulumix.Output[map[string]*EnterpriseManagerBridge]{
-		OutputState: i.ToEnterpriseManagerBridgeMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EnterpriseManagerBridgeOutput struct{ *pulumi.OutputState }
 
 func (EnterpriseManagerBridgeOutput) ElementType() reflect.Type {
@@ -341,12 +322,6 @@ func (o EnterpriseManagerBridgeOutput) ToEnterpriseManagerBridgeOutput() Enterpr
 
 func (o EnterpriseManagerBridgeOutput) ToEnterpriseManagerBridgeOutputWithContext(ctx context.Context) EnterpriseManagerBridgeOutput {
 	return o
-}
-
-func (o EnterpriseManagerBridgeOutput) ToOutput(ctx context.Context) pulumix.Output[*EnterpriseManagerBridge] {
-	return pulumix.Output[*EnterpriseManagerBridge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment identifier of the Enterprise Manager bridge
@@ -431,12 +406,6 @@ func (o EnterpriseManagerBridgeArrayOutput) ToEnterpriseManagerBridgeArrayOutput
 	return o
 }
 
-func (o EnterpriseManagerBridgeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EnterpriseManagerBridge] {
-	return pulumix.Output[[]*EnterpriseManagerBridge]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o EnterpriseManagerBridgeArrayOutput) Index(i pulumi.IntInput) EnterpriseManagerBridgeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EnterpriseManagerBridge {
 		return vs[0].([]*EnterpriseManagerBridge)[vs[1].(int)]
@@ -455,12 +424,6 @@ func (o EnterpriseManagerBridgeMapOutput) ToEnterpriseManagerBridgeMapOutput() E
 
 func (o EnterpriseManagerBridgeMapOutput) ToEnterpriseManagerBridgeMapOutputWithContext(ctx context.Context) EnterpriseManagerBridgeMapOutput {
 	return o
-}
-
-func (o EnterpriseManagerBridgeMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EnterpriseManagerBridge] {
-	return pulumix.Output[map[string]*EnterpriseManagerBridge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EnterpriseManagerBridgeMapOutput) MapIndex(k pulumi.StringInput) EnterpriseManagerBridgeOutput {

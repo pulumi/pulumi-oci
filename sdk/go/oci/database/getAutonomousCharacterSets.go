@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
@@ -116,12 +115,6 @@ func (o GetAutonomousCharacterSetsResultOutput) ToGetAutonomousCharacterSetsResu
 
 func (o GetAutonomousCharacterSetsResultOutput) ToGetAutonomousCharacterSetsResultOutputWithContext(ctx context.Context) GetAutonomousCharacterSetsResultOutput {
 	return o
-}
-
-func (o GetAutonomousCharacterSetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousCharacterSetsResult] {
-	return pulumix.Output[GetAutonomousCharacterSetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of autonomous_database_character_sets.

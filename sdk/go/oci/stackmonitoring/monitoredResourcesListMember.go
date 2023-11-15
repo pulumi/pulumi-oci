@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resources List Member resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -182,12 +181,6 @@ func (i *MonitoredResourcesListMember) ToMonitoredResourcesListMemberOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberOutput)
 }
 
-func (i *MonitoredResourcesListMember) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesListMember] {
-	return pulumix.Output[*MonitoredResourcesListMember]{
-		OutputState: i.ToMonitoredResourcesListMemberOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourcesListMemberArrayInput is an input type that accepts MonitoredResourcesListMemberArray and MonitoredResourcesListMemberArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourcesListMemberArrayInput` via:
 //
@@ -211,12 +204,6 @@ func (i MonitoredResourcesListMemberArray) ToMonitoredResourcesListMemberArrayOu
 
 func (i MonitoredResourcesListMemberArray) ToMonitoredResourcesListMemberArrayOutputWithContext(ctx context.Context) MonitoredResourcesListMemberArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberArrayOutput)
-}
-
-func (i MonitoredResourcesListMemberArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesListMember] {
-	return pulumix.Output[[]*MonitoredResourcesListMember]{
-		OutputState: i.ToMonitoredResourcesListMemberArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MonitoredResourcesListMemberMapInput is an input type that accepts MonitoredResourcesListMemberMap and MonitoredResourcesListMemberMapOutput values.
@@ -244,12 +231,6 @@ func (i MonitoredResourcesListMemberMap) ToMonitoredResourcesListMemberMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourcesListMemberMapOutput)
 }
 
-func (i MonitoredResourcesListMemberMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesListMember] {
-	return pulumix.Output[map[string]*MonitoredResourcesListMember]{
-		OutputState: i.ToMonitoredResourcesListMemberMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourcesListMemberOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourcesListMemberOutput) ElementType() reflect.Type {
@@ -262,12 +243,6 @@ func (o MonitoredResourcesListMemberOutput) ToMonitoredResourcesListMemberOutput
 
 func (o MonitoredResourcesListMemberOutput) ToMonitoredResourcesListMemberOutputWithContext(ctx context.Context) MonitoredResourcesListMemberOutput {
 	return o
-}
-
-func (o MonitoredResourcesListMemberOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResourcesListMember] {
-	return pulumix.Output[*MonitoredResourcesListMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -307,12 +282,6 @@ func (o MonitoredResourcesListMemberArrayOutput) ToMonitoredResourcesListMemberA
 	return o
 }
 
-func (o MonitoredResourcesListMemberArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResourcesListMember] {
-	return pulumix.Output[[]*MonitoredResourcesListMember]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourcesListMemberArrayOutput) Index(i pulumi.IntInput) MonitoredResourcesListMemberOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MonitoredResourcesListMember {
 		return vs[0].([]*MonitoredResourcesListMember)[vs[1].(int)]
@@ -331,12 +300,6 @@ func (o MonitoredResourcesListMemberMapOutput) ToMonitoredResourcesListMemberMap
 
 func (o MonitoredResourcesListMemberMapOutput) ToMonitoredResourcesListMemberMapOutputWithContext(ctx context.Context) MonitoredResourcesListMemberMapOutput {
 	return o
-}
-
-func (o MonitoredResourcesListMemberMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResourcesListMember] {
-	return pulumix.Output[map[string]*MonitoredResourcesListMember]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourcesListMemberMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourcesListMemberOutput {

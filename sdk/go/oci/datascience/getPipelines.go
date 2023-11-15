@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Pipelines in Oracle Cloud Infrastructure Data Science service.
@@ -139,12 +138,6 @@ func (o GetPipelinesResultOutput) ToGetPipelinesResultOutput() GetPipelinesResul
 
 func (o GetPipelinesResultOutput) ToGetPipelinesResultOutputWithContext(ctx context.Context) GetPipelinesResultOutput {
 	return o
-}
-
-func (o GetPipelinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPipelinesResult] {
-	return pulumix.Output[GetPipelinesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.

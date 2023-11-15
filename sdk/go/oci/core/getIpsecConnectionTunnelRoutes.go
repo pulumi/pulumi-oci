@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
@@ -118,12 +117,6 @@ func (o GetIpsecConnectionTunnelRoutesResultOutput) ToGetIpsecConnectionTunnelRo
 
 func (o GetIpsecConnectionTunnelRoutesResultOutput) ToGetIpsecConnectionTunnelRoutesResultOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelRoutesResultOutput {
 	return o
-}
-
-func (o GetIpsecConnectionTunnelRoutesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecConnectionTunnelRoutesResult] {
-	return pulumix.Output[GetIpsecConnectionTunnelRoutesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The source of the route advertisement.

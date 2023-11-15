@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Custom Tables in Oracle Cloud Infrastructure Metering Computation service.
@@ -113,12 +112,6 @@ func (o GetCustomTablesResultOutput) ToGetCustomTablesResultOutput() GetCustomTa
 
 func (o GetCustomTablesResultOutput) ToGetCustomTablesResultOutputWithContext(ctx context.Context) GetCustomTablesResultOutput {
 	return o
-}
-
-func (o GetCustomTablesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomTablesResult] {
-	return pulumix.Output[GetCustomTablesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The custom table compartment OCID.

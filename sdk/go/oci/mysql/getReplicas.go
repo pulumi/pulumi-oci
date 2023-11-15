@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Replicas in Oracle Cloud Infrastructure MySQL Database service.
@@ -146,12 +145,6 @@ func (o GetReplicasResultOutput) ToGetReplicasResultOutput() GetReplicasResultOu
 
 func (o GetReplicasResultOutput) ToGetReplicasResultOutputWithContext(ctx context.Context) GetReplicasResultOutput {
 	return o
-}
-
-func (o GetReplicasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetReplicasResult] {
-	return pulumix.Output[GetReplicasResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the read replica.

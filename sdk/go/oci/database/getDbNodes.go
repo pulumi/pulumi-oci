@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
@@ -132,12 +131,6 @@ func (o GetDbNodesResultOutput) ToGetDbNodesResultOutput() GetDbNodesResultOutpu
 
 func (o GetDbNodesResultOutput) ToGetDbNodesResultOutputWithContext(ctx context.Context) GetDbNodesResultOutput {
 	return o
-}
-
-func (o GetDbNodesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbNodesResult] {
-	return pulumix.Output[GetDbNodesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDbNodesResultOutput) CompartmentId() pulumi.StringOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
@@ -124,12 +123,6 @@ func (o GetExternalAsmInstanceResultOutput) ToGetExternalAsmInstanceResultOutput
 
 func (o GetExternalAsmInstanceResultOutput) ToGetExternalAsmInstanceResultOutputWithContext(ctx context.Context) GetExternalAsmInstanceResultOutput {
 	return o
-}
-
-func (o GetExternalAsmInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalAsmInstanceResult] {
-	return pulumix.Output[GetExternalAsmInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.

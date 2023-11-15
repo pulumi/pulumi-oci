@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Announcements in Oracle Cloud Infrastructure Jms service.
@@ -117,12 +116,6 @@ func (o GetAnnouncementsResultOutput) ToGetAnnouncementsResultOutput() GetAnnoun
 
 func (o GetAnnouncementsResultOutput) ToGetAnnouncementsResultOutputWithContext(ctx context.Context) GetAnnouncementsResultOutput {
 	return o
-}
-
-func (o GetAnnouncementsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnnouncementsResult] {
-	return pulumix.Output[GetAnnouncementsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of announcement_collection.

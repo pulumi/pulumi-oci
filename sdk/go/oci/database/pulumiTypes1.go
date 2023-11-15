@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -67,12 +66,6 @@ func (i GetVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetworkVmNetworkOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkOutput)
 }
 
-func (i GetVmClusterNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkArray and GetVmClusterNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkVmNetworkArrayInput` via:
 //
@@ -98,12 +91,6 @@ func (i GetVmClusterNetworkVmNetworkArray) ToGetVmClusterNetworkVmNetworkArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkArrayOutput)
 }
 
-func (i GetVmClusterNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworkVmNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworkVmNetworkOutput) ElementType() reflect.Type {
@@ -116,12 +103,6 @@ func (o GetVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworkVmNetworkOutput
 
 func (o GetVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkOutput {
 	return o
-}
-
-func (o GetVmClusterNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network domain name.
@@ -166,12 +147,6 @@ func (o GetVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworkVmNetworkA
 
 func (o GetVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkVmNetworkOutput {
@@ -233,12 +208,6 @@ func (i GetVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNetworkVmNetworkNode
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkNodeOutput)
 }
 
-func (i GetVmClusterNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworkVmNetworkNodeArrayInput` via:
 //
@@ -264,12 +233,6 @@ func (i GetVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNetworkVmNetworkNod
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkVmNetworkNodeArrayOutput)
 }
 
-func (i GetVmClusterNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
@@ -282,12 +245,6 @@ func (o GetVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworkVmNetworkNo
 
 func (o GetVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworkVmNetworkNodeOutput {
 	return o
-}
-
-func (o GetVmClusterNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Db server associated with the node.
@@ -334,12 +291,6 @@ func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClusterNetworkVmNetw
 	return o
 }
 
-func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkVmNetworkNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworkVmNetworkNode {
 		return vs[0].([]GetVmClusterNetworkVmNetworkNode)[vs[1].(int)]
@@ -381,12 +332,6 @@ func (i GetVmClusterNetworksFilterArgs) ToGetVmClusterNetworksFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksFilterOutput)
 }
 
-func (i GetVmClusterNetworksFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksFilter] {
-	return pulumix.Output[GetVmClusterNetworksFilter]{
-		OutputState: i.ToGetVmClusterNetworksFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksFilterArrayInput is an input type that accepts GetVmClusterNetworksFilterArray and GetVmClusterNetworksFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksFilterArrayInput` via:
 //
@@ -412,12 +357,6 @@ func (i GetVmClusterNetworksFilterArray) ToGetVmClusterNetworksFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksFilterArrayOutput)
 }
 
-func (i GetVmClusterNetworksFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksFilter] {
-	return pulumix.Output[[]GetVmClusterNetworksFilter]{
-		OutputState: i.ToGetVmClusterNetworksFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksFilterOutput) ElementType() reflect.Type {
@@ -430,12 +369,6 @@ func (o GetVmClusterNetworksFilterOutput) ToGetVmClusterNetworksFilterOutput() G
 
 func (o GetVmClusterNetworksFilterOutput) ToGetVmClusterNetworksFilterOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksFilter] {
-	return pulumix.Output[GetVmClusterNetworksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksFilterOutput) Name() pulumi.StringOutput {
@@ -462,12 +395,6 @@ func (o GetVmClusterNetworksFilterArrayOutput) ToGetVmClusterNetworksFilterArray
 
 func (o GetVmClusterNetworksFilterArrayOutput) ToGetVmClusterNetworksFilterArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksFilterArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksFilter] {
-	return pulumix.Output[[]GetVmClusterNetworksFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksFilterOutput {
@@ -569,12 +496,6 @@ func (i GetVmClusterNetworksVmClusterNetworkArgs) ToGetVmClusterNetworksVmCluste
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksVmClusterNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkArray and GetVmClusterNetworksVmClusterNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkArrayInput` via:
 //
@@ -600,12 +521,6 @@ func (i GetVmClusterNetworksVmClusterNetworkArray) ToGetVmClusterNetworksVmClust
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkOutput) ElementType() reflect.Type {
@@ -618,12 +533,6 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) ToGetVmClusterNetworksVmClus
 
 func (o GetVmClusterNetworksVmClusterNetworkOutput) ToGetVmClusterNetworksVmClusterNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksVmClusterNetworkOutput) Action() pulumi.StringOutput {
@@ -729,12 +638,6 @@ func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToGetVmClusterNetworksV
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetwork]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksVmClusterNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetwork {
 		return vs[0].([]GetVmClusterNetworksVmClusterNetwork)[vs[1].(int)]
@@ -782,12 +685,6 @@ func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToGetVmClusterNetworksVm
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkDrScanOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkDrScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksVmClusterNetworkDrScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkDrScanArray and GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkDrScanArrayInput` via:
 //
@@ -813,12 +710,6 @@ func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToGetVmClusterNetworksV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkDrScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkDrScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkDrScanOutput) ElementType() reflect.Type {
@@ -831,12 +722,6 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToGetVmClusterNetworks
 
 func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToGetVmClusterNetworksVmClusterNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkDrScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The node host name.
@@ -866,12 +751,6 @@ func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNet
 
 func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNetworksVmClusterNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksVmClusterNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkDrScanOutput {
@@ -929,12 +808,6 @@ func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToGetVmClusterNetworksVmCl
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkScanOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksVmClusterNetworkScanArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkScanArray and GetVmClusterNetworksVmClusterNetworkScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkScanArrayInput` via:
 //
@@ -960,12 +833,6 @@ func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToGetVmClusterNetworksVmC
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkScanArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkScanOutput) ElementType() reflect.Type {
@@ -978,12 +845,6 @@ func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToGetVmClusterNetworksVm
 
 func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToGetVmClusterNetworksVmClusterNetworkScanOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The node host name.
@@ -1023,12 +884,6 @@ func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToGetVmClusterNetwo
 
 func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToGetVmClusterNetworksVmClusterNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkScanArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksVmClusterNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkScanOutput {
@@ -1090,12 +945,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToGetVmClusterNetwork
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkArray and GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkArrayInput` via:
 //
@@ -1121,12 +970,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToGetVmClusterNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkVmNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ElementType() reflect.Type {
@@ -1139,12 +982,6 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetwo
 
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network domain name.
@@ -1191,12 +1028,6 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToGetVmCluster
 
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkVmNetworkOutput {
@@ -1258,12 +1089,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToGetVmClusterNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray and GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayInput` via:
 //
@@ -1289,12 +1114,6 @@ func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToGetVmClusterNe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput)
 }
 
-func (i GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
@@ -1307,12 +1126,6 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterN
 
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToGetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Db server associated with the node.
@@ -1359,12 +1172,6 @@ func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToGetVmClu
 	return o
 }
 
-func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterNetworksVmClusterNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterNetworksVmClusterNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworksVmClusterNetworkVmNetworkNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
 		return vs[0].([]GetVmClusterNetworksVmClusterNetworkVmNetworkNode)[vs[1].(int)]
@@ -1406,12 +1213,6 @@ func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToGetVmClusterPatchHistoryEnt
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesFilterOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterPatchHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesFilterArray and GetVmClusterPatchHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesFilterArrayInput` via:
 //
@@ -1437,12 +1238,6 @@ func (i GetVmClusterPatchHistoryEntriesFilterArray) ToGetVmClusterPatchHistoryEn
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesFilterArrayOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchHistoryEntriesFilterOutput) ElementType() reflect.Type {
@@ -1455,12 +1250,6 @@ func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToGetVmClusterPatchHistoryE
 
 func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToGetVmClusterPatchHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterPatchHistoryEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
@@ -1487,12 +1276,6 @@ func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToGetVmClusterPatchHis
 
 func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToGetVmClusterPatchHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesFilterArrayOutput {
 	return o
-}
-
-func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchHistoryEntriesFilterOutput {
@@ -1558,12 +1341,6 @@ func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToGetVmClusterPatc
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput is an input type that accepts GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray and GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayInput` via:
 //
@@ -1589,12 +1366,6 @@ func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToGetVmClusterPat
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput)
 }
 
-func (i GetVmClusterPatchHistoryEntriesPatchHistoryEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: i.ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ElementType() reflect.Type {
@@ -1607,12 +1378,6 @@ func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToGetVmClusterPa
 
 func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToGetVmClusterPatchHistoryEntriesPatchHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
 	return o
-}
-
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action being performed or was completed.
@@ -1664,12 +1429,6 @@ func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToGetVmClus
 	return o
 }
 
-func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterPatchHistoryEntriesPatchHistoryEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchHistoryEntriesPatchHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchHistoryEntriesPatchHistoryEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchHistoryEntriesPatchHistoryEntry {
 		return vs[0].([]GetVmClusterPatchHistoryEntriesPatchHistoryEntry)[vs[1].(int)]
@@ -1711,12 +1470,6 @@ func (i GetVmClusterPatchesFilterArgs) ToGetVmClusterPatchesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesFilterOutput)
 }
 
-func (i GetVmClusterPatchesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesFilter] {
-	return pulumix.Output[GetVmClusterPatchesFilter]{
-		OutputState: i.ToGetVmClusterPatchesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterPatchesFilterArrayInput is an input type that accepts GetVmClusterPatchesFilterArray and GetVmClusterPatchesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesFilterArrayInput` via:
 //
@@ -1742,12 +1495,6 @@ func (i GetVmClusterPatchesFilterArray) ToGetVmClusterPatchesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesFilterArrayOutput)
 }
 
-func (i GetVmClusterPatchesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchesFilter]{
-		OutputState: i.ToGetVmClusterPatchesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchesFilterOutput) ElementType() reflect.Type {
@@ -1760,12 +1507,6 @@ func (o GetVmClusterPatchesFilterOutput) ToGetVmClusterPatchesFilterOutput() Get
 
 func (o GetVmClusterPatchesFilterOutput) ToGetVmClusterPatchesFilterOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterPatchesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesFilter] {
-	return pulumix.Output[GetVmClusterPatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchesFilterOutput) Name() pulumi.StringOutput {
@@ -1792,12 +1533,6 @@ func (o GetVmClusterPatchesFilterArrayOutput) ToGetVmClusterPatchesFilterArrayOu
 
 func (o GetVmClusterPatchesFilterArrayOutput) ToGetVmClusterPatchesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterPatchesFilterArrayOutput {
 	return o
-}
-
-func (o GetVmClusterPatchesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesFilter] {
-	return pulumix.Output[[]GetVmClusterPatchesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterPatchesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchesFilterOutput {
@@ -1867,12 +1602,6 @@ func (i GetVmClusterPatchesPatchArgs) ToGetVmClusterPatchesPatchOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesPatchOutput)
 }
 
-func (i GetVmClusterPatchesPatchArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesPatch] {
-	return pulumix.Output[GetVmClusterPatchesPatch]{
-		OutputState: i.ToGetVmClusterPatchesPatchOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterPatchesPatchArrayInput is an input type that accepts GetVmClusterPatchesPatchArray and GetVmClusterPatchesPatchArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterPatchesPatchArrayInput` via:
 //
@@ -1898,12 +1627,6 @@ func (i GetVmClusterPatchesPatchArray) ToGetVmClusterPatchesPatchArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterPatchesPatchArrayOutput)
 }
 
-func (i GetVmClusterPatchesPatchArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesPatch] {
-	return pulumix.Output[[]GetVmClusterPatchesPatch]{
-		OutputState: i.ToGetVmClusterPatchesPatchArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterPatchesPatchOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterPatchesPatchOutput) ElementType() reflect.Type {
@@ -1916,12 +1639,6 @@ func (o GetVmClusterPatchesPatchOutput) ToGetVmClusterPatchesPatchOutput() GetVm
 
 func (o GetVmClusterPatchesPatchOutput) ToGetVmClusterPatchesPatchOutputWithContext(ctx context.Context) GetVmClusterPatchesPatchOutput {
 	return o
-}
-
-func (o GetVmClusterPatchesPatchOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesPatch] {
-	return pulumix.Output[GetVmClusterPatchesPatch]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Actions that can possibly be performed using this patch.
@@ -1978,12 +1695,6 @@ func (o GetVmClusterPatchesPatchArrayOutput) ToGetVmClusterPatchesPatchArrayOutp
 	return o
 }
 
-func (o GetVmClusterPatchesPatchArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterPatchesPatch] {
-	return pulumix.Output[[]GetVmClusterPatchesPatch]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchesPatchArrayOutput) Index(i pulumi.IntInput) GetVmClusterPatchesPatchOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterPatchesPatch {
 		return vs[0].([]GetVmClusterPatchesPatch)[vs[1].(int)]
@@ -2031,12 +1742,6 @@ func (i GetVmClusterRecommendedNetworkDrScanArgs) ToGetVmClusterRecommendedNetwo
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkDrScanOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkDrScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterRecommendedNetworkDrScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkDrScanArray and GetVmClusterRecommendedNetworkDrScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkDrScanArrayInput` via:
 //
@@ -2062,12 +1767,6 @@ func (i GetVmClusterRecommendedNetworkDrScanArray) ToGetVmClusterRecommendedNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkDrScanArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkDrScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkDrScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkDrScanOutput) ElementType() reflect.Type {
@@ -2080,12 +1779,6 @@ func (o GetVmClusterRecommendedNetworkDrScanOutput) ToGetVmClusterRecommendedNet
 
 func (o GetVmClusterRecommendedNetworkDrScanOutput) ToGetVmClusterRecommendedNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkDrScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The node host name.
@@ -2115,12 +1808,6 @@ func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToGetVmClusterRecommend
 
 func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToGetVmClusterRecommendedNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkDrScanArrayOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkDrScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterRecommendedNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkDrScanOutput {
@@ -2186,12 +1873,6 @@ func (i GetVmClusterRecommendedNetworkNetworkArgs) ToGetVmClusterRecommendedNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkNetworkOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterRecommendedNetworkNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkNetworkArray and GetVmClusterRecommendedNetworkNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkNetworkArrayInput` via:
 //
@@ -2217,12 +1898,6 @@ func (i GetVmClusterRecommendedNetworkNetworkArray) ToGetVmClusterRecommendedNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkNetworkArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkNetworkOutput) ElementType() reflect.Type {
@@ -2235,12 +1910,6 @@ func (o GetVmClusterRecommendedNetworkNetworkOutput) ToGetVmClusterRecommendedNe
 
 func (o GetVmClusterRecommendedNetworkNetworkOutput) ToGetVmClusterRecommendedNetworkNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The cidr for the network.
@@ -2290,12 +1959,6 @@ func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToGetVmClusterRecommen
 
 func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToGetVmClusterRecommendedNetworkNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkNetworkArrayOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterRecommendedNetworkNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkNetworkOutput {
@@ -2353,12 +2016,6 @@ func (i GetVmClusterRecommendedNetworkScanArgs) ToGetVmClusterRecommendedNetwork
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkScanOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkScanArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterRecommendedNetworkScanArrayInput is an input type that accepts GetVmClusterRecommendedNetworkScanArray and GetVmClusterRecommendedNetworkScanArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkScanArrayInput` via:
 //
@@ -2384,12 +2041,6 @@ func (i GetVmClusterRecommendedNetworkScanArray) ToGetVmClusterRecommendedNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkScanArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkScanArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkScan]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkScanOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkScanOutput) ElementType() reflect.Type {
@@ -2402,12 +2053,6 @@ func (o GetVmClusterRecommendedNetworkScanOutput) ToGetVmClusterRecommendedNetwo
 
 func (o GetVmClusterRecommendedNetworkScanOutput) ToGetVmClusterRecommendedNetworkScanOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkScanOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The node host name.
@@ -2447,12 +2092,6 @@ func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToGetVmClusterRecommended
 
 func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToGetVmClusterRecommendedNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkScanArrayOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkScanArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkScan] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkScan]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterRecommendedNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkScanOutput {
@@ -2514,12 +2153,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToGetVmClusterRecommendedNe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkVmNetworkArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterRecommendedNetworkVmNetworkArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkArray and GetVmClusterRecommendedNetworkVmNetworkArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkArrayInput` via:
 //
@@ -2545,12 +2178,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToGetVmClusterRecommendedN
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkVmNetworkArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkVmNetworkOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkVmNetworkOutput) ElementType() reflect.Type {
@@ -2563,12 +2190,6 @@ func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToGetVmClusterRecommended
 
 func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToGetVmClusterRecommendedNetworkVmNetworkOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkVmNetworkOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The network domain name.
@@ -2615,12 +2236,6 @@ func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToGetVmClusterRecomm
 
 func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToGetVmClusterRecommendedNetworkVmNetworkArrayOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkArrayOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetwork]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterRecommendedNetworkVmNetworkArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkVmNetworkOutput {
@@ -2682,12 +2297,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToGetVmClusterRecommend
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkNodeOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkVmNetworkNodeArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput is an input type that accepts GetVmClusterRecommendedNetworkVmNetworkNodeArray and GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterRecommendedNetworkVmNetworkNodeArrayInput` via:
 //
@@ -2713,12 +2322,6 @@ func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToGetVmClusterRecommen
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput)
 }
 
-func (i GetVmClusterRecommendedNetworkVmNetworkNodeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: i.ToGetVmClusterRecommendedNetworkVmNetworkNodeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterRecommendedNetworkVmNetworkNodeOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ElementType() reflect.Type {
@@ -2731,12 +2334,6 @@ func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToGetVmClusterRecomme
 
 func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToGetVmClusterRecommendedNetworkVmNetworkNodeOutputWithContext(ctx context.Context) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
 	return o
-}
-
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Db server associated with the node.
@@ -2783,12 +2380,6 @@ func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToGetVmClusterRe
 	return o
 }
 
-func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode] {
-	return pulumix.Output[[]GetVmClusterRecommendedNetworkVmNetworkNode]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterRecommendedNetworkVmNetworkNodeArrayOutput) Index(i pulumi.IntInput) GetVmClusterRecommendedNetworkVmNetworkNodeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterRecommendedNetworkVmNetworkNode {
 		return vs[0].([]GetVmClusterRecommendedNetworkVmNetworkNode)[vs[1].(int)]
@@ -2830,12 +2421,6 @@ func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToGetVmClusterUpdateHistoryE
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesFilterOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterUpdateHistoryEntriesFilterArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesFilterArray and GetVmClusterUpdateHistoryEntriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesFilterArrayInput` via:
 //
@@ -2861,12 +2446,6 @@ func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToGetVmClusterUpdateHistory
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesFilterArrayOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdateHistoryEntriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdateHistoryEntriesFilterOutput) ElementType() reflect.Type {
@@ -2879,12 +2458,6 @@ func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToGetVmClusterUpdateHistor
 
 func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToGetVmClusterUpdateHistoryEntriesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterUpdateHistoryEntriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdateHistoryEntriesFilterOutput) Name() pulumi.StringOutput {
@@ -2911,12 +2484,6 @@ func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetVmClusterUpdateH
 
 func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToGetVmClusterUpdateHistoryEntriesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesFilterArrayOutput {
 	return o
-}
-
-func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdateHistoryEntriesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateHistoryEntriesFilterOutput {
@@ -2986,12 +2553,6 @@ func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToGetVm
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput is an input type that accepts GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray and GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayInput` via:
 //
@@ -3017,12 +2578,6 @@ func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput)
 }
 
-func (i GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: i.ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ElementType() reflect.Type {
@@ -3035,12 +2590,6 @@ func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToGet
 
 func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToGetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutputWithContext(ctx context.Context) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
 	return o
-}
-
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
@@ -3097,12 +2646,6 @@ func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) 
 	return o
 }
 
-func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry] {
-	return pulumix.Output[[]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntryOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry {
 		return vs[0].([]GetVmClusterUpdateHistoryEntriesVmClusterUpdateHistoryEntry)[vs[1].(int)]
@@ -3144,12 +2687,6 @@ func (i GetVmClusterUpdatesFilterArgs) ToGetVmClusterUpdatesFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesFilterOutput)
 }
 
-func (i GetVmClusterUpdatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesFilter] {
-	return pulumix.Output[GetVmClusterUpdatesFilter]{
-		OutputState: i.ToGetVmClusterUpdatesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterUpdatesFilterArrayInput is an input type that accepts GetVmClusterUpdatesFilterArray and GetVmClusterUpdatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesFilterArrayInput` via:
 //
@@ -3175,12 +2712,6 @@ func (i GetVmClusterUpdatesFilterArray) ToGetVmClusterUpdatesFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesFilterArrayOutput)
 }
 
-func (i GetVmClusterUpdatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdatesFilter]{
-		OutputState: i.ToGetVmClusterUpdatesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdatesFilterOutput) ElementType() reflect.Type {
@@ -3193,12 +2724,6 @@ func (o GetVmClusterUpdatesFilterOutput) ToGetVmClusterUpdatesFilterOutput() Get
 
 func (o GetVmClusterUpdatesFilterOutput) ToGetVmClusterUpdatesFilterOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterOutput {
 	return o
-}
-
-func (o GetVmClusterUpdatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesFilter] {
-	return pulumix.Output[GetVmClusterUpdatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdatesFilterOutput) Name() pulumi.StringOutput {
@@ -3225,12 +2750,6 @@ func (o GetVmClusterUpdatesFilterArrayOutput) ToGetVmClusterUpdatesFilterArrayOu
 
 func (o GetVmClusterUpdatesFilterArrayOutput) ToGetVmClusterUpdatesFilterArrayOutputWithContext(ctx context.Context) GetVmClusterUpdatesFilterArrayOutput {
 	return o
-}
-
-func (o GetVmClusterUpdatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesFilter] {
-	return pulumix.Output[[]GetVmClusterUpdatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClusterUpdatesFilterArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdatesFilterOutput {
@@ -3304,12 +2823,6 @@ func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToGetVmClusterUpdatesVmClusterUp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesVmClusterUpdateOutput)
 }
 
-func (i GetVmClusterUpdatesVmClusterUpdateArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: i.ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClusterUpdatesVmClusterUpdateArrayInput is an input type that accepts GetVmClusterUpdatesVmClusterUpdateArray and GetVmClusterUpdatesVmClusterUpdateArrayOutput values.
 // You can construct a concrete instance of `GetVmClusterUpdatesVmClusterUpdateArrayInput` via:
 //
@@ -3335,12 +2848,6 @@ func (i GetVmClusterUpdatesVmClusterUpdateArray) ToGetVmClusterUpdatesVmClusterU
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterUpdatesVmClusterUpdateArrayOutput)
 }
 
-func (i GetVmClusterUpdatesVmClusterUpdateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: i.ToGetVmClusterUpdatesVmClusterUpdateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClusterUpdatesVmClusterUpdateOutput struct{ *pulumi.OutputState }
 
 func (GetVmClusterUpdatesVmClusterUpdateOutput) ElementType() reflect.Type {
@@ -3353,12 +2860,6 @@ func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToGetVmClusterUpdatesVmCluster
 
 func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToGetVmClusterUpdatesVmClusterUpdateOutputWithContext(ctx context.Context) GetVmClusterUpdatesVmClusterUpdateOutput {
 	return o
-}
-
-func (o GetVmClusterUpdatesVmClusterUpdateOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The possible actions that can be performed using this maintenance update.
@@ -3420,12 +2921,6 @@ func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToGetVmClusterUpdatesVmCl
 	return o
 }
 
-func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate] {
-	return pulumix.Output[[]GetVmClusterUpdatesVmClusterUpdate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterUpdatesVmClusterUpdateArrayOutput) Index(i pulumi.IntInput) GetVmClusterUpdatesVmClusterUpdateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterUpdatesVmClusterUpdate {
 		return vs[0].([]GetVmClusterUpdatesVmClusterUpdate)[vs[1].(int)]
@@ -3467,12 +2962,6 @@ func (i GetVmClustersFilterArgs) ToGetVmClustersFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersFilterOutput)
 }
 
-func (i GetVmClustersFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersFilter] {
-	return pulumix.Output[GetVmClustersFilter]{
-		OutputState: i.ToGetVmClustersFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClustersFilterArrayInput is an input type that accepts GetVmClustersFilterArray and GetVmClustersFilterArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersFilterArrayInput` via:
 //
@@ -3498,12 +2987,6 @@ func (i GetVmClustersFilterArray) ToGetVmClustersFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersFilterArrayOutput)
 }
 
-func (i GetVmClustersFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersFilter] {
-	return pulumix.Output[[]GetVmClustersFilter]{
-		OutputState: i.ToGetVmClustersFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClustersFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClustersFilterOutput) ElementType() reflect.Type {
@@ -3516,12 +2999,6 @@ func (o GetVmClustersFilterOutput) ToGetVmClustersFilterOutput() GetVmClustersFi
 
 func (o GetVmClustersFilterOutput) ToGetVmClustersFilterOutputWithContext(ctx context.Context) GetVmClustersFilterOutput {
 	return o
-}
-
-func (o GetVmClustersFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersFilter] {
-	return pulumix.Output[GetVmClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClustersFilterOutput) Name() pulumi.StringOutput {
@@ -3548,12 +3025,6 @@ func (o GetVmClustersFilterArrayOutput) ToGetVmClustersFilterArrayOutput() GetVm
 
 func (o GetVmClustersFilterArrayOutput) ToGetVmClustersFilterArrayOutputWithContext(ctx context.Context) GetVmClustersFilterArrayOutput {
 	return o
-}
-
-func (o GetVmClustersFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersFilter] {
-	return pulumix.Output[[]GetVmClustersFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClustersFilterArrayOutput) Index(i pulumi.IntInput) GetVmClustersFilterOutput {
@@ -3705,12 +3176,6 @@ func (i GetVmClustersVmClusterArgs) ToGetVmClustersVmClusterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterOutput)
 }
 
-func (i GetVmClustersVmClusterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmCluster] {
-	return pulumix.Output[GetVmClustersVmCluster]{
-		OutputState: i.ToGetVmClustersVmClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClustersVmClusterArrayInput is an input type that accepts GetVmClustersVmClusterArray and GetVmClustersVmClusterArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersVmClusterArrayInput` via:
 //
@@ -3736,12 +3201,6 @@ func (i GetVmClustersVmClusterArray) ToGetVmClustersVmClusterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterArrayOutput)
 }
 
-func (i GetVmClustersVmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmCluster] {
-	return pulumix.Output[[]GetVmClustersVmCluster]{
-		OutputState: i.ToGetVmClustersVmClusterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClustersVmClusterOutput struct{ *pulumi.OutputState }
 
 func (GetVmClustersVmClusterOutput) ElementType() reflect.Type {
@@ -3754,12 +3213,6 @@ func (o GetVmClustersVmClusterOutput) ToGetVmClustersVmClusterOutput() GetVmClus
 
 func (o GetVmClustersVmClusterOutput) ToGetVmClustersVmClusterOutputWithContext(ctx context.Context) GetVmClustersVmClusterOutput {
 	return o
-}
-
-func (o GetVmClustersVmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmCluster] {
-	return pulumix.Output[GetVmClustersVmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the availability domain that the VM cluster is located in.
@@ -3925,12 +3378,6 @@ func (o GetVmClustersVmClusterArrayOutput) ToGetVmClustersVmClusterArrayOutputWi
 	return o
 }
 
-func (o GetVmClustersVmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmCluster] {
-	return pulumix.Output[[]GetVmClustersVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClustersVmClusterArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClustersVmCluster {
 		return vs[0].([]GetVmClustersVmCluster)[vs[1].(int)]
@@ -3978,12 +3425,6 @@ func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToGetVmClustersVmCluster
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterDataCollectionOptionOutput)
 }
 
-func (i GetVmClustersVmClusterDataCollectionOptionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: i.ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVmClustersVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClustersVmClusterDataCollectionOptionArray and GetVmClustersVmClusterDataCollectionOptionArrayOutput values.
 // You can construct a concrete instance of `GetVmClustersVmClusterDataCollectionOptionArrayInput` via:
 //
@@ -4009,12 +3450,6 @@ func (i GetVmClustersVmClusterDataCollectionOptionArray) ToGetVmClustersVmCluste
 	return pulumi.ToOutputWithContext(ctx, i).(GetVmClustersVmClusterDataCollectionOptionArrayOutput)
 }
 
-func (i GetVmClustersVmClusterDataCollectionOptionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: i.ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVmClustersVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
 
 func (GetVmClustersVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
@@ -4027,12 +3462,6 @@ func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToGetVmClustersVmClust
 
 func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToGetVmClustersVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionOutput {
 	return o
-}
-
-func (o GetVmClustersVmClusterDataCollectionOptionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
@@ -4062,12 +3491,6 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToGetVmClustersVm
 
 func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToGetVmClustersVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClustersVmClusterDataCollectionOptionArrayOutput {
 	return o
-}
-
-func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption] {
-	return pulumix.Output[[]GetVmClustersVmClusterDataCollectionOption]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetVmClustersVmClusterDataCollectionOptionOutput {

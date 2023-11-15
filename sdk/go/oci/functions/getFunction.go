@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Function resource in Oracle Cloud Infrastructure Functions service.
@@ -136,12 +135,6 @@ func (o LookupFunctionResultOutput) ToLookupFunctionResultOutput() LookupFunctio
 
 func (o LookupFunctionResultOutput) ToLookupFunctionResultOutputWithContext(ctx context.Context) LookupFunctionResultOutput {
 	return o
-}
-
-func (o LookupFunctionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupFunctionResult] {
-	return pulumix.Output[LookupFunctionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the application the function belongs to.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
@@ -105,12 +104,6 @@ func (o GetBlockchainPlatformPatchesResultOutput) ToGetBlockchainPlatformPatches
 
 func (o GetBlockchainPlatformPatchesResultOutput) ToGetBlockchainPlatformPatchesResultOutputWithContext(ctx context.Context) GetBlockchainPlatformPatchesResultOutput {
 	return o
-}
-
-func (o GetBlockchainPlatformPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBlockchainPlatformPatchesResult] {
-	return pulumix.Output[GetBlockchainPlatformPatchesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetBlockchainPlatformPatchesResultOutput) BlockchainPlatformId() pulumi.StringOutput {

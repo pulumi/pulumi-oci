@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Workflow Job resource in Oracle Cloud Infrastructure Media Services service.
@@ -309,12 +308,6 @@ func (i *MediaWorkflowJob) ToMediaWorkflowJobOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobOutput)
 }
 
-func (i *MediaWorkflowJob) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowJob] {
-	return pulumix.Output[*MediaWorkflowJob]{
-		OutputState: i.ToMediaWorkflowJobOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowJobArrayInput is an input type that accepts MediaWorkflowJobArray and MediaWorkflowJobArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowJobArrayInput` via:
 //
@@ -338,12 +331,6 @@ func (i MediaWorkflowJobArray) ToMediaWorkflowJobArrayOutput() MediaWorkflowJobA
 
 func (i MediaWorkflowJobArray) ToMediaWorkflowJobArrayOutputWithContext(ctx context.Context) MediaWorkflowJobArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobArrayOutput)
-}
-
-func (i MediaWorkflowJobArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowJob] {
-	return pulumix.Output[[]*MediaWorkflowJob]{
-		OutputState: i.ToMediaWorkflowJobArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MediaWorkflowJobMapInput is an input type that accepts MediaWorkflowJobMap and MediaWorkflowJobMapOutput values.
@@ -371,12 +358,6 @@ func (i MediaWorkflowJobMap) ToMediaWorkflowJobMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowJobMapOutput)
 }
 
-func (i MediaWorkflowJobMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowJob] {
-	return pulumix.Output[map[string]*MediaWorkflowJob]{
-		OutputState: i.ToMediaWorkflowJobMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowJobOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowJobOutput) ElementType() reflect.Type {
@@ -389,12 +370,6 @@ func (o MediaWorkflowJobOutput) ToMediaWorkflowJobOutput() MediaWorkflowJobOutpu
 
 func (o MediaWorkflowJobOutput) ToMediaWorkflowJobOutputWithContext(ctx context.Context) MediaWorkflowJobOutput {
 	return o
-}
-
-func (o MediaWorkflowJobOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowJob] {
-	return pulumix.Output[*MediaWorkflowJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) ID of the compartment in which the job should be created.
@@ -509,12 +484,6 @@ func (o MediaWorkflowJobArrayOutput) ToMediaWorkflowJobArrayOutputWithContext(ct
 	return o
 }
 
-func (o MediaWorkflowJobArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowJob] {
-	return pulumix.Output[[]*MediaWorkflowJob]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MediaWorkflowJobArrayOutput) Index(i pulumi.IntInput) MediaWorkflowJobOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MediaWorkflowJob {
 		return vs[0].([]*MediaWorkflowJob)[vs[1].(int)]
@@ -533,12 +502,6 @@ func (o MediaWorkflowJobMapOutput) ToMediaWorkflowJobMapOutput() MediaWorkflowJo
 
 func (o MediaWorkflowJobMapOutput) ToMediaWorkflowJobMapOutputWithContext(ctx context.Context) MediaWorkflowJobMapOutput {
 	return o
-}
-
-func (o MediaWorkflowJobMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowJob] {
-	return pulumix.Output[map[string]*MediaWorkflowJob]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowJobMapOutput) MapIndex(k pulumi.StringInput) MediaWorkflowJobOutput {

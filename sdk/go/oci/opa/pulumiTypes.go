@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -65,12 +64,6 @@ func (i OpaInstanceAttachmentArgs) ToOpaInstanceAttachmentOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceAttachmentOutput)
 }
 
-func (i OpaInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[OpaInstanceAttachment] {
-	return pulumix.Output[OpaInstanceAttachment]{
-		OutputState: i.ToOpaInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OpaInstanceAttachmentArrayInput is an input type that accepts OpaInstanceAttachmentArray and OpaInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `OpaInstanceAttachmentArrayInput` via:
 //
@@ -96,12 +89,6 @@ func (i OpaInstanceAttachmentArray) ToOpaInstanceAttachmentArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(OpaInstanceAttachmentArrayOutput)
 }
 
-func (i OpaInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]OpaInstanceAttachment] {
-	return pulumix.Output[[]OpaInstanceAttachment]{
-		OutputState: i.ToOpaInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OpaInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (OpaInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -114,12 +101,6 @@ func (o OpaInstanceAttachmentOutput) ToOpaInstanceAttachmentOutput() OpaInstance
 
 func (o OpaInstanceAttachmentOutput) ToOpaInstanceAttachmentOutputWithContext(ctx context.Context) OpaInstanceAttachmentOutput {
 	return o
-}
-
-func (o OpaInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[OpaInstanceAttachment] {
-	return pulumix.Output[OpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -160,12 +141,6 @@ func (o OpaInstanceAttachmentArrayOutput) ToOpaInstanceAttachmentArrayOutput() O
 
 func (o OpaInstanceAttachmentArrayOutput) ToOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) OpaInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o OpaInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]OpaInstanceAttachment] {
-	return pulumix.Output[[]OpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) OpaInstanceAttachmentOutput {
@@ -225,12 +200,6 @@ func (i GetOpaInstanceAttachmentArgs) ToGetOpaInstanceAttachmentOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstanceAttachmentOutput)
 }
 
-func (i GetOpaInstanceAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstanceAttachment] {
-	return pulumix.Output[GetOpaInstanceAttachment]{
-		OutputState: i.ToGetOpaInstanceAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstanceAttachmentArrayInput is an input type that accepts GetOpaInstanceAttachmentArray and GetOpaInstanceAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstanceAttachmentArrayInput` via:
 //
@@ -256,12 +225,6 @@ func (i GetOpaInstanceAttachmentArray) ToGetOpaInstanceAttachmentArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstanceAttachmentArrayOutput)
 }
 
-func (i GetOpaInstanceAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstanceAttachment] {
-	return pulumix.Output[[]GetOpaInstanceAttachment]{
-		OutputState: i.ToGetOpaInstanceAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstanceAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstanceAttachmentOutput) ElementType() reflect.Type {
@@ -274,12 +237,6 @@ func (o GetOpaInstanceAttachmentOutput) ToGetOpaInstanceAttachmentOutput() GetOp
 
 func (o GetOpaInstanceAttachmentOutput) ToGetOpaInstanceAttachmentOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentOutput {
 	return o
-}
-
-func (o GetOpaInstanceAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstanceAttachment] {
-	return pulumix.Output[GetOpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -320,12 +277,6 @@ func (o GetOpaInstanceAttachmentArrayOutput) ToGetOpaInstanceAttachmentArrayOutp
 
 func (o GetOpaInstanceAttachmentArrayOutput) ToGetOpaInstanceAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstanceAttachmentArrayOutput {
 	return o
-}
-
-func (o GetOpaInstanceAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstanceAttachment] {
-	return pulumix.Output[[]GetOpaInstanceAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstanceAttachmentArrayOutput) Index(i pulumi.IntInput) GetOpaInstanceAttachmentOutput {
@@ -369,12 +320,6 @@ func (i GetOpaInstancesFilterArgs) ToGetOpaInstancesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesFilterOutput)
 }
 
-func (i GetOpaInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesFilter] {
-	return pulumix.Output[GetOpaInstancesFilter]{
-		OutputState: i.ToGetOpaInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstancesFilterArrayInput is an input type that accepts GetOpaInstancesFilterArray and GetOpaInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstancesFilterArrayInput` via:
 //
@@ -400,12 +345,6 @@ func (i GetOpaInstancesFilterArray) ToGetOpaInstancesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesFilterArrayOutput)
 }
 
-func (i GetOpaInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesFilter] {
-	return pulumix.Output[[]GetOpaInstancesFilter]{
-		OutputState: i.ToGetOpaInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesFilterOutput) ElementType() reflect.Type {
@@ -418,12 +357,6 @@ func (o GetOpaInstancesFilterOutput) ToGetOpaInstancesFilterOutput() GetOpaInsta
 
 func (o GetOpaInstancesFilterOutput) ToGetOpaInstancesFilterOutputWithContext(ctx context.Context) GetOpaInstancesFilterOutput {
 	return o
-}
-
-func (o GetOpaInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesFilter] {
-	return pulumix.Output[GetOpaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesFilterOutput) Name() pulumi.StringOutput {
@@ -450,12 +383,6 @@ func (o GetOpaInstancesFilterArrayOutput) ToGetOpaInstancesFilterArrayOutput() G
 
 func (o GetOpaInstancesFilterArrayOutput) ToGetOpaInstancesFilterArrayOutputWithContext(ctx context.Context) GetOpaInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetOpaInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesFilter] {
-	return pulumix.Output[[]GetOpaInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesFilterOutput {
@@ -495,12 +422,6 @@ func (i GetOpaInstancesOpaInstanceCollectionArgs) ToGetOpaInstancesOpaInstanceCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollection]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstancesOpaInstanceCollectionArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionArray and GetOpaInstancesOpaInstanceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstancesOpaInstanceCollectionArrayInput` via:
 //
@@ -526,12 +447,6 @@ func (i GetOpaInstancesOpaInstanceCollectionArray) ToGetOpaInstancesOpaInstanceC
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionArrayOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollection]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesOpaInstanceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesOpaInstanceCollectionOutput) ElementType() reflect.Type {
@@ -544,12 +459,6 @@ func (o GetOpaInstancesOpaInstanceCollectionOutput) ToGetOpaInstancesOpaInstance
 
 func (o GetOpaInstancesOpaInstanceCollectionOutput) ToGetOpaInstancesOpaInstanceCollectionOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesOpaInstanceCollectionOutput) Items() GetOpaInstancesOpaInstanceCollectionItemArrayOutput {
@@ -570,12 +479,6 @@ func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) ToGetOpaInstancesOpaIns
 
 func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) ToGetOpaInstancesOpaInstanceCollectionArrayOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionArrayOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollection] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesOpaInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionOutput {
@@ -695,12 +598,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemArgs) ToGetOpaInstancesOpaInstan
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstancesOpaInstanceCollectionItemArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemArray and GetOpaInstancesOpaInstanceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstancesOpaInstanceCollectionItemArrayInput` via:
 //
@@ -726,12 +623,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemArray) ToGetOpaInstancesOpaInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemArrayOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesOpaInstanceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesOpaInstanceCollectionItemOutput) ElementType() reflect.Type {
@@ -744,12 +635,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToGetOpaInstancesOpaInst
 
 func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToGetOpaInstancesOpaInstanceCollectionItemOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of associated attachments to other services
@@ -872,12 +757,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) ToGetOpaInstancesOp
 	return o
 }
 
-func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetOpaInstancesOpaInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpaInstancesOpaInstanceCollectionItem {
 		return vs[0].([]GetOpaInstancesOpaInstanceCollectionItem)[vs[1].(int)]
@@ -935,12 +814,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToGetOpaInstance
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput is an input type that accepts GetOpaInstancesOpaInstanceCollectionItemAttachmentArray and GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput values.
 // You can construct a concrete instance of `GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayInput` via:
 //
@@ -966,12 +839,6 @@ func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ToGetOpaInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput)
 }
 
-func (i GetOpaInstancesOpaInstanceCollectionItemAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: i.ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput struct{ *pulumi.OutputState }
 
 func (GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ElementType() reflect.Type {
@@ -984,12 +851,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToGetOpaInstan
 
 func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // * If role == `PARENT`, the attached instance was created by this service instance
@@ -1030,12 +891,6 @@ func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToGetOpaI
 
 func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToGetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutputWithContext(ctx context.Context) GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput {
 	return o
-}
-
-func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment] {
-	return pulumix.Output[[]GetOpaInstancesOpaInstanceCollectionItemAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentArrayOutput) Index(i pulumi.IntInput) GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput {

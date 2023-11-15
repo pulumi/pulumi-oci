@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
@@ -165,12 +164,6 @@ func (o GetContainerSignaturesResultOutput) ToGetContainerSignaturesResultOutput
 
 func (o GetContainerSignaturesResultOutput) ToGetContainerSignaturesResultOutputWithContext(ctx context.Context) GetContainerSignaturesResultOutput {
 	return o
-}
-
-func (o GetContainerSignaturesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesResult] {
-	return pulumix.Output[GetContainerSignaturesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure OS Management service.
@@ -150,12 +149,6 @@ func (o LookupManagedInstanceResultOutput) ToLookupManagedInstanceResultOutput()
 
 func (o LookupManagedInstanceResultOutput) ToLookupManagedInstanceResultOutputWithContext(ctx context.Context) LookupManagedInstanceResultOutput {
 	return o
-}
-
-func (o LookupManagedInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedInstanceResult] {
-	return pulumix.Output[LookupManagedInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information

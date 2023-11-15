@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Announcement Subscriptions Actions Change Compartment resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -170,12 +169,6 @@ func (i *AnnouncementSubscriptionsActionsChangeCompartment) ToAnnouncementSubscr
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsActionsChangeCompartmentOutput)
 }
 
-func (i *AnnouncementSubscriptionsActionsChangeCompartment) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscriptionsActionsChangeCompartment] {
-	return pulumix.Output[*AnnouncementSubscriptionsActionsChangeCompartment]{
-		OutputState: i.ToAnnouncementSubscriptionsActionsChangeCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnnouncementSubscriptionsActionsChangeCompartmentArrayInput is an input type that accepts AnnouncementSubscriptionsActionsChangeCompartmentArray and AnnouncementSubscriptionsActionsChangeCompartmentArrayOutput values.
 // You can construct a concrete instance of `AnnouncementSubscriptionsActionsChangeCompartmentArrayInput` via:
 //
@@ -199,12 +192,6 @@ func (i AnnouncementSubscriptionsActionsChangeCompartmentArray) ToAnnouncementSu
 
 func (i AnnouncementSubscriptionsActionsChangeCompartmentArray) ToAnnouncementSubscriptionsActionsChangeCompartmentArrayOutputWithContext(ctx context.Context) AnnouncementSubscriptionsActionsChangeCompartmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsActionsChangeCompartmentArrayOutput)
-}
-
-func (i AnnouncementSubscriptionsActionsChangeCompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscriptionsActionsChangeCompartment] {
-	return pulumix.Output[[]*AnnouncementSubscriptionsActionsChangeCompartment]{
-		OutputState: i.ToAnnouncementSubscriptionsActionsChangeCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AnnouncementSubscriptionsActionsChangeCompartmentMapInput is an input type that accepts AnnouncementSubscriptionsActionsChangeCompartmentMap and AnnouncementSubscriptionsActionsChangeCompartmentMapOutput values.
@@ -232,12 +219,6 @@ func (i AnnouncementSubscriptionsActionsChangeCompartmentMap) ToAnnouncementSubs
 	return pulumi.ToOutputWithContext(ctx, i).(AnnouncementSubscriptionsActionsChangeCompartmentMapOutput)
 }
 
-func (i AnnouncementSubscriptionsActionsChangeCompartmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscriptionsActionsChangeCompartment] {
-	return pulumix.Output[map[string]*AnnouncementSubscriptionsActionsChangeCompartment]{
-		OutputState: i.ToAnnouncementSubscriptionsActionsChangeCompartmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnnouncementSubscriptionsActionsChangeCompartmentOutput struct{ *pulumi.OutputState }
 
 func (AnnouncementSubscriptionsActionsChangeCompartmentOutput) ElementType() reflect.Type {
@@ -250,12 +231,6 @@ func (o AnnouncementSubscriptionsActionsChangeCompartmentOutput) ToAnnouncementS
 
 func (o AnnouncementSubscriptionsActionsChangeCompartmentOutput) ToAnnouncementSubscriptionsActionsChangeCompartmentOutputWithContext(ctx context.Context) AnnouncementSubscriptionsActionsChangeCompartmentOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionsActionsChangeCompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[*AnnouncementSubscriptionsActionsChangeCompartment] {
-	return pulumix.Output[*AnnouncementSubscriptionsActionsChangeCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the announcement subscription.
@@ -287,12 +262,6 @@ func (o AnnouncementSubscriptionsActionsChangeCompartmentArrayOutput) ToAnnounce
 	return o
 }
 
-func (o AnnouncementSubscriptionsActionsChangeCompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AnnouncementSubscriptionsActionsChangeCompartment] {
-	return pulumix.Output[[]*AnnouncementSubscriptionsActionsChangeCompartment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AnnouncementSubscriptionsActionsChangeCompartmentArrayOutput) Index(i pulumi.IntInput) AnnouncementSubscriptionsActionsChangeCompartmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AnnouncementSubscriptionsActionsChangeCompartment {
 		return vs[0].([]*AnnouncementSubscriptionsActionsChangeCompartment)[vs[1].(int)]
@@ -311,12 +280,6 @@ func (o AnnouncementSubscriptionsActionsChangeCompartmentMapOutput) ToAnnounceme
 
 func (o AnnouncementSubscriptionsActionsChangeCompartmentMapOutput) ToAnnouncementSubscriptionsActionsChangeCompartmentMapOutputWithContext(ctx context.Context) AnnouncementSubscriptionsActionsChangeCompartmentMapOutput {
 	return o
-}
-
-func (o AnnouncementSubscriptionsActionsChangeCompartmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AnnouncementSubscriptionsActionsChangeCompartment] {
-	return pulumix.Output[map[string]*AnnouncementSubscriptionsActionsChangeCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnnouncementSubscriptionsActionsChangeCompartmentMapOutput) MapIndex(k pulumi.StringInput) AnnouncementSubscriptionsActionsChangeCompartmentOutput {

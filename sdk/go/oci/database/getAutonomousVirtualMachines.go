@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Autonomous Virtual Machines in Oracle Cloud Infrastructure Database service.
@@ -120,12 +119,6 @@ func (o GetAutonomousVirtualMachinesResultOutput) ToGetAutonomousVirtualMachines
 
 func (o GetAutonomousVirtualMachinesResultOutput) ToGetAutonomousVirtualMachinesResultOutputWithContext(ctx context.Context) GetAutonomousVirtualMachinesResultOutput {
 	return o
-}
-
-func (o GetAutonomousVirtualMachinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAutonomousVirtualMachinesResult] {
-	return pulumix.Output[GetAutonomousVirtualMachinesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of autonomous_virtual_machines.

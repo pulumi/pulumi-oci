@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Oneoff Patches in Oracle Cloud Infrastructure Database service.
@@ -120,12 +119,6 @@ func (o GetOneoffPatchesResultOutput) ToGetOneoffPatchesResultOutput() GetOneoff
 
 func (o GetOneoffPatchesResultOutput) ToGetOneoffPatchesResultOutputWithContext(ctx context.Context) GetOneoffPatchesResultOutput {
 	return o
-}
-
-func (o GetOneoffPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOneoffPatchesResult] {
-	return pulumix.Output[GetOneoffPatchesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

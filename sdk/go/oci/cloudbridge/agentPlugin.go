@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Agent Plugin resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -233,12 +232,6 @@ func (i *AgentPlugin) ToAgentPluginOutputWithContext(ctx context.Context) AgentP
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginOutput)
 }
 
-func (i *AgentPlugin) ToOutput(ctx context.Context) pulumix.Output[*AgentPlugin] {
-	return pulumix.Output[*AgentPlugin]{
-		OutputState: i.ToAgentPluginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AgentPluginArrayInput is an input type that accepts AgentPluginArray and AgentPluginArrayOutput values.
 // You can construct a concrete instance of `AgentPluginArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i AgentPluginArray) ToAgentPluginArrayOutput() AgentPluginArrayOutput {
 
 func (i AgentPluginArray) ToAgentPluginArrayOutputWithContext(ctx context.Context) AgentPluginArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginArrayOutput)
-}
-
-func (i AgentPluginArray) ToOutput(ctx context.Context) pulumix.Output[[]*AgentPlugin] {
-	return pulumix.Output[[]*AgentPlugin]{
-		OutputState: i.ToAgentPluginArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AgentPluginMapInput is an input type that accepts AgentPluginMap and AgentPluginMapOutput values.
@@ -295,12 +282,6 @@ func (i AgentPluginMap) ToAgentPluginMapOutputWithContext(ctx context.Context) A
 	return pulumi.ToOutputWithContext(ctx, i).(AgentPluginMapOutput)
 }
 
-func (i AgentPluginMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AgentPlugin] {
-	return pulumix.Output[map[string]*AgentPlugin]{
-		OutputState: i.ToAgentPluginMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AgentPluginOutput struct{ *pulumi.OutputState }
 
 func (AgentPluginOutput) ElementType() reflect.Type {
@@ -313,12 +294,6 @@ func (o AgentPluginOutput) ToAgentPluginOutput() AgentPluginOutput {
 
 func (o AgentPluginOutput) ToAgentPluginOutputWithContext(ctx context.Context) AgentPluginOutput {
 	return o
-}
-
-func (o AgentPluginOutput) ToOutput(ctx context.Context) pulumix.Output[*AgentPlugin] {
-	return pulumix.Output[*AgentPlugin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique Agent identifier path parameter.
@@ -398,12 +373,6 @@ func (o AgentPluginArrayOutput) ToAgentPluginArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o AgentPluginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AgentPlugin] {
-	return pulumix.Output[[]*AgentPlugin]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AgentPluginArrayOutput) Index(i pulumi.IntInput) AgentPluginOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *AgentPlugin {
 		return vs[0].([]*AgentPlugin)[vs[1].(int)]
@@ -422,12 +391,6 @@ func (o AgentPluginMapOutput) ToAgentPluginMapOutput() AgentPluginMapOutput {
 
 func (o AgentPluginMapOutput) ToAgentPluginMapOutputWithContext(ctx context.Context) AgentPluginMapOutput {
 	return o
-}
-
-func (o AgentPluginMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AgentPlugin] {
-	return pulumix.Output[map[string]*AgentPlugin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AgentPluginMapOutput) MapIndex(k pulumi.StringInput) AgentPluginOutput {

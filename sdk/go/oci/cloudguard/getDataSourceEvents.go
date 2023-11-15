@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
@@ -113,12 +112,6 @@ func (o GetDataSourceEventsResultOutput) ToGetDataSourceEventsResultOutput() Get
 
 func (o GetDataSourceEventsResultOutput) ToGetDataSourceEventsResultOutputWithContext(ctx context.Context) GetDataSourceEventsResultOutput {
 	return o
-}
-
-func (o GetDataSourceEventsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDataSourceEventsResult] {
-	return pulumix.Output[GetDataSourceEventsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of data_source_event_collection.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
@@ -102,12 +101,6 @@ func (o GetModelsResultOutput) ToGetModelsResultOutput() GetModelsResultOutput {
 
 func (o GetModelsResultOutput) ToGetModelsResultOutputWithContext(ctx context.Context) GetModelsResultOutput {
 	return o
-}
-
-func (o GetModelsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetModelsResult] {
-	return pulumix.Output[GetModelsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the model's compartment.

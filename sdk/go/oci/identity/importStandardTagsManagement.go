@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Import Standard Tags Management resource in Oracle Cloud Infrastructure Identity service.
@@ -172,12 +171,6 @@ func (i *ImportStandardTagsManagement) ToImportStandardTagsManagementOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(ImportStandardTagsManagementOutput)
 }
 
-func (i *ImportStandardTagsManagement) ToOutput(ctx context.Context) pulumix.Output[*ImportStandardTagsManagement] {
-	return pulumix.Output[*ImportStandardTagsManagement]{
-		OutputState: i.ToImportStandardTagsManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ImportStandardTagsManagementArrayInput is an input type that accepts ImportStandardTagsManagementArray and ImportStandardTagsManagementArrayOutput values.
 // You can construct a concrete instance of `ImportStandardTagsManagementArrayInput` via:
 //
@@ -201,12 +194,6 @@ func (i ImportStandardTagsManagementArray) ToImportStandardTagsManagementArrayOu
 
 func (i ImportStandardTagsManagementArray) ToImportStandardTagsManagementArrayOutputWithContext(ctx context.Context) ImportStandardTagsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ImportStandardTagsManagementArrayOutput)
-}
-
-func (i ImportStandardTagsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ImportStandardTagsManagement] {
-	return pulumix.Output[[]*ImportStandardTagsManagement]{
-		OutputState: i.ToImportStandardTagsManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ImportStandardTagsManagementMapInput is an input type that accepts ImportStandardTagsManagementMap and ImportStandardTagsManagementMapOutput values.
@@ -234,12 +221,6 @@ func (i ImportStandardTagsManagementMap) ToImportStandardTagsManagementMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(ImportStandardTagsManagementMapOutput)
 }
 
-func (i ImportStandardTagsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImportStandardTagsManagement] {
-	return pulumix.Output[map[string]*ImportStandardTagsManagement]{
-		OutputState: i.ToImportStandardTagsManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ImportStandardTagsManagementOutput struct{ *pulumi.OutputState }
 
 func (ImportStandardTagsManagementOutput) ElementType() reflect.Type {
@@ -252,12 +233,6 @@ func (o ImportStandardTagsManagementOutput) ToImportStandardTagsManagementOutput
 
 func (o ImportStandardTagsManagementOutput) ToImportStandardTagsManagementOutputWithContext(ctx context.Context) ImportStandardTagsManagementOutput {
 	return o
-}
-
-func (o ImportStandardTagsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ImportStandardTagsManagement] {
-	return pulumix.Output[*ImportStandardTagsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
@@ -291,12 +266,6 @@ func (o ImportStandardTagsManagementArrayOutput) ToImportStandardTagsManagementA
 	return o
 }
 
-func (o ImportStandardTagsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ImportStandardTagsManagement] {
-	return pulumix.Output[[]*ImportStandardTagsManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ImportStandardTagsManagementArrayOutput) Index(i pulumi.IntInput) ImportStandardTagsManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ImportStandardTagsManagement {
 		return vs[0].([]*ImportStandardTagsManagement)[vs[1].(int)]
@@ -315,12 +284,6 @@ func (o ImportStandardTagsManagementMapOutput) ToImportStandardTagsManagementMap
 
 func (o ImportStandardTagsManagementMapOutput) ToImportStandardTagsManagementMapOutputWithContext(ctx context.Context) ImportStandardTagsManagementMapOutput {
 	return o
-}
-
-func (o ImportStandardTagsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ImportStandardTagsManagement] {
-	return pulumix.Output[map[string]*ImportStandardTagsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ImportStandardTagsManagementMapOutput) MapIndex(k pulumi.StringInput) ImportStandardTagsManagementOutput {

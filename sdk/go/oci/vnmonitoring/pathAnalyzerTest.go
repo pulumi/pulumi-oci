@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
@@ -292,12 +291,6 @@ func (i *PathAnalyzerTest) ToPathAnalyzerTestOutputWithContext(ctx context.Conte
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestOutput)
 }
 
-func (i *PathAnalyzerTest) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTest] {
-	return pulumix.Output[*PathAnalyzerTest]{
-		OutputState: i.ToPathAnalyzerTestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PathAnalyzerTestArrayInput is an input type that accepts PathAnalyzerTestArray and PathAnalyzerTestArrayOutput values.
 // You can construct a concrete instance of `PathAnalyzerTestArrayInput` via:
 //
@@ -321,12 +314,6 @@ func (i PathAnalyzerTestArray) ToPathAnalyzerTestArrayOutput() PathAnalyzerTestA
 
 func (i PathAnalyzerTestArray) ToPathAnalyzerTestArrayOutputWithContext(ctx context.Context) PathAnalyzerTestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestArrayOutput)
-}
-
-func (i PathAnalyzerTestArray) ToOutput(ctx context.Context) pulumix.Output[[]*PathAnalyzerTest] {
-	return pulumix.Output[[]*PathAnalyzerTest]{
-		OutputState: i.ToPathAnalyzerTestArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PathAnalyzerTestMapInput is an input type that accepts PathAnalyzerTestMap and PathAnalyzerTestMapOutput values.
@@ -354,12 +341,6 @@ func (i PathAnalyzerTestMap) ToPathAnalyzerTestMapOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(PathAnalyzerTestMapOutput)
 }
 
-func (i PathAnalyzerTestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*PathAnalyzerTest] {
-	return pulumix.Output[map[string]*PathAnalyzerTest]{
-		OutputState: i.ToPathAnalyzerTestMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PathAnalyzerTestOutput struct{ *pulumi.OutputState }
 
 func (PathAnalyzerTestOutput) ElementType() reflect.Type {
@@ -372,12 +353,6 @@ func (o PathAnalyzerTestOutput) ToPathAnalyzerTestOutput() PathAnalyzerTestOutpu
 
 func (o PathAnalyzerTestOutput) ToPathAnalyzerTestOutputWithContext(ctx context.Context) PathAnalyzerTestOutput {
 	return o
-}
-
-func (o PathAnalyzerTestOutput) ToOutput(ctx context.Context) pulumix.Output[*PathAnalyzerTest] {
-	return pulumix.Output[*PathAnalyzerTest]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
@@ -459,12 +434,6 @@ func (o PathAnalyzerTestArrayOutput) ToPathAnalyzerTestArrayOutputWithContext(ct
 	return o
 }
 
-func (o PathAnalyzerTestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*PathAnalyzerTest] {
-	return pulumix.Output[[]*PathAnalyzerTest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PathAnalyzerTestArrayOutput) Index(i pulumi.IntInput) PathAnalyzerTestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *PathAnalyzerTest {
 		return vs[0].([]*PathAnalyzerTest)[vs[1].(int)]
@@ -483,12 +452,6 @@ func (o PathAnalyzerTestMapOutput) ToPathAnalyzerTestMapOutput() PathAnalyzerTes
 
 func (o PathAnalyzerTestMapOutput) ToPathAnalyzerTestMapOutputWithContext(ctx context.Context) PathAnalyzerTestMapOutput {
 	return o
-}
-
-func (o PathAnalyzerTestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*PathAnalyzerTest] {
-	return pulumix.Output[map[string]*PathAnalyzerTest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PathAnalyzerTestMapOutput) MapIndex(k pulumi.StringInput) PathAnalyzerTestOutput {

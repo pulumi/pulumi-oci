@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the External Db System Stack Monitorings Management resource in Oracle Cloud Infrastructure Database Management service.
@@ -181,12 +180,6 @@ func (i *ExternalDbSystemStackMonitoringsManagement) ToExternalDbSystemStackMoni
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemStackMonitoringsManagementOutput)
 }
 
-func (i *ExternalDbSystemStackMonitoringsManagement) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemStackMonitoringsManagement] {
-	return pulumix.Output[*ExternalDbSystemStackMonitoringsManagement]{
-		OutputState: i.ToExternalDbSystemStackMonitoringsManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExternalDbSystemStackMonitoringsManagementArrayInput is an input type that accepts ExternalDbSystemStackMonitoringsManagementArray and ExternalDbSystemStackMonitoringsManagementArrayOutput values.
 // You can construct a concrete instance of `ExternalDbSystemStackMonitoringsManagementArrayInput` via:
 //
@@ -210,12 +203,6 @@ func (i ExternalDbSystemStackMonitoringsManagementArray) ToExternalDbSystemStack
 
 func (i ExternalDbSystemStackMonitoringsManagementArray) ToExternalDbSystemStackMonitoringsManagementArrayOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringsManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemStackMonitoringsManagementArrayOutput)
-}
-
-func (i ExternalDbSystemStackMonitoringsManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemStackMonitoringsManagement] {
-	return pulumix.Output[[]*ExternalDbSystemStackMonitoringsManagement]{
-		OutputState: i.ToExternalDbSystemStackMonitoringsManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExternalDbSystemStackMonitoringsManagementMapInput is an input type that accepts ExternalDbSystemStackMonitoringsManagementMap and ExternalDbSystemStackMonitoringsManagementMapOutput values.
@@ -243,12 +230,6 @@ func (i ExternalDbSystemStackMonitoringsManagementMap) ToExternalDbSystemStackMo
 	return pulumi.ToOutputWithContext(ctx, i).(ExternalDbSystemStackMonitoringsManagementMapOutput)
 }
 
-func (i ExternalDbSystemStackMonitoringsManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemStackMonitoringsManagement] {
-	return pulumix.Output[map[string]*ExternalDbSystemStackMonitoringsManagement]{
-		OutputState: i.ToExternalDbSystemStackMonitoringsManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExternalDbSystemStackMonitoringsManagementOutput struct{ *pulumi.OutputState }
 
 func (ExternalDbSystemStackMonitoringsManagementOutput) ElementType() reflect.Type {
@@ -261,12 +242,6 @@ func (o ExternalDbSystemStackMonitoringsManagementOutput) ToExternalDbSystemStac
 
 func (o ExternalDbSystemStackMonitoringsManagementOutput) ToExternalDbSystemStackMonitoringsManagementOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringsManagementOutput {
 	return o
-}
-
-func (o ExternalDbSystemStackMonitoringsManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*ExternalDbSystemStackMonitoringsManagement] {
-	return pulumix.Output[*ExternalDbSystemStackMonitoringsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -306,12 +281,6 @@ func (o ExternalDbSystemStackMonitoringsManagementArrayOutput) ToExternalDbSyste
 	return o
 }
 
-func (o ExternalDbSystemStackMonitoringsManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ExternalDbSystemStackMonitoringsManagement] {
-	return pulumix.Output[[]*ExternalDbSystemStackMonitoringsManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExternalDbSystemStackMonitoringsManagementArrayOutput) Index(i pulumi.IntInput) ExternalDbSystemStackMonitoringsManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ExternalDbSystemStackMonitoringsManagement {
 		return vs[0].([]*ExternalDbSystemStackMonitoringsManagement)[vs[1].(int)]
@@ -330,12 +299,6 @@ func (o ExternalDbSystemStackMonitoringsManagementMapOutput) ToExternalDbSystemS
 
 func (o ExternalDbSystemStackMonitoringsManagementMapOutput) ToExternalDbSystemStackMonitoringsManagementMapOutputWithContext(ctx context.Context) ExternalDbSystemStackMonitoringsManagementMapOutput {
 	return o
-}
-
-func (o ExternalDbSystemStackMonitoringsManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ExternalDbSystemStackMonitoringsManagement] {
-	return pulumix.Output[map[string]*ExternalDbSystemStackMonitoringsManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExternalDbSystemStackMonitoringsManagementMapOutput) MapIndex(k pulumi.StringInput) ExternalDbSystemStackMonitoringsManagementOutput {

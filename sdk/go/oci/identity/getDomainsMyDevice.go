@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific My Device resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -206,12 +205,6 @@ func (o GetDomainsMyDeviceResultOutput) ToGetDomainsMyDeviceResultOutput() GetDo
 
 func (o GetDomainsMyDeviceResultOutput) ToGetDomainsMyDeviceResultOutputWithContext(ctx context.Context) GetDomainsMyDeviceResultOutput {
 	return o
-}
-
-func (o GetDomainsMyDeviceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsMyDeviceResult] {
-	return pulumix.Output[GetDomainsMyDeviceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Device additional attributes

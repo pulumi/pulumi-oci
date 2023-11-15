@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
@@ -132,12 +131,6 @@ func (o GetDeployStagesResultOutput) ToGetDeployStagesResultOutput() GetDeploySt
 
 func (o GetDeployStagesResultOutput) ToGetDeployStagesResultOutputWithContext(ctx context.Context) GetDeployStagesResultOutput {
 	return o
-}
-
-func (o GetDeployStagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeployStagesResult] {
-	return pulumix.Output[GetDeployStagesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment where the ContainerInstance will be created.

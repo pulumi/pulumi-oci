@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opensearch Cluster resource in Oracle Cloud Infrastructure Opensearch service.
@@ -203,12 +202,6 @@ func (o GetOpensearchClusterResultOutput) ToGetOpensearchClusterResultOutput() G
 
 func (o GetOpensearchClusterResultOutput) ToGetOpensearchClusterResultOutputWithContext(ctx context.Context) GetOpensearchClusterResultOutput {
 	return o
-}
-
-func (o GetOpensearchClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetOpensearchClusterResult] {
-	return pulumix.Output[GetOpensearchClusterResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The availability domains to distribute the cluser nodes across.

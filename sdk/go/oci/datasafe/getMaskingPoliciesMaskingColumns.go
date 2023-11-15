@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
@@ -206,12 +205,6 @@ func (o GetMaskingPoliciesMaskingColumnsResultOutput) ToGetMaskingPoliciesMaskin
 
 func (o GetMaskingPoliciesMaskingColumnsResultOutput) ToGetMaskingPoliciesMaskingColumnsResultOutputWithContext(ctx context.Context) GetMaskingPoliciesMaskingColumnsResultOutput {
 	return o
-}
-
-func (o GetMaskingPoliciesMaskingColumnsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMaskingPoliciesMaskingColumnsResult] {
-	return pulumix.Output[GetMaskingPoliciesMaskingColumnsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the substitution column.

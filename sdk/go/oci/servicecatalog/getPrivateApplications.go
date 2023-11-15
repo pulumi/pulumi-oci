@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
@@ -119,12 +118,6 @@ func (o GetPrivateApplicationsResultOutput) ToGetPrivateApplicationsResultOutput
 
 func (o GetPrivateApplicationsResultOutput) ToGetPrivateApplicationsResultOutputWithContext(ctx context.Context) GetPrivateApplicationsResultOutput {
 	return o
-}
-
-func (o GetPrivateApplicationsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPrivateApplicationsResult] {
-	return pulumix.Output[GetPrivateApplicationsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.

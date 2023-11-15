@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Software Source Vendors in Oracle Cloud Infrastructure Os Management Hub service.
@@ -113,12 +112,6 @@ func (o GetSoftwareSourceVendorsResultOutput) ToGetSoftwareSourceVendorsResultOu
 
 func (o GetSoftwareSourceVendorsResultOutput) ToGetSoftwareSourceVendorsResultOutputWithContext(ctx context.Context) GetSoftwareSourceVendorsResultOutput {
 	return o
-}
-
-func (o GetSoftwareSourceVendorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceVendorsResult] {
-	return pulumix.Output[GetSoftwareSourceVendorsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSoftwareSourceVendorsResultOutput) CompartmentId() pulumi.StringOutput {

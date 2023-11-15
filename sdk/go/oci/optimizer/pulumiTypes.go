@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -45,12 +44,6 @@ func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationOutput() Pro
 
 func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationOutputWithContext(ctx context.Context) ProfileLevelsConfigurationOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationOutput)
-}
-
-func (i ProfileLevelsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfiguration] {
-	return pulumix.Output[ProfileLevelsConfiguration]{
-		OutputState: i.ToProfileLevelsConfigurationOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ProfileLevelsConfigurationArgs) ToProfileLevelsConfigurationPtrOutput() ProfileLevelsConfigurationPtrOutput {
@@ -94,12 +87,6 @@ func (i *profileLevelsConfigurationPtrType) ToProfileLevelsConfigurationPtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationPtrOutput)
 }
 
-func (i *profileLevelsConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProfileLevelsConfiguration] {
-	return pulumix.Output[*ProfileLevelsConfiguration]{
-		OutputState: i.ToProfileLevelsConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileLevelsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (ProfileLevelsConfigurationOutput) ElementType() reflect.Type {
@@ -124,12 +111,6 @@ func (o ProfileLevelsConfigurationOutput) ToProfileLevelsConfigurationPtrOutputW
 	}).(ProfileLevelsConfigurationPtrOutput)
 }
 
-func (o ProfileLevelsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfiguration] {
-	return pulumix.Output[ProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of tags specified in the current profile override.
 func (o ProfileLevelsConfigurationOutput) Items() ProfileLevelsConfigurationItemArrayOutput {
 	return o.ApplyT(func(v ProfileLevelsConfiguration) []ProfileLevelsConfigurationItem { return v.Items }).(ProfileLevelsConfigurationItemArrayOutput)
@@ -147,12 +128,6 @@ func (o ProfileLevelsConfigurationPtrOutput) ToProfileLevelsConfigurationPtrOutp
 
 func (o ProfileLevelsConfigurationPtrOutput) ToProfileLevelsConfigurationPtrOutputWithContext(ctx context.Context) ProfileLevelsConfigurationPtrOutput {
 	return o
-}
-
-func (o ProfileLevelsConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProfileLevelsConfiguration] {
-	return pulumix.Output[*ProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileLevelsConfigurationPtrOutput) Elem() ProfileLevelsConfigurationOutput {
@@ -212,12 +187,6 @@ func (i ProfileLevelsConfigurationItemArgs) ToProfileLevelsConfigurationItemOutp
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationItemOutput)
 }
 
-func (i ProfileLevelsConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfigurationItem] {
-	return pulumix.Output[ProfileLevelsConfigurationItem]{
-		OutputState: i.ToProfileLevelsConfigurationItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileLevelsConfigurationItemArrayInput is an input type that accepts ProfileLevelsConfigurationItemArray and ProfileLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `ProfileLevelsConfigurationItemArrayInput` via:
 //
@@ -243,12 +212,6 @@ func (i ProfileLevelsConfigurationItemArray) ToProfileLevelsConfigurationItemArr
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileLevelsConfigurationItemArrayOutput)
 }
 
-func (i ProfileLevelsConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]ProfileLevelsConfigurationItem]{
-		OutputState: i.ToProfileLevelsConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileLevelsConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (ProfileLevelsConfigurationItemOutput) ElementType() reflect.Type {
@@ -261,12 +224,6 @@ func (o ProfileLevelsConfigurationItemOutput) ToProfileLevelsConfigurationItemOu
 
 func (o ProfileLevelsConfigurationItemOutput) ToProfileLevelsConfigurationItemOutputWithContext(ctx context.Context) ProfileLevelsConfigurationItemOutput {
 	return o
-}
-
-func (o ProfileLevelsConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileLevelsConfigurationItem] {
-	return pulumix.Output[ProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The pre-defined profile level.
@@ -291,12 +248,6 @@ func (o ProfileLevelsConfigurationItemArrayOutput) ToProfileLevelsConfigurationI
 
 func (o ProfileLevelsConfigurationItemArrayOutput) ToProfileLevelsConfigurationItemArrayOutputWithContext(ctx context.Context) ProfileLevelsConfigurationItemArrayOutput {
 	return o
-}
-
-func (o ProfileLevelsConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]ProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) ProfileLevelsConfigurationItemOutput {
@@ -336,12 +287,6 @@ func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsOutput() Profi
 
 func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsOutputWithContext(ctx context.Context) ProfileTargetCompartmentsOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetCompartmentsOutput)
-}
-
-func (i ProfileTargetCompartmentsArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetCompartments] {
-	return pulumix.Output[ProfileTargetCompartments]{
-		OutputState: i.ToProfileTargetCompartmentsOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i ProfileTargetCompartmentsArgs) ToProfileTargetCompartmentsPtrOutput() ProfileTargetCompartmentsPtrOutput {
@@ -385,12 +330,6 @@ func (i *profileTargetCompartmentsPtrType) ToProfileTargetCompartmentsPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetCompartmentsPtrOutput)
 }
 
-func (i *profileTargetCompartmentsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetCompartments] {
-	return pulumix.Output[*ProfileTargetCompartments]{
-		OutputState: i.ToProfileTargetCompartmentsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileTargetCompartmentsOutput struct{ *pulumi.OutputState }
 
 func (ProfileTargetCompartmentsOutput) ElementType() reflect.Type {
@@ -415,12 +354,6 @@ func (o ProfileTargetCompartmentsOutput) ToProfileTargetCompartmentsPtrOutputWit
 	}).(ProfileTargetCompartmentsPtrOutput)
 }
 
-func (o ProfileTargetCompartmentsOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetCompartments] {
-	return pulumix.Output[ProfileTargetCompartments]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of tags specified in the current profile override.
 func (o ProfileTargetCompartmentsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ProfileTargetCompartments) []string { return v.Items }).(pulumi.StringArrayOutput)
@@ -438,12 +371,6 @@ func (o ProfileTargetCompartmentsPtrOutput) ToProfileTargetCompartmentsPtrOutput
 
 func (o ProfileTargetCompartmentsPtrOutput) ToProfileTargetCompartmentsPtrOutputWithContext(ctx context.Context) ProfileTargetCompartmentsPtrOutput {
 	return o
-}
-
-func (o ProfileTargetCompartmentsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetCompartments] {
-	return pulumix.Output[*ProfileTargetCompartments]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileTargetCompartmentsPtrOutput) Elem() ProfileTargetCompartmentsOutput {
@@ -499,12 +426,6 @@ func (i ProfileTargetTagsArgs) ToProfileTargetTagsOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsOutput)
 }
 
-func (i ProfileTargetTagsArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTags] {
-	return pulumix.Output[ProfileTargetTags]{
-		OutputState: i.ToProfileTargetTagsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ProfileTargetTagsArgs) ToProfileTargetTagsPtrOutput() ProfileTargetTagsPtrOutput {
 	return i.ToProfileTargetTagsPtrOutputWithContext(context.Background())
 }
@@ -546,12 +467,6 @@ func (i *profileTargetTagsPtrType) ToProfileTargetTagsPtrOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsPtrOutput)
 }
 
-func (i *profileTargetTagsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetTags] {
-	return pulumix.Output[*ProfileTargetTags]{
-		OutputState: i.ToProfileTargetTagsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileTargetTagsOutput struct{ *pulumi.OutputState }
 
 func (ProfileTargetTagsOutput) ElementType() reflect.Type {
@@ -576,12 +491,6 @@ func (o ProfileTargetTagsOutput) ToProfileTargetTagsPtrOutputWithContext(ctx con
 	}).(ProfileTargetTagsPtrOutput)
 }
 
-func (o ProfileTargetTagsOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTags] {
-	return pulumix.Output[ProfileTargetTags]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of tags specified in the current profile override.
 func (o ProfileTargetTagsOutput) Items() ProfileTargetTagsItemArrayOutput {
 	return o.ApplyT(func(v ProfileTargetTags) []ProfileTargetTagsItem { return v.Items }).(ProfileTargetTagsItemArrayOutput)
@@ -599,12 +508,6 @@ func (o ProfileTargetTagsPtrOutput) ToProfileTargetTagsPtrOutput() ProfileTarget
 
 func (o ProfileTargetTagsPtrOutput) ToProfileTargetTagsPtrOutputWithContext(ctx context.Context) ProfileTargetTagsPtrOutput {
 	return o
-}
-
-func (o ProfileTargetTagsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ProfileTargetTags] {
-	return pulumix.Output[*ProfileTargetTags]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileTargetTagsPtrOutput) Elem() ProfileTargetTagsOutput {
@@ -686,12 +589,6 @@ func (i ProfileTargetTagsItemArgs) ToProfileTargetTagsItemOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsItemOutput)
 }
 
-func (i ProfileTargetTagsItemArgs) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTagsItem] {
-	return pulumix.Output[ProfileTargetTagsItem]{
-		OutputState: i.ToProfileTargetTagsItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProfileTargetTagsItemArrayInput is an input type that accepts ProfileTargetTagsItemArray and ProfileTargetTagsItemArrayOutput values.
 // You can construct a concrete instance of `ProfileTargetTagsItemArrayInput` via:
 //
@@ -717,12 +614,6 @@ func (i ProfileTargetTagsItemArray) ToProfileTargetTagsItemArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ProfileTargetTagsItemArrayOutput)
 }
 
-func (i ProfileTargetTagsItemArray) ToOutput(ctx context.Context) pulumix.Output[[]ProfileTargetTagsItem] {
-	return pulumix.Output[[]ProfileTargetTagsItem]{
-		OutputState: i.ToProfileTargetTagsItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProfileTargetTagsItemOutput struct{ *pulumi.OutputState }
 
 func (ProfileTargetTagsItemOutput) ElementType() reflect.Type {
@@ -735,12 +626,6 @@ func (o ProfileTargetTagsItemOutput) ToProfileTargetTagsItemOutput() ProfileTarg
 
 func (o ProfileTargetTagsItemOutput) ToProfileTargetTagsItemOutputWithContext(ctx context.Context) ProfileTargetTagsItemOutput {
 	return o
-}
-
-func (o ProfileTargetTagsItemOutput) ToOutput(ctx context.Context) pulumix.Output[ProfileTargetTagsItem] {
-	return pulumix.Output[ProfileTargetTagsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The name you use to refer to the tag, also known as the tag key.
@@ -782,12 +667,6 @@ func (o ProfileTargetTagsItemArrayOutput) ToProfileTargetTagsItemArrayOutput() P
 
 func (o ProfileTargetTagsItemArrayOutput) ToProfileTargetTagsItemArrayOutputWithContext(ctx context.Context) ProfileTargetTagsItemArrayOutput {
 	return o
-}
-
-func (o ProfileTargetTagsItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProfileTargetTagsItem] {
-	return pulumix.Output[[]ProfileTargetTagsItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProfileTargetTagsItemArrayOutput) Index(i pulumi.IntInput) ProfileTargetTagsItemOutput {
@@ -833,12 +712,6 @@ func (i RecommendationResourceCountArgs) ToRecommendationResourceCountOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationResourceCountOutput)
 }
 
-func (i RecommendationResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[RecommendationResourceCount] {
-	return pulumix.Output[RecommendationResourceCount]{
-		OutputState: i.ToRecommendationResourceCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationResourceCountArrayInput is an input type that accepts RecommendationResourceCountArray and RecommendationResourceCountArrayOutput values.
 // You can construct a concrete instance of `RecommendationResourceCountArrayInput` via:
 //
@@ -864,12 +737,6 @@ func (i RecommendationResourceCountArray) ToRecommendationResourceCountArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationResourceCountArrayOutput)
 }
 
-func (i RecommendationResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationResourceCount] {
-	return pulumix.Output[[]RecommendationResourceCount]{
-		OutputState: i.ToRecommendationResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationResourceCountOutput struct{ *pulumi.OutputState }
 
 func (RecommendationResourceCountOutput) ElementType() reflect.Type {
@@ -882,12 +749,6 @@ func (o RecommendationResourceCountOutput) ToRecommendationResourceCountOutput()
 
 func (o RecommendationResourceCountOutput) ToRecommendationResourceCountOutputWithContext(ctx context.Context) RecommendationResourceCountOutput {
 	return o
-}
-
-func (o RecommendationResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[RecommendationResourceCount] {
-	return pulumix.Output[RecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -912,12 +773,6 @@ func (o RecommendationResourceCountArrayOutput) ToRecommendationResourceCountArr
 
 func (o RecommendationResourceCountArrayOutput) ToRecommendationResourceCountArrayOutputWithContext(ctx context.Context) RecommendationResourceCountArrayOutput {
 	return o
-}
-
-func (o RecommendationResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationResourceCount] {
-	return pulumix.Output[[]RecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationResourceCountArrayOutput) Index(i pulumi.IntInput) RecommendationResourceCountOutput {
@@ -959,12 +814,6 @@ func (i RecommendationSupportedLevelArgs) ToRecommendationSupportedLevelOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelOutput)
 }
 
-func (i RecommendationSupportedLevelArgs) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevel] {
-	return pulumix.Output[RecommendationSupportedLevel]{
-		OutputState: i.ToRecommendationSupportedLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationSupportedLevelArrayInput is an input type that accepts RecommendationSupportedLevelArray and RecommendationSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelArrayInput` via:
 //
@@ -990,12 +839,6 @@ func (i RecommendationSupportedLevelArray) ToRecommendationSupportedLevelArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelArrayOutput)
 }
 
-func (i RecommendationSupportedLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevel] {
-	return pulumix.Output[[]RecommendationSupportedLevel]{
-		OutputState: i.ToRecommendationSupportedLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationSupportedLevelOutput struct{ *pulumi.OutputState }
 
 func (RecommendationSupportedLevelOutput) ElementType() reflect.Type {
@@ -1008,12 +851,6 @@ func (o RecommendationSupportedLevelOutput) ToRecommendationSupportedLevelOutput
 
 func (o RecommendationSupportedLevelOutput) ToRecommendationSupportedLevelOutputWithContext(ctx context.Context) RecommendationSupportedLevelOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelOutput) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevel] {
-	return pulumix.Output[RecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -1033,12 +870,6 @@ func (o RecommendationSupportedLevelArrayOutput) ToRecommendationSupportedLevelA
 
 func (o RecommendationSupportedLevelArrayOutput) ToRecommendationSupportedLevelArrayOutputWithContext(ctx context.Context) RecommendationSupportedLevelArrayOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevel] {
-	return pulumix.Output[[]RecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationSupportedLevelArrayOutput) Index(i pulumi.IntInput) RecommendationSupportedLevelOutput {
@@ -1080,12 +911,6 @@ func (i RecommendationSupportedLevelItemArgs) ToRecommendationSupportedLevelItem
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelItemOutput)
 }
 
-func (i RecommendationSupportedLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevelItem] {
-	return pulumix.Output[RecommendationSupportedLevelItem]{
-		OutputState: i.ToRecommendationSupportedLevelItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RecommendationSupportedLevelItemArrayInput is an input type that accepts RecommendationSupportedLevelItemArray and RecommendationSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `RecommendationSupportedLevelItemArrayInput` via:
 //
@@ -1111,12 +936,6 @@ func (i RecommendationSupportedLevelItemArray) ToRecommendationSupportedLevelIte
 	return pulumi.ToOutputWithContext(ctx, i).(RecommendationSupportedLevelItemArrayOutput)
 }
 
-func (i RecommendationSupportedLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevelItem] {
-	return pulumix.Output[[]RecommendationSupportedLevelItem]{
-		OutputState: i.ToRecommendationSupportedLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RecommendationSupportedLevelItemOutput struct{ *pulumi.OutputState }
 
 func (RecommendationSupportedLevelItemOutput) ElementType() reflect.Type {
@@ -1129,12 +948,6 @@ func (o RecommendationSupportedLevelItemOutput) ToRecommendationSupportedLevelIt
 
 func (o RecommendationSupportedLevelItemOutput) ToRecommendationSupportedLevelItemOutputWithContext(ctx context.Context) RecommendationSupportedLevelItemOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[RecommendationSupportedLevelItem] {
-	return pulumix.Output[RecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the profile level.
@@ -1154,12 +967,6 @@ func (o RecommendationSupportedLevelItemArrayOutput) ToRecommendationSupportedLe
 
 func (o RecommendationSupportedLevelItemArrayOutput) ToRecommendationSupportedLevelItemArrayOutputWithContext(ctx context.Context) RecommendationSupportedLevelItemArrayOutput {
 	return o
-}
-
-func (o RecommendationSupportedLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RecommendationSupportedLevelItem] {
-	return pulumix.Output[[]RecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RecommendationSupportedLevelItemArrayOutput) Index(i pulumi.IntInput) RecommendationSupportedLevelItemOutput {
@@ -1209,12 +1016,6 @@ func (i ResourceActionActionArgs) ToResourceActionActionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionActionOutput)
 }
 
-func (i ResourceActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[ResourceActionAction] {
-	return pulumix.Output[ResourceActionAction]{
-		OutputState: i.ToResourceActionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ResourceActionActionArrayInput is an input type that accepts ResourceActionActionArray and ResourceActionActionArrayOutput values.
 // You can construct a concrete instance of `ResourceActionActionArrayInput` via:
 //
@@ -1240,12 +1041,6 @@ func (i ResourceActionActionArray) ToResourceActionActionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ResourceActionActionArrayOutput)
 }
 
-func (i ResourceActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]ResourceActionAction] {
-	return pulumix.Output[[]ResourceActionAction]{
-		OutputState: i.ToResourceActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ResourceActionActionOutput struct{ *pulumi.OutputState }
 
 func (ResourceActionActionOutput) ElementType() reflect.Type {
@@ -1258,12 +1053,6 @@ func (o ResourceActionActionOutput) ToResourceActionActionOutput() ResourceActio
 
 func (o ResourceActionActionOutput) ToResourceActionActionOutputWithContext(ctx context.Context) ResourceActionActionOutput {
 	return o
-}
-
-func (o ResourceActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[ResourceActionAction] {
-	return pulumix.Output[ResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Text describing the recommended action.
@@ -1293,12 +1082,6 @@ func (o ResourceActionActionArrayOutput) ToResourceActionActionArrayOutput() Res
 
 func (o ResourceActionActionArrayOutput) ToResourceActionActionArrayOutputWithContext(ctx context.Context) ResourceActionActionArrayOutput {
 	return o
-}
-
-func (o ResourceActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ResourceActionAction] {
-	return pulumix.Output[[]ResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ResourceActionActionArrayOutput) Index(i pulumi.IntInput) ResourceActionActionOutput {
@@ -1338,12 +1121,6 @@ func (i GetCategoriesCategoryCollectionArgs) ToGetCategoriesCategoryCollectionOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionOutput)
 }
 
-func (i GetCategoriesCategoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollection] {
-	return pulumix.Output[GetCategoriesCategoryCollection]{
-		OutputState: i.ToGetCategoriesCategoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesCategoryCollectionArrayInput is an input type that accepts GetCategoriesCategoryCollectionArray and GetCategoriesCategoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionArrayInput` via:
 //
@@ -1369,12 +1146,6 @@ func (i GetCategoriesCategoryCollectionArray) ToGetCategoriesCategoryCollectionA
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollection] {
-	return pulumix.Output[[]GetCategoriesCategoryCollection]{
-		OutputState: i.ToGetCategoriesCategoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionOutput) ElementType() reflect.Type {
@@ -1387,12 +1158,6 @@ func (o GetCategoriesCategoryCollectionOutput) ToGetCategoriesCategoryCollection
 
 func (o GetCategoriesCategoryCollectionOutput) ToGetCategoriesCategoryCollectionOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollection] {
-	return pulumix.Output[GetCategoriesCategoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesCategoryCollectionOutput) Items() GetCategoriesCategoryCollectionItemArrayOutput {
@@ -1411,12 +1176,6 @@ func (o GetCategoriesCategoryCollectionArrayOutput) ToGetCategoriesCategoryColle
 
 func (o GetCategoriesCategoryCollectionArrayOutput) ToGetCategoriesCategoryCollectionArrayOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionArrayOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollection] {
-	return pulumix.Output[[]GetCategoriesCategoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesCategoryCollectionArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionOutput {
@@ -1502,12 +1261,6 @@ func (i GetCategoriesCategoryCollectionItemArgs) ToGetCategoriesCategoryCollecti
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItem]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesCategoryCollectionItemArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemArray and GetCategoriesCategoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemArrayInput` via:
 //
@@ -1533,12 +1286,6 @@ func (i GetCategoriesCategoryCollectionItemArray) ToGetCategoriesCategoryCollect
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItem]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionItemOutput) ElementType() reflect.Type {
@@ -1551,12 +1298,6 @@ func (o GetCategoriesCategoryCollectionItemOutput) ToGetCategoriesCategoryCollec
 
 func (o GetCategoriesCategoryCollectionItemOutput) ToGetCategoriesCategoryCollectionItemOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -1637,12 +1378,6 @@ func (o GetCategoriesCategoryCollectionItemArrayOutput) ToGetCategoriesCategoryC
 	return o
 }
 
-func (o GetCategoriesCategoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItem] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCategoriesCategoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCategoriesCategoryCollectionItem {
 		return vs[0].([]GetCategoriesCategoryCollectionItem)[vs[1].(int)]
@@ -1686,12 +1421,6 @@ func (i GetCategoriesCategoryCollectionItemRecommendationCountArgs) ToGetCategor
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemRecommendationCountOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemRecommendationCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemRecommendationCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesCategoryCollectionItemRecommendationCountArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemRecommendationCountArray and GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemRecommendationCountArrayInput` via:
 //
@@ -1717,12 +1446,6 @@ func (i GetCategoriesCategoryCollectionItemRecommendationCountArray) ToGetCatego
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemRecommendationCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemRecommendationCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionItemRecommendationCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionItemRecommendationCountOutput) ElementType() reflect.Type {
@@ -1735,12 +1458,6 @@ func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) ToGetCateg
 
 func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) ToGetCategoriesCategoryCollectionItemRecommendationCountOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemRecommendationCountOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionItemRecommendationCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -1765,12 +1482,6 @@ func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) ToGet
 
 func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) ToGetCategoriesCategoryCollectionItemRecommendationCountArrayOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemRecommendationCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesCategoryCollectionItemRecommendationCountArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionItemRecommendationCountOutput {
@@ -1816,12 +1527,6 @@ func (i GetCategoriesCategoryCollectionItemResourceCountArgs) ToGetCategoriesCat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemResourceCountOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemResourceCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesCategoryCollectionItemResourceCountArrayInput is an input type that accepts GetCategoriesCategoryCollectionItemResourceCountArray and GetCategoriesCategoryCollectionItemResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesCategoryCollectionItemResourceCountArrayInput` via:
 //
@@ -1847,12 +1552,6 @@ func (i GetCategoriesCategoryCollectionItemResourceCountArray) ToGetCategoriesCa
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesCategoryCollectionItemResourceCountArrayOutput)
 }
 
-func (i GetCategoriesCategoryCollectionItemResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: i.ToGetCategoriesCategoryCollectionItemResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesCategoryCollectionItemResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesCategoryCollectionItemResourceCountOutput) ElementType() reflect.Type {
@@ -1865,12 +1564,6 @@ func (o GetCategoriesCategoryCollectionItemResourceCountOutput) ToGetCategoriesC
 
 func (o GetCategoriesCategoryCollectionItemResourceCountOutput) ToGetCategoriesCategoryCollectionItemResourceCountOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemResourceCountOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionItemResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -1895,12 +1588,6 @@ func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) ToGetCatego
 
 func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) ToGetCategoriesCategoryCollectionItemResourceCountArrayOutputWithContext(ctx context.Context) GetCategoriesCategoryCollectionItemResourceCountArrayOutput {
 	return o
-}
-
-func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount] {
-	return pulumix.Output[[]GetCategoriesCategoryCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesCategoryCollectionItemResourceCountArrayOutput) Index(i pulumi.IntInput) GetCategoriesCategoryCollectionItemResourceCountOutput {
@@ -1946,12 +1633,6 @@ func (i GetCategoriesFilterArgs) ToGetCategoriesFilterOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesFilterOutput)
 }
 
-func (i GetCategoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesFilter] {
-	return pulumix.Output[GetCategoriesFilter]{
-		OutputState: i.ToGetCategoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoriesFilterArrayInput is an input type that accepts GetCategoriesFilterArray and GetCategoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCategoriesFilterArrayInput` via:
 //
@@ -1977,12 +1658,6 @@ func (i GetCategoriesFilterArray) ToGetCategoriesFilterArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoriesFilterArrayOutput)
 }
 
-func (i GetCategoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesFilter] {
-	return pulumix.Output[[]GetCategoriesFilter]{
-		OutputState: i.ToGetCategoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCategoriesFilterOutput) ElementType() reflect.Type {
@@ -1995,12 +1670,6 @@ func (o GetCategoriesFilterOutput) ToGetCategoriesFilterOutput() GetCategoriesFi
 
 func (o GetCategoriesFilterOutput) ToGetCategoriesFilterOutputWithContext(ctx context.Context) GetCategoriesFilterOutput {
 	return o
-}
-
-func (o GetCategoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoriesFilter] {
-	return pulumix.Output[GetCategoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -2028,12 +1697,6 @@ func (o GetCategoriesFilterArrayOutput) ToGetCategoriesFilterArrayOutput() GetCa
 
 func (o GetCategoriesFilterArrayOutput) ToGetCategoriesFilterArrayOutputWithContext(ctx context.Context) GetCategoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetCategoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoriesFilter] {
-	return pulumix.Output[[]GetCategoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoriesFilterArrayOutput) Index(i pulumi.IntInput) GetCategoriesFilterOutput {
@@ -2079,12 +1742,6 @@ func (i GetCategoryRecommendationCountArgs) ToGetCategoryRecommendationCountOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryRecommendationCountOutput)
 }
 
-func (i GetCategoryRecommendationCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoryRecommendationCount] {
-	return pulumix.Output[GetCategoryRecommendationCount]{
-		OutputState: i.ToGetCategoryRecommendationCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoryRecommendationCountArrayInput is an input type that accepts GetCategoryRecommendationCountArray and GetCategoryRecommendationCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoryRecommendationCountArrayInput` via:
 //
@@ -2110,12 +1767,6 @@ func (i GetCategoryRecommendationCountArray) ToGetCategoryRecommendationCountArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryRecommendationCountArrayOutput)
 }
 
-func (i GetCategoryRecommendationCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryRecommendationCount] {
-	return pulumix.Output[[]GetCategoryRecommendationCount]{
-		OutputState: i.ToGetCategoryRecommendationCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoryRecommendationCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoryRecommendationCountOutput) ElementType() reflect.Type {
@@ -2128,12 +1779,6 @@ func (o GetCategoryRecommendationCountOutput) ToGetCategoryRecommendationCountOu
 
 func (o GetCategoryRecommendationCountOutput) ToGetCategoryRecommendationCountOutputWithContext(ctx context.Context) GetCategoryRecommendationCountOutput {
 	return o
-}
-
-func (o GetCategoryRecommendationCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoryRecommendationCount] {
-	return pulumix.Output[GetCategoryRecommendationCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -2158,12 +1803,6 @@ func (o GetCategoryRecommendationCountArrayOutput) ToGetCategoryRecommendationCo
 
 func (o GetCategoryRecommendationCountArrayOutput) ToGetCategoryRecommendationCountArrayOutputWithContext(ctx context.Context) GetCategoryRecommendationCountArrayOutput {
 	return o
-}
-
-func (o GetCategoryRecommendationCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryRecommendationCount] {
-	return pulumix.Output[[]GetCategoryRecommendationCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoryRecommendationCountArrayOutput) Index(i pulumi.IntInput) GetCategoryRecommendationCountOutput {
@@ -2209,12 +1848,6 @@ func (i GetCategoryResourceCountArgs) ToGetCategoryResourceCountOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryResourceCountOutput)
 }
 
-func (i GetCategoryResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetCategoryResourceCount] {
-	return pulumix.Output[GetCategoryResourceCount]{
-		OutputState: i.ToGetCategoryResourceCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCategoryResourceCountArrayInput is an input type that accepts GetCategoryResourceCountArray and GetCategoryResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetCategoryResourceCountArrayInput` via:
 //
@@ -2240,12 +1873,6 @@ func (i GetCategoryResourceCountArray) ToGetCategoryResourceCountArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCategoryResourceCountArrayOutput)
 }
 
-func (i GetCategoryResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryResourceCount] {
-	return pulumix.Output[[]GetCategoryResourceCount]{
-		OutputState: i.ToGetCategoryResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCategoryResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetCategoryResourceCountOutput) ElementType() reflect.Type {
@@ -2258,12 +1885,6 @@ func (o GetCategoryResourceCountOutput) ToGetCategoryResourceCountOutput() GetCa
 
 func (o GetCategoryResourceCountOutput) ToGetCategoryResourceCountOutputWithContext(ctx context.Context) GetCategoryResourceCountOutput {
 	return o
-}
-
-func (o GetCategoryResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetCategoryResourceCount] {
-	return pulumix.Output[GetCategoryResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -2288,12 +1909,6 @@ func (o GetCategoryResourceCountArrayOutput) ToGetCategoryResourceCountArrayOutp
 
 func (o GetCategoryResourceCountArrayOutput) ToGetCategoryResourceCountArrayOutputWithContext(ctx context.Context) GetCategoryResourceCountArrayOutput {
 	return o
-}
-
-func (o GetCategoryResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCategoryResourceCount] {
-	return pulumix.Output[[]GetCategoryResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCategoryResourceCountArrayOutput) Index(i pulumi.IntInput) GetCategoryResourceCountOutput {
@@ -2333,12 +1948,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionArgs) ToGetEnrollmentStat
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionArray and GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionArrayInput` via:
 //
@@ -2364,12 +1973,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionArray) ToGetEnrollmentSta
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnrollmentStatusesEnrollmentStatusCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ElementType() reflect.Type {
@@ -2382,12 +1985,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ToGetEnrollmentSt
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ToGetEnrollmentStatusesEnrollmentStatusCollectionOutputWithContext(ctx context.Context) GetEnrollmentStatusesEnrollmentStatusCollectionOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionOutput) Items() GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput {
@@ -2408,12 +2005,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) ToGetEnrollm
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) ToGetEnrollmentStatusesEnrollmentStatusCollectionArrayOutputWithContext(ctx context.Context) GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionArrayOutput) Index(i pulumi.IntInput) GetEnrollmentStatusesEnrollmentStatusCollectionOutput {
@@ -2481,12 +2072,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ToGetEnrollment
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayInput is an input type that accepts GetEnrollmentStatusesEnrollmentStatusCollectionItemArray and GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayInput` via:
 //
@@ -2512,12 +2097,6 @@ func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArray) ToGetEnrollmen
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput)
 }
 
-func (i GetEnrollmentStatusesEnrollmentStatusCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: i.ToGetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ElementType() reflect.Type {
@@ -2530,12 +2109,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ToGetEnrollme
 
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ToGetEnrollmentStatusesEnrollmentStatusCollectionItemOutputWithContext(ctx context.Context) GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.
@@ -2591,12 +2164,6 @@ func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) ToGetEnr
 	return o
 }
 
-func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem] {
-	return pulumix.Output[[]GetEnrollmentStatusesEnrollmentStatusCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetEnrollmentStatusesEnrollmentStatusCollectionItemArrayOutput) Index(i pulumi.IntInput) GetEnrollmentStatusesEnrollmentStatusCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEnrollmentStatusesEnrollmentStatusCollectionItem {
 		return vs[0].([]GetEnrollmentStatusesEnrollmentStatusCollectionItem)[vs[1].(int)]
@@ -2638,12 +2205,6 @@ func (i GetEnrollmentStatusesFilterArgs) ToGetEnrollmentStatusesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesFilterOutput)
 }
 
-func (i GetEnrollmentStatusesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesFilter] {
-	return pulumix.Output[GetEnrollmentStatusesFilter]{
-		OutputState: i.ToGetEnrollmentStatusesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEnrollmentStatusesFilterArrayInput is an input type that accepts GetEnrollmentStatusesFilterArray and GetEnrollmentStatusesFilterArrayOutput values.
 // You can construct a concrete instance of `GetEnrollmentStatusesFilterArrayInput` via:
 //
@@ -2669,12 +2230,6 @@ func (i GetEnrollmentStatusesFilterArray) ToGetEnrollmentStatusesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetEnrollmentStatusesFilterArrayOutput)
 }
 
-func (i GetEnrollmentStatusesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesFilter] {
-	return pulumix.Output[[]GetEnrollmentStatusesFilter]{
-		OutputState: i.ToGetEnrollmentStatusesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEnrollmentStatusesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEnrollmentStatusesFilterOutput) ElementType() reflect.Type {
@@ -2687,12 +2242,6 @@ func (o GetEnrollmentStatusesFilterOutput) ToGetEnrollmentStatusesFilterOutput()
 
 func (o GetEnrollmentStatusesFilterOutput) ToGetEnrollmentStatusesFilterOutputWithContext(ctx context.Context) GetEnrollmentStatusesFilterOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEnrollmentStatusesFilter] {
-	return pulumix.Output[GetEnrollmentStatusesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesFilterOutput) Name() pulumi.StringOutput {
@@ -2719,12 +2268,6 @@ func (o GetEnrollmentStatusesFilterArrayOutput) ToGetEnrollmentStatusesFilterArr
 
 func (o GetEnrollmentStatusesFilterArrayOutput) ToGetEnrollmentStatusesFilterArrayOutputWithContext(ctx context.Context) GetEnrollmentStatusesFilterArrayOutput {
 	return o
-}
-
-func (o GetEnrollmentStatusesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEnrollmentStatusesFilter] {
-	return pulumix.Output[[]GetEnrollmentStatusesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEnrollmentStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetEnrollmentStatusesFilterOutput {
@@ -2770,12 +2313,6 @@ func (i GetHistoriesFilterArgs) ToGetHistoriesFilterOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesFilterOutput)
 }
 
-func (i GetHistoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesFilter] {
-	return pulumix.Output[GetHistoriesFilter]{
-		OutputState: i.ToGetHistoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHistoriesFilterArrayInput is an input type that accepts GetHistoriesFilterArray and GetHistoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesFilterArrayInput` via:
 //
@@ -2801,12 +2338,6 @@ func (i GetHistoriesFilterArray) ToGetHistoriesFilterArrayOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesFilterArrayOutput)
 }
 
-func (i GetHistoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesFilter] {
-	return pulumix.Output[[]GetHistoriesFilter]{
-		OutputState: i.ToGetHistoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesFilterOutput) ElementType() reflect.Type {
@@ -2819,12 +2350,6 @@ func (o GetHistoriesFilterOutput) ToGetHistoriesFilterOutput() GetHistoriesFilte
 
 func (o GetHistoriesFilterOutput) ToGetHistoriesFilterOutputWithContext(ctx context.Context) GetHistoriesFilterOutput {
 	return o
-}
-
-func (o GetHistoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesFilter] {
-	return pulumix.Output[GetHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -2852,12 +2377,6 @@ func (o GetHistoriesFilterArrayOutput) ToGetHistoriesFilterArrayOutput() GetHist
 
 func (o GetHistoriesFilterArrayOutput) ToGetHistoriesFilterArrayOutputWithContext(ctx context.Context) GetHistoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetHistoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesFilter] {
-	return pulumix.Output[[]GetHistoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHistoriesFilterArrayOutput) Index(i pulumi.IntInput) GetHistoriesFilterOutput {
@@ -2899,12 +2418,6 @@ func (i GetHistoriesHistoryCollectionArgs) ToGetHistoriesHistoryCollectionOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionOutput)
 }
 
-func (i GetHistoriesHistoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollection] {
-	return pulumix.Output[GetHistoriesHistoryCollection]{
-		OutputState: i.ToGetHistoriesHistoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHistoriesHistoryCollectionArrayInput is an input type that accepts GetHistoriesHistoryCollectionArray and GetHistoriesHistoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionArrayInput` via:
 //
@@ -2930,12 +2443,6 @@ func (i GetHistoriesHistoryCollectionArray) ToGetHistoriesHistoryCollectionArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionArrayOutput)
 }
 
-func (i GetHistoriesHistoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollection] {
-	return pulumix.Output[[]GetHistoriesHistoryCollection]{
-		OutputState: i.ToGetHistoriesHistoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesHistoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesHistoryCollectionOutput) ElementType() reflect.Type {
@@ -2948,12 +2455,6 @@ func (o GetHistoriesHistoryCollectionOutput) ToGetHistoriesHistoryCollectionOutp
 
 func (o GetHistoriesHistoryCollectionOutput) ToGetHistoriesHistoryCollectionOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionOutput {
 	return o
-}
-
-func (o GetHistoriesHistoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollection] {
-	return pulumix.Output[GetHistoriesHistoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A collection of history summaries.
@@ -2973,12 +2474,6 @@ func (o GetHistoriesHistoryCollectionArrayOutput) ToGetHistoriesHistoryCollectio
 
 func (o GetHistoriesHistoryCollectionArrayOutput) ToGetHistoriesHistoryCollectionArrayOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionArrayOutput {
 	return o
-}
-
-func (o GetHistoriesHistoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollection] {
-	return pulumix.Output[[]GetHistoriesHistoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHistoriesHistoryCollectionArrayOutput) Index(i pulumi.IntInput) GetHistoriesHistoryCollectionOutput {
@@ -3084,12 +2579,6 @@ func (i GetHistoriesHistoryCollectionItemArgs) ToGetHistoriesHistoryCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemOutput)
 }
 
-func (i GetHistoriesHistoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItem]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHistoriesHistoryCollectionItemArrayInput is an input type that accepts GetHistoriesHistoryCollectionItemArray and GetHistoriesHistoryCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionItemArrayInput` via:
 //
@@ -3115,12 +2604,6 @@ func (i GetHistoriesHistoryCollectionItemArray) ToGetHistoriesHistoryCollectionI
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemArrayOutput)
 }
 
-func (i GetHistoriesHistoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItem]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesHistoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesHistoryCollectionItemOutput) ElementType() reflect.Type {
@@ -3133,12 +2616,6 @@ func (o GetHistoriesHistoryCollectionItemOutput) ToGetHistoriesHistoryCollection
 
 func (o GetHistoriesHistoryCollectionItemOutput) ToGetHistoriesHistoryCollectionItemOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionItemOutput {
 	return o
-}
-
-func (o GetHistoriesHistoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Details about the recommended action.
@@ -3240,12 +2717,6 @@ func (o GetHistoriesHistoryCollectionItemArrayOutput) ToGetHistoriesHistoryColle
 	return o
 }
 
-func (o GetHistoriesHistoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItem] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHistoriesHistoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetHistoriesHistoryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHistoriesHistoryCollectionItem {
 		return vs[0].([]GetHistoriesHistoryCollectionItem)[vs[1].(int)]
@@ -3293,12 +2764,6 @@ func (i GetHistoriesHistoryCollectionItemActionArgs) ToGetHistoriesHistoryCollec
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemActionOutput)
 }
 
-func (i GetHistoriesHistoryCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItemAction]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHistoriesHistoryCollectionItemActionArrayInput is an input type that accepts GetHistoriesHistoryCollectionItemActionArray and GetHistoriesHistoryCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetHistoriesHistoryCollectionItemActionArrayInput` via:
 //
@@ -3324,12 +2789,6 @@ func (i GetHistoriesHistoryCollectionItemActionArray) ToGetHistoriesHistoryColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetHistoriesHistoryCollectionItemActionArrayOutput)
 }
 
-func (i GetHistoriesHistoryCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItemAction]{
-		OutputState: i.ToGetHistoriesHistoryCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHistoriesHistoryCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetHistoriesHistoryCollectionItemActionOutput) ElementType() reflect.Type {
@@ -3342,12 +2801,6 @@ func (o GetHistoriesHistoryCollectionItemActionOutput) ToGetHistoriesHistoryColl
 
 func (o GetHistoriesHistoryCollectionItemActionOutput) ToGetHistoriesHistoryCollectionItemActionOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionItemActionOutput {
 	return o
-}
-
-func (o GetHistoriesHistoryCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[GetHistoriesHistoryCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Text describing the recommended action.
@@ -3377,12 +2830,6 @@ func (o GetHistoriesHistoryCollectionItemActionArrayOutput) ToGetHistoriesHistor
 
 func (o GetHistoriesHistoryCollectionItemActionArrayOutput) ToGetHistoriesHistoryCollectionItemActionArrayOutputWithContext(ctx context.Context) GetHistoriesHistoryCollectionItemActionArrayOutput {
 	return o
-}
-
-func (o GetHistoriesHistoryCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHistoriesHistoryCollectionItemAction] {
-	return pulumix.Output[[]GetHistoriesHistoryCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHistoriesHistoryCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetHistoriesHistoryCollectionItemActionOutput {
@@ -3448,12 +2895,6 @@ func (i GetProfileLevelItemArgs) ToGetProfileLevelItemOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemOutput)
 }
 
-func (i GetProfileLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItem] {
-	return pulumix.Output[GetProfileLevelItem]{
-		OutputState: i.ToGetProfileLevelItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelItemArrayInput is an input type that accepts GetProfileLevelItemArray and GetProfileLevelItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelItemArrayInput` via:
 //
@@ -3479,12 +2920,6 @@ func (i GetProfileLevelItemArray) ToGetProfileLevelItemArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemArrayOutput)
 }
 
-func (i GetProfileLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItem] {
-	return pulumix.Output[[]GetProfileLevelItem]{
-		OutputState: i.ToGetProfileLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelItemOutput) ElementType() reflect.Type {
@@ -3497,12 +2932,6 @@ func (o GetProfileLevelItemOutput) ToGetProfileLevelItemOutput() GetProfileLevel
 
 func (o GetProfileLevelItemOutput) ToGetProfileLevelItemOutputWithContext(ctx context.Context) GetProfileLevelItemOutput {
 	return o
-}
-
-func (o GetProfileLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItem] {
-	return pulumix.Output[GetProfileLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default aggregation interval (in days) for profiles using this profile level.
@@ -3552,12 +2981,6 @@ func (o GetProfileLevelItemArrayOutput) ToGetProfileLevelItemArrayOutput() GetPr
 
 func (o GetProfileLevelItemArrayOutput) ToGetProfileLevelItemArrayOutputWithContext(ctx context.Context) GetProfileLevelItemArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItem] {
-	return pulumix.Output[[]GetProfileLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevelItemOutput {
@@ -3611,12 +3034,6 @@ func (i GetProfileLevelItemMetricArgs) ToGetProfileLevelItemMetricOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemMetricOutput)
 }
 
-func (i GetProfileLevelItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItemMetric] {
-	return pulumix.Output[GetProfileLevelItemMetric]{
-		OutputState: i.ToGetProfileLevelItemMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelItemMetricArrayInput is an input type that accepts GetProfileLevelItemMetricArray and GetProfileLevelItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelItemMetricArrayInput` via:
 //
@@ -3642,12 +3059,6 @@ func (i GetProfileLevelItemMetricArray) ToGetProfileLevelItemMetricArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelItemMetricArrayOutput)
 }
 
-func (i GetProfileLevelItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItemMetric] {
-	return pulumix.Output[[]GetProfileLevelItemMetric]{
-		OutputState: i.ToGetProfileLevelItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelItemMetricOutput) ElementType() reflect.Type {
@@ -3660,12 +3071,6 @@ func (o GetProfileLevelItemMetricOutput) ToGetProfileLevelItemMetricOutput() Get
 
 func (o GetProfileLevelItemMetricOutput) ToGetProfileLevelItemMetricOutputWithContext(ctx context.Context) GetProfileLevelItemMetricOutput {
 	return o
-}
-
-func (o GetProfileLevelItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelItemMetric] {
-	return pulumix.Output[GetProfileLevelItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -3700,12 +3105,6 @@ func (o GetProfileLevelItemMetricArrayOutput) ToGetProfileLevelItemMetricArrayOu
 
 func (o GetProfileLevelItemMetricArrayOutput) ToGetProfileLevelItemMetricArrayOutputWithContext(ctx context.Context) GetProfileLevelItemMetricArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelItemMetric] {
-	return pulumix.Output[[]GetProfileLevelItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelItemMetricArrayOutput) Index(i pulumi.IntInput) GetProfileLevelItemMetricOutput {
@@ -3747,12 +3146,6 @@ func (i GetProfileLevelsConfigurationArgs) ToGetProfileLevelsConfigurationOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationOutput)
 }
 
-func (i GetProfileLevelsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfiguration] {
-	return pulumix.Output[GetProfileLevelsConfiguration]{
-		OutputState: i.ToGetProfileLevelsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsConfigurationArrayInput is an input type that accepts GetProfileLevelsConfigurationArray and GetProfileLevelsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationArrayInput` via:
 //
@@ -3778,12 +3171,6 @@ func (i GetProfileLevelsConfigurationArray) ToGetProfileLevelsConfigurationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationArrayOutput)
 }
 
-func (i GetProfileLevelsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfiguration] {
-	return pulumix.Output[[]GetProfileLevelsConfiguration]{
-		OutputState: i.ToGetProfileLevelsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsConfigurationOutput) ElementType() reflect.Type {
@@ -3796,12 +3183,6 @@ func (o GetProfileLevelsConfigurationOutput) ToGetProfileLevelsConfigurationOutp
 
 func (o GetProfileLevelsConfigurationOutput) ToGetProfileLevelsConfigurationOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationOutput {
 	return o
-}
-
-func (o GetProfileLevelsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfiguration] {
-	return pulumix.Output[GetProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -3821,12 +3202,6 @@ func (o GetProfileLevelsConfigurationArrayOutput) ToGetProfileLevelsConfiguratio
 
 func (o GetProfileLevelsConfigurationArrayOutput) ToGetProfileLevelsConfigurationArrayOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfiguration] {
-	return pulumix.Output[[]GetProfileLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsConfigurationArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsConfigurationOutput {
@@ -3872,12 +3247,6 @@ func (i GetProfileLevelsConfigurationItemArgs) ToGetProfileLevelsConfigurationIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationItemOutput)
 }
 
-func (i GetProfileLevelsConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[GetProfileLevelsConfigurationItem]{
-		OutputState: i.ToGetProfileLevelsConfigurationItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsConfigurationItemArrayInput is an input type that accepts GetProfileLevelsConfigurationItemArray and GetProfileLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsConfigurationItemArrayInput` via:
 //
@@ -3903,12 +3272,6 @@ func (i GetProfileLevelsConfigurationItemArray) ToGetProfileLevelsConfigurationI
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsConfigurationItemArrayOutput)
 }
 
-func (i GetProfileLevelsConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfileLevelsConfigurationItem]{
-		OutputState: i.ToGetProfileLevelsConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsConfigurationItemOutput) ElementType() reflect.Type {
@@ -3921,12 +3284,6 @@ func (o GetProfileLevelsConfigurationItemOutput) ToGetProfileLevelsConfiguration
 
 func (o GetProfileLevelsConfigurationItemOutput) ToGetProfileLevelsConfigurationItemOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationItemOutput {
 	return o
-}
-
-func (o GetProfileLevelsConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[GetProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The pre-defined profile level.
@@ -3951,12 +3308,6 @@ func (o GetProfileLevelsConfigurationItemArrayOutput) ToGetProfileLevelsConfigur
 
 func (o GetProfileLevelsConfigurationItemArrayOutput) ToGetProfileLevelsConfigurationItemArrayOutputWithContext(ctx context.Context) GetProfileLevelsConfigurationItemArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfileLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsConfigurationItemOutput {
@@ -4002,12 +3353,6 @@ func (i GetProfileLevelsFilterArgs) ToGetProfileLevelsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsFilterOutput)
 }
 
-func (i GetProfileLevelsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsFilter] {
-	return pulumix.Output[GetProfileLevelsFilter]{
-		OutputState: i.ToGetProfileLevelsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsFilterArrayInput is an input type that accepts GetProfileLevelsFilterArray and GetProfileLevelsFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsFilterArrayInput` via:
 //
@@ -4033,12 +3378,6 @@ func (i GetProfileLevelsFilterArray) ToGetProfileLevelsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsFilterArrayOutput)
 }
 
-func (i GetProfileLevelsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsFilter] {
-	return pulumix.Output[[]GetProfileLevelsFilter]{
-		OutputState: i.ToGetProfileLevelsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsFilterOutput) ElementType() reflect.Type {
@@ -4051,12 +3390,6 @@ func (o GetProfileLevelsFilterOutput) ToGetProfileLevelsFilterOutput() GetProfil
 
 func (o GetProfileLevelsFilterOutput) ToGetProfileLevelsFilterOutputWithContext(ctx context.Context) GetProfileLevelsFilterOutput {
 	return o
-}
-
-func (o GetProfileLevelsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsFilter] {
-	return pulumix.Output[GetProfileLevelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -4084,12 +3417,6 @@ func (o GetProfileLevelsFilterArrayOutput) ToGetProfileLevelsFilterArrayOutput()
 
 func (o GetProfileLevelsFilterArrayOutput) ToGetProfileLevelsFilterArrayOutputWithContext(ctx context.Context) GetProfileLevelsFilterArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsFilter] {
-	return pulumix.Output[[]GetProfileLevelsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsFilterArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsFilterOutput {
@@ -4131,12 +3458,6 @@ func (i GetProfileLevelsProfileLevelCollectionArgs) ToGetProfileLevelsProfileLev
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollection]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsProfileLevelCollectionArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionArray and GetProfileLevelsProfileLevelCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionArrayInput` via:
 //
@@ -4162,12 +3483,6 @@ func (i GetProfileLevelsProfileLevelCollectionArray) ToGetProfileLevelsProfileLe
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionArrayOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollection]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsProfileLevelCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsProfileLevelCollectionOutput) ElementType() reflect.Type {
@@ -4180,12 +3495,6 @@ func (o GetProfileLevelsProfileLevelCollectionOutput) ToGetProfileLevelsProfileL
 
 func (o GetProfileLevelsProfileLevelCollectionOutput) ToGetProfileLevelsProfileLevelCollectionOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A collection of profile levels.
@@ -4207,12 +3516,6 @@ func (o GetProfileLevelsProfileLevelCollectionArrayOutput) ToGetProfileLevelsPro
 
 func (o GetProfileLevelsProfileLevelCollectionArrayOutput) ToGetProfileLevelsProfileLevelCollectionArrayOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollection] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsProfileLevelCollectionArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsProfileLevelCollectionOutput {
@@ -4278,12 +3581,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemArgs) ToGetProfileLevelsProfil
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsProfileLevelCollectionItemArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemArray and GetProfileLevelsProfileLevelCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionItemArrayInput` via:
 //
@@ -4309,12 +3606,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemArray) ToGetProfileLevelsProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemArrayOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsProfileLevelCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsProfileLevelCollectionItemOutput) ElementType() reflect.Type {
@@ -4327,12 +3618,6 @@ func (o GetProfileLevelsProfileLevelCollectionItemOutput) ToGetProfileLevelsProf
 
 func (o GetProfileLevelsProfileLevelCollectionItemOutput) ToGetProfileLevelsProfileLevelCollectionItemOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionItemOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The default aggregation interval (in days) for profiles using this profile level.
@@ -4386,12 +3671,6 @@ func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) ToGetProfileLevel
 	return o
 }
 
-func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfileLevelsProfileLevelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsProfileLevelCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfileLevelsProfileLevelCollectionItem {
 		return vs[0].([]GetProfileLevelsProfileLevelCollectionItem)[vs[1].(int)]
@@ -4443,12 +3722,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemMetricArgs) ToGetProfileLevels
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemMetricOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionItemMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileLevelsProfileLevelCollectionItemMetricArrayInput is an input type that accepts GetProfileLevelsProfileLevelCollectionItemMetricArray and GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput values.
 // You can construct a concrete instance of `GetProfileLevelsProfileLevelCollectionItemMetricArrayInput` via:
 //
@@ -4474,12 +3747,6 @@ func (i GetProfileLevelsProfileLevelCollectionItemMetricArray) ToGetProfileLevel
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput)
 }
 
-func (i GetProfileLevelsProfileLevelCollectionItemMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: i.ToGetProfileLevelsProfileLevelCollectionItemMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileLevelsProfileLevelCollectionItemMetricOutput struct{ *pulumi.OutputState }
 
 func (GetProfileLevelsProfileLevelCollectionItemMetricOutput) ElementType() reflect.Type {
@@ -4492,12 +3759,6 @@ func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) ToGetProfileLeve
 
 func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) ToGetProfileLevelsProfileLevelCollectionItemMetricOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionItemMetricOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionItemMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -4532,12 +3793,6 @@ func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) ToGetProfil
 
 func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) ToGetProfileLevelsProfileLevelCollectionItemMetricArrayOutputWithContext(ctx context.Context) GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput {
 	return o
-}
-
-func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric] {
-	return pulumix.Output[[]GetProfileLevelsProfileLevelCollectionItemMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileLevelsProfileLevelCollectionItemMetricArrayOutput) Index(i pulumi.IntInput) GetProfileLevelsProfileLevelCollectionItemMetricOutput {
@@ -4579,12 +3834,6 @@ func (i GetProfileTargetCompartmentArgs) ToGetProfileTargetCompartmentOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetCompartmentOutput)
 }
 
-func (i GetProfileTargetCompartmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetCompartment] {
-	return pulumix.Output[GetProfileTargetCompartment]{
-		OutputState: i.ToGetProfileTargetCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileTargetCompartmentArrayInput is an input type that accepts GetProfileTargetCompartmentArray and GetProfileTargetCompartmentArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetCompartmentArrayInput` via:
 //
@@ -4610,12 +3859,6 @@ func (i GetProfileTargetCompartmentArray) ToGetProfileTargetCompartmentArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetCompartmentArrayOutput)
 }
 
-func (i GetProfileTargetCompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetCompartment] {
-	return pulumix.Output[[]GetProfileTargetCompartment]{
-		OutputState: i.ToGetProfileTargetCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileTargetCompartmentOutput struct{ *pulumi.OutputState }
 
 func (GetProfileTargetCompartmentOutput) ElementType() reflect.Type {
@@ -4628,12 +3871,6 @@ func (o GetProfileTargetCompartmentOutput) ToGetProfileTargetCompartmentOutput()
 
 func (o GetProfileTargetCompartmentOutput) ToGetProfileTargetCompartmentOutputWithContext(ctx context.Context) GetProfileTargetCompartmentOutput {
 	return o
-}
-
-func (o GetProfileTargetCompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetCompartment] {
-	return pulumix.Output[GetProfileTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -4653,12 +3890,6 @@ func (o GetProfileTargetCompartmentArrayOutput) ToGetProfileTargetCompartmentArr
 
 func (o GetProfileTargetCompartmentArrayOutput) ToGetProfileTargetCompartmentArrayOutputWithContext(ctx context.Context) GetProfileTargetCompartmentArrayOutput {
 	return o
-}
-
-func (o GetProfileTargetCompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetCompartment] {
-	return pulumix.Output[[]GetProfileTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileTargetCompartmentArrayOutput) Index(i pulumi.IntInput) GetProfileTargetCompartmentOutput {
@@ -4700,12 +3931,6 @@ func (i GetProfileTargetTagArgs) ToGetProfileTargetTagOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagOutput)
 }
 
-func (i GetProfileTargetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTag] {
-	return pulumix.Output[GetProfileTargetTag]{
-		OutputState: i.ToGetProfileTargetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileTargetTagArrayInput is an input type that accepts GetProfileTargetTagArray and GetProfileTargetTagArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagArrayInput` via:
 //
@@ -4731,12 +3956,6 @@ func (i GetProfileTargetTagArray) ToGetProfileTargetTagArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagArrayOutput)
 }
 
-func (i GetProfileTargetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTag] {
-	return pulumix.Output[[]GetProfileTargetTag]{
-		OutputState: i.ToGetProfileTargetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileTargetTagOutput struct{ *pulumi.OutputState }
 
 func (GetProfileTargetTagOutput) ElementType() reflect.Type {
@@ -4749,12 +3968,6 @@ func (o GetProfileTargetTagOutput) ToGetProfileTargetTagOutput() GetProfileTarge
 
 func (o GetProfileTargetTagOutput) ToGetProfileTargetTagOutputWithContext(ctx context.Context) GetProfileTargetTagOutput {
 	return o
-}
-
-func (o GetProfileTargetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTag] {
-	return pulumix.Output[GetProfileTargetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -4774,12 +3987,6 @@ func (o GetProfileTargetTagArrayOutput) ToGetProfileTargetTagArrayOutput() GetPr
 
 func (o GetProfileTargetTagArrayOutput) ToGetProfileTargetTagArrayOutputWithContext(ctx context.Context) GetProfileTargetTagArrayOutput {
 	return o
-}
-
-func (o GetProfileTargetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTag] {
-	return pulumix.Output[[]GetProfileTargetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileTargetTagArrayOutput) Index(i pulumi.IntInput) GetProfileTargetTagOutput {
@@ -4833,12 +4040,6 @@ func (i GetProfileTargetTagItemArgs) ToGetProfileTargetTagItemOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagItemOutput)
 }
 
-func (i GetProfileTargetTagItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTagItem] {
-	return pulumix.Output[GetProfileTargetTagItem]{
-		OutputState: i.ToGetProfileTargetTagItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfileTargetTagItemArrayInput is an input type that accepts GetProfileTargetTagItemArray and GetProfileTargetTagItemArrayOutput values.
 // You can construct a concrete instance of `GetProfileTargetTagItemArrayInput` via:
 //
@@ -4864,12 +4065,6 @@ func (i GetProfileTargetTagItemArray) ToGetProfileTargetTagItemArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfileTargetTagItemArrayOutput)
 }
 
-func (i GetProfileTargetTagItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTagItem] {
-	return pulumix.Output[[]GetProfileTargetTagItem]{
-		OutputState: i.ToGetProfileTargetTagItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfileTargetTagItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfileTargetTagItemOutput) ElementType() reflect.Type {
@@ -4882,12 +4077,6 @@ func (o GetProfileTargetTagItemOutput) ToGetProfileTargetTagItemOutput() GetProf
 
 func (o GetProfileTargetTagItemOutput) ToGetProfileTargetTagItemOutputWithContext(ctx context.Context) GetProfileTargetTagItemOutput {
 	return o
-}
-
-func (o GetProfileTargetTagItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfileTargetTagItem] {
-	return pulumix.Output[GetProfileTargetTagItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name you use to refer to the tag, also known as the tag key.
@@ -4922,12 +4111,6 @@ func (o GetProfileTargetTagItemArrayOutput) ToGetProfileTargetTagItemArrayOutput
 
 func (o GetProfileTargetTagItemArrayOutput) ToGetProfileTargetTagItemArrayOutputWithContext(ctx context.Context) GetProfileTargetTagItemArrayOutput {
 	return o
-}
-
-func (o GetProfileTargetTagItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfileTargetTagItem] {
-	return pulumix.Output[[]GetProfileTargetTagItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfileTargetTagItemArrayOutput) Index(i pulumi.IntInput) GetProfileTargetTagItemOutput {
@@ -4973,12 +4156,6 @@ func (i GetProfilesFilterArgs) ToGetProfilesFilterOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesFilterOutput)
 }
 
-func (i GetProfilesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesFilter] {
-	return pulumix.Output[GetProfilesFilter]{
-		OutputState: i.ToGetProfilesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesFilterArrayInput is an input type that accepts GetProfilesFilterArray and GetProfilesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProfilesFilterArrayInput` via:
 //
@@ -5004,12 +4181,6 @@ func (i GetProfilesFilterArray) ToGetProfilesFilterArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesFilterArrayOutput)
 }
 
-func (i GetProfilesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesFilter] {
-	return pulumix.Output[[]GetProfilesFilter]{
-		OutputState: i.ToGetProfilesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesFilterOutput) ElementType() reflect.Type {
@@ -5022,12 +4193,6 @@ func (o GetProfilesFilterOutput) ToGetProfilesFilterOutput() GetProfilesFilterOu
 
 func (o GetProfilesFilterOutput) ToGetProfilesFilterOutputWithContext(ctx context.Context) GetProfilesFilterOutput {
 	return o
-}
-
-func (o GetProfilesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesFilter] {
-	return pulumix.Output[GetProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -5055,12 +4220,6 @@ func (o GetProfilesFilterArrayOutput) ToGetProfilesFilterArrayOutput() GetProfil
 
 func (o GetProfilesFilterArrayOutput) ToGetProfilesFilterArrayOutputWithContext(ctx context.Context) GetProfilesFilterArrayOutput {
 	return o
-}
-
-func (o GetProfilesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesFilter] {
-	return pulumix.Output[[]GetProfilesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesFilterArrayOutput) Index(i pulumi.IntInput) GetProfilesFilterOutput {
@@ -5102,12 +4261,6 @@ func (i GetProfilesProfileCollectionArgs) ToGetProfilesProfileCollectionOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionOutput)
 }
 
-func (i GetProfilesProfileCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollection] {
-	return pulumix.Output[GetProfilesProfileCollection]{
-		OutputState: i.ToGetProfilesProfileCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionArrayInput is an input type that accepts GetProfilesProfileCollectionArray and GetProfilesProfileCollectionArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionArrayInput` via:
 //
@@ -5133,12 +4286,6 @@ func (i GetProfilesProfileCollectionArray) ToGetProfilesProfileCollectionArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollection] {
-	return pulumix.Output[[]GetProfilesProfileCollection]{
-		OutputState: i.ToGetProfilesProfileCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionOutput) ElementType() reflect.Type {
@@ -5151,12 +4298,6 @@ func (o GetProfilesProfileCollectionOutput) ToGetProfilesProfileCollectionOutput
 
 func (o GetProfilesProfileCollectionOutput) ToGetProfilesProfileCollectionOutputWithContext(ctx context.Context) GetProfilesProfileCollectionOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollection] {
-	return pulumix.Output[GetProfilesProfileCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5176,12 +4317,6 @@ func (o GetProfilesProfileCollectionArrayOutput) ToGetProfilesProfileCollectionA
 
 func (o GetProfilesProfileCollectionArrayOutput) ToGetProfilesProfileCollectionArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollection] {
-	return pulumix.Output[[]GetProfilesProfileCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionOutput {
@@ -5271,12 +4406,6 @@ func (i GetProfilesProfileCollectionItemArgs) ToGetProfilesProfileCollectionItem
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemOutput)
 }
 
-func (i GetProfilesProfileCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemArray and GetProfilesProfileCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemArrayInput` via:
 //
@@ -5302,12 +4431,6 @@ func (i GetProfilesProfileCollectionItemArray) ToGetProfilesProfileCollectionIte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemOutput) ElementType() reflect.Type {
@@ -5320,12 +4443,6 @@ func (o GetProfilesProfileCollectionItemOutput) ToGetProfilesProfileCollectionIt
 
 func (o GetProfilesProfileCollectionItemOutput) ToGetProfilesProfileCollectionItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The time period over which to collect data for the recommendations, measured in number of days.
@@ -5413,12 +4530,6 @@ func (o GetProfilesProfileCollectionItemArrayOutput) ToGetProfilesProfileCollect
 	return o
 }
 
-func (o GetProfilesProfileCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProfilesProfileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProfilesProfileCollectionItem {
 		return vs[0].([]GetProfilesProfileCollectionItem)[vs[1].(int)]
@@ -5458,12 +4569,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationArgs) ToGetProfilesPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemLevelsConfigurationArrayInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationArray and GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationArrayInput` via:
 //
@@ -5489,12 +4594,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationArray) ToGetProfilesP
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemLevelsConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemLevelsConfigurationOutput) ElementType() reflect.Type {
@@ -5507,12 +4606,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationOutput) ToGetProfiles
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationOutput) ToGetProfilesProfileCollectionItemLevelsConfigurationOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemLevelsConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5534,12 +4627,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) ToGetPro
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) ToGetProfilesProfileCollectionItemLevelsConfigurationArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemLevelsConfigurationOutput {
@@ -5585,12 +4672,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ToGetProfil
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationItemOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemLevelsConfigurationItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemLevelsConfigurationItemArray and GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemLevelsConfigurationItemArrayInput` via:
 //
@@ -5616,12 +4697,6 @@ func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArray) ToGetProfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemLevelsConfigurationItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemLevelsConfigurationItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ElementType() reflect.Type {
@@ -5634,12 +4709,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ToGetProf
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ToGetProfilesProfileCollectionItemLevelsConfigurationItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationItemOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemLevelsConfigurationItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The pre-defined profile level.
@@ -5664,12 +4733,6 @@ func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) ToGe
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) ToGetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemLevelsConfigurationItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemLevelsConfigurationItemOutput {
@@ -5711,12 +4774,6 @@ func (i GetProfilesProfileCollectionItemTargetCompartmentArgs) ToGetProfilesProf
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetCompartmentOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetCompartmentArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemTargetCompartmentArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetCompartmentArray and GetProfilesProfileCollectionItemTargetCompartmentArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetCompartmentArrayInput` via:
 //
@@ -5742,12 +4799,6 @@ func (i GetProfilesProfileCollectionItemTargetCompartmentArray) ToGetProfilesPro
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetCompartmentArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetCompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemTargetCompartmentOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemTargetCompartmentOutput) ElementType() reflect.Type {
@@ -5760,12 +4811,6 @@ func (o GetProfilesProfileCollectionItemTargetCompartmentOutput) ToGetProfilesPr
 
 func (o GetProfilesProfileCollectionItemTargetCompartmentOutput) ToGetProfilesProfileCollectionItemTargetCompartmentOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetCompartmentOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetCompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5785,12 +4830,6 @@ func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) ToGetProfi
 
 func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) ToGetProfilesProfileCollectionItemTargetCompartmentArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetCompartmentArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetCompartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemTargetCompartmentArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemTargetCompartmentOutput {
@@ -5832,12 +4871,6 @@ func (i GetProfilesProfileCollectionItemTargetTagArgs) ToGetProfilesProfileColle
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemTargetTagArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagArray and GetProfilesProfileCollectionItemTargetTagArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagArrayInput` via:
 //
@@ -5863,12 +4896,6 @@ func (i GetProfilesProfileCollectionItemTargetTagArray) ToGetProfilesProfileColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemTargetTagOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemTargetTagOutput) ElementType() reflect.Type {
@@ -5881,12 +4908,6 @@ func (o GetProfilesProfileCollectionItemTargetTagOutput) ToGetProfilesProfileCol
 
 func (o GetProfilesProfileCollectionItemTargetTagOutput) ToGetProfilesProfileCollectionItemTargetTagOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetTagOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetTagOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of tags specified in the current profile override.
@@ -5908,12 +4929,6 @@ func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) ToGetProfilesProfi
 
 func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) ToGetProfilesProfileCollectionItemTargetTagArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetTagArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTag]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemTargetTagArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemTargetTagOutput {
@@ -5967,12 +4982,6 @@ func (i GetProfilesProfileCollectionItemTargetTagItemArgs) ToGetProfilesProfileC
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagItemOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProfilesProfileCollectionItemTargetTagItemArrayInput is an input type that accepts GetProfilesProfileCollectionItemTargetTagItemArray and GetProfilesProfileCollectionItemTargetTagItemArrayOutput values.
 // You can construct a concrete instance of `GetProfilesProfileCollectionItemTargetTagItemArrayInput` via:
 //
@@ -5998,12 +5007,6 @@ func (i GetProfilesProfileCollectionItemTargetTagItemArray) ToGetProfilesProfile
 	return pulumi.ToOutputWithContext(ctx, i).(GetProfilesProfileCollectionItemTargetTagItemArrayOutput)
 }
 
-func (i GetProfilesProfileCollectionItemTargetTagItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: i.ToGetProfilesProfileCollectionItemTargetTagItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProfilesProfileCollectionItemTargetTagItemOutput struct{ *pulumi.OutputState }
 
 func (GetProfilesProfileCollectionItemTargetTagItemOutput) ElementType() reflect.Type {
@@ -6016,12 +5019,6 @@ func (o GetProfilesProfileCollectionItemTargetTagItemOutput) ToGetProfilesProfil
 
 func (o GetProfilesProfileCollectionItemTargetTagItemOutput) ToGetProfilesProfileCollectionItemTargetTagItemOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetTagItemOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetTagItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name you use to refer to the tag, also known as the tag key.
@@ -6056,12 +5053,6 @@ func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) ToGetProfilesP
 
 func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) ToGetProfilesProfileCollectionItemTargetTagItemArrayOutputWithContext(ctx context.Context) GetProfilesProfileCollectionItemTargetTagItemArrayOutput {
 	return o
-}
-
-func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem] {
-	return pulumix.Output[[]GetProfilesProfileCollectionItemTargetTagItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProfilesProfileCollectionItemTargetTagItemArrayOutput) Index(i pulumi.IntInput) GetProfilesProfileCollectionItemTargetTagItemOutput {
@@ -6107,12 +5098,6 @@ func (i GetRecommendationResourceCountArgs) ToGetRecommendationResourceCountOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationResourceCountOutput)
 }
 
-func (i GetRecommendationResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationResourceCount] {
-	return pulumix.Output[GetRecommendationResourceCount]{
-		OutputState: i.ToGetRecommendationResourceCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationResourceCountArrayInput is an input type that accepts GetRecommendationResourceCountArray and GetRecommendationResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationResourceCountArrayInput` via:
 //
@@ -6138,12 +5123,6 @@ func (i GetRecommendationResourceCountArray) ToGetRecommendationResourceCountArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationResourceCountArrayOutput)
 }
 
-func (i GetRecommendationResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationResourceCount] {
-	return pulumix.Output[[]GetRecommendationResourceCount]{
-		OutputState: i.ToGetRecommendationResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationResourceCountOutput) ElementType() reflect.Type {
@@ -6156,12 +5135,6 @@ func (o GetRecommendationResourceCountOutput) ToGetRecommendationResourceCountOu
 
 func (o GetRecommendationResourceCountOutput) ToGetRecommendationResourceCountOutputWithContext(ctx context.Context) GetRecommendationResourceCountOutput {
 	return o
-}
-
-func (o GetRecommendationResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationResourceCount] {
-	return pulumix.Output[GetRecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -6186,12 +5159,6 @@ func (o GetRecommendationResourceCountArrayOutput) ToGetRecommendationResourceCo
 
 func (o GetRecommendationResourceCountArrayOutput) ToGetRecommendationResourceCountArrayOutputWithContext(ctx context.Context) GetRecommendationResourceCountArrayOutput {
 	return o
-}
-
-func (o GetRecommendationResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationResourceCount] {
-	return pulumix.Output[[]GetRecommendationResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationResourceCountArrayOutput) Index(i pulumi.IntInput) GetRecommendationResourceCountOutput {
@@ -6237,12 +5204,6 @@ func (i GetRecommendationStrategiesFilterArgs) ToGetRecommendationStrategiesFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesFilterOutput)
 }
 
-func (i GetRecommendationStrategiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesFilter] {
-	return pulumix.Output[GetRecommendationStrategiesFilter]{
-		OutputState: i.ToGetRecommendationStrategiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesFilterArrayInput is an input type that accepts GetRecommendationStrategiesFilterArray and GetRecommendationStrategiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesFilterArrayInput` via:
 //
@@ -6268,12 +5229,6 @@ func (i GetRecommendationStrategiesFilterArray) ToGetRecommendationStrategiesFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesFilterArrayOutput)
 }
 
-func (i GetRecommendationStrategiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesFilter] {
-	return pulumix.Output[[]GetRecommendationStrategiesFilter]{
-		OutputState: i.ToGetRecommendationStrategiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesFilterOutput) ElementType() reflect.Type {
@@ -6286,12 +5241,6 @@ func (o GetRecommendationStrategiesFilterOutput) ToGetRecommendationStrategiesFi
 
 func (o GetRecommendationStrategiesFilterOutput) ToGetRecommendationStrategiesFilterOutputWithContext(ctx context.Context) GetRecommendationStrategiesFilterOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesFilter] {
-	return pulumix.Output[GetRecommendationStrategiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -6319,12 +5268,6 @@ func (o GetRecommendationStrategiesFilterArrayOutput) ToGetRecommendationStrateg
 
 func (o GetRecommendationStrategiesFilterArrayOutput) ToGetRecommendationStrategiesFilterArrayOutputWithContext(ctx context.Context) GetRecommendationStrategiesFilterArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesFilter] {
-	return pulumix.Output[[]GetRecommendationStrategiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategiesFilterArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesFilterOutput {
@@ -6366,12 +5309,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionArgs) ToGetRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionArray and GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionArrayInput` via:
 //
@@ -6397,12 +5334,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionArray) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ElementType() reflect.Type {
@@ -6415,12 +5346,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ToGet
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A collection of recommendation strategy summaries.
@@ -6442,12 +5367,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) 
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionArrayOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionOutput {
@@ -6493,12 +5412,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayInput` via:
 //
@@ -6524,12 +5437,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) ElementType() reflect.Type {
@@ -6542,12 +5449,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) T
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -6574,12 +5475,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutp
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionItemOutput {
@@ -6629,12 +5524,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayInput` via:
 //
@@ -6660,12 +5549,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) ElementType() reflect.Type {
@@ -6678,12 +5561,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyO
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether this is the default recommendation strategy.
@@ -6719,12 +5596,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyA
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyOutput {
@@ -6786,12 +5657,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput is an input type that accepts GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray and GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayInput` via:
 //
@@ -6817,12 +5682,6 @@ func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput)
 }
 
-func (i GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) ElementType() reflect.Type {
@@ -6835,12 +5694,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) ToGetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutputWithContext(ctx context.Context) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput {
 	return o
-}
-
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A default value used for the strategy parameter.
@@ -6899,12 +5752,6 @@ func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyP
 	return o
 }
 
-func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition {
 		return vs[0].([]GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition)[vs[1].(int)]
@@ -6948,12 +5795,6 @@ func (i GetRecommendationStrategyItemArgs) ToGetRecommendationStrategyItemOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemOutput)
 }
 
-func (i GetRecommendationStrategyItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItem] {
-	return pulumix.Output[GetRecommendationStrategyItem]{
-		OutputState: i.ToGetRecommendationStrategyItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategyItemArrayInput is an input type that accepts GetRecommendationStrategyItemArray and GetRecommendationStrategyItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemArrayInput` via:
 //
@@ -6979,12 +5820,6 @@ func (i GetRecommendationStrategyItemArray) ToGetRecommendationStrategyItemArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemArrayOutput)
 }
 
-func (i GetRecommendationStrategyItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItem] {
-	return pulumix.Output[[]GetRecommendationStrategyItem]{
-		OutputState: i.ToGetRecommendationStrategyItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategyItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategyItemOutput) ElementType() reflect.Type {
@@ -6997,12 +5832,6 @@ func (o GetRecommendationStrategyItemOutput) ToGetRecommendationStrategyItemOutp
 
 func (o GetRecommendationStrategyItemOutput) ToGetRecommendationStrategyItemOutputWithContext(ctx context.Context) GetRecommendationStrategyItemOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItem] {
-	return pulumix.Output[GetRecommendationStrategyItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -7027,12 +5856,6 @@ func (o GetRecommendationStrategyItemArrayOutput) ToGetRecommendationStrategyIte
 
 func (o GetRecommendationStrategyItemArrayOutput) ToGetRecommendationStrategyItemArrayOutputWithContext(ctx context.Context) GetRecommendationStrategyItemArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItem] {
-	return pulumix.Output[[]GetRecommendationStrategyItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategyItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategyItemOutput {
@@ -7082,12 +5905,6 @@ func (i GetRecommendationStrategyItemStrategyArgs) ToGetRecommendationStrategyIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyOutput)
 }
 
-func (i GetRecommendationStrategyItemStrategyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategyItemStrategyArrayInput is an input type that accepts GetRecommendationStrategyItemStrategyArray and GetRecommendationStrategyItemStrategyArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemStrategyArrayInput` via:
 //
@@ -7113,12 +5930,6 @@ func (i GetRecommendationStrategyItemStrategyArray) ToGetRecommendationStrategyI
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyArrayOutput)
 }
 
-func (i GetRecommendationStrategyItemStrategyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategy]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategyItemStrategyOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategyItemStrategyOutput) ElementType() reflect.Type {
@@ -7131,12 +5942,6 @@ func (o GetRecommendationStrategyItemStrategyOutput) ToGetRecommendationStrategy
 
 func (o GetRecommendationStrategyItemStrategyOutput) ToGetRecommendationStrategyItemStrategyOutputWithContext(ctx context.Context) GetRecommendationStrategyItemStrategyOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyItemStrategyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Whether this is the default recommendation strategy.
@@ -7168,12 +5973,6 @@ func (o GetRecommendationStrategyItemStrategyArrayOutput) ToGetRecommendationStr
 
 func (o GetRecommendationStrategyItemStrategyArrayOutput) ToGetRecommendationStrategyItemStrategyArrayOutputWithContext(ctx context.Context) GetRecommendationStrategyItemStrategyArrayOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyItemStrategyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategy] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationStrategyItemStrategyArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategyItemStrategyOutput {
@@ -7235,12 +6034,6 @@ func (i GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ToGetReco
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyParametersDefinitionOutput)
 }
 
-func (i GetRecommendationStrategyItemStrategyParametersDefinitionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyParametersDefinitionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput is an input type that accepts GetRecommendationStrategyItemStrategyParametersDefinitionArray and GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationStrategyItemStrategyParametersDefinitionArrayInput` via:
 //
@@ -7266,12 +6059,6 @@ func (i GetRecommendationStrategyItemStrategyParametersDefinitionArray) ToGetRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput)
 }
 
-func (i GetRecommendationStrategyItemStrategyParametersDefinitionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: i.ToGetRecommendationStrategyItemStrategyParametersDefinitionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationStrategyItemStrategyParametersDefinitionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ElementType() reflect.Type {
@@ -7284,12 +6071,6 @@ func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ToGetRe
 
 func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ToGetRecommendationStrategyItemStrategyParametersDefinitionOutputWithContext(ctx context.Context) GetRecommendationStrategyItemStrategyParametersDefinitionOutput {
 	return o
-}
-
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A default value used for the strategy parameter.
@@ -7340,12 +6121,6 @@ func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) To
 	return o
 }
 
-func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition] {
-	return pulumix.Output[[]GetRecommendationStrategyItemStrategyParametersDefinition]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationStrategyItemStrategyParametersDefinitionArrayOutput) Index(i pulumi.IntInput) GetRecommendationStrategyItemStrategyParametersDefinitionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationStrategyItemStrategyParametersDefinition {
 		return vs[0].([]GetRecommendationStrategyItemStrategyParametersDefinition)[vs[1].(int)]
@@ -7385,12 +6160,6 @@ func (i GetRecommendationSupportedLevelArgs) ToGetRecommendationSupportedLevelOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelOutput)
 }
 
-func (i GetRecommendationSupportedLevelArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevel] {
-	return pulumix.Output[GetRecommendationSupportedLevel]{
-		OutputState: i.ToGetRecommendationSupportedLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationSupportedLevelArrayInput is an input type that accepts GetRecommendationSupportedLevelArray and GetRecommendationSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelArrayInput` via:
 //
@@ -7416,12 +6185,6 @@ func (i GetRecommendationSupportedLevelArray) ToGetRecommendationSupportedLevelA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelArrayOutput)
 }
 
-func (i GetRecommendationSupportedLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationSupportedLevel]{
-		OutputState: i.ToGetRecommendationSupportedLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationSupportedLevelOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationSupportedLevelOutput) ElementType() reflect.Type {
@@ -7434,12 +6197,6 @@ func (o GetRecommendationSupportedLevelOutput) ToGetRecommendationSupportedLevel
 
 func (o GetRecommendationSupportedLevelOutput) ToGetRecommendationSupportedLevelOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelOutput {
 	return o
-}
-
-func (o GetRecommendationSupportedLevelOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevel] {
-	return pulumix.Output[GetRecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -7459,12 +6216,6 @@ func (o GetRecommendationSupportedLevelArrayOutput) ToGetRecommendationSupported
 
 func (o GetRecommendationSupportedLevelArrayOutput) ToGetRecommendationSupportedLevelArrayOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelArrayOutput {
 	return o
-}
-
-func (o GetRecommendationSupportedLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationSupportedLevelArrayOutput) Index(i pulumi.IntInput) GetRecommendationSupportedLevelOutput {
@@ -7506,12 +6257,6 @@ func (i GetRecommendationSupportedLevelItemArgs) ToGetRecommendationSupportedLev
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelItemOutput)
 }
 
-func (i GetRecommendationSupportedLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationSupportedLevelItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationSupportedLevelItemArrayInput is an input type that accepts GetRecommendationSupportedLevelItemArray and GetRecommendationSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationSupportedLevelItemArrayInput` via:
 //
@@ -7537,12 +6282,6 @@ func (i GetRecommendationSupportedLevelItemArray) ToGetRecommendationSupportedLe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationSupportedLevelItemArrayOutput)
 }
 
-func (i GetRecommendationSupportedLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationSupportedLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationSupportedLevelItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationSupportedLevelItemOutput) ElementType() reflect.Type {
@@ -7555,12 +6294,6 @@ func (o GetRecommendationSupportedLevelItemOutput) ToGetRecommendationSupportedL
 
 func (o GetRecommendationSupportedLevelItemOutput) ToGetRecommendationSupportedLevelItemOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelItemOutput {
 	return o
-}
-
-func (o GetRecommendationSupportedLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the profile level.
@@ -7580,12 +6313,6 @@ func (o GetRecommendationSupportedLevelItemArrayOutput) ToGetRecommendationSuppo
 
 func (o GetRecommendationSupportedLevelItemArrayOutput) ToGetRecommendationSupportedLevelItemArrayOutputWithContext(ctx context.Context) GetRecommendationSupportedLevelItemArrayOutput {
 	return o
-}
-
-func (o GetRecommendationSupportedLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationSupportedLevelItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationSupportedLevelItemOutput {
@@ -7631,12 +6358,6 @@ func (i GetRecommendationsFilterArgs) ToGetRecommendationsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsFilterOutput)
 }
 
-func (i GetRecommendationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsFilter] {
-	return pulumix.Output[GetRecommendationsFilter]{
-		OutputState: i.ToGetRecommendationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsFilterArrayInput is an input type that accepts GetRecommendationsFilterArray and GetRecommendationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsFilterArrayInput` via:
 //
@@ -7662,12 +6383,6 @@ func (i GetRecommendationsFilterArray) ToGetRecommendationsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsFilterArrayOutput)
 }
 
-func (i GetRecommendationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsFilter] {
-	return pulumix.Output[[]GetRecommendationsFilter]{
-		OutputState: i.ToGetRecommendationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsFilterOutput) ElementType() reflect.Type {
@@ -7680,12 +6395,6 @@ func (o GetRecommendationsFilterOutput) ToGetRecommendationsFilterOutput() GetRe
 
 func (o GetRecommendationsFilterOutput) ToGetRecommendationsFilterOutputWithContext(ctx context.Context) GetRecommendationsFilterOutput {
 	return o
-}
-
-func (o GetRecommendationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsFilter] {
-	return pulumix.Output[GetRecommendationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -7713,12 +6422,6 @@ func (o GetRecommendationsFilterArrayOutput) ToGetRecommendationsFilterArrayOutp
 
 func (o GetRecommendationsFilterArrayOutput) ToGetRecommendationsFilterArrayOutputWithContext(ctx context.Context) GetRecommendationsFilterArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsFilter] {
-	return pulumix.Output[[]GetRecommendationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsFilterArrayOutput) Index(i pulumi.IntInput) GetRecommendationsFilterOutput {
@@ -7760,12 +6463,6 @@ func (i GetRecommendationsRecommendationCollectionArgs) ToGetRecommendationsReco
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[GetRecommendationsRecommendationCollection]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionArray and GetRecommendationsRecommendationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionArrayInput` via:
 //
@@ -7791,12 +6488,6 @@ func (i GetRecommendationsRecommendationCollectionArray) ToGetRecommendationsRec
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollection]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionOutput) ElementType() reflect.Type {
@@ -7809,12 +6500,6 @@ func (o GetRecommendationsRecommendationCollectionOutput) ToGetRecommendationsRe
 
 func (o GetRecommendationsRecommendationCollectionOutput) ToGetRecommendationsRecommendationCollectionOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[GetRecommendationsRecommendationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -7836,12 +6521,6 @@ func (o GetRecommendationsRecommendationCollectionArrayOutput) ToGetRecommendati
 
 func (o GetRecommendationsRecommendationCollectionArrayOutput) ToGetRecommendationsRecommendationCollectionArrayOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollection] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsRecommendationCollectionArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionOutput {
@@ -7945,12 +6624,6 @@ func (i GetRecommendationsRecommendationCollectionItemArgs) ToGetRecommendations
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionItemArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemArray and GetRecommendationsRecommendationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemArrayInput` via:
 //
@@ -7976,12 +6649,6 @@ func (i GetRecommendationsRecommendationCollectionItemArray) ToGetRecommendation
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemOutput) ElementType() reflect.Type {
@@ -7994,12 +6661,6 @@ func (o GetRecommendationsRecommendationCollectionItemOutput) ToGetRecommendatio
 
 func (o GetRecommendationsRecommendationCollectionItemOutput) ToGetRecommendationsRecommendationCollectionItemOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique OCID associated with the category.
@@ -8106,12 +6767,6 @@ func (o GetRecommendationsRecommendationCollectionItemArrayOutput) ToGetRecommen
 	return o
 }
 
-func (o GetRecommendationsRecommendationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRecommendationsRecommendationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRecommendationsRecommendationCollectionItem {
 		return vs[0].([]GetRecommendationsRecommendationCollectionItem)[vs[1].(int)]
@@ -8155,12 +6810,6 @@ func (i GetRecommendationsRecommendationCollectionItemResourceCountArgs) ToGetRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemResourceCountOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemResourceCountArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemResourceCountOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionItemResourceCountArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemResourceCountArray and GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemResourceCountArrayInput` via:
 //
@@ -8186,12 +6835,6 @@ func (i GetRecommendationsRecommendationCollectionItemResourceCountArray) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemResourceCountArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemResourceCountArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemResourceCountOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemResourceCountOutput) ElementType() reflect.Type {
@@ -8204,12 +6847,6 @@ func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) ToGet
 
 func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) ToGetRecommendationsRecommendationCollectionItemResourceCountOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemResourceCountOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemResourceCountOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The count of resources.
@@ -8234,12 +6871,6 @@ func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) 
 
 func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) ToGetRecommendationsRecommendationCollectionItemResourceCountArrayOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemResourceCount]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsRecommendationCollectionItemResourceCountArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemResourceCountOutput {
@@ -8281,12 +6912,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArgs) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelArray and GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelArrayInput` via:
 //
@@ -8312,12 +6937,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemSupportedLevelOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ElementType() reflect.Type {
@@ -8330,12 +6949,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ToGe
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ToGetRecommendationsRecommendationCollectionItemSupportedLevelOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemSupportedLevelOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of supported levels.
@@ -8357,12 +6970,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput)
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput) ToGetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevel]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemSupportedLevelOutput {
@@ -8404,12 +7011,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayInput is an input type that accepts GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray and GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput values.
 // You can construct a concrete instance of `GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayInput` via:
 //
@@ -8435,12 +7036,6 @@ func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput)
 }
 
-func (i GetRecommendationsRecommendationCollectionItemSupportedLevelItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: i.ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput struct{ *pulumi.OutputState }
 
 func (GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) ElementType() reflect.Type {
@@ -8453,12 +7048,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) 
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -8478,12 +7067,6 @@ func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOut
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput) ToGetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutputWithContext(ctx context.Context) GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput {
 	return o
-}
-
-func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem] {
-	return pulumix.Output[[]GetRecommendationsRecommendationCollectionItemSupportedLevelItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRecommendationsRecommendationCollectionItemSupportedLevelItemArrayOutput) Index(i pulumi.IntInput) GetRecommendationsRecommendationCollectionItemSupportedLevelItemOutput {
@@ -8533,12 +7116,6 @@ func (i GetResourceActionActionArgs) ToGetResourceActionActionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionActionOutput)
 }
 
-func (i GetResourceActionActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionAction] {
-	return pulumix.Output[GetResourceActionAction]{
-		OutputState: i.ToGetResourceActionActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionActionArrayInput is an input type that accepts GetResourceActionActionArray and GetResourceActionActionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionActionArrayInput` via:
 //
@@ -8564,12 +7141,6 @@ func (i GetResourceActionActionArray) ToGetResourceActionActionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionActionArrayOutput)
 }
 
-func (i GetResourceActionActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionAction] {
-	return pulumix.Output[[]GetResourceActionAction]{
-		OutputState: i.ToGetResourceActionActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionActionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionActionOutput) ElementType() reflect.Type {
@@ -8582,12 +7153,6 @@ func (o GetResourceActionActionOutput) ToGetResourceActionActionOutput() GetReso
 
 func (o GetResourceActionActionOutput) ToGetResourceActionActionOutputWithContext(ctx context.Context) GetResourceActionActionOutput {
 	return o
-}
-
-func (o GetResourceActionActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionAction] {
-	return pulumix.Output[GetResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Text describing the recommended action.
@@ -8617,12 +7182,6 @@ func (o GetResourceActionActionArrayOutput) ToGetResourceActionActionArrayOutput
 
 func (o GetResourceActionActionArrayOutput) ToGetResourceActionActionArrayOutputWithContext(ctx context.Context) GetResourceActionActionArrayOutput {
 	return o
-}
-
-func (o GetResourceActionActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionAction] {
-	return pulumix.Output[[]GetResourceActionAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionActionArrayOutput) Index(i pulumi.IntInput) GetResourceActionActionOutput {
@@ -8668,12 +7227,6 @@ func (i GetResourceActionsFilterArgs) ToGetResourceActionsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsFilterOutput)
 }
 
-func (i GetResourceActionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsFilter] {
-	return pulumix.Output[GetResourceActionsFilter]{
-		OutputState: i.ToGetResourceActionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionsFilterArrayInput is an input type that accepts GetResourceActionsFilterArray and GetResourceActionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsFilterArrayInput` via:
 //
@@ -8699,12 +7252,6 @@ func (i GetResourceActionsFilterArray) ToGetResourceActionsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsFilterArrayOutput)
 }
 
-func (i GetResourceActionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsFilter] {
-	return pulumix.Output[[]GetResourceActionsFilter]{
-		OutputState: i.ToGetResourceActionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsFilterOutput) ElementType() reflect.Type {
@@ -8717,12 +7264,6 @@ func (o GetResourceActionsFilterOutput) ToGetResourceActionsFilterOutput() GetRe
 
 func (o GetResourceActionsFilterOutput) ToGetResourceActionsFilterOutputWithContext(ctx context.Context) GetResourceActionsFilterOutput {
 	return o
-}
-
-func (o GetResourceActionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsFilter] {
-	return pulumix.Output[GetResourceActionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -8750,12 +7291,6 @@ func (o GetResourceActionsFilterArrayOutput) ToGetResourceActionsFilterArrayOutp
 
 func (o GetResourceActionsFilterArrayOutput) ToGetResourceActionsFilterArrayOutputWithContext(ctx context.Context) GetResourceActionsFilterArrayOutput {
 	return o
-}
-
-func (o GetResourceActionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsFilter] {
-	return pulumix.Output[[]GetResourceActionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsFilterArrayOutput) Index(i pulumi.IntInput) GetResourceActionsFilterOutput {
@@ -8795,12 +7330,6 @@ func (i GetResourceActionsResourceActionCollectionArgs) ToGetResourceActionsReso
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[GetResourceActionsResourceActionCollection]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionsResourceActionCollectionArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionArray and GetResourceActionsResourceActionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionArrayInput` via:
 //
@@ -8826,12 +7355,6 @@ func (i GetResourceActionsResourceActionCollectionArray) ToGetResourceActionsRes
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionArrayOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollection]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsResourceActionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsResourceActionCollectionOutput) ElementType() reflect.Type {
@@ -8844,12 +7367,6 @@ func (o GetResourceActionsResourceActionCollectionOutput) ToGetResourceActionsRe
 
 func (o GetResourceActionsResourceActionCollectionOutput) ToGetResourceActionsResourceActionCollectionOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[GetResourceActionsResourceActionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsResourceActionCollectionOutput) Items() GetResourceActionsResourceActionCollectionItemArrayOutput {
@@ -8870,12 +7387,6 @@ func (o GetResourceActionsResourceActionCollectionArrayOutput) ToGetResourceActi
 
 func (o GetResourceActionsResourceActionCollectionArrayOutput) ToGetResourceActionsResourceActionCollectionArrayOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionArrayOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollection] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsResourceActionCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceActionsResourceActionCollectionOutput {
@@ -8987,12 +7498,6 @@ func (i GetResourceActionsResourceActionCollectionItemArgs) ToGetResourceActions
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItem]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionsResourceActionCollectionItemArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionItemArray and GetResourceActionsResourceActionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionItemArrayInput` via:
 //
@@ -9018,12 +7523,6 @@ func (i GetResourceActionsResourceActionCollectionItemArray) ToGetResourceAction
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemArrayOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItem]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsResourceActionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsResourceActionCollectionItemOutput) ElementType() reflect.Type {
@@ -9036,12 +7535,6 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) ToGetResourceActio
 
 func (o GetResourceActionsResourceActionCollectionItemOutput) ToGetResourceActionsResourceActionCollectionItemOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionItemOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Details about the recommended action.
@@ -9156,12 +7649,6 @@ func (o GetResourceActionsResourceActionCollectionItemArrayOutput) ToGetResource
 	return o
 }
 
-func (o GetResourceActionsResourceActionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItem] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetResourceActionsResourceActionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceActionsResourceActionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceActionsResourceActionCollectionItem {
 		return vs[0].([]GetResourceActionsResourceActionCollectionItem)[vs[1].(int)]
@@ -9209,12 +7696,6 @@ func (i GetResourceActionsResourceActionCollectionItemActionArgs) ToGetResourceA
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemActionOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionItemActionArgs) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemActionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetResourceActionsResourceActionCollectionItemActionArrayInput is an input type that accepts GetResourceActionsResourceActionCollectionItemActionArray and GetResourceActionsResourceActionCollectionItemActionArrayOutput values.
 // You can construct a concrete instance of `GetResourceActionsResourceActionCollectionItemActionArrayInput` via:
 //
@@ -9240,12 +7721,6 @@ func (i GetResourceActionsResourceActionCollectionItemActionArray) ToGetResource
 	return pulumi.ToOutputWithContext(ctx, i).(GetResourceActionsResourceActionCollectionItemActionArrayOutput)
 }
 
-func (i GetResourceActionsResourceActionCollectionItemActionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: i.ToGetResourceActionsResourceActionCollectionItemActionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetResourceActionsResourceActionCollectionItemActionOutput struct{ *pulumi.OutputState }
 
 func (GetResourceActionsResourceActionCollectionItemActionOutput) ElementType() reflect.Type {
@@ -9258,12 +7733,6 @@ func (o GetResourceActionsResourceActionCollectionItemActionOutput) ToGetResourc
 
 func (o GetResourceActionsResourceActionCollectionItemActionOutput) ToGetResourceActionsResourceActionCollectionItemActionOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionItemActionOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionItemActionOutput) ToOutput(ctx context.Context) pulumix.Output[GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Text describing the recommended action.
@@ -9293,12 +7762,6 @@ func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) ToGetRe
 
 func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) ToGetResourceActionsResourceActionCollectionItemActionArrayOutputWithContext(ctx context.Context) GetResourceActionsResourceActionCollectionItemActionArrayOutput {
 	return o
-}
-
-func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction] {
-	return pulumix.Output[[]GetResourceActionsResourceActionCollectionItemAction]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetResourceActionsResourceActionCollectionItemActionArrayOutput) Index(i pulumi.IntInput) GetResourceActionsResourceActionCollectionItemActionOutput {

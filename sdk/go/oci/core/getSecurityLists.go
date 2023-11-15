@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Security Lists in Oracle Cloud Infrastructure Core service.
@@ -128,12 +127,6 @@ func (o GetSecurityListsResultOutput) ToGetSecurityListsResultOutput() GetSecuri
 
 func (o GetSecurityListsResultOutput) ToGetSecurityListsResultOutputWithContext(ctx context.Context) GetSecurityListsResultOutput {
 	return o
-}
-
-func (o GetSecurityListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSecurityListsResult] {
-	return pulumix.Output[GetSecurityListsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the security list.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Redis Cluster resource in Oracle Cloud Infrastructure Redis service.
@@ -136,12 +135,6 @@ func (o LookupRedisClusterResultOutput) ToLookupRedisClusterResultOutput() Looku
 
 func (o LookupRedisClusterResultOutput) ToLookupRedisClusterResultOutputWithContext(ctx context.Context) LookupRedisClusterResultOutput {
 	return o
-}
-
-func (o LookupRedisClusterResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRedisClusterResult] {
-	return pulumix.Output[LookupRedisClusterResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Proxy Detail resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -81,12 +80,6 @@ func (o GetProxyDetailResultOutput) ToGetProxyDetailResultOutput() GetProxyDetai
 
 func (o GetProxyDetailResultOutput) ToGetProxyDetailResultOutputWithContext(ctx context.Context) GetProxyDetailResultOutput {
 	return o
-}
-
-func (o GetProxyDetailResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProxyDetailResult] {
-	return pulumix.Output[GetProxyDetailResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The provider-assigned unique ID for this managed resource.

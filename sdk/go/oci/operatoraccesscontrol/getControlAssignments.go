@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
@@ -133,12 +132,6 @@ func (o GetControlAssignmentsResultOutput) ToGetControlAssignmentsResultOutput()
 
 func (o GetControlAssignmentsResultOutput) ToGetControlAssignmentsResultOutputWithContext(ctx context.Context) GetControlAssignmentsResultOutput {
 	return o
-}
-
-func (o GetControlAssignmentsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetControlAssignmentsResult] {
-	return pulumix.Output[GetControlAssignmentsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the comparment that contains the operator control assignment.

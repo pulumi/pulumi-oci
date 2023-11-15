@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Workflow Configuration resource in Oracle Cloud Infrastructure Media Services service.
@@ -238,12 +237,6 @@ func (i *MediaWorkflowConfiguration) ToMediaWorkflowConfigurationOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationOutput)
 }
 
-func (i *MediaWorkflowConfiguration) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowConfiguration] {
-	return pulumix.Output[*MediaWorkflowConfiguration]{
-		OutputState: i.ToMediaWorkflowConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowConfigurationArrayInput is an input type that accepts MediaWorkflowConfigurationArray and MediaWorkflowConfigurationArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowConfigurationArrayInput` via:
 //
@@ -267,12 +260,6 @@ func (i MediaWorkflowConfigurationArray) ToMediaWorkflowConfigurationArrayOutput
 
 func (i MediaWorkflowConfigurationArray) ToMediaWorkflowConfigurationArrayOutputWithContext(ctx context.Context) MediaWorkflowConfigurationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationArrayOutput)
-}
-
-func (i MediaWorkflowConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowConfiguration] {
-	return pulumix.Output[[]*MediaWorkflowConfiguration]{
-		OutputState: i.ToMediaWorkflowConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MediaWorkflowConfigurationMapInput is an input type that accepts MediaWorkflowConfigurationMap and MediaWorkflowConfigurationMapOutput values.
@@ -300,12 +287,6 @@ func (i MediaWorkflowConfigurationMap) ToMediaWorkflowConfigurationMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowConfigurationMapOutput)
 }
 
-func (i MediaWorkflowConfigurationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowConfiguration] {
-	return pulumix.Output[map[string]*MediaWorkflowConfiguration]{
-		OutputState: i.ToMediaWorkflowConfigurationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowConfigurationOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowConfigurationOutput) ElementType() reflect.Type {
@@ -318,12 +299,6 @@ func (o MediaWorkflowConfigurationOutput) ToMediaWorkflowConfigurationOutput() M
 
 func (o MediaWorkflowConfigurationOutput) ToMediaWorkflowConfigurationOutputWithContext(ctx context.Context) MediaWorkflowConfigurationOutput {
 	return o
-}
-
-func (o MediaWorkflowConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflowConfiguration] {
-	return pulumix.Output[*MediaWorkflowConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier.
@@ -393,12 +368,6 @@ func (o MediaWorkflowConfigurationArrayOutput) ToMediaWorkflowConfigurationArray
 	return o
 }
 
-func (o MediaWorkflowConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflowConfiguration] {
-	return pulumix.Output[[]*MediaWorkflowConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MediaWorkflowConfigurationArrayOutput) Index(i pulumi.IntInput) MediaWorkflowConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MediaWorkflowConfiguration {
 		return vs[0].([]*MediaWorkflowConfiguration)[vs[1].(int)]
@@ -417,12 +386,6 @@ func (o MediaWorkflowConfigurationMapOutput) ToMediaWorkflowConfigurationMapOutp
 
 func (o MediaWorkflowConfigurationMapOutput) ToMediaWorkflowConfigurationMapOutputWithContext(ctx context.Context) MediaWorkflowConfigurationMapOutput {
 	return o
-}
-
-func (o MediaWorkflowConfigurationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflowConfiguration] {
-	return pulumix.Output[map[string]*MediaWorkflowConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowConfigurationMapOutput) MapIndex(k pulumi.StringInput) MediaWorkflowConfigurationOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
@@ -112,12 +111,6 @@ func (o GetUserAssessmentComparisonResultOutput) ToGetUserAssessmentComparisonRe
 
 func (o GetUserAssessmentComparisonResultOutput) ToGetUserAssessmentComparisonResultOutputWithContext(ctx context.Context) GetUserAssessmentComparisonResultOutput {
 	return o
-}
-
-func (o GetUserAssessmentComparisonResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserAssessmentComparisonResult] {
-	return pulumix.Output[GetUserAssessmentComparisonResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUserAssessmentComparisonResultOutput) ComparisonUserAssessmentId() pulumi.StringOutput {

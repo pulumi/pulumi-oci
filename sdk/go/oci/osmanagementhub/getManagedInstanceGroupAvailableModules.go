@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Instance Group Available Modules in Oracle Cloud Infrastructure Os Management Hub service.
@@ -125,12 +124,6 @@ func (o GetManagedInstanceGroupAvailableModulesResultOutput) ToGetManagedInstanc
 
 func (o GetManagedInstanceGroupAvailableModulesResultOutput) ToGetManagedInstanceGroupAvailableModulesResultOutputWithContext(ctx context.Context) GetManagedInstanceGroupAvailableModulesResultOutput {
 	return o
-}
-
-func (o GetManagedInstanceGroupAvailableModulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedInstanceGroupAvailableModulesResult] {
-	return pulumix.Output[GetManagedInstanceGroupAvailableModulesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedInstanceGroupAvailableModulesResultOutput) CompartmentId() pulumi.StringPtrOutput {

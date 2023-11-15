@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
@@ -127,12 +126,6 @@ func (o GetDeploymentUpgradesResultOutput) ToGetDeploymentUpgradesResultOutput()
 
 func (o GetDeploymentUpgradesResultOutput) ToGetDeploymentUpgradesResultOutputWithContext(ctx context.Context) GetDeploymentUpgradesResultOutput {
 	return o
-}
-
-func (o GetDeploymentUpgradesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDeploymentUpgradesResult] {
-	return pulumix.Output[GetDeploymentUpgradesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.

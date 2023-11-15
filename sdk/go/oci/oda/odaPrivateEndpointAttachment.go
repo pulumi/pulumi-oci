@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Oda Private Endpoint Attachment resource in Oracle Cloud Infrastructure Digital Assistant service.
@@ -195,12 +194,6 @@ func (i *OdaPrivateEndpointAttachment) ToOdaPrivateEndpointAttachmentOutputWithC
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointAttachmentOutput)
 }
 
-func (i *OdaPrivateEndpointAttachment) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpointAttachment] {
-	return pulumix.Output[*OdaPrivateEndpointAttachment]{
-		OutputState: i.ToOdaPrivateEndpointAttachmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // OdaPrivateEndpointAttachmentArrayInput is an input type that accepts OdaPrivateEndpointAttachmentArray and OdaPrivateEndpointAttachmentArrayOutput values.
 // You can construct a concrete instance of `OdaPrivateEndpointAttachmentArrayInput` via:
 //
@@ -224,12 +217,6 @@ func (i OdaPrivateEndpointAttachmentArray) ToOdaPrivateEndpointAttachmentArrayOu
 
 func (i OdaPrivateEndpointAttachmentArray) ToOdaPrivateEndpointAttachmentArrayOutputWithContext(ctx context.Context) OdaPrivateEndpointAttachmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointAttachmentArrayOutput)
-}
-
-func (i OdaPrivateEndpointAttachmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpointAttachment] {
-	return pulumix.Output[[]*OdaPrivateEndpointAttachment]{
-		OutputState: i.ToOdaPrivateEndpointAttachmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // OdaPrivateEndpointAttachmentMapInput is an input type that accepts OdaPrivateEndpointAttachmentMap and OdaPrivateEndpointAttachmentMapOutput values.
@@ -257,12 +244,6 @@ func (i OdaPrivateEndpointAttachmentMap) ToOdaPrivateEndpointAttachmentMapOutput
 	return pulumi.ToOutputWithContext(ctx, i).(OdaPrivateEndpointAttachmentMapOutput)
 }
 
-func (i OdaPrivateEndpointAttachmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpointAttachment] {
-	return pulumix.Output[map[string]*OdaPrivateEndpointAttachment]{
-		OutputState: i.ToOdaPrivateEndpointAttachmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type OdaPrivateEndpointAttachmentOutput struct{ *pulumi.OutputState }
 
 func (OdaPrivateEndpointAttachmentOutput) ElementType() reflect.Type {
@@ -275,12 +256,6 @@ func (o OdaPrivateEndpointAttachmentOutput) ToOdaPrivateEndpointAttachmentOutput
 
 func (o OdaPrivateEndpointAttachmentOutput) ToOdaPrivateEndpointAttachmentOutputWithContext(ctx context.Context) OdaPrivateEndpointAttachmentOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointAttachmentOutput) ToOutput(ctx context.Context) pulumix.Output[*OdaPrivateEndpointAttachment] {
-	return pulumix.Output[*OdaPrivateEndpointAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint attachment belongs to.
@@ -330,12 +305,6 @@ func (o OdaPrivateEndpointAttachmentArrayOutput) ToOdaPrivateEndpointAttachmentA
 	return o
 }
 
-func (o OdaPrivateEndpointAttachmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*OdaPrivateEndpointAttachment] {
-	return pulumix.Output[[]*OdaPrivateEndpointAttachment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o OdaPrivateEndpointAttachmentArrayOutput) Index(i pulumi.IntInput) OdaPrivateEndpointAttachmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *OdaPrivateEndpointAttachment {
 		return vs[0].([]*OdaPrivateEndpointAttachment)[vs[1].(int)]
@@ -354,12 +323,6 @@ func (o OdaPrivateEndpointAttachmentMapOutput) ToOdaPrivateEndpointAttachmentMap
 
 func (o OdaPrivateEndpointAttachmentMapOutput) ToOdaPrivateEndpointAttachmentMapOutputWithContext(ctx context.Context) OdaPrivateEndpointAttachmentMapOutput {
 	return o
-}
-
-func (o OdaPrivateEndpointAttachmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*OdaPrivateEndpointAttachment] {
-	return pulumix.Output[map[string]*OdaPrivateEndpointAttachment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o OdaPrivateEndpointAttachmentMapOutput) MapIndex(k pulumi.StringInput) OdaPrivateEndpointAttachmentOutput {

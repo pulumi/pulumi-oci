@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -51,12 +50,6 @@ func (i GetOceInstancesFilterArgs) ToGetOceInstancesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetOceInstancesFilterOutput)
 }
 
-func (i GetOceInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetOceInstancesFilter] {
-	return pulumix.Output[GetOceInstancesFilter]{
-		OutputState: i.ToGetOceInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOceInstancesFilterArrayInput is an input type that accepts GetOceInstancesFilterArray and GetOceInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetOceInstancesFilterArrayInput` via:
 //
@@ -82,12 +75,6 @@ func (i GetOceInstancesFilterArray) ToGetOceInstancesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetOceInstancesFilterArrayOutput)
 }
 
-func (i GetOceInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOceInstancesFilter] {
-	return pulumix.Output[[]GetOceInstancesFilter]{
-		OutputState: i.ToGetOceInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOceInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetOceInstancesFilterOutput) ElementType() reflect.Type {
@@ -100,12 +87,6 @@ func (o GetOceInstancesFilterOutput) ToGetOceInstancesFilterOutput() GetOceInsta
 
 func (o GetOceInstancesFilterOutput) ToGetOceInstancesFilterOutputWithContext(ctx context.Context) GetOceInstancesFilterOutput {
 	return o
-}
-
-func (o GetOceInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetOceInstancesFilter] {
-	return pulumix.Output[GetOceInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // OceInstance Name
@@ -133,12 +114,6 @@ func (o GetOceInstancesFilterArrayOutput) ToGetOceInstancesFilterArrayOutput() G
 
 func (o GetOceInstancesFilterArrayOutput) ToGetOceInstancesFilterArrayOutputWithContext(ctx context.Context) GetOceInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetOceInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOceInstancesFilter] {
-	return pulumix.Output[[]GetOceInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOceInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetOceInstancesFilterOutput {
@@ -282,12 +257,6 @@ func (i GetOceInstancesOceInstanceArgs) ToGetOceInstancesOceInstanceOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetOceInstancesOceInstanceOutput)
 }
 
-func (i GetOceInstancesOceInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetOceInstancesOceInstance] {
-	return pulumix.Output[GetOceInstancesOceInstance]{
-		OutputState: i.ToGetOceInstancesOceInstanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetOceInstancesOceInstanceArrayInput is an input type that accepts GetOceInstancesOceInstanceArray and GetOceInstancesOceInstanceArrayOutput values.
 // You can construct a concrete instance of `GetOceInstancesOceInstanceArrayInput` via:
 //
@@ -313,12 +282,6 @@ func (i GetOceInstancesOceInstanceArray) ToGetOceInstancesOceInstanceArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetOceInstancesOceInstanceArrayOutput)
 }
 
-func (i GetOceInstancesOceInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetOceInstancesOceInstance] {
-	return pulumix.Output[[]GetOceInstancesOceInstance]{
-		OutputState: i.ToGetOceInstancesOceInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetOceInstancesOceInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetOceInstancesOceInstanceOutput) ElementType() reflect.Type {
@@ -331,12 +294,6 @@ func (o GetOceInstancesOceInstanceOutput) ToGetOceInstancesOceInstanceOutput() G
 
 func (o GetOceInstancesOceInstanceOutput) ToGetOceInstancesOceInstanceOutputWithContext(ctx context.Context) GetOceInstancesOceInstanceOutput {
 	return o
-}
-
-func (o GetOceInstancesOceInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetOceInstancesOceInstance] {
-	return pulumix.Output[GetOceInstancesOceInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // a list of add-on features for the ocm instance
@@ -485,12 +442,6 @@ func (o GetOceInstancesOceInstanceArrayOutput) ToGetOceInstancesOceInstanceArray
 
 func (o GetOceInstancesOceInstanceArrayOutput) ToGetOceInstancesOceInstanceArrayOutputWithContext(ctx context.Context) GetOceInstancesOceInstanceArrayOutput {
 	return o
-}
-
-func (o GetOceInstancesOceInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetOceInstancesOceInstance] {
-	return pulumix.Output[[]GetOceInstancesOceInstance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetOceInstancesOceInstanceArrayOutput) Index(i pulumi.IntInput) GetOceInstancesOceInstanceOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed Databases Reset Database Parameter resource in Oracle Cloud Infrastructure Database Management service.
@@ -205,12 +204,6 @@ func (i *ManagedDatabasesResetDatabaseParameter) ToManagedDatabasesResetDatabase
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesResetDatabaseParameterOutput)
 }
 
-func (i *ManagedDatabasesResetDatabaseParameter) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabasesResetDatabaseParameter] {
-	return pulumix.Output[*ManagedDatabasesResetDatabaseParameter]{
-		OutputState: i.ToManagedDatabasesResetDatabaseParameterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedDatabasesResetDatabaseParameterArrayInput is an input type that accepts ManagedDatabasesResetDatabaseParameterArray and ManagedDatabasesResetDatabaseParameterArrayOutput values.
 // You can construct a concrete instance of `ManagedDatabasesResetDatabaseParameterArrayInput` via:
 //
@@ -234,12 +227,6 @@ func (i ManagedDatabasesResetDatabaseParameterArray) ToManagedDatabasesResetData
 
 func (i ManagedDatabasesResetDatabaseParameterArray) ToManagedDatabasesResetDatabaseParameterArrayOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesResetDatabaseParameterArrayOutput)
-}
-
-func (i ManagedDatabasesResetDatabaseParameterArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabasesResetDatabaseParameter] {
-	return pulumix.Output[[]*ManagedDatabasesResetDatabaseParameter]{
-		OutputState: i.ToManagedDatabasesResetDatabaseParameterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedDatabasesResetDatabaseParameterMapInput is an input type that accepts ManagedDatabasesResetDatabaseParameterMap and ManagedDatabasesResetDatabaseParameterMapOutput values.
@@ -267,12 +254,6 @@ func (i ManagedDatabasesResetDatabaseParameterMap) ToManagedDatabasesResetDataba
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedDatabasesResetDatabaseParameterMapOutput)
 }
 
-func (i ManagedDatabasesResetDatabaseParameterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabasesResetDatabaseParameter] {
-	return pulumix.Output[map[string]*ManagedDatabasesResetDatabaseParameter]{
-		OutputState: i.ToManagedDatabasesResetDatabaseParameterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedDatabasesResetDatabaseParameterOutput struct{ *pulumi.OutputState }
 
 func (ManagedDatabasesResetDatabaseParameterOutput) ElementType() reflect.Type {
@@ -285,12 +266,6 @@ func (o ManagedDatabasesResetDatabaseParameterOutput) ToManagedDatabasesResetDat
 
 func (o ManagedDatabasesResetDatabaseParameterOutput) ToManagedDatabasesResetDatabaseParameterOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterOutput {
 	return o
-}
-
-func (o ManagedDatabasesResetDatabaseParameterOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedDatabasesResetDatabaseParameter] {
-	return pulumix.Output[*ManagedDatabasesResetDatabaseParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The database credentials used to perform management activity.
@@ -334,12 +309,6 @@ func (o ManagedDatabasesResetDatabaseParameterArrayOutput) ToManagedDatabasesRes
 	return o
 }
 
-func (o ManagedDatabasesResetDatabaseParameterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedDatabasesResetDatabaseParameter] {
-	return pulumix.Output[[]*ManagedDatabasesResetDatabaseParameter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagedDatabasesResetDatabaseParameterArrayOutput) Index(i pulumi.IntInput) ManagedDatabasesResetDatabaseParameterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagedDatabasesResetDatabaseParameter {
 		return vs[0].([]*ManagedDatabasesResetDatabaseParameter)[vs[1].(int)]
@@ -358,12 +327,6 @@ func (o ManagedDatabasesResetDatabaseParameterMapOutput) ToManagedDatabasesReset
 
 func (o ManagedDatabasesResetDatabaseParameterMapOutput) ToManagedDatabasesResetDatabaseParameterMapOutputWithContext(ctx context.Context) ManagedDatabasesResetDatabaseParameterMapOutput {
 	return o
-}
-
-func (o ManagedDatabasesResetDatabaseParameterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedDatabasesResetDatabaseParameter] {
-	return pulumix.Output[map[string]*ManagedDatabasesResetDatabaseParameter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedDatabasesResetDatabaseParameterMapOutput) MapIndex(k pulumi.StringInput) ManagedDatabasesResetDatabaseParameterOutput {

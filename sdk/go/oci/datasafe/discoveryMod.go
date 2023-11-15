@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -352,12 +351,6 @@ func (i *DiscoveryMod) ToDiscoveryModOutputWithContext(ctx context.Context) Disc
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryModOutput)
 }
 
-func (i *DiscoveryMod) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryMod] {
-	return pulumix.Output[*DiscoveryMod]{
-		OutputState: i.ToDiscoveryModOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DiscoveryModArrayInput is an input type that accepts DiscoveryModArray and DiscoveryModArrayOutput values.
 // You can construct a concrete instance of `DiscoveryModArrayInput` via:
 //
@@ -381,12 +374,6 @@ func (i DiscoveryModArray) ToDiscoveryModArrayOutput() DiscoveryModArrayOutput {
 
 func (i DiscoveryModArray) ToDiscoveryModArrayOutputWithContext(ctx context.Context) DiscoveryModArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryModArrayOutput)
-}
-
-func (i DiscoveryModArray) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryMod] {
-	return pulumix.Output[[]*DiscoveryMod]{
-		OutputState: i.ToDiscoveryModArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DiscoveryModMapInput is an input type that accepts DiscoveryModMap and DiscoveryModMapOutput values.
@@ -414,12 +401,6 @@ func (i DiscoveryModMap) ToDiscoveryModMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(DiscoveryModMapOutput)
 }
 
-func (i DiscoveryModMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryMod] {
-	return pulumix.Output[map[string]*DiscoveryMod]{
-		OutputState: i.ToDiscoveryModMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DiscoveryModOutput struct{ *pulumi.OutputState }
 
 func (DiscoveryModOutput) ElementType() reflect.Type {
@@ -432,12 +413,6 @@ func (o DiscoveryModOutput) ToDiscoveryModOutput() DiscoveryModOutput {
 
 func (o DiscoveryModOutput) ToDiscoveryModOutputWithContext(ctx context.Context) DiscoveryModOutput {
 	return o
-}
-
-func (o DiscoveryModOutput) ToOutput(ctx context.Context) pulumix.Output[*DiscoveryMod] {
-	return pulumix.Output[*DiscoveryMod]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment where the discovery job resource should be created.
@@ -572,12 +547,6 @@ func (o DiscoveryModArrayOutput) ToDiscoveryModArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o DiscoveryModArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DiscoveryMod] {
-	return pulumix.Output[[]*DiscoveryMod]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DiscoveryModArrayOutput) Index(i pulumi.IntInput) DiscoveryModOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DiscoveryMod {
 		return vs[0].([]*DiscoveryMod)[vs[1].(int)]
@@ -596,12 +565,6 @@ func (o DiscoveryModMapOutput) ToDiscoveryModMapOutput() DiscoveryModMapOutput {
 
 func (o DiscoveryModMapOutput) ToDiscoveryModMapOutputWithContext(ctx context.Context) DiscoveryModMapOutput {
 	return o
-}
-
-func (o DiscoveryModMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DiscoveryMod] {
-	return pulumix.Output[map[string]*DiscoveryMod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DiscoveryModMapOutput) MapIndex(k pulumi.StringInput) DiscoveryModOutput {

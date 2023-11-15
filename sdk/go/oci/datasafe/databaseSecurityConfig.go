@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Security Config resource in Oracle Cloud Infrastructure Data Safe service.
@@ -240,12 +239,6 @@ func (i *DatabaseSecurityConfig) ToDatabaseSecurityConfigOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigOutput)
 }
 
-func (i *DatabaseSecurityConfig) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfig] {
-	return pulumix.Output[*DatabaseSecurityConfig]{
-		OutputState: i.ToDatabaseSecurityConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseSecurityConfigArrayInput is an input type that accepts DatabaseSecurityConfigArray and DatabaseSecurityConfigArrayOutput values.
 // You can construct a concrete instance of `DatabaseSecurityConfigArrayInput` via:
 //
@@ -269,12 +262,6 @@ func (i DatabaseSecurityConfigArray) ToDatabaseSecurityConfigArrayOutput() Datab
 
 func (i DatabaseSecurityConfigArray) ToDatabaseSecurityConfigArrayOutputWithContext(ctx context.Context) DatabaseSecurityConfigArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigArrayOutput)
-}
-
-func (i DatabaseSecurityConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfig] {
-	return pulumix.Output[[]*DatabaseSecurityConfig]{
-		OutputState: i.ToDatabaseSecurityConfigArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseSecurityConfigMapInput is an input type that accepts DatabaseSecurityConfigMap and DatabaseSecurityConfigMapOutput values.
@@ -302,12 +289,6 @@ func (i DatabaseSecurityConfigMap) ToDatabaseSecurityConfigMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseSecurityConfigMapOutput)
 }
 
-func (i DatabaseSecurityConfigMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfig] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfig]{
-		OutputState: i.ToDatabaseSecurityConfigMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseSecurityConfigOutput struct{ *pulumi.OutputState }
 
 func (DatabaseSecurityConfigOutput) ElementType() reflect.Type {
@@ -320,12 +301,6 @@ func (o DatabaseSecurityConfigOutput) ToDatabaseSecurityConfigOutput() DatabaseS
 
 func (o DatabaseSecurityConfigOutput) ToDatabaseSecurityConfigOutputWithContext(ctx context.Context) DatabaseSecurityConfigOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseSecurityConfig] {
-	return pulumix.Output[*DatabaseSecurityConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the compartment containing the database security config.
@@ -422,12 +397,6 @@ func (o DatabaseSecurityConfigArrayOutput) ToDatabaseSecurityConfigArrayOutputWi
 	return o
 }
 
-func (o DatabaseSecurityConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseSecurityConfig] {
-	return pulumix.Output[[]*DatabaseSecurityConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DatabaseSecurityConfigArrayOutput) Index(i pulumi.IntInput) DatabaseSecurityConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseSecurityConfig {
 		return vs[0].([]*DatabaseSecurityConfig)[vs[1].(int)]
@@ -446,12 +415,6 @@ func (o DatabaseSecurityConfigMapOutput) ToDatabaseSecurityConfigMapOutput() Dat
 
 func (o DatabaseSecurityConfigMapOutput) ToDatabaseSecurityConfigMapOutputWithContext(ctx context.Context) DatabaseSecurityConfigMapOutput {
 	return o
-}
-
-func (o DatabaseSecurityConfigMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseSecurityConfig] {
-	return pulumix.Output[map[string]*DatabaseSecurityConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseSecurityConfigMapOutput) MapIndex(k pulumi.StringInput) DatabaseSecurityConfigOutput {

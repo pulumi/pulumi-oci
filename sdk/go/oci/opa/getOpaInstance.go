@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Opa Instance resource in Oracle Cloud Infrastructure Opa service.
@@ -139,12 +138,6 @@ func (o LookupOpaInstanceResultOutput) ToLookupOpaInstanceResultOutput() LookupO
 
 func (o LookupOpaInstanceResultOutput) ToLookupOpaInstanceResultOutputWithContext(ctx context.Context) LookupOpaInstanceResultOutput {
 	return o
-}
-
-func (o LookupOpaInstanceResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupOpaInstanceResult] {
-	return pulumix.Output[LookupOpaInstanceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of associated attachments to other services

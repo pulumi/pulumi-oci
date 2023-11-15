@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Model Provenance resource in Oracle Cloud Infrastructure Data Science service.
@@ -220,12 +219,6 @@ func (i *ModelProvenance) ToModelProvenanceOutputWithContext(ctx context.Context
 	return pulumi.ToOutputWithContext(ctx, i).(ModelProvenanceOutput)
 }
 
-func (i *ModelProvenance) ToOutput(ctx context.Context) pulumix.Output[*ModelProvenance] {
-	return pulumix.Output[*ModelProvenance]{
-		OutputState: i.ToModelProvenanceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ModelProvenanceArrayInput is an input type that accepts ModelProvenanceArray and ModelProvenanceArrayOutput values.
 // You can construct a concrete instance of `ModelProvenanceArrayInput` via:
 //
@@ -249,12 +242,6 @@ func (i ModelProvenanceArray) ToModelProvenanceArrayOutput() ModelProvenanceArra
 
 func (i ModelProvenanceArray) ToModelProvenanceArrayOutputWithContext(ctx context.Context) ModelProvenanceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ModelProvenanceArrayOutput)
-}
-
-func (i ModelProvenanceArray) ToOutput(ctx context.Context) pulumix.Output[[]*ModelProvenance] {
-	return pulumix.Output[[]*ModelProvenance]{
-		OutputState: i.ToModelProvenanceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ModelProvenanceMapInput is an input type that accepts ModelProvenanceMap and ModelProvenanceMapOutput values.
@@ -282,12 +269,6 @@ func (i ModelProvenanceMap) ToModelProvenanceMapOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ModelProvenanceMapOutput)
 }
 
-func (i ModelProvenanceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelProvenance] {
-	return pulumix.Output[map[string]*ModelProvenance]{
-		OutputState: i.ToModelProvenanceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ModelProvenanceOutput struct{ *pulumi.OutputState }
 
 func (ModelProvenanceOutput) ElementType() reflect.Type {
@@ -300,12 +281,6 @@ func (o ModelProvenanceOutput) ToModelProvenanceOutput() ModelProvenanceOutput {
 
 func (o ModelProvenanceOutput) ToModelProvenanceOutputWithContext(ctx context.Context) ModelProvenanceOutput {
 	return o
-}
-
-func (o ModelProvenanceOutput) ToOutput(ctx context.Context) pulumix.Output[*ModelProvenance] {
-	return pulumix.Output[*ModelProvenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
@@ -360,12 +335,6 @@ func (o ModelProvenanceArrayOutput) ToModelProvenanceArrayOutputWithContext(ctx 
 	return o
 }
 
-func (o ModelProvenanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ModelProvenance] {
-	return pulumix.Output[[]*ModelProvenance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ModelProvenanceArrayOutput) Index(i pulumi.IntInput) ModelProvenanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ModelProvenance {
 		return vs[0].([]*ModelProvenance)[vs[1].(int)]
@@ -384,12 +353,6 @@ func (o ModelProvenanceMapOutput) ToModelProvenanceMapOutput() ModelProvenanceMa
 
 func (o ModelProvenanceMapOutput) ToModelProvenanceMapOutputWithContext(ctx context.Context) ModelProvenanceMapOutput {
 	return o
-}
-
-func (o ModelProvenanceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ModelProvenance] {
-	return pulumix.Output[map[string]*ModelProvenance]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ModelProvenanceMapOutput) MapIndex(k pulumi.StringInput) ModelProvenanceOutput {

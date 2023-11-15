@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vault Replicas in Oracle Cloud Infrastructure Kms service.
@@ -110,12 +109,6 @@ func (o GetVaultReplicasResultOutput) ToGetVaultReplicasResultOutput() GetVaultR
 
 func (o GetVaultReplicasResultOutput) ToGetVaultReplicasResultOutputWithContext(ctx context.Context) GetVaultReplicasResultOutput {
 	return o
-}
-
-func (o GetVaultReplicasResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVaultReplicasResult] {
-	return pulumix.Output[GetVaultReplicasResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVaultReplicasResultOutput) Filters() GetVaultReplicasFilterArrayOutput {

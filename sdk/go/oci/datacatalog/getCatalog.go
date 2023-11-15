@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -124,12 +123,6 @@ func (o LookupCatalogResultOutput) ToLookupCatalogResultOutput() LookupCatalogRe
 
 func (o LookupCatalogResultOutput) ToLookupCatalogResultOutputWithContext(ctx context.Context) LookupCatalogResultOutput {
 	return o
-}
-
-func (o LookupCatalogResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupCatalogResult] {
-	return pulumix.Output[LookupCatalogResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of private reverse connection endpoints attached to the catalog

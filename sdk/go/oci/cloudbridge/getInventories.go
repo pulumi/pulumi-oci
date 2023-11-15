@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Inventories in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -113,12 +112,6 @@ func (o GetInventoriesResultOutput) ToGetInventoriesResultOutput() GetInventorie
 
 func (o GetInventoriesResultOutput) ToGetInventoriesResultOutputWithContext(ctx context.Context) GetInventoriesResultOutput {
 	return o
-}
-
-func (o GetInventoriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInventoriesResult] {
-	return pulumix.Output[GetInventoriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenantId.

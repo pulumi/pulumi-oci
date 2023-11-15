@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ip Sec Connection Tunnel Management resource in Oracle Cloud Infrastructure Core service.
@@ -316,12 +315,6 @@ func (i *IpsecConnectionTunnelManagement) ToIpsecConnectionTunnelManagementOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecConnectionTunnelManagementOutput)
 }
 
-func (i *IpsecConnectionTunnelManagement) ToOutput(ctx context.Context) pulumix.Output[*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[*IpsecConnectionTunnelManagement]{
-		OutputState: i.ToIpsecConnectionTunnelManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IpsecConnectionTunnelManagementArrayInput is an input type that accepts IpsecConnectionTunnelManagementArray and IpsecConnectionTunnelManagementArrayOutput values.
 // You can construct a concrete instance of `IpsecConnectionTunnelManagementArrayInput` via:
 //
@@ -345,12 +338,6 @@ func (i IpsecConnectionTunnelManagementArray) ToIpsecConnectionTunnelManagementA
 
 func (i IpsecConnectionTunnelManagementArray) ToIpsecConnectionTunnelManagementArrayOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecConnectionTunnelManagementArrayOutput)
-}
-
-func (i IpsecConnectionTunnelManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[[]*IpsecConnectionTunnelManagement]{
-		OutputState: i.ToIpsecConnectionTunnelManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IpsecConnectionTunnelManagementMapInput is an input type that accepts IpsecConnectionTunnelManagementMap and IpsecConnectionTunnelManagementMapOutput values.
@@ -378,12 +365,6 @@ func (i IpsecConnectionTunnelManagementMap) ToIpsecConnectionTunnelManagementMap
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecConnectionTunnelManagementMapOutput)
 }
 
-func (i IpsecConnectionTunnelManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[map[string]*IpsecConnectionTunnelManagement]{
-		OutputState: i.ToIpsecConnectionTunnelManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IpsecConnectionTunnelManagementOutput struct{ *pulumi.OutputState }
 
 func (IpsecConnectionTunnelManagementOutput) ElementType() reflect.Type {
@@ -396,12 +377,6 @@ func (o IpsecConnectionTunnelManagementOutput) ToIpsecConnectionTunnelManagement
 
 func (o IpsecConnectionTunnelManagementOutput) ToIpsecConnectionTunnelManagementOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementOutput {
 	return o
-}
-
-func (o IpsecConnectionTunnelManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[*IpsecConnectionTunnelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of virtual circuit [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
@@ -538,12 +513,6 @@ func (o IpsecConnectionTunnelManagementArrayOutput) ToIpsecConnectionTunnelManag
 	return o
 }
 
-func (o IpsecConnectionTunnelManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[[]*IpsecConnectionTunnelManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o IpsecConnectionTunnelManagementArrayOutput) Index(i pulumi.IntInput) IpsecConnectionTunnelManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *IpsecConnectionTunnelManagement {
 		return vs[0].([]*IpsecConnectionTunnelManagement)[vs[1].(int)]
@@ -562,12 +531,6 @@ func (o IpsecConnectionTunnelManagementMapOutput) ToIpsecConnectionTunnelManagem
 
 func (o IpsecConnectionTunnelManagementMapOutput) ToIpsecConnectionTunnelManagementMapOutputWithContext(ctx context.Context) IpsecConnectionTunnelManagementMapOutput {
 	return o
-}
-
-func (o IpsecConnectionTunnelManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*IpsecConnectionTunnelManagement] {
-	return pulumix.Output[map[string]*IpsecConnectionTunnelManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IpsecConnectionTunnelManagementMapOutput) MapIndex(k pulumi.StringInput) IpsecConnectionTunnelManagementOutput {

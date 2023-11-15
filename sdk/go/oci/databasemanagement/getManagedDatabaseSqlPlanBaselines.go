@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
@@ -166,12 +165,6 @@ func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) ToGetManagedDatabaseSqlP
 
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) ToGetManagedDatabaseSqlPlanBaselinesResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselinesResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselinesResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselinesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedDatabaseSqlPlanBaselinesResultOutput) Filters() GetManagedDatabaseSqlPlanBaselinesFilterArrayOutput {

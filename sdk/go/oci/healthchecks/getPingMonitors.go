@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ping Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -123,12 +122,6 @@ func (o GetPingMonitorsResultOutput) ToGetPingMonitorsResultOutput() GetPingMoni
 
 func (o GetPingMonitorsResultOutput) ToGetPingMonitorsResultOutputWithContext(ctx context.Context) GetPingMonitorsResultOutput {
 	return o
-}
-
-func (o GetPingMonitorsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPingMonitorsResult] {
-	return pulumix.Output[GetPingMonitorsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment.

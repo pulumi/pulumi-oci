@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
@@ -105,12 +104,6 @@ func (o GetDbHomePatchHistoryEntriesResultOutput) ToGetDbHomePatchHistoryEntries
 
 func (o GetDbHomePatchHistoryEntriesResultOutput) ToGetDbHomePatchHistoryEntriesResultOutputWithContext(ctx context.Context) GetDbHomePatchHistoryEntriesResultOutput {
 	return o
-}
-
-func (o GetDbHomePatchHistoryEntriesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbHomePatchHistoryEntriesResult] {
-	return pulumix.Output[GetDbHomePatchHistoryEntriesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDbHomePatchHistoryEntriesResultOutput) DbHomeId() pulumi.StringOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // ## Example Usage
@@ -231,12 +230,6 @@ func (i *Compartment) ToCompartmentOutputWithContext(ctx context.Context) Compar
 	return pulumi.ToOutputWithContext(ctx, i).(CompartmentOutput)
 }
 
-func (i *Compartment) ToOutput(ctx context.Context) pulumix.Output[*Compartment] {
-	return pulumix.Output[*Compartment]{
-		OutputState: i.ToCompartmentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CompartmentArrayInput is an input type that accepts CompartmentArray and CompartmentArrayOutput values.
 // You can construct a concrete instance of `CompartmentArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i CompartmentArray) ToCompartmentArrayOutput() CompartmentArrayOutput {
 
 func (i CompartmentArray) ToCompartmentArrayOutputWithContext(ctx context.Context) CompartmentArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CompartmentArrayOutput)
-}
-
-func (i CompartmentArray) ToOutput(ctx context.Context) pulumix.Output[[]*Compartment] {
-	return pulumix.Output[[]*Compartment]{
-		OutputState: i.ToCompartmentArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CompartmentMapInput is an input type that accepts CompartmentMap and CompartmentMapOutput values.
@@ -293,12 +280,6 @@ func (i CompartmentMap) ToCompartmentMapOutputWithContext(ctx context.Context) C
 	return pulumi.ToOutputWithContext(ctx, i).(CompartmentMapOutput)
 }
 
-func (i CompartmentMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Compartment] {
-	return pulumix.Output[map[string]*Compartment]{
-		OutputState: i.ToCompartmentMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CompartmentOutput struct{ *pulumi.OutputState }
 
 func (CompartmentOutput) ElementType() reflect.Type {
@@ -311,12 +292,6 @@ func (o CompartmentOutput) ToCompartmentOutput() CompartmentOutput {
 
 func (o CompartmentOutput) ToCompartmentOutputWithContext(ctx context.Context) CompartmentOutput {
 	return o
-}
-
-func (o CompartmentOutput) ToOutput(ctx context.Context) pulumix.Output[*Compartment] {
-	return pulumix.Output[*Compartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the parent compartment containing the compartment.
@@ -386,12 +361,6 @@ func (o CompartmentArrayOutput) ToCompartmentArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o CompartmentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Compartment] {
-	return pulumix.Output[[]*Compartment]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CompartmentArrayOutput) Index(i pulumi.IntInput) CompartmentOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Compartment {
 		return vs[0].([]*Compartment)[vs[1].(int)]
@@ -410,12 +379,6 @@ func (o CompartmentMapOutput) ToCompartmentMapOutput() CompartmentMapOutput {
 
 func (o CompartmentMapOutput) ToCompartmentMapOutputWithContext(ctx context.Context) CompartmentMapOutput {
 	return o
-}
-
-func (o CompartmentMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Compartment] {
-	return pulumix.Output[map[string]*Compartment]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CompartmentMapOutput) MapIndex(k pulumi.StringInput) CompartmentOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Identity Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -176,12 +175,6 @@ func (o LookupDomainsIdentitySettingResultOutput) ToLookupDomainsIdentitySetting
 
 func (o LookupDomainsIdentitySettingResultOutput) ToLookupDomainsIdentitySettingResultOutputWithContext(ctx context.Context) LookupDomainsIdentitySettingResultOutput {
 	return o
-}
-
-func (o LookupDomainsIdentitySettingResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsIdentitySettingResult] {
-	return pulumix.Output[LookupDomainsIdentitySettingResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsIdentitySettingResultOutput) AttributeSets() pulumi.StringArrayOutput {

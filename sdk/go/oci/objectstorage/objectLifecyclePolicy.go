@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
@@ -184,12 +183,6 @@ func (i *ObjectLifecyclePolicy) ToObjectLifecyclePolicyOutputWithContext(ctx con
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyOutput)
 }
 
-func (i *ObjectLifecyclePolicy) ToOutput(ctx context.Context) pulumix.Output[*ObjectLifecyclePolicy] {
-	return pulumix.Output[*ObjectLifecyclePolicy]{
-		OutputState: i.ToObjectLifecyclePolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ObjectLifecyclePolicyArrayInput is an input type that accepts ObjectLifecyclePolicyArray and ObjectLifecyclePolicyArrayOutput values.
 // You can construct a concrete instance of `ObjectLifecyclePolicyArrayInput` via:
 //
@@ -213,12 +206,6 @@ func (i ObjectLifecyclePolicyArray) ToObjectLifecyclePolicyArrayOutput() ObjectL
 
 func (i ObjectLifecyclePolicyArray) ToObjectLifecyclePolicyArrayOutputWithContext(ctx context.Context) ObjectLifecyclePolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyArrayOutput)
-}
-
-func (i ObjectLifecyclePolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*ObjectLifecyclePolicy] {
-	return pulumix.Output[[]*ObjectLifecyclePolicy]{
-		OutputState: i.ToObjectLifecyclePolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ObjectLifecyclePolicyMapInput is an input type that accepts ObjectLifecyclePolicyMap and ObjectLifecyclePolicyMapOutput values.
@@ -246,12 +233,6 @@ func (i ObjectLifecyclePolicyMap) ToObjectLifecyclePolicyMapOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(ObjectLifecyclePolicyMapOutput)
 }
 
-func (i ObjectLifecyclePolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ObjectLifecyclePolicy] {
-	return pulumix.Output[map[string]*ObjectLifecyclePolicy]{
-		OutputState: i.ToObjectLifecyclePolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ObjectLifecyclePolicyOutput struct{ *pulumi.OutputState }
 
 func (ObjectLifecyclePolicyOutput) ElementType() reflect.Type {
@@ -264,12 +245,6 @@ func (o ObjectLifecyclePolicyOutput) ToObjectLifecyclePolicyOutput() ObjectLifec
 
 func (o ObjectLifecyclePolicyOutput) ToObjectLifecyclePolicyOutputWithContext(ctx context.Context) ObjectLifecyclePolicyOutput {
 	return o
-}
-
-func (o ObjectLifecyclePolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*ObjectLifecyclePolicy] {
-	return pulumix.Output[*ObjectLifecyclePolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -306,12 +281,6 @@ func (o ObjectLifecyclePolicyArrayOutput) ToObjectLifecyclePolicyArrayOutputWith
 	return o
 }
 
-func (o ObjectLifecyclePolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ObjectLifecyclePolicy] {
-	return pulumix.Output[[]*ObjectLifecyclePolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ObjectLifecyclePolicyArrayOutput) Index(i pulumi.IntInput) ObjectLifecyclePolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ObjectLifecyclePolicy {
 		return vs[0].([]*ObjectLifecyclePolicy)[vs[1].(int)]
@@ -330,12 +299,6 @@ func (o ObjectLifecyclePolicyMapOutput) ToObjectLifecyclePolicyMapOutput() Objec
 
 func (o ObjectLifecyclePolicyMapOutput) ToObjectLifecyclePolicyMapOutputWithContext(ctx context.Context) ObjectLifecyclePolicyMapOutput {
 	return o
-}
-
-func (o ObjectLifecyclePolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ObjectLifecyclePolicy] {
-	return pulumix.Output[map[string]*ObjectLifecyclePolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ObjectLifecyclePolicyMapOutput) MapIndex(k pulumi.StringInput) ObjectLifecyclePolicyOutput {

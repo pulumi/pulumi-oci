@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sensitive Data Model Sensitive Objects in Oracle Cloud Infrastructure Data Safe service.
@@ -126,12 +125,6 @@ func (o GetSensitiveDataModelSensitiveObjectsResultOutput) ToGetSensitiveDataMod
 
 func (o GetSensitiveDataModelSensitiveObjectsResultOutput) ToGetSensitiveDataModelSensitiveObjectsResultOutputWithContext(ctx context.Context) GetSensitiveDataModelSensitiveObjectsResultOutput {
 	return o
-}
-
-func (o GetSensitiveDataModelSensitiveObjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsResult] {
-	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSensitiveDataModelSensitiveObjectsResultOutput) Filters() GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {

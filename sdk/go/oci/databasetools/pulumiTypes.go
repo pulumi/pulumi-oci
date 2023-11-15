@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i DatabaseToolsConnectionKeyStoreArgs) ToDatabaseToolsConnectionKeyStoreOu
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionKeyStoreOutput)
 }
 
-func (i DatabaseToolsConnectionKeyStoreArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[DatabaseToolsConnectionKeyStore]{
-		OutputState: i.ToDatabaseToolsConnectionKeyStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseToolsConnectionKeyStoreArrayInput is an input type that accepts DatabaseToolsConnectionKeyStoreArray and DatabaseToolsConnectionKeyStoreArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsConnectionKeyStoreArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i DatabaseToolsConnectionKeyStoreArray) ToDatabaseToolsConnectionKeyStoreA
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionKeyStoreArrayOutput)
 }
 
-func (i DatabaseToolsConnectionKeyStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[[]DatabaseToolsConnectionKeyStore]{
-		OutputState: i.ToDatabaseToolsConnectionKeyStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionKeyStoreOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionKeyStoreOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o DatabaseToolsConnectionKeyStoreOutput) ToDatabaseToolsConnectionKeyStore
 
 func (o DatabaseToolsConnectionKeyStoreOutput) ToDatabaseToolsConnectionKeyStoreOutputWithContext(ctx context.Context) DatabaseToolsConnectionKeyStoreOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionKeyStoreOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[DatabaseToolsConnectionKeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The key store content.
@@ -143,12 +124,6 @@ func (o DatabaseToolsConnectionKeyStoreArrayOutput) ToDatabaseToolsConnectionKey
 
 func (o DatabaseToolsConnectionKeyStoreArrayOutput) ToDatabaseToolsConnectionKeyStoreArrayOutputWithContext(ctx context.Context) DatabaseToolsConnectionKeyStoreArrayOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionKeyStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[[]DatabaseToolsConnectionKeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionKeyStoreArrayOutput) Index(i pulumi.IntInput) DatabaseToolsConnectionKeyStoreOutput {
@@ -200,12 +175,6 @@ func (i DatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToDatabaseToolsConne
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionKeyStoreKeyStoreContentOutput)
 }
 
-func (i DatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: i.ToDatabaseToolsConnectionKeyStoreKeyStoreContentOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToDatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput() DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput {
 	return i.ToDatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutputWithContext(context.Background())
 }
@@ -247,12 +216,6 @@ func (i *databaseToolsConnectionKeyStoreKeyStoreContentPtrType) ToDatabaseToolsC
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput)
 }
 
-func (i *databaseToolsConnectionKeyStoreKeyStoreContentPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: i.ToDatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionKeyStoreKeyStoreContentOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ElementType() reflect.Type {
@@ -275,12 +238,6 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ToDatabaseToolsCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsConnectionKeyStoreKeyStoreContent) *DatabaseToolsConnectionKeyStoreKeyStoreContent {
 		return &v
 	}).(DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput)
-}
-
-func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -308,12 +265,6 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) ToDatabaseTools
 
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) ToDatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) Elem() DatabaseToolsConnectionKeyStoreKeyStoreContentOutput {
@@ -392,12 +343,6 @@ func (i DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToDatabaseToolsConn
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput)
 }
 
-func (i DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: i.ToDatabaseToolsConnectionKeyStoreKeyStorePasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToDatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput() DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput {
 	return i.ToDatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutputWithContext(context.Background())
 }
@@ -439,12 +384,6 @@ func (i *databaseToolsConnectionKeyStoreKeyStorePasswordPtrType) ToDatabaseTools
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput)
 }
 
-func (i *databaseToolsConnectionKeyStoreKeyStorePasswordPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: i.ToDatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ElementType() reflect.Type {
@@ -467,12 +406,6 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ToDatabaseToolsCo
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsConnectionKeyStoreKeyStorePassword) *DatabaseToolsConnectionKeyStoreKeyStorePassword {
 		return &v
 	}).(DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput)
-}
-
-func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[DatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -500,12 +433,6 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) ToDatabaseTool
 
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) ToDatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[*DatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) Elem() DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput {
@@ -578,12 +505,6 @@ func (i DatabaseToolsConnectionRelatedResourceArgs) ToDatabaseToolsConnectionRel
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionRelatedResourceOutput)
 }
 
-func (i DatabaseToolsConnectionRelatedResourceArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[DatabaseToolsConnectionRelatedResource]{
-		OutputState: i.ToDatabaseToolsConnectionRelatedResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseToolsConnectionRelatedResourceArgs) ToDatabaseToolsConnectionRelatedResourcePtrOutput() DatabaseToolsConnectionRelatedResourcePtrOutput {
 	return i.ToDatabaseToolsConnectionRelatedResourcePtrOutputWithContext(context.Background())
 }
@@ -625,12 +546,6 @@ func (i *databaseToolsConnectionRelatedResourcePtrType) ToDatabaseToolsConnectio
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionRelatedResourcePtrOutput)
 }
 
-func (i *databaseToolsConnectionRelatedResourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[*DatabaseToolsConnectionRelatedResource]{
-		OutputState: i.ToDatabaseToolsConnectionRelatedResourcePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionRelatedResourceOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionRelatedResourceOutput) ElementType() reflect.Type {
@@ -655,12 +570,6 @@ func (o DatabaseToolsConnectionRelatedResourceOutput) ToDatabaseToolsConnectionR
 	}).(DatabaseToolsConnectionRelatedResourcePtrOutput)
 }
 
-func (o DatabaseToolsConnectionRelatedResourceOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[DatabaseToolsConnectionRelatedResource]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The resource entity type.
 func (o DatabaseToolsConnectionRelatedResourceOutput) EntityType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionRelatedResource) string { return v.EntityType }).(pulumi.StringOutput)
@@ -683,12 +592,6 @@ func (o DatabaseToolsConnectionRelatedResourcePtrOutput) ToDatabaseToolsConnecti
 
 func (o DatabaseToolsConnectionRelatedResourcePtrOutput) ToDatabaseToolsConnectionRelatedResourcePtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionRelatedResourcePtrOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionRelatedResourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[*DatabaseToolsConnectionRelatedResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionRelatedResourcePtrOutput) Elem() DatabaseToolsConnectionRelatedResourceOutput {
@@ -764,12 +667,6 @@ func (i DatabaseToolsConnectionUserPasswordArgs) ToDatabaseToolsConnectionUserPa
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionUserPasswordOutput)
 }
 
-func (i DatabaseToolsConnectionUserPasswordArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[DatabaseToolsConnectionUserPassword]{
-		OutputState: i.ToDatabaseToolsConnectionUserPasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i DatabaseToolsConnectionUserPasswordArgs) ToDatabaseToolsConnectionUserPasswordPtrOutput() DatabaseToolsConnectionUserPasswordPtrOutput {
 	return i.ToDatabaseToolsConnectionUserPasswordPtrOutputWithContext(context.Background())
 }
@@ -811,12 +708,6 @@ func (i *databaseToolsConnectionUserPasswordPtrType) ToDatabaseToolsConnectionUs
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionUserPasswordPtrOutput)
 }
 
-func (i *databaseToolsConnectionUserPasswordPtrType) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[*DatabaseToolsConnectionUserPassword]{
-		OutputState: i.ToDatabaseToolsConnectionUserPasswordPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsConnectionUserPasswordOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsConnectionUserPasswordOutput) ElementType() reflect.Type {
@@ -839,12 +730,6 @@ func (o DatabaseToolsConnectionUserPasswordOutput) ToDatabaseToolsConnectionUser
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsConnectionUserPassword) *DatabaseToolsConnectionUserPassword {
 		return &v
 	}).(DatabaseToolsConnectionUserPasswordPtrOutput)
-}
-
-func (o DatabaseToolsConnectionUserPasswordOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[DatabaseToolsConnectionUserPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -872,12 +757,6 @@ func (o DatabaseToolsConnectionUserPasswordPtrOutput) ToDatabaseToolsConnectionU
 
 func (o DatabaseToolsConnectionUserPasswordPtrOutput) ToDatabaseToolsConnectionUserPasswordPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionUserPasswordPtrOutput {
 	return o
-}
-
-func (o DatabaseToolsConnectionUserPasswordPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[*DatabaseToolsConnectionUserPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsConnectionUserPasswordPtrOutput) Elem() DatabaseToolsConnectionUserPasswordOutput {
@@ -946,12 +825,6 @@ func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs) ToDataba
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput)
 }
 
-func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput is an input type that accepts DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray and DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput` via:
 //
@@ -977,12 +850,6 @@ func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray) ToDatab
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput)
 }
 
-func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ElementType() reflect.Type {
@@ -995,12 +862,6 @@ func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ToData
 
 func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput {
 	return o
-}
-
-func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
@@ -1022,12 +883,6 @@ func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) T
 
 func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput {
 	return o
-}
-
-func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) Index(i pulumi.IntInput) DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput {
@@ -1069,12 +924,6 @@ func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput)
 }
 
-func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput is an input type that accepts DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray and DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput values.
 // You can construct a concrete instance of `DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput` via:
 //
@@ -1100,12 +949,6 @@ func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput)
 }
 
-func (i DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: i.ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput struct{ *pulumi.OutputState }
 
 func (DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ElementType() reflect.Type {
@@ -1118,12 +961,6 @@ func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 
 func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput {
 	return o
-}
-
-func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ToOutput(ctx context.Context) pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
@@ -1145,12 +982,6 @@ func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnect
 
 func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) ToDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput {
 	return o
-}
-
-func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[[]DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) Index(i pulumi.IntInput) DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput {
@@ -1200,12 +1031,6 @@ func (i GetDatabaseToolsConnectionKeyStoreArgs) ToGetDatabaseToolsConnectionKeyS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionKeyStoreOutput)
 }
 
-func (i GetDatabaseToolsConnectionKeyStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[GetDatabaseToolsConnectionKeyStore]{
-		OutputState: i.ToGetDatabaseToolsConnectionKeyStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionKeyStoreArrayInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreArray and GetDatabaseToolsConnectionKeyStoreArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreArrayInput` via:
 //
@@ -1231,12 +1056,6 @@ func (i GetDatabaseToolsConnectionKeyStoreArray) ToGetDatabaseToolsConnectionKey
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionKeyStoreArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionKeyStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionKeyStore]{
-		OutputState: i.ToGetDatabaseToolsConnectionKeyStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionKeyStoreOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionKeyStoreOutput) ElementType() reflect.Type {
@@ -1249,12 +1068,6 @@ func (o GetDatabaseToolsConnectionKeyStoreOutput) ToGetDatabaseToolsConnectionKe
 
 func (o GetDatabaseToolsConnectionKeyStoreOutput) ToGetDatabaseToolsConnectionKeyStoreOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionKeyStoreOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionKeyStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[GetDatabaseToolsConnectionKeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The key store content.
@@ -1288,12 +1101,6 @@ func (o GetDatabaseToolsConnectionKeyStoreArrayOutput) ToGetDatabaseToolsConnect
 
 func (o GetDatabaseToolsConnectionKeyStoreArrayOutput) ToGetDatabaseToolsConnectionKeyStoreArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionKeyStoreArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionKeyStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionKeyStore] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionKeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionKeyStoreArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionKeyStoreOutput {
@@ -1339,12 +1146,6 @@ func (i GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToGetDatabaseTool
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput)
 }
 
-func (i GetDatabaseToolsConnectionKeyStoreKeyStoreContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: i.ToGetDatabaseToolsConnectionKeyStoreKeyStoreContentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray and GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayInput` via:
 //
@@ -1370,12 +1171,6 @@ func (i GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray) ToGetDatabaseToo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: i.ToGetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ElementType() reflect.Type {
@@ -1388,12 +1183,6 @@ func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ToGetDatabaseTo
 
 func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ToGetDatabaseToolsConnectionKeyStoreKeyStoreContentOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -1418,12 +1207,6 @@ func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput) ToGetDatab
 
 func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput) ToGetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStoreContent] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStoreContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionKeyStoreKeyStoreContentOutput {
@@ -1469,12 +1252,6 @@ func (i GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToGetDatabaseToo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput)
 }
 
-func (i GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray and GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayInput` via:
 //
@@ -1500,12 +1277,6 @@ func (i GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray) ToGetDatabaseTo
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ElementType() reflect.Type {
@@ -1518,12 +1289,6 @@ func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ToGetDatabaseT
 
 func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ToGetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -1548,12 +1313,6 @@ func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput) ToGetData
 
 func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput) ToGetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStorePassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionKeyStoreKeyStorePassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput {
@@ -1599,12 +1358,6 @@ func (i GetDatabaseToolsConnectionRelatedResourceArgs) ToGetDatabaseToolsConnect
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionRelatedResourceOutput)
 }
 
-func (i GetDatabaseToolsConnectionRelatedResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[GetDatabaseToolsConnectionRelatedResource]{
-		OutputState: i.ToGetDatabaseToolsConnectionRelatedResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionRelatedResourceArrayInput is an input type that accepts GetDatabaseToolsConnectionRelatedResourceArray and GetDatabaseToolsConnectionRelatedResourceArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionRelatedResourceArrayInput` via:
 //
@@ -1630,12 +1383,6 @@ func (i GetDatabaseToolsConnectionRelatedResourceArray) ToGetDatabaseToolsConnec
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionRelatedResourceArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionRelatedResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionRelatedResource]{
-		OutputState: i.ToGetDatabaseToolsConnectionRelatedResourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionRelatedResourceOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionRelatedResourceOutput) ElementType() reflect.Type {
@@ -1648,12 +1395,6 @@ func (o GetDatabaseToolsConnectionRelatedResourceOutput) ToGetDatabaseToolsConne
 
 func (o GetDatabaseToolsConnectionRelatedResourceOutput) ToGetDatabaseToolsConnectionRelatedResourceOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionRelatedResourceOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionRelatedResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[GetDatabaseToolsConnectionRelatedResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The resource entity type.
@@ -1678,12 +1419,6 @@ func (o GetDatabaseToolsConnectionRelatedResourceArrayOutput) ToGetDatabaseTools
 
 func (o GetDatabaseToolsConnectionRelatedResourceArrayOutput) ToGetDatabaseToolsConnectionRelatedResourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionRelatedResourceArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionRelatedResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionRelatedResource] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionRelatedResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionRelatedResourceOutput {
@@ -1729,12 +1464,6 @@ func (i GetDatabaseToolsConnectionUserPasswordArgs) ToGetDatabaseToolsConnection
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionUserPasswordOutput)
 }
 
-func (i GetDatabaseToolsConnectionUserPasswordArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionUserPassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionUserPasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionUserPasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionUserPasswordArray and GetDatabaseToolsConnectionUserPasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionUserPasswordArrayInput` via:
 //
@@ -1760,12 +1489,6 @@ func (i GetDatabaseToolsConnectionUserPasswordArray) ToGetDatabaseToolsConnectio
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionUserPasswordArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionUserPasswordArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionUserPassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionUserPasswordArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionUserPasswordOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionUserPasswordOutput) ElementType() reflect.Type {
@@ -1778,12 +1501,6 @@ func (o GetDatabaseToolsConnectionUserPasswordOutput) ToGetDatabaseToolsConnecti
 
 func (o GetDatabaseToolsConnectionUserPasswordOutput) ToGetDatabaseToolsConnectionUserPasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionUserPasswordOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionUserPasswordOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionUserPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -1808,12 +1525,6 @@ func (o GetDatabaseToolsConnectionUserPasswordArrayOutput) ToGetDatabaseToolsCon
 
 func (o GetDatabaseToolsConnectionUserPasswordArrayOutput) ToGetDatabaseToolsConnectionUserPasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionUserPasswordArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionUserPasswordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionUserPassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionUserPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionUserPasswordArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionUserPasswordOutput {
@@ -1853,12 +1564,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs) ToGetD
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayInput` via:
 //
@@ -1884,12 +1589,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput) ElementType() reflect.Type {
@@ -1902,12 +1601,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput) ToGe
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput) Items() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutput {
@@ -1928,12 +1621,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput)
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutput {
@@ -2043,12 +1730,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayInput` via:
 //
@@ -2074,12 +1755,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArray) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) ElementType() reflect.Type {
@@ -2092,12 +1767,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
@@ -2226,12 +1895,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOut
 	return o
 }
 
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem {
 		return vs[0].([]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem)[vs[1].(int)]
@@ -2279,12 +1942,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput` via:
 //
@@ -2310,12 +1967,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput) ElementType() reflect.Type {
@@ -2328,12 +1979,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The key store content.
@@ -2369,12 +2014,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreOutput {
@@ -2420,12 +2059,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayInput` via:
 //
@@ -2451,12 +2084,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput) ElementType() reflect.Type {
@@ -2469,12 +2096,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -2503,12 +2124,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContent]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentOutput {
@@ -2554,12 +2169,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayInput` via:
 //
@@ -2585,12 +2194,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput) ElementType() reflect.Type {
@@ -2603,12 +2206,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -2637,12 +2234,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput {
@@ -2688,12 +2279,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedR
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput` via:
 //
@@ -2719,12 +2304,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedR
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput) ElementType() reflect.Type {
@@ -2737,12 +2316,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedR
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The resource entity type.
@@ -2771,12 +2344,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedR
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput {
@@ -2822,12 +2389,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPass
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayInput` via:
 //
@@ -2853,12 +2414,6 @@ func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPass
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword]{
-		OutputState: i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput) ElementType() reflect.Type {
@@ -2871,12 +2426,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPass
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword] {
-	return pulumix.Output[GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
@@ -2905,12 +2454,6 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPass
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput {
@@ -2954,12 +2497,6 @@ func (i GetDatabaseToolsConnectionsFilterArgs) ToGetDatabaseToolsConnectionsFilt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsFilterOutput)
 }
 
-func (i GetDatabaseToolsConnectionsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsFilter] {
-	return pulumix.Output[GetDatabaseToolsConnectionsFilter]{
-		OutputState: i.ToGetDatabaseToolsConnectionsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsConnectionsFilterArrayInput is an input type that accepts GetDatabaseToolsConnectionsFilterArray and GetDatabaseToolsConnectionsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsConnectionsFilterArrayInput` via:
 //
@@ -2985,12 +2522,6 @@ func (i GetDatabaseToolsConnectionsFilterArray) ToGetDatabaseToolsConnectionsFil
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsFilterArrayOutput)
 }
 
-func (i GetDatabaseToolsConnectionsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsFilter] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsFilter]{
-		OutputState: i.ToGetDatabaseToolsConnectionsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsConnectionsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsConnectionsFilterOutput) ElementType() reflect.Type {
@@ -3003,12 +2534,6 @@ func (o GetDatabaseToolsConnectionsFilterOutput) ToGetDatabaseToolsConnectionsFi
 
 func (o GetDatabaseToolsConnectionsFilterOutput) ToGetDatabaseToolsConnectionsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsFilterOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsConnectionsFilter] {
-	return pulumix.Output[GetDatabaseToolsConnectionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsFilterOutput) Name() pulumi.StringOutput {
@@ -3035,12 +2560,6 @@ func (o GetDatabaseToolsConnectionsFilterArrayOutput) ToGetDatabaseToolsConnecti
 
 func (o GetDatabaseToolsConnectionsFilterArrayOutput) ToGetDatabaseToolsConnectionsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsFilterArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsConnectionsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsConnectionsFilter] {
-	return pulumix.Output[[]GetDatabaseToolsConnectionsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsFilterOutput {
@@ -3080,12 +2599,6 @@ func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput)
 }
 
-func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection]{
-		OutputState: i.ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayInput is an input type that accepts GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArray and GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayInput` via:
 //
@@ -3111,12 +2624,6 @@ func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput)
 }
 
-func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection] {
-	return pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection]{
-		OutputState: i.ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput) ElementType() reflect.Type {
@@ -3129,12 +2636,6 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOu
 
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput) ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput {
 	return o
-}
-
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput) Items() GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput {
@@ -3155,12 +2656,6 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionAr
 
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput) ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection] {
-	return pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionOutput {
@@ -3246,12 +2741,6 @@ func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput)
 }
 
-func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem]{
-		OutputState: i.ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput is an input type that accepts GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray and GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput` via:
 //
@@ -3277,12 +2766,6 @@ func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput)
 }
 
-func (i GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem] {
-	return pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem]{
-		OutputState: i.ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) ElementType() reflect.Type {
@@ -3295,12 +2778,6 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) ToGetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput {
 	return o
-}
-
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of the compartment in which to list resources.
@@ -3399,12 +2876,6 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 	return o
 }
 
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem] {
-	return pulumix.Output[[]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem {
 		return vs[0].([]GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem)[vs[1].(int)]
@@ -3448,12 +2919,6 @@ func (i GetDatabaseToolsEndpointServicesFilterArgs) ToGetDatabaseToolsEndpointSe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsEndpointServicesFilterOutput)
 }
 
-func (i GetDatabaseToolsEndpointServicesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesFilter] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesFilter]{
-		OutputState: i.ToGetDatabaseToolsEndpointServicesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsEndpointServicesFilterArrayInput is an input type that accepts GetDatabaseToolsEndpointServicesFilterArray and GetDatabaseToolsEndpointServicesFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsEndpointServicesFilterArrayInput` via:
 //
@@ -3479,12 +2944,6 @@ func (i GetDatabaseToolsEndpointServicesFilterArray) ToGetDatabaseToolsEndpointS
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsEndpointServicesFilterArrayOutput)
 }
 
-func (i GetDatabaseToolsEndpointServicesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsEndpointServicesFilter] {
-	return pulumix.Output[[]GetDatabaseToolsEndpointServicesFilter]{
-		OutputState: i.ToGetDatabaseToolsEndpointServicesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsEndpointServicesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsEndpointServicesFilterOutput) ElementType() reflect.Type {
@@ -3497,12 +2956,6 @@ func (o GetDatabaseToolsEndpointServicesFilterOutput) ToGetDatabaseToolsEndpoint
 
 func (o GetDatabaseToolsEndpointServicesFilterOutput) ToGetDatabaseToolsEndpointServicesFilterOutputWithContext(ctx context.Context) GetDatabaseToolsEndpointServicesFilterOutput {
 	return o
-}
-
-func (o GetDatabaseToolsEndpointServicesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsEndpointServicesFilter] {
-	return pulumix.Output[GetDatabaseToolsEndpointServicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the entire specified name.
@@ -3530,12 +2983,6 @@ func (o GetDatabaseToolsEndpointServicesFilterArrayOutput) ToGetDatabaseToolsEnd
 
 func (o GetDatabaseToolsEndpointServicesFilterArrayOutput) ToGetDatabaseToolsEndpointServicesFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsEndpointServicesFilterArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsEndpointServicesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsEndpointServicesFilter] {
-	return pulumix.Output[[]GetDatabaseToolsEndpointServicesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsEndpointServicesFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsEndpointServicesFilterOutput {
@@ -3577,12 +3024,6 @@ func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray and GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput` via:
 //
@@ -3608,12 +3049,6 @@ func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ElementType() reflect.Type {
@@ -3626,12 +3061,6 @@ func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ToG
 
 func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
@@ -3653,12 +3082,6 @@ func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput
 
 func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput {
@@ -3700,12 +3123,6 @@ func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConn
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray and GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput` via:
 //
@@ -3731,12 +3148,6 @@ func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConn
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ElementType() reflect.Type {
@@ -3749,12 +3160,6 @@ func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConn
 
 func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
@@ -3776,12 +3181,6 @@ func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConn
 
 func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) ToGetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput {
@@ -3821,12 +3220,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayInput` via:
 //
@@ -3852,12 +3245,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput) ElementType() reflect.Type {
@@ -3870,12 +3257,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOu
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput) Items() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput {
@@ -3896,12 +3277,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionAr
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionOutput {
@@ -4019,12 +3394,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayInput` via:
 //
@@ -4050,12 +3419,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
@@ -4068,12 +3431,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of additional FQDNs that can be also be used for the private endpoint.
@@ -4228,12 +3585,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return o
 }
 
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem {
 		return vs[0].([]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem)[vs[1].(int)]
@@ -4273,12 +3624,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput` via:
 //
@@ -4304,12 +3649,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput) ElementType() reflect.Type {
@@ -4322,12 +3661,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
@@ -4349,12 +3682,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput {
@@ -4396,12 +3723,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayInput` via:
 //
@@ -4427,12 +3748,6 @@ func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ElementType() reflect.Type {
@@ -4445,12 +3760,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The IP address in the customer's VCN to be used as the source IP for reverse connection packets traveling from the customer's VCN to the service's VCN.
@@ -4472,12 +3781,6 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIp]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput {
@@ -4521,12 +3824,6 @@ func (i GetDatabaseToolsPrivateEndpointsFilterArgs) ToGetDatabaseToolsPrivateEnd
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsFilterOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsFilter] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsFilter]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetDatabaseToolsPrivateEndpointsFilterArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsFilterArray and GetDatabaseToolsPrivateEndpointsFilterArrayOutput values.
 // You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsFilterArrayInput` via:
 //
@@ -4552,12 +3849,6 @@ func (i GetDatabaseToolsPrivateEndpointsFilterArray) ToGetDatabaseToolsPrivateEn
 	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsFilterArrayOutput)
 }
 
-func (i GetDatabaseToolsPrivateEndpointsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsFilter]{
-		OutputState: i.ToGetDatabaseToolsPrivateEndpointsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetDatabaseToolsPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetDatabaseToolsPrivateEndpointsFilterOutput) ElementType() reflect.Type {
@@ -4570,12 +3861,6 @@ func (o GetDatabaseToolsPrivateEndpointsFilterOutput) ToGetDatabaseToolsPrivateE
 
 func (o GetDatabaseToolsPrivateEndpointsFilterOutput) ToGetDatabaseToolsPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsFilterOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetDatabaseToolsPrivateEndpointsFilter] {
-	return pulumix.Output[GetDatabaseToolsPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
@@ -4602,12 +3887,6 @@ func (o GetDatabaseToolsPrivateEndpointsFilterArrayOutput) ToGetDatabaseToolsPri
 
 func (o GetDatabaseToolsPrivateEndpointsFilterArrayOutput) ToGetDatabaseToolsPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsFilterArrayOutput {
 	return o
-}
-
-func (o GetDatabaseToolsPrivateEndpointsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetDatabaseToolsPrivateEndpointsFilter] {
-	return pulumix.Output[[]GetDatabaseToolsPrivateEndpointsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDatabaseToolsPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointsFilterOutput {

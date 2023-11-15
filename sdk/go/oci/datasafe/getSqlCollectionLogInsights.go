@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
@@ -125,12 +124,6 @@ func (o GetSqlCollectionLogInsightsResultOutput) ToGetSqlCollectionLogInsightsRe
 
 func (o GetSqlCollectionLogInsightsResultOutput) ToGetSqlCollectionLogInsightsResultOutputWithContext(ctx context.Context) GetSqlCollectionLogInsightsResultOutput {
 	return o
-}
-
-func (o GetSqlCollectionLogInsightsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSqlCollectionLogInsightsResult] {
-	return pulumix.Output[GetSqlCollectionLogInsightsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSqlCollectionLogInsightsResultOutput) Filters() GetSqlCollectionLogInsightsFilterArrayOutput {

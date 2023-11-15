@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewalls in Oracle Cloud Infrastructure Network Firewall service.
@@ -139,12 +138,6 @@ func (o GetNetworkFirewallsResultOutput) ToGetNetworkFirewallsResultOutput() Get
 
 func (o GetNetworkFirewallsResultOutput) ToGetNetworkFirewallsResultOutputWithContext(ctx context.Context) GetNetworkFirewallsResultOutput {
 	return o
-}
-
-func (o GetNetworkFirewallsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallsResult] {
-	return pulumix.Output[GetNetworkFirewallsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use the [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`

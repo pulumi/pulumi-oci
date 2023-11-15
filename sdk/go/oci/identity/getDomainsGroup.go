@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -174,12 +173,6 @@ func (o LookupDomainsGroupResultOutput) ToLookupDomainsGroupResultOutput() Looku
 
 func (o LookupDomainsGroupResultOutput) ToLookupDomainsGroupResultOutputWithContext(ctx context.Context) LookupDomainsGroupResultOutput {
 	return o
-}
-
-func (o LookupDomainsGroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDomainsGroupResult] {
-	return pulumix.Output[LookupDomainsGroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupDomainsGroupResultOutput) AttributeSets() pulumi.StringArrayOutput {

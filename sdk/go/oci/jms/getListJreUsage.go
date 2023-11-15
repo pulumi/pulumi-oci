@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
@@ -134,12 +133,6 @@ func (o GetListJreUsageResultOutput) ToGetListJreUsageResultOutput() GetListJreU
 
 func (o GetListJreUsageResultOutput) ToGetListJreUsageResultOutputWithContext(ctx context.Context) GetListJreUsageResultOutput {
 	return o
-}
-
-func (o GetListJreUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetListJreUsageResult] {
-	return pulumix.Output[GetListJreUsageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetListJreUsageResultOutput) ApplicationId() pulumi.StringPtrOutput {

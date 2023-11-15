@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Preferences Management resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -164,12 +163,6 @@ func (i *LogAnalyticsPreferencesManagement) ToLogAnalyticsPreferencesManagementO
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementOutput)
 }
 
-func (i *LogAnalyticsPreferencesManagement) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsPreferencesManagement] {
-	return pulumix.Output[*LogAnalyticsPreferencesManagement]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsPreferencesManagementArrayInput is an input type that accepts LogAnalyticsPreferencesManagementArray and LogAnalyticsPreferencesManagementArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsPreferencesManagementArrayInput` via:
 //
@@ -193,12 +186,6 @@ func (i LogAnalyticsPreferencesManagementArray) ToLogAnalyticsPreferencesManagem
 
 func (i LogAnalyticsPreferencesManagementArray) ToLogAnalyticsPreferencesManagementArrayOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementArrayOutput)
-}
-
-func (i LogAnalyticsPreferencesManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsPreferencesManagement] {
-	return pulumix.Output[[]*LogAnalyticsPreferencesManagement]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsPreferencesManagementMapInput is an input type that accepts LogAnalyticsPreferencesManagementMap and LogAnalyticsPreferencesManagementMapOutput values.
@@ -226,12 +213,6 @@ func (i LogAnalyticsPreferencesManagementMap) ToLogAnalyticsPreferencesManagemen
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsPreferencesManagementMapOutput)
 }
 
-func (i LogAnalyticsPreferencesManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsPreferencesManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsPreferencesManagement]{
-		OutputState: i.ToLogAnalyticsPreferencesManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsPreferencesManagementOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsPreferencesManagementOutput) ElementType() reflect.Type {
@@ -244,12 +225,6 @@ func (o LogAnalyticsPreferencesManagementOutput) ToLogAnalyticsPreferencesManage
 
 func (o LogAnalyticsPreferencesManagementOutput) ToLogAnalyticsPreferencesManagementOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementOutput {
 	return o
-}
-
-func (o LogAnalyticsPreferencesManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsPreferencesManagement] {
-	return pulumix.Output[*LogAnalyticsPreferencesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of tenant preference details.
@@ -281,12 +256,6 @@ func (o LogAnalyticsPreferencesManagementArrayOutput) ToLogAnalyticsPreferencesM
 	return o
 }
 
-func (o LogAnalyticsPreferencesManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsPreferencesManagement] {
-	return pulumix.Output[[]*LogAnalyticsPreferencesManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsPreferencesManagementArrayOutput) Index(i pulumi.IntInput) LogAnalyticsPreferencesManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsPreferencesManagement {
 		return vs[0].([]*LogAnalyticsPreferencesManagement)[vs[1].(int)]
@@ -305,12 +274,6 @@ func (o LogAnalyticsPreferencesManagementMapOutput) ToLogAnalyticsPreferencesMan
 
 func (o LogAnalyticsPreferencesManagementMapOutput) ToLogAnalyticsPreferencesManagementMapOutputWithContext(ctx context.Context) LogAnalyticsPreferencesManagementMapOutput {
 	return o
-}
-
-func (o LogAnalyticsPreferencesManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsPreferencesManagement] {
-	return pulumix.Output[map[string]*LogAnalyticsPreferencesManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsPreferencesManagementMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsPreferencesManagementOutput {

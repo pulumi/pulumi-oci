@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Byoip Ranges in Oracle Cloud Infrastructure Core service.
@@ -121,12 +120,6 @@ func (o GetByoipRangesResultOutput) ToGetByoipRangesResultOutput() GetByoipRange
 
 func (o GetByoipRangesResultOutput) ToGetByoipRangesResultOutputWithContext(ctx context.Context) GetByoipRangesResultOutput {
 	return o
-}
-
-func (o GetByoipRangesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetByoipRangesResult] {
-	return pulumix.Output[GetByoipRangesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of byoip_range_collection.

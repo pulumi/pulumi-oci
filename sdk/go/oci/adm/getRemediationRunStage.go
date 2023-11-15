@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Remediation Run Stage resource in Oracle Cloud Infrastructure Adm service.
@@ -131,12 +130,6 @@ func (o LookupRemediationRunStageResultOutput) ToLookupRemediationRunStageResult
 
 func (o LookupRemediationRunStageResultOutput) ToLookupRemediationRunStageResultOutputWithContext(ctx context.Context) LookupRemediationRunStageResultOutput {
 	return o
-}
-
-func (o LookupRemediationRunStageResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupRemediationRunStageResult] {
-	return pulumix.Output[LookupRemediationRunStageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.

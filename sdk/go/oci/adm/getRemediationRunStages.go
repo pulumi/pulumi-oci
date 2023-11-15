@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Remediation Run Stages in Oracle Cloud Infrastructure Adm service.
@@ -120,12 +119,6 @@ func (o GetRemediationRunStagesResultOutput) ToGetRemediationRunStagesResultOutp
 
 func (o GetRemediationRunStagesResultOutput) ToGetRemediationRunStagesResultOutputWithContext(ctx context.Context) GetRemediationRunStagesResultOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesResult] {
-	return pulumix.Output[GetRemediationRunStagesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesResultOutput) Filters() GetRemediationRunStagesFilterArrayOutput {

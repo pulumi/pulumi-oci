@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Node Pool Option resource in Oracle Cloud Infrastructure Container Engine service.
@@ -114,12 +113,6 @@ func (o GetNodePoolOptionResultOutput) ToGetNodePoolOptionResultOutput() GetNode
 
 func (o GetNodePoolOptionResultOutput) ToGetNodePoolOptionResultOutputWithContext(ctx context.Context) GetNodePoolOptionResultOutput {
 	return o
-}
-
-func (o GetNodePoolOptionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNodePoolOptionResult] {
-	return pulumix.Output[GetNodePoolOptionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNodePoolOptionResultOutput) CompartmentId() pulumi.StringPtrOutput {

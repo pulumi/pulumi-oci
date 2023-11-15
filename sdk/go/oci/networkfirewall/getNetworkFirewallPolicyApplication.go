@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -87,12 +86,6 @@ func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToLookupNetworkFirew
 
 func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToLookupNetworkFirewallPolicyApplicationResultOutputWithContext(ctx context.Context) LookupNetworkFirewallPolicyApplicationResultOutput {
 	return o
-}
-
-func (o LookupNetworkFirewallPolicyApplicationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkFirewallPolicyApplicationResult] {
-	return pulumix.Output[LookupNetworkFirewallPolicyApplicationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The value of the ICMP/ICMP_V6 message Code (subtype) field as defined by [RFC 4443](https://www.rfc-editor.org/rfc/rfc4443.html#section-2.1).

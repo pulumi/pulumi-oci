@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -231,12 +230,6 @@ func (i *LogAnalyticsLogGroup) ToLogAnalyticsLogGroupOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsLogGroupOutput)
 }
 
-func (i *LogAnalyticsLogGroup) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsLogGroup] {
-	return pulumix.Output[*LogAnalyticsLogGroup]{
-		OutputState: i.ToLogAnalyticsLogGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LogAnalyticsLogGroupArrayInput is an input type that accepts LogAnalyticsLogGroupArray and LogAnalyticsLogGroupArrayOutput values.
 // You can construct a concrete instance of `LogAnalyticsLogGroupArrayInput` via:
 //
@@ -260,12 +253,6 @@ func (i LogAnalyticsLogGroupArray) ToLogAnalyticsLogGroupArrayOutput() LogAnalyt
 
 func (i LogAnalyticsLogGroupArray) ToLogAnalyticsLogGroupArrayOutputWithContext(ctx context.Context) LogAnalyticsLogGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsLogGroupArrayOutput)
-}
-
-func (i LogAnalyticsLogGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsLogGroup] {
-	return pulumix.Output[[]*LogAnalyticsLogGroup]{
-		OutputState: i.ToLogAnalyticsLogGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LogAnalyticsLogGroupMapInput is an input type that accepts LogAnalyticsLogGroupMap and LogAnalyticsLogGroupMapOutput values.
@@ -293,12 +280,6 @@ func (i LogAnalyticsLogGroupMap) ToLogAnalyticsLogGroupMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(LogAnalyticsLogGroupMapOutput)
 }
 
-func (i LogAnalyticsLogGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsLogGroup] {
-	return pulumix.Output[map[string]*LogAnalyticsLogGroup]{
-		OutputState: i.ToLogAnalyticsLogGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LogAnalyticsLogGroupOutput struct{ *pulumi.OutputState }
 
 func (LogAnalyticsLogGroupOutput) ElementType() reflect.Type {
@@ -311,12 +292,6 @@ func (o LogAnalyticsLogGroupOutput) ToLogAnalyticsLogGroupOutput() LogAnalyticsL
 
 func (o LogAnalyticsLogGroupOutput) ToLogAnalyticsLogGroupOutputWithContext(ctx context.Context) LogAnalyticsLogGroupOutput {
 	return o
-}
-
-func (o LogAnalyticsLogGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*LogAnalyticsLogGroup] {
-	return pulumix.Output[*LogAnalyticsLogGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -376,12 +351,6 @@ func (o LogAnalyticsLogGroupArrayOutput) ToLogAnalyticsLogGroupArrayOutputWithCo
 	return o
 }
 
-func (o LogAnalyticsLogGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LogAnalyticsLogGroup] {
-	return pulumix.Output[[]*LogAnalyticsLogGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LogAnalyticsLogGroupArrayOutput) Index(i pulumi.IntInput) LogAnalyticsLogGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LogAnalyticsLogGroup {
 		return vs[0].([]*LogAnalyticsLogGroup)[vs[1].(int)]
@@ -400,12 +369,6 @@ func (o LogAnalyticsLogGroupMapOutput) ToLogAnalyticsLogGroupMapOutput() LogAnal
 
 func (o LogAnalyticsLogGroupMapOutput) ToLogAnalyticsLogGroupMapOutputWithContext(ctx context.Context) LogAnalyticsLogGroupMapOutput {
 	return o
-}
-
-func (o LogAnalyticsLogGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LogAnalyticsLogGroup] {
-	return pulumix.Output[map[string]*LogAnalyticsLogGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LogAnalyticsLogGroupMapOutput) MapIndex(k pulumi.StringInput) LogAnalyticsLogGroupOutput {

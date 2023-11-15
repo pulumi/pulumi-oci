@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Address Lists in Oracle Cloud Infrastructure Network Firewall service.
@@ -111,12 +110,6 @@ func (o GetNetworkFirewallPolicyAddressListsResultOutput) ToGetNetworkFirewallPo
 
 func (o GetNetworkFirewallPolicyAddressListsResultOutput) ToGetNetworkFirewallPolicyAddressListsResultOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyAddressListsResultOutput {
 	return o
-}
-
-func (o GetNetworkFirewallPolicyAddressListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyAddressListsResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyAddressListsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of address_list_summary_collection.

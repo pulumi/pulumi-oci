@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Authentication Factor Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -2103,12 +2102,6 @@ func (i *DomainsAuthenticationFactorSetting) ToDomainsAuthenticationFactorSettin
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthenticationFactorSettingOutput)
 }
 
-func (i *DomainsAuthenticationFactorSetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[*DomainsAuthenticationFactorSetting]{
-		OutputState: i.ToDomainsAuthenticationFactorSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsAuthenticationFactorSettingArrayInput is an input type that accepts DomainsAuthenticationFactorSettingArray and DomainsAuthenticationFactorSettingArrayOutput values.
 // You can construct a concrete instance of `DomainsAuthenticationFactorSettingArrayInput` via:
 //
@@ -2132,12 +2125,6 @@ func (i DomainsAuthenticationFactorSettingArray) ToDomainsAuthenticationFactorSe
 
 func (i DomainsAuthenticationFactorSettingArray) ToDomainsAuthenticationFactorSettingArrayOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthenticationFactorSettingArrayOutput)
-}
-
-func (i DomainsAuthenticationFactorSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[[]*DomainsAuthenticationFactorSetting]{
-		OutputState: i.ToDomainsAuthenticationFactorSettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsAuthenticationFactorSettingMapInput is an input type that accepts DomainsAuthenticationFactorSettingMap and DomainsAuthenticationFactorSettingMapOutput values.
@@ -2165,12 +2152,6 @@ func (i DomainsAuthenticationFactorSettingMap) ToDomainsAuthenticationFactorSett
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsAuthenticationFactorSettingMapOutput)
 }
 
-func (i DomainsAuthenticationFactorSettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[map[string]*DomainsAuthenticationFactorSetting]{
-		OutputState: i.ToDomainsAuthenticationFactorSettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsAuthenticationFactorSettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsAuthenticationFactorSettingOutput) ElementType() reflect.Type {
@@ -2183,12 +2164,6 @@ func (o DomainsAuthenticationFactorSettingOutput) ToDomainsAuthenticationFactorS
 
 func (o DomainsAuthenticationFactorSettingOutput) ToDomainsAuthenticationFactorSettingOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingOutput {
 	return o
-}
-
-func (o DomainsAuthenticationFactorSettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[*DomainsAuthenticationFactorSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -2806,12 +2781,6 @@ func (o DomainsAuthenticationFactorSettingArrayOutput) ToDomainsAuthenticationFa
 	return o
 }
 
-func (o DomainsAuthenticationFactorSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[[]*DomainsAuthenticationFactorSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsAuthenticationFactorSettingArrayOutput) Index(i pulumi.IntInput) DomainsAuthenticationFactorSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsAuthenticationFactorSetting {
 		return vs[0].([]*DomainsAuthenticationFactorSetting)[vs[1].(int)]
@@ -2830,12 +2799,6 @@ func (o DomainsAuthenticationFactorSettingMapOutput) ToDomainsAuthenticationFact
 
 func (o DomainsAuthenticationFactorSettingMapOutput) ToDomainsAuthenticationFactorSettingMapOutputWithContext(ctx context.Context) DomainsAuthenticationFactorSettingMapOutput {
 	return o
-}
-
-func (o DomainsAuthenticationFactorSettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsAuthenticationFactorSetting] {
-	return pulumix.Output[map[string]*DomainsAuthenticationFactorSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsAuthenticationFactorSettingMapOutput) MapIndex(k pulumi.StringInput) DomainsAuthenticationFactorSettingOutput {

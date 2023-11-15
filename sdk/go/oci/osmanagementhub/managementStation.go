@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Management Station resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -302,12 +301,6 @@ func (i *ManagementStation) ToManagementStationOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationOutput)
 }
 
-func (i *ManagementStation) ToOutput(ctx context.Context) pulumix.Output[*ManagementStation] {
-	return pulumix.Output[*ManagementStation]{
-		OutputState: i.ToManagementStationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagementStationArrayInput is an input type that accepts ManagementStationArray and ManagementStationArrayOutput values.
 // You can construct a concrete instance of `ManagementStationArrayInput` via:
 //
@@ -331,12 +324,6 @@ func (i ManagementStationArray) ToManagementStationArrayOutput() ManagementStati
 
 func (i ManagementStationArray) ToManagementStationArrayOutputWithContext(ctx context.Context) ManagementStationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationArrayOutput)
-}
-
-func (i ManagementStationArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementStation] {
-	return pulumix.Output[[]*ManagementStation]{
-		OutputState: i.ToManagementStationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagementStationMapInput is an input type that accepts ManagementStationMap and ManagementStationMapOutput values.
@@ -364,12 +351,6 @@ func (i ManagementStationMap) ToManagementStationMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(ManagementStationMapOutput)
 }
 
-func (i ManagementStationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementStation] {
-	return pulumix.Output[map[string]*ManagementStation]{
-		OutputState: i.ToManagementStationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagementStationOutput struct{ *pulumi.OutputState }
 
 func (ManagementStationOutput) ElementType() reflect.Type {
@@ -382,12 +363,6 @@ func (o ManagementStationOutput) ToManagementStationOutput() ManagementStationOu
 
 func (o ManagementStationOutput) ToManagementStationOutputWithContext(ctx context.Context) ManagementStationOutput {
 	return o
-}
-
-func (o ManagementStationOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagementStation] {
-	return pulumix.Output[*ManagementStation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the tenancy containing the Management Station.
@@ -494,12 +469,6 @@ func (o ManagementStationArrayOutput) ToManagementStationArrayOutputWithContext(
 	return o
 }
 
-func (o ManagementStationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagementStation] {
-	return pulumix.Output[[]*ManagementStation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ManagementStationArrayOutput) Index(i pulumi.IntInput) ManagementStationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *ManagementStation {
 		return vs[0].([]*ManagementStation)[vs[1].(int)]
@@ -518,12 +487,6 @@ func (o ManagementStationMapOutput) ToManagementStationMapOutput() ManagementSta
 
 func (o ManagementStationMapOutput) ToManagementStationMapOutputWithContext(ctx context.Context) ManagementStationMapOutput {
 	return o
-}
-
-func (o ManagementStationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagementStation] {
-	return pulumix.Output[map[string]*ManagementStation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagementStationMapOutput) MapIndex(k pulumi.StringInput) ManagementStationOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Em Warehouse resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -273,12 +272,6 @@ func (i *EmWarehouse) ToEmWarehouseOutputWithContext(ctx context.Context) EmWare
 	return pulumi.ToOutputWithContext(ctx, i).(EmWarehouseOutput)
 }
 
-func (i *EmWarehouse) ToOutput(ctx context.Context) pulumix.Output[*EmWarehouse] {
-	return pulumix.Output[*EmWarehouse]{
-		OutputState: i.ToEmWarehouseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EmWarehouseArrayInput is an input type that accepts EmWarehouseArray and EmWarehouseArrayOutput values.
 // You can construct a concrete instance of `EmWarehouseArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i EmWarehouseArray) ToEmWarehouseArrayOutput() EmWarehouseArrayOutput {
 
 func (i EmWarehouseArray) ToEmWarehouseArrayOutputWithContext(ctx context.Context) EmWarehouseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EmWarehouseArrayOutput)
-}
-
-func (i EmWarehouseArray) ToOutput(ctx context.Context) pulumix.Output[[]*EmWarehouse] {
-	return pulumix.Output[[]*EmWarehouse]{
-		OutputState: i.ToEmWarehouseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EmWarehouseMapInput is an input type that accepts EmWarehouseMap and EmWarehouseMapOutput values.
@@ -335,12 +322,6 @@ func (i EmWarehouseMap) ToEmWarehouseMapOutputWithContext(ctx context.Context) E
 	return pulumi.ToOutputWithContext(ctx, i).(EmWarehouseMapOutput)
 }
 
-func (i EmWarehouseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmWarehouse] {
-	return pulumix.Output[map[string]*EmWarehouse]{
-		OutputState: i.ToEmWarehouseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EmWarehouseOutput struct{ *pulumi.OutputState }
 
 func (EmWarehouseOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o EmWarehouseOutput) ToEmWarehouseOutput() EmWarehouseOutput {
 
 func (o EmWarehouseOutput) ToEmWarehouseOutputWithContext(ctx context.Context) EmWarehouseOutput {
 	return o
-}
-
-func (o EmWarehouseOutput) ToOutput(ctx context.Context) pulumix.Output[*EmWarehouse] {
-	return pulumix.Output[*EmWarehouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier
@@ -453,12 +428,6 @@ func (o EmWarehouseArrayOutput) ToEmWarehouseArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o EmWarehouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EmWarehouse] {
-	return pulumix.Output[[]*EmWarehouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o EmWarehouseArrayOutput) Index(i pulumi.IntInput) EmWarehouseOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *EmWarehouse {
 		return vs[0].([]*EmWarehouse)[vs[1].(int)]
@@ -477,12 +446,6 @@ func (o EmWarehouseMapOutput) ToEmWarehouseMapOutput() EmWarehouseMapOutput {
 
 func (o EmWarehouseMapOutput) ToEmWarehouseMapOutputWithContext(ctx context.Context) EmWarehouseMapOutput {
 	return o
-}
-
-func (o EmWarehouseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmWarehouse] {
-	return pulumix.Output[map[string]*EmWarehouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EmWarehouseMapOutput) MapIndex(k pulumi.StringInput) EmWarehouseOutput {

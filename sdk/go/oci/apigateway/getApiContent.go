@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Api Content resource in Oracle Cloud Infrastructure API Gateway service.
@@ -101,12 +100,6 @@ func (o GetApiContentResultOutput) ToGetApiContentResultOutput() GetApiContentRe
 
 func (o GetApiContentResultOutput) ToGetApiContentResultOutputWithContext(ctx context.Context) GetApiContentResultOutput {
 	return o
-}
-
-func (o GetApiContentResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetApiContentResult] {
-	return pulumix.Output[GetApiContentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetApiContentResultOutput) ApiId() pulumi.StringOutput {

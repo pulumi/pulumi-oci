@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -134,12 +133,6 @@ func (o GetGuardTargetResultOutput) ToGetGuardTargetResultOutput() GetGuardTarge
 
 func (o GetGuardTargetResultOutput) ToGetGuardTargetResultOutputWithContext(ctx context.Context) GetGuardTargetResultOutput {
 	return o
-}
-
-func (o GetGuardTargetResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetGuardTargetResult] {
-	return pulumix.Output[GetGuardTargetResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier

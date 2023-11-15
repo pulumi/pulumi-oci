@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fleet Java Migration Analysis Results in Oracle Cloud Infrastructure Jms service.
@@ -125,12 +124,6 @@ func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ToGetFleetJavaMigratio
 
 func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ToGetFleetJavaMigrationAnalysisResultsResultOutputWithContext(ctx context.Context) GetFleetJavaMigrationAnalysisResultsResultOutput {
 	return o
-}
-
-func (o GetFleetJavaMigrationAnalysisResultsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFleetJavaMigrationAnalysisResultsResult] {
-	return pulumix.Output[GetFleetJavaMigrationAnalysisResultsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetFleetJavaMigrationAnalysisResultsResultOutput) Filters() GetFleetJavaMigrationAnalysisResultsFilterArrayOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Ipsec Algorithm resource in Oracle Cloud Infrastructure Core service.
@@ -87,12 +86,6 @@ func (o GetIpsecAlgorithmResultOutput) ToGetIpsecAlgorithmResultOutput() GetIpse
 
 func (o GetIpsecAlgorithmResultOutput) ToGetIpsecAlgorithmResultOutputWithContext(ctx context.Context) GetIpsecAlgorithmResultOutput {
 	return o
-}
-
-func (o GetIpsecAlgorithmResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIpsecAlgorithmResult] {
-	return pulumix.Output[GetIpsecAlgorithmResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Allowed phase one parameters.

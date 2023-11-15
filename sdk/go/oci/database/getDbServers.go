@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Servers in Oracle Cloud Infrastructure Database service.
@@ -127,12 +126,6 @@ func (o GetDbServersResultOutput) ToGetDbServersResultOutput() GetDbServersResul
 
 func (o GetDbServersResultOutput) ToGetDbServersResultOutputWithContext(ctx context.Context) GetDbServersResultOutput {
 	return o
-}
-
-func (o GetDbServersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbServersResult] {
-	return pulumix.Output[GetDbServersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
@@ -190,12 +189,6 @@ func (i *NetworkFirewallPolicyApplicationGroup) ToNetworkFirewallPolicyApplicati
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationGroupOutput)
 }
 
-func (i *NetworkFirewallPolicyApplicationGroup) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyApplicationGroup] {
-	return pulumix.Output[*NetworkFirewallPolicyApplicationGroup]{
-		OutputState: i.ToNetworkFirewallPolicyApplicationGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NetworkFirewallPolicyApplicationGroupArrayInput is an input type that accepts NetworkFirewallPolicyApplicationGroupArray and NetworkFirewallPolicyApplicationGroupArrayOutput values.
 // You can construct a concrete instance of `NetworkFirewallPolicyApplicationGroupArrayInput` via:
 //
@@ -219,12 +212,6 @@ func (i NetworkFirewallPolicyApplicationGroupArray) ToNetworkFirewallPolicyAppli
 
 func (i NetworkFirewallPolicyApplicationGroupArray) ToNetworkFirewallPolicyApplicationGroupArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationGroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationGroupArrayOutput)
-}
-
-func (i NetworkFirewallPolicyApplicationGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyApplicationGroup] {
-	return pulumix.Output[[]*NetworkFirewallPolicyApplicationGroup]{
-		OutputState: i.ToNetworkFirewallPolicyApplicationGroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NetworkFirewallPolicyApplicationGroupMapInput is an input type that accepts NetworkFirewallPolicyApplicationGroupMap and NetworkFirewallPolicyApplicationGroupMapOutput values.
@@ -252,12 +239,6 @@ func (i NetworkFirewallPolicyApplicationGroupMap) ToNetworkFirewallPolicyApplica
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationGroupMapOutput)
 }
 
-func (i NetworkFirewallPolicyApplicationGroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyApplicationGroup] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyApplicationGroup]{
-		OutputState: i.ToNetworkFirewallPolicyApplicationGroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NetworkFirewallPolicyApplicationGroupOutput struct{ *pulumi.OutputState }
 
 func (NetworkFirewallPolicyApplicationGroupOutput) ElementType() reflect.Type {
@@ -270,12 +251,6 @@ func (o NetworkFirewallPolicyApplicationGroupOutput) ToNetworkFirewallPolicyAppl
 
 func (o NetworkFirewallPolicyApplicationGroupOutput) ToNetworkFirewallPolicyApplicationGroupOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationGroupOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyApplicationGroupOutput) ToOutput(ctx context.Context) pulumix.Output[*NetworkFirewallPolicyApplicationGroup] {
-	return pulumix.Output[*NetworkFirewallPolicyApplicationGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Collection of application names. The apps referenced in the application group must already be present in the policy before being used in the application group.
@@ -320,12 +295,6 @@ func (o NetworkFirewallPolicyApplicationGroupArrayOutput) ToNetworkFirewallPolic
 	return o
 }
 
-func (o NetworkFirewallPolicyApplicationGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NetworkFirewallPolicyApplicationGroup] {
-	return pulumix.Output[[]*NetworkFirewallPolicyApplicationGroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NetworkFirewallPolicyApplicationGroupArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyApplicationGroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NetworkFirewallPolicyApplicationGroup {
 		return vs[0].([]*NetworkFirewallPolicyApplicationGroup)[vs[1].(int)]
@@ -344,12 +313,6 @@ func (o NetworkFirewallPolicyApplicationGroupMapOutput) ToNetworkFirewallPolicyA
 
 func (o NetworkFirewallPolicyApplicationGroupMapOutput) ToNetworkFirewallPolicyApplicationGroupMapOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationGroupMapOutput {
 	return o
-}
-
-func (o NetworkFirewallPolicyApplicationGroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NetworkFirewallPolicyApplicationGroup] {
-	return pulumix.Output[map[string]*NetworkFirewallPolicyApplicationGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NetworkFirewallPolicyApplicationGroupMapOutput) MapIndex(k pulumi.StringInput) NetworkFirewallPolicyApplicationGroupOutput {

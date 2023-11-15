@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
@@ -127,12 +126,6 @@ func (o GetCloudVmClustersResultOutput) ToGetCloudVmClustersResultOutput() GetCl
 
 func (o GetCloudVmClustersResultOutput) ToGetCloudVmClustersResultOutputWithContext(ctx context.Context) GetCloudVmClustersResultOutput {
 	return o
-}
-
-func (o GetCloudVmClustersResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudVmClustersResult] {
-	return pulumix.Output[GetCloudVmClustersResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.

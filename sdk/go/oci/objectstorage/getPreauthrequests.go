@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
@@ -119,12 +118,6 @@ func (o GetPreauthrequestsResultOutput) ToGetPreauthrequestsResultOutput() GetPr
 
 func (o GetPreauthrequestsResultOutput) ToGetPreauthrequestsResultOutputWithContext(ctx context.Context) GetPreauthrequestsResultOutput {
 	return o
-}
-
-func (o GetPreauthrequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPreauthrequestsResult] {
-	return pulumix.Output[GetPreauthrequestsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the bucket.  Example: `my-new-bucket1`

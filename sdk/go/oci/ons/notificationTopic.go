@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
@@ -250,12 +249,6 @@ func (i *NotificationTopic) ToNotificationTopicOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(NotificationTopicOutput)
 }
 
-func (i *NotificationTopic) ToOutput(ctx context.Context) pulumix.Output[*NotificationTopic] {
-	return pulumix.Output[*NotificationTopic]{
-		OutputState: i.ToNotificationTopicOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NotificationTopicArrayInput is an input type that accepts NotificationTopicArray and NotificationTopicArrayOutput values.
 // You can construct a concrete instance of `NotificationTopicArrayInput` via:
 //
@@ -279,12 +272,6 @@ func (i NotificationTopicArray) ToNotificationTopicArrayOutput() NotificationTop
 
 func (i NotificationTopicArray) ToNotificationTopicArrayOutputWithContext(ctx context.Context) NotificationTopicArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NotificationTopicArrayOutput)
-}
-
-func (i NotificationTopicArray) ToOutput(ctx context.Context) pulumix.Output[[]*NotificationTopic] {
-	return pulumix.Output[[]*NotificationTopic]{
-		OutputState: i.ToNotificationTopicArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NotificationTopicMapInput is an input type that accepts NotificationTopicMap and NotificationTopicMapOutput values.
@@ -312,12 +299,6 @@ func (i NotificationTopicMap) ToNotificationTopicMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(NotificationTopicMapOutput)
 }
 
-func (i NotificationTopicMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotificationTopic] {
-	return pulumix.Output[map[string]*NotificationTopic]{
-		OutputState: i.ToNotificationTopicMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NotificationTopicOutput struct{ *pulumi.OutputState }
 
 func (NotificationTopicOutput) ElementType() reflect.Type {
@@ -330,12 +311,6 @@ func (o NotificationTopicOutput) ToNotificationTopicOutput() NotificationTopicOu
 
 func (o NotificationTopicOutput) ToNotificationTopicOutputWithContext(ctx context.Context) NotificationTopicOutput {
 	return o
-}
-
-func (o NotificationTopicOutput) ToOutput(ctx context.Context) pulumix.Output[*NotificationTopic] {
-	return pulumix.Output[*NotificationTopic]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The endpoint for managing subscriptions or publishing messages to the topic.
@@ -410,12 +385,6 @@ func (o NotificationTopicArrayOutput) ToNotificationTopicArrayOutputWithContext(
 	return o
 }
 
-func (o NotificationTopicArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NotificationTopic] {
-	return pulumix.Output[[]*NotificationTopic]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NotificationTopicArrayOutput) Index(i pulumi.IntInput) NotificationTopicOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NotificationTopic {
 		return vs[0].([]*NotificationTopic)[vs[1].(int)]
@@ -434,12 +403,6 @@ func (o NotificationTopicMapOutput) ToNotificationTopicMapOutput() NotificationT
 
 func (o NotificationTopicMapOutput) ToNotificationTopicMapOutputWithContext(ctx context.Context) NotificationTopicMapOutput {
 	return o
-}
-
-func (o NotificationTopicMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NotificationTopic] {
-	return pulumix.Output[map[string]*NotificationTopic]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NotificationTopicMapOutput) MapIndex(k pulumi.StringInput) NotificationTopicOutput {

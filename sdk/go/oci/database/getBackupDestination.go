@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Backup Destination resource in Oracle Cloud Infrastructure Database service.
@@ -133,12 +132,6 @@ func (o LookupBackupDestinationResultOutput) ToLookupBackupDestinationResultOutp
 
 func (o LookupBackupDestinationResultOutput) ToLookupBackupDestinationResultOutputWithContext(ctx context.Context) LookupBackupDestinationResultOutput {
 	return o
-}
-
-func (o LookupBackupDestinationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBackupDestinationResult] {
-	return pulumix.Output[LookupBackupDestinationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of databases associated with the backup destination.

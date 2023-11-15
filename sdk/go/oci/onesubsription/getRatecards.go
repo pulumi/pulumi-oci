@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ratecards in Oracle Cloud Infrastructure Onesubscription service.
@@ -131,12 +130,6 @@ func (o GetRatecardsResultOutput) ToGetRatecardsResultOutput() GetRatecardsResul
 
 func (o GetRatecardsResultOutput) ToGetRatecardsResultOutputWithContext(ctx context.Context) GetRatecardsResultOutput {
 	return o
-}
-
-func (o GetRatecardsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetRatecardsResult] {
-	return pulumix.Output[GetRatecardsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRatecardsResultOutput) CompartmentId() pulumi.StringOutput {

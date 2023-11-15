@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
@@ -130,12 +129,6 @@ func (o LookupDhcpOptionsResultOutput) ToLookupDhcpOptionsResultOutput() LookupD
 
 func (o LookupDhcpOptionsResultOutput) ToLookupDhcpOptionsResultOutputWithContext(ctx context.Context) LookupDhcpOptionsResultOutput {
 	return o
-}
-
-func (o LookupDhcpOptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDhcpOptionsResult] {
-	return pulumix.Output[LookupDhcpOptionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the set of DHCP options.

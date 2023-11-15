@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -63,12 +62,6 @@ func (i ConnectorSourceArgs) ToConnectorSourceOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceOutput)
 }
 
-func (i ConnectorSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSource] {
-	return pulumix.Output[ConnectorSource]{
-		OutputState: i.ToConnectorSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConnectorSourceArgs) ToConnectorSourcePtrOutput() ConnectorSourcePtrOutput {
 	return i.ToConnectorSourcePtrOutputWithContext(context.Background())
 }
@@ -110,12 +103,6 @@ func (i *connectorSourcePtrType) ToConnectorSourcePtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourcePtrOutput)
 }
 
-func (i *connectorSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectorSource] {
-	return pulumix.Output[*ConnectorSource]{
-		OutputState: i.ToConnectorSourcePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceOutput) ElementType() reflect.Type {
@@ -138,12 +125,6 @@ func (o ConnectorSourceOutput) ToConnectorSourcePtrOutputWithContext(ctx context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectorSource) *ConnectorSource {
 		return &v
 	}).(ConnectorSourcePtrOutput)
-}
-
-func (o ConnectorSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSource] {
-	return pulumix.Output[ConnectorSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
@@ -183,12 +164,6 @@ func (o ConnectorSourcePtrOutput) ToConnectorSourcePtrOutput() ConnectorSourcePt
 
 func (o ConnectorSourcePtrOutput) ToConnectorSourcePtrOutputWithContext(ctx context.Context) ConnectorSourcePtrOutput {
 	return o
-}
-
-func (o ConnectorSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectorSource] {
-	return pulumix.Output[*ConnectorSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorSourcePtrOutput) Elem() ConnectorSourceOutput {
@@ -284,12 +259,6 @@ func (i ConnectorSourceCursorArgs) ToConnectorSourceCursorOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceCursorOutput)
 }
 
-func (i ConnectorSourceCursorArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceCursor] {
-	return pulumix.Output[ConnectorSourceCursor]{
-		OutputState: i.ToConnectorSourceCursorOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConnectorSourceCursorArgs) ToConnectorSourceCursorPtrOutput() ConnectorSourceCursorPtrOutput {
 	return i.ToConnectorSourceCursorPtrOutputWithContext(context.Background())
 }
@@ -331,12 +300,6 @@ func (i *connectorSourceCursorPtrType) ToConnectorSourceCursorPtrOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceCursorPtrOutput)
 }
 
-func (i *connectorSourceCursorPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectorSourceCursor] {
-	return pulumix.Output[*ConnectorSourceCursor]{
-		OutputState: i.ToConnectorSourceCursorPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceCursorOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceCursorOutput) ElementType() reflect.Type {
@@ -361,12 +324,6 @@ func (o ConnectorSourceCursorOutput) ToConnectorSourceCursorPtrOutputWithContext
 	}).(ConnectorSourceCursorPtrOutput)
 }
 
-func (o ConnectorSourceCursorOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceCursor] {
-	return pulumix.Output[ConnectorSourceCursor]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The type descriminator.
 func (o ConnectorSourceCursorOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceCursor) *string { return v.Kind }).(pulumi.StringPtrOutput)
@@ -384,12 +341,6 @@ func (o ConnectorSourceCursorPtrOutput) ToConnectorSourceCursorPtrOutput() Conne
 
 func (o ConnectorSourceCursorPtrOutput) ToConnectorSourceCursorPtrOutputWithContext(ctx context.Context) ConnectorSourceCursorPtrOutput {
 	return o
-}
-
-func (o ConnectorSourceCursorPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectorSourceCursor] {
-	return pulumix.Output[*ConnectorSourceCursor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorSourceCursorPtrOutput) Elem() ConnectorSourceCursorOutput {
@@ -453,12 +404,6 @@ func (i ConnectorSourceLogSourceArgs) ToConnectorSourceLogSourceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceLogSourceOutput)
 }
 
-func (i ConnectorSourceLogSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceLogSource] {
-	return pulumix.Output[ConnectorSourceLogSource]{
-		OutputState: i.ToConnectorSourceLogSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectorSourceLogSourceArrayInput is an input type that accepts ConnectorSourceLogSourceArray and ConnectorSourceLogSourceArrayOutput values.
 // You can construct a concrete instance of `ConnectorSourceLogSourceArrayInput` via:
 //
@@ -484,12 +429,6 @@ func (i ConnectorSourceLogSourceArray) ToConnectorSourceLogSourceArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceLogSourceArrayOutput)
 }
 
-func (i ConnectorSourceLogSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorSourceLogSource] {
-	return pulumix.Output[[]ConnectorSourceLogSource]{
-		OutputState: i.ToConnectorSourceLogSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceLogSourceOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceLogSourceOutput) ElementType() reflect.Type {
@@ -502,12 +441,6 @@ func (o ConnectorSourceLogSourceOutput) ToConnectorSourceLogSourceOutput() Conne
 
 func (o ConnectorSourceLogSourceOutput) ToConnectorSourceLogSourceOutputWithContext(ctx context.Context) ConnectorSourceLogSourceOutput {
 	return o
-}
-
-func (o ConnectorSourceLogSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceLogSource] {
-	return pulumix.Output[ConnectorSourceLogSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
@@ -537,12 +470,6 @@ func (o ConnectorSourceLogSourceArrayOutput) ToConnectorSourceLogSourceArrayOutp
 
 func (o ConnectorSourceLogSourceArrayOutput) ToConnectorSourceLogSourceArrayOutputWithContext(ctx context.Context) ConnectorSourceLogSourceArrayOutput {
 	return o
-}
-
-func (o ConnectorSourceLogSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorSourceLogSource] {
-	return pulumix.Output[[]ConnectorSourceLogSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorSourceLogSourceArrayOutput) Index(i pulumi.IntInput) ConnectorSourceLogSourceOutput {
@@ -588,12 +515,6 @@ func (i ConnectorSourceMonitoringSourceArgs) ToConnectorSourceMonitoringSourceOu
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceOutput)
 }
 
-func (i ConnectorSourceMonitoringSourceArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSource] {
-	return pulumix.Output[ConnectorSourceMonitoringSource]{
-		OutputState: i.ToConnectorSourceMonitoringSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectorSourceMonitoringSourceArrayInput is an input type that accepts ConnectorSourceMonitoringSourceArray and ConnectorSourceMonitoringSourceArrayOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceArrayInput` via:
 //
@@ -619,12 +540,6 @@ func (i ConnectorSourceMonitoringSourceArray) ToConnectorSourceMonitoringSourceA
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceArrayOutput)
 }
 
-func (i ConnectorSourceMonitoringSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorSourceMonitoringSource] {
-	return pulumix.Output[[]ConnectorSourceMonitoringSource]{
-		OutputState: i.ToConnectorSourceMonitoringSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceMonitoringSourceOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceMonitoringSourceOutput) ElementType() reflect.Type {
@@ -637,12 +552,6 @@ func (o ConnectorSourceMonitoringSourceOutput) ToConnectorSourceMonitoringSource
 
 func (o ConnectorSourceMonitoringSourceOutput) ToConnectorSourceMonitoringSourceOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceOutput {
 	return o
-}
-
-func (o ConnectorSourceMonitoringSourceOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSource] {
-	return pulumix.Output[ConnectorSourceMonitoringSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
@@ -669,12 +578,6 @@ func (o ConnectorSourceMonitoringSourceArrayOutput) ToConnectorSourceMonitoringS
 
 func (o ConnectorSourceMonitoringSourceArrayOutput) ToConnectorSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceArrayOutput {
 	return o
-}
-
-func (o ConnectorSourceMonitoringSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorSourceMonitoringSource] {
-	return pulumix.Output[[]ConnectorSourceMonitoringSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) ConnectorSourceMonitoringSourceOutput {
@@ -720,12 +623,6 @@ func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMo
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsOutput)
 }
 
-func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetails] {
-	return pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetails]{
-		OutputState: i.ToConnectorSourceMonitoringSourceNamespaceDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConnectorSourceMonitoringSourceNamespaceDetailsArgs) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput() ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
 	return i.ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(context.Background())
 }
@@ -767,12 +664,6 @@ func (i *connectorSourceMonitoringSourceNamespaceDetailsPtrType) ToConnectorSour
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput)
 }
 
-func (i *connectorSourceMonitoringSourceNamespaceDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectorSourceMonitoringSourceNamespaceDetails] {
-	return pulumix.Output[*ConnectorSourceMonitoringSourceNamespaceDetails]{
-		OutputState: i.ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceMonitoringSourceNamespaceDetailsOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ElementType() reflect.Type {
@@ -795,12 +686,6 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToConnectorSource
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectorSourceMonitoringSourceNamespaceDetails) *ConnectorSourceMonitoringSourceNamespaceDetails {
 		return &v
 	}).(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput)
-}
-
-func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetails] {
-	return pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type descriminator.
@@ -827,12 +712,6 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) ToConnectorSou
 
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsPtrOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput {
 	return o
-}
-
-func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectorSourceMonitoringSourceNamespaceDetails] {
-	return pulumix.Output[*ConnectorSourceMonitoringSourceNamespaceDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Elem() ConnectorSourceMonitoringSourceNamespaceDetailsOutput {
@@ -902,12 +781,6 @@ func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs) ToConnecto
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput)
 }
 
-func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespace] {
-	return pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespace]{
-		OutputState: i.ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput is an input type that accepts ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray and ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput values.
 // You can construct a concrete instance of `ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput` via:
 //
@@ -933,12 +806,6 @@ func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray) ToConnect
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput)
 }
 
-func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace] {
-	return pulumix.Output[[]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace]{
-		OutputState: i.ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ElementType() reflect.Type {
@@ -951,12 +818,6 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ToConnec
 
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
 	return o
-}
-
-func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespace] {
-	return pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The metrics to query for the specified metric namespace.
@@ -983,12 +844,6 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) ToC
 
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput {
 	return o
-}
-
-func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace] {
-	return pulumix.Output[[]ConnectorSourceMonitoringSourceNamespaceDetailsNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) Index(i pulumi.IntInput) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput {
@@ -1030,12 +885,6 @@ func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs) ToC
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput)
 }
 
-func (i ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics] {
-	return pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics]{
-		OutputState: i.ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput struct{ *pulumi.OutputState }
 
 func (ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) ElementType() reflect.Type {
@@ -1048,12 +897,6 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) T
 
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) ToConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutputWithContext(ctx context.Context) ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput {
 	return o
-}
-
-func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics] {
-	return pulumix.Output[ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type descriminator.
@@ -1154,12 +997,6 @@ func (i ConnectorTargetArgs) ToConnectorTargetOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetOutput)
 }
 
-func (i ConnectorTargetArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorTarget] {
-	return pulumix.Output[ConnectorTarget]{
-		OutputState: i.ToConnectorTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConnectorTargetArgs) ToConnectorTargetPtrOutput() ConnectorTargetPtrOutput {
 	return i.ToConnectorTargetPtrOutputWithContext(context.Background())
 }
@@ -1201,12 +1038,6 @@ func (i *connectorTargetPtrType) ToConnectorTargetPtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetPtrOutput)
 }
 
-func (i *connectorTargetPtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectorTarget] {
-	return pulumix.Output[*ConnectorTarget]{
-		OutputState: i.ToConnectorTargetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorTargetOutput struct{ *pulumi.OutputState }
 
 func (ConnectorTargetOutput) ElementType() reflect.Type {
@@ -1229,12 +1060,6 @@ func (o ConnectorTargetOutput) ToConnectorTargetPtrOutputWithContext(ctx context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectorTarget) *ConnectorTarget {
 		return &v
 	}).(ConnectorTargetPtrOutput)
-}
-
-func (o ConnectorTargetOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorTarget] {
-	return pulumix.Output[ConnectorTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The batch rollover size in megabytes.
@@ -1329,12 +1154,6 @@ func (o ConnectorTargetPtrOutput) ToConnectorTargetPtrOutput() ConnectorTargetPt
 
 func (o ConnectorTargetPtrOutput) ToConnectorTargetPtrOutputWithContext(ctx context.Context) ConnectorTargetPtrOutput {
 	return o
-}
-
-func (o ConnectorTargetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectorTarget] {
-	return pulumix.Output[*ConnectorTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorTargetPtrOutput) Elem() ConnectorTargetOutput {
@@ -1544,12 +1363,6 @@ func (i ConnectorTargetDimensionArgs) ToConnectorTargetDimensionOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetDimensionOutput)
 }
 
-func (i ConnectorTargetDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorTargetDimension] {
-	return pulumix.Output[ConnectorTargetDimension]{
-		OutputState: i.ToConnectorTargetDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectorTargetDimensionArrayInput is an input type that accepts ConnectorTargetDimensionArray and ConnectorTargetDimensionArrayOutput values.
 // You can construct a concrete instance of `ConnectorTargetDimensionArrayInput` via:
 //
@@ -1575,12 +1388,6 @@ func (i ConnectorTargetDimensionArray) ToConnectorTargetDimensionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetDimensionArrayOutput)
 }
 
-func (i ConnectorTargetDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorTargetDimension] {
-	return pulumix.Output[[]ConnectorTargetDimension]{
-		OutputState: i.ToConnectorTargetDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorTargetDimensionOutput struct{ *pulumi.OutputState }
 
 func (ConnectorTargetDimensionOutput) ElementType() reflect.Type {
@@ -1593,12 +1400,6 @@ func (o ConnectorTargetDimensionOutput) ToConnectorTargetDimensionOutput() Conne
 
 func (o ConnectorTargetDimensionOutput) ToConnectorTargetDimensionOutputWithContext(ctx context.Context) ConnectorTargetDimensionOutput {
 	return o
-}
-
-func (o ConnectorTargetDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorTargetDimension] {
-	return pulumix.Output[ConnectorTargetDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
@@ -1623,12 +1424,6 @@ func (o ConnectorTargetDimensionArrayOutput) ToConnectorTargetDimensionArrayOutp
 
 func (o ConnectorTargetDimensionArrayOutput) ToConnectorTargetDimensionArrayOutputWithContext(ctx context.Context) ConnectorTargetDimensionArrayOutput {
 	return o
-}
-
-func (o ConnectorTargetDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorTargetDimension] {
-	return pulumix.Output[[]ConnectorTargetDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) ConnectorTargetDimensionOutput {
@@ -1678,12 +1473,6 @@ func (i ConnectorTargetDimensionDimensionValueArgs) ToConnectorTargetDimensionDi
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetDimensionDimensionValueOutput)
 }
 
-func (i ConnectorTargetDimensionDimensionValueArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[ConnectorTargetDimensionDimensionValue]{
-		OutputState: i.ToConnectorTargetDimensionDimensionValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ConnectorTargetDimensionDimensionValueArgs) ToConnectorTargetDimensionDimensionValuePtrOutput() ConnectorTargetDimensionDimensionValuePtrOutput {
 	return i.ToConnectorTargetDimensionDimensionValuePtrOutputWithContext(context.Background())
 }
@@ -1725,12 +1514,6 @@ func (i *connectorTargetDimensionDimensionValuePtrType) ToConnectorTargetDimensi
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTargetDimensionDimensionValuePtrOutput)
 }
 
-func (i *connectorTargetDimensionDimensionValuePtrType) ToOutput(ctx context.Context) pulumix.Output[*ConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[*ConnectorTargetDimensionDimensionValue]{
-		OutputState: i.ToConnectorTargetDimensionDimensionValuePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorTargetDimensionDimensionValueOutput struct{ *pulumi.OutputState }
 
 func (ConnectorTargetDimensionDimensionValueOutput) ElementType() reflect.Type {
@@ -1753,12 +1536,6 @@ func (o ConnectorTargetDimensionDimensionValueOutput) ToConnectorTargetDimension
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConnectorTargetDimensionDimensionValue) *ConnectorTargetDimensionDimensionValue {
 		return &v
 	}).(ConnectorTargetDimensionDimensionValuePtrOutput)
-}
-
-func (o ConnectorTargetDimensionDimensionValueOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[ConnectorTargetDimensionDimensionValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The type descriminator.
@@ -1788,12 +1565,6 @@ func (o ConnectorTargetDimensionDimensionValuePtrOutput) ToConnectorTargetDimens
 
 func (o ConnectorTargetDimensionDimensionValuePtrOutput) ToConnectorTargetDimensionDimensionValuePtrOutputWithContext(ctx context.Context) ConnectorTargetDimensionDimensionValuePtrOutput {
 	return o
-}
-
-func (o ConnectorTargetDimensionDimensionValuePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[*ConnectorTargetDimensionDimensionValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorTargetDimensionDimensionValuePtrOutput) Elem() ConnectorTargetDimensionDimensionValueOutput {
@@ -1885,12 +1656,6 @@ func (i ConnectorTaskArgs) ToConnectorTaskOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTaskOutput)
 }
 
-func (i ConnectorTaskArgs) ToOutput(ctx context.Context) pulumix.Output[ConnectorTask] {
-	return pulumix.Output[ConnectorTask]{
-		OutputState: i.ToConnectorTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConnectorTaskArrayInput is an input type that accepts ConnectorTaskArray and ConnectorTaskArrayOutput values.
 // You can construct a concrete instance of `ConnectorTaskArrayInput` via:
 //
@@ -1916,12 +1681,6 @@ func (i ConnectorTaskArray) ToConnectorTaskArrayOutputWithContext(ctx context.Co
 	return pulumi.ToOutputWithContext(ctx, i).(ConnectorTaskArrayOutput)
 }
 
-func (i ConnectorTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorTask] {
-	return pulumix.Output[[]ConnectorTask]{
-		OutputState: i.ToConnectorTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConnectorTaskOutput struct{ *pulumi.OutputState }
 
 func (ConnectorTaskOutput) ElementType() reflect.Type {
@@ -1934,12 +1693,6 @@ func (o ConnectorTaskOutput) ToConnectorTaskOutput() ConnectorTaskOutput {
 
 func (o ConnectorTaskOutput) ToConnectorTaskOutputWithContext(ctx context.Context) ConnectorTaskOutput {
 	return o
-}
-
-func (o ConnectorTaskOutput) ToOutput(ctx context.Context) pulumix.Output[ConnectorTask] {
-	return pulumix.Output[ConnectorTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
@@ -1979,12 +1732,6 @@ func (o ConnectorTaskArrayOutput) ToConnectorTaskArrayOutput() ConnectorTaskArra
 
 func (o ConnectorTaskArrayOutput) ToConnectorTaskArrayOutputWithContext(ctx context.Context) ConnectorTaskArrayOutput {
 	return o
-}
-
-func (o ConnectorTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ConnectorTask] {
-	return pulumix.Output[[]ConnectorTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConnectorTaskArrayOutput) Index(i pulumi.IntInput) ConnectorTaskOutput {
@@ -2042,12 +1789,6 @@ func (i GetServiceConnectorSourceArgs) ToGetServiceConnectorSourceOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceOutput)
 }
 
-func (i GetServiceConnectorSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSource] {
-	return pulumix.Output[GetServiceConnectorSource]{
-		OutputState: i.ToGetServiceConnectorSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceArrayInput is an input type that accepts GetServiceConnectorSourceArray and GetServiceConnectorSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceArrayInput` via:
 //
@@ -2073,12 +1814,6 @@ func (i GetServiceConnectorSourceArray) ToGetServiceConnectorSourceArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceArrayOutput)
 }
 
-func (i GetServiceConnectorSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSource] {
-	return pulumix.Output[[]GetServiceConnectorSource]{
-		OutputState: i.ToGetServiceConnectorSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceOutput) ElementType() reflect.Type {
@@ -2091,12 +1826,6 @@ func (o GetServiceConnectorSourceOutput) ToGetServiceConnectorSourceOutput() Get
 
 func (o GetServiceConnectorSourceOutput) ToGetServiceConnectorSourceOutputWithContext(ctx context.Context) GetServiceConnectorSourceOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSource] {
-	return pulumix.Output[GetServiceConnectorSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
@@ -2140,12 +1869,6 @@ func (o GetServiceConnectorSourceArrayOutput) ToGetServiceConnectorSourceArrayOu
 	return o
 }
 
-func (o GetServiceConnectorSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSource] {
-	return pulumix.Output[[]GetServiceConnectorSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceConnectorSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorSource {
 		return vs[0].([]GetServiceConnectorSource)[vs[1].(int)]
@@ -2185,12 +1908,6 @@ func (i GetServiceConnectorSourceCursorArgs) ToGetServiceConnectorSourceCursorOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceCursorOutput)
 }
 
-func (i GetServiceConnectorSourceCursorArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceCursor] {
-	return pulumix.Output[GetServiceConnectorSourceCursor]{
-		OutputState: i.ToGetServiceConnectorSourceCursorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceCursorArrayInput is an input type that accepts GetServiceConnectorSourceCursorArray and GetServiceConnectorSourceCursorArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceCursorArrayInput` via:
 //
@@ -2216,12 +1933,6 @@ func (i GetServiceConnectorSourceCursorArray) ToGetServiceConnectorSourceCursorA
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceCursorArrayOutput)
 }
 
-func (i GetServiceConnectorSourceCursorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceCursor] {
-	return pulumix.Output[[]GetServiceConnectorSourceCursor]{
-		OutputState: i.ToGetServiceConnectorSourceCursorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceCursorOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceCursorOutput) ElementType() reflect.Type {
@@ -2234,12 +1945,6 @@ func (o GetServiceConnectorSourceCursorOutput) ToGetServiceConnectorSourceCursor
 
 func (o GetServiceConnectorSourceCursorOutput) ToGetServiceConnectorSourceCursorOutputWithContext(ctx context.Context) GetServiceConnectorSourceCursorOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceCursorOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceCursor] {
-	return pulumix.Output[GetServiceConnectorSourceCursor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -2259,12 +1964,6 @@ func (o GetServiceConnectorSourceCursorArrayOutput) ToGetServiceConnectorSourceC
 
 func (o GetServiceConnectorSourceCursorArrayOutput) ToGetServiceConnectorSourceCursorArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceCursorArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceCursorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceCursor] {
-	return pulumix.Output[[]GetServiceConnectorSourceCursor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorSourceCursorArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceCursorOutput {
@@ -2314,12 +2013,6 @@ func (i GetServiceConnectorSourceLogSourceArgs) ToGetServiceConnectorSourceLogSo
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceLogSourceOutput)
 }
 
-func (i GetServiceConnectorSourceLogSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceLogSource] {
-	return pulumix.Output[GetServiceConnectorSourceLogSource]{
-		OutputState: i.ToGetServiceConnectorSourceLogSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceLogSourceArrayInput is an input type that accepts GetServiceConnectorSourceLogSourceArray and GetServiceConnectorSourceLogSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceLogSourceArrayInput` via:
 //
@@ -2345,12 +2038,6 @@ func (i GetServiceConnectorSourceLogSourceArray) ToGetServiceConnectorSourceLogS
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceLogSourceArrayOutput)
 }
 
-func (i GetServiceConnectorSourceLogSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceLogSource] {
-	return pulumix.Output[[]GetServiceConnectorSourceLogSource]{
-		OutputState: i.ToGetServiceConnectorSourceLogSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceLogSourceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceLogSourceOutput) ElementType() reflect.Type {
@@ -2363,12 +2050,6 @@ func (o GetServiceConnectorSourceLogSourceOutput) ToGetServiceConnectorSourceLog
 
 func (o GetServiceConnectorSourceLogSourceOutput) ToGetServiceConnectorSourceLogSourceOutputWithContext(ctx context.Context) GetServiceConnectorSourceLogSourceOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceLogSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceLogSource] {
-	return pulumix.Output[GetServiceConnectorSourceLogSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
@@ -2398,12 +2079,6 @@ func (o GetServiceConnectorSourceLogSourceArrayOutput) ToGetServiceConnectorSour
 
 func (o GetServiceConnectorSourceLogSourceArrayOutput) ToGetServiceConnectorSourceLogSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceLogSourceArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceLogSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceLogSource] {
-	return pulumix.Output[[]GetServiceConnectorSourceLogSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorSourceLogSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceLogSourceOutput {
@@ -2449,12 +2124,6 @@ func (i GetServiceConnectorSourceMonitoringSourceArgs) ToGetServiceConnectorSour
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSource] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSource]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceMonitoringSourceArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceArray and GetServiceConnectorSourceMonitoringSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceArrayInput` via:
 //
@@ -2480,12 +2149,6 @@ func (i GetServiceConnectorSourceMonitoringSourceArray) ToGetServiceConnectorSou
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceArrayOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSource] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSource]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceMonitoringSourceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceMonitoringSourceOutput) ElementType() reflect.Type {
@@ -2498,12 +2161,6 @@ func (o GetServiceConnectorSourceMonitoringSourceOutput) ToGetServiceConnectorSo
 
 func (o GetServiceConnectorSourceMonitoringSourceOutput) ToGetServiceConnectorSourceMonitoringSourceOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSource] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
@@ -2530,12 +2187,6 @@ func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) ToGetServiceConnec
 
 func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) ToGetServiceConnectorSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSource] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceOutput {
@@ -2581,12 +2232,6 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs) ToGetServi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetail]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayInput` via:
 //
@@ -2612,12 +2257,6 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray) ToGetServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetail]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ElementType() reflect.Type {
@@ -2630,12 +2269,6 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToGetSer
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -2662,12 +2295,6 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) ToG
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceNamespaceDetailOutput {
@@ -2713,12 +2340,6 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayInput` via:
 //
@@ -2744,12 +2365,6 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) ElementType() reflect.Type {
@@ -2762,12 +2377,6 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput)
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The metrics to query for the specified metric namespace.
@@ -2794,12 +2403,6 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOu
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceOutput {
@@ -2841,12 +2444,6 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricA
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput is an input type that accepts GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray and GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput` via:
 //
@@ -2872,12 +2469,6 @@ func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricA
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput)
 }
 
-func (i GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: i.ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ElementType() reflect.Type {
@@ -2890,12 +2481,6 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricO
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -2915,12 +2500,6 @@ func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricA
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToGetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx context.Context) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[[]GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
@@ -3022,12 +2601,6 @@ func (i GetServiceConnectorTargetArgs) ToGetServiceConnectorTargetOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetOutput)
 }
 
-func (i GetServiceConnectorTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTarget] {
-	return pulumix.Output[GetServiceConnectorTarget]{
-		OutputState: i.ToGetServiceConnectorTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorTargetArrayInput is an input type that accepts GetServiceConnectorTargetArray and GetServiceConnectorTargetArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetArrayInput` via:
 //
@@ -3053,12 +2626,6 @@ func (i GetServiceConnectorTargetArray) ToGetServiceConnectorTargetArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetArrayOutput)
 }
 
-func (i GetServiceConnectorTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTarget] {
-	return pulumix.Output[[]GetServiceConnectorTarget]{
-		OutputState: i.ToGetServiceConnectorTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorTargetOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorTargetOutput) ElementType() reflect.Type {
@@ -3071,12 +2638,6 @@ func (o GetServiceConnectorTargetOutput) ToGetServiceConnectorTargetOutput() Get
 
 func (o GetServiceConnectorTargetOutput) ToGetServiceConnectorTargetOutputWithContext(ctx context.Context) GetServiceConnectorTargetOutput {
 	return o
-}
-
-func (o GetServiceConnectorTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTarget] {
-	return pulumix.Output[GetServiceConnectorTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The batch rollover size in megabytes.
@@ -3173,12 +2734,6 @@ func (o GetServiceConnectorTargetArrayOutput) ToGetServiceConnectorTargetArrayOu
 	return o
 }
 
-func (o GetServiceConnectorTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTarget] {
-	return pulumix.Output[[]GetServiceConnectorTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceConnectorTargetArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorTarget {
 		return vs[0].([]GetServiceConnectorTarget)[vs[1].(int)]
@@ -3222,12 +2777,6 @@ func (i GetServiceConnectorTargetDimensionArgs) ToGetServiceConnectorTargetDimen
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetDimensionOutput)
 }
 
-func (i GetServiceConnectorTargetDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTargetDimension] {
-	return pulumix.Output[GetServiceConnectorTargetDimension]{
-		OutputState: i.ToGetServiceConnectorTargetDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorTargetDimensionArrayInput is an input type that accepts GetServiceConnectorTargetDimensionArray and GetServiceConnectorTargetDimensionArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetDimensionArrayInput` via:
 //
@@ -3253,12 +2802,6 @@ func (i GetServiceConnectorTargetDimensionArray) ToGetServiceConnectorTargetDime
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetDimensionArrayOutput)
 }
 
-func (i GetServiceConnectorTargetDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTargetDimension] {
-	return pulumix.Output[[]GetServiceConnectorTargetDimension]{
-		OutputState: i.ToGetServiceConnectorTargetDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorTargetDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorTargetDimensionOutput) ElementType() reflect.Type {
@@ -3271,12 +2814,6 @@ func (o GetServiceConnectorTargetDimensionOutput) ToGetServiceConnectorTargetDim
 
 func (o GetServiceConnectorTargetDimensionOutput) ToGetServiceConnectorTargetDimensionOutputWithContext(ctx context.Context) GetServiceConnectorTargetDimensionOutput {
 	return o
-}
-
-func (o GetServiceConnectorTargetDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTargetDimension] {
-	return pulumix.Output[GetServiceConnectorTargetDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
@@ -3303,12 +2840,6 @@ func (o GetServiceConnectorTargetDimensionArrayOutput) ToGetServiceConnectorTarg
 
 func (o GetServiceConnectorTargetDimensionArrayOutput) ToGetServiceConnectorTargetDimensionArrayOutputWithContext(ctx context.Context) GetServiceConnectorTargetDimensionArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorTargetDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTargetDimension] {
-	return pulumix.Output[[]GetServiceConnectorTargetDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorTargetDimensionOutput {
@@ -3358,12 +2889,6 @@ func (i GetServiceConnectorTargetDimensionDimensionValueArgs) ToGetServiceConnec
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetDimensionDimensionValueOutput)
 }
 
-func (i GetServiceConnectorTargetDimensionDimensionValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[GetServiceConnectorTargetDimensionDimensionValue]{
-		OutputState: i.ToGetServiceConnectorTargetDimensionDimensionValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorTargetDimensionDimensionValueArrayInput is an input type that accepts GetServiceConnectorTargetDimensionDimensionValueArray and GetServiceConnectorTargetDimensionDimensionValueArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTargetDimensionDimensionValueArrayInput` via:
 //
@@ -3389,12 +2914,6 @@ func (i GetServiceConnectorTargetDimensionDimensionValueArray) ToGetServiceConne
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTargetDimensionDimensionValueArrayOutput)
 }
 
-func (i GetServiceConnectorTargetDimensionDimensionValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[[]GetServiceConnectorTargetDimensionDimensionValue]{
-		OutputState: i.ToGetServiceConnectorTargetDimensionDimensionValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorTargetDimensionDimensionValueOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorTargetDimensionDimensionValueOutput) ElementType() reflect.Type {
@@ -3407,12 +2926,6 @@ func (o GetServiceConnectorTargetDimensionDimensionValueOutput) ToGetServiceConn
 
 func (o GetServiceConnectorTargetDimensionDimensionValueOutput) ToGetServiceConnectorTargetDimensionDimensionValueOutputWithContext(ctx context.Context) GetServiceConnectorTargetDimensionDimensionValueOutput {
 	return o
-}
-
-func (o GetServiceConnectorTargetDimensionDimensionValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[GetServiceConnectorTargetDimensionDimensionValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -3442,12 +2955,6 @@ func (o GetServiceConnectorTargetDimensionDimensionValueArrayOutput) ToGetServic
 
 func (o GetServiceConnectorTargetDimensionDimensionValueArrayOutput) ToGetServiceConnectorTargetDimensionDimensionValueArrayOutputWithContext(ctx context.Context) GetServiceConnectorTargetDimensionDimensionValueArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorTargetDimensionDimensionValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTargetDimensionDimensionValue] {
-	return pulumix.Output[[]GetServiceConnectorTargetDimensionDimensionValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorTargetDimensionDimensionValueArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorTargetDimensionDimensionValueOutput {
@@ -3505,12 +3012,6 @@ func (i GetServiceConnectorTaskArgs) ToGetServiceConnectorTaskOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTaskOutput)
 }
 
-func (i GetServiceConnectorTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTask] {
-	return pulumix.Output[GetServiceConnectorTask]{
-		OutputState: i.ToGetServiceConnectorTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorTaskArrayInput is an input type that accepts GetServiceConnectorTaskArray and GetServiceConnectorTaskArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorTaskArrayInput` via:
 //
@@ -3536,12 +3037,6 @@ func (i GetServiceConnectorTaskArray) ToGetServiceConnectorTaskArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorTaskArrayOutput)
 }
 
-func (i GetServiceConnectorTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTask] {
-	return pulumix.Output[[]GetServiceConnectorTask]{
-		OutputState: i.ToGetServiceConnectorTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorTaskOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorTaskOutput) ElementType() reflect.Type {
@@ -3554,12 +3049,6 @@ func (o GetServiceConnectorTaskOutput) ToGetServiceConnectorTaskOutput() GetServ
 
 func (o GetServiceConnectorTaskOutput) ToGetServiceConnectorTaskOutputWithContext(ctx context.Context) GetServiceConnectorTaskOutput {
 	return o
-}
-
-func (o GetServiceConnectorTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorTask] {
-	return pulumix.Output[GetServiceConnectorTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Size limit (kilobytes) for batch sent to invoke the function.
@@ -3599,12 +3088,6 @@ func (o GetServiceConnectorTaskArrayOutput) ToGetServiceConnectorTaskArrayOutput
 
 func (o GetServiceConnectorTaskArrayOutput) ToGetServiceConnectorTaskArrayOutputWithContext(ctx context.Context) GetServiceConnectorTaskArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorTask] {
-	return pulumix.Output[[]GetServiceConnectorTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorTaskArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorTaskOutput {
@@ -3650,12 +3133,6 @@ func (i GetServiceConnectorsFilterArgs) ToGetServiceConnectorsFilterOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsFilterOutput)
 }
 
-func (i GetServiceConnectorsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsFilter] {
-	return pulumix.Output[GetServiceConnectorsFilter]{
-		OutputState: i.ToGetServiceConnectorsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsFilterArrayInput is an input type that accepts GetServiceConnectorsFilterArray and GetServiceConnectorsFilterArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsFilterArrayInput` via:
 //
@@ -3681,12 +3158,6 @@ func (i GetServiceConnectorsFilterArray) ToGetServiceConnectorsFilterArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsFilterArrayOutput)
 }
 
-func (i GetServiceConnectorsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsFilter] {
-	return pulumix.Output[[]GetServiceConnectorsFilter]{
-		OutputState: i.ToGetServiceConnectorsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsFilterOutput) ElementType() reflect.Type {
@@ -3699,12 +3170,6 @@ func (o GetServiceConnectorsFilterOutput) ToGetServiceConnectorsFilterOutput() G
 
 func (o GetServiceConnectorsFilterOutput) ToGetServiceConnectorsFilterOutputWithContext(ctx context.Context) GetServiceConnectorsFilterOutput {
 	return o
-}
-
-func (o GetServiceConnectorsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsFilter] {
-	return pulumix.Output[GetServiceConnectorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Dimension key. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. Custom dimension keys are acceptable. Avoid entering confidential information. Due to use by Service Connector Hub, the following dimension names are reserved: `connectorId`, `connectorName`, `connectorSourceType`. For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). Example: `type`
@@ -3732,12 +3197,6 @@ func (o GetServiceConnectorsFilterArrayOutput) ToGetServiceConnectorsFilterArray
 
 func (o GetServiceConnectorsFilterArrayOutput) ToGetServiceConnectorsFilterArrayOutputWithContext(ctx context.Context) GetServiceConnectorsFilterArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsFilter] {
-	return pulumix.Output[[]GetServiceConnectorsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsFilterOutput {
@@ -3777,12 +3236,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionArgs) ToGetServiceConnecto
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollection] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollection]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionArray and GetServiceConnectorsServiceConnectorCollectionArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionArrayInput` via:
 //
@@ -3808,12 +3261,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionArray) ToGetServiceConnect
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollection] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollection]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionOutput) ElementType() reflect.Type {
@@ -3826,12 +3273,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionOutput) ToGetServiceConnec
 
 func (o GetServiceConnectorsServiceConnectorCollectionOutput) ToGetServiceConnectorsServiceConnectorCollectionOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollection] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionOutput) Items() GetServiceConnectorsServiceConnectorCollectionItemArrayOutput {
@@ -3852,12 +3293,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionArrayOutput) ToGetServiceC
 
 func (o GetServiceConnectorsServiceConnectorCollectionArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollection] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionOutput {
@@ -3951,12 +3386,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemArgs) ToGetServiceConn
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItem] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItem]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemArray and GetServiceConnectorsServiceConnectorCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemArrayInput` via:
 //
@@ -3982,12 +3411,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemArray) ToGetServiceCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItem] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItem]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemOutput) ElementType() reflect.Type {
@@ -4000,12 +3423,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) ToGetServiceCo
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) ToGetServiceConnectorsServiceConnectorCollectionItemOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItem] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
@@ -4102,12 +3519,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemArrayOutput) ToGetServ
 	return o
 }
 
-func (o GetServiceConnectorsServiceConnectorCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItem] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceConnectorsServiceConnectorCollectionItemArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItem {
 		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItem)[vs[1].(int)]
@@ -4163,12 +3574,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceArgs) ToGetServi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSource] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSource]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceArrayInput` via:
 //
@@ -4194,12 +3599,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceArray) ToGetServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSource] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSource]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ElementType() reflect.Type {
@@ -4212,12 +3611,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ToGetSer
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSource] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of [cursor](https://docs.cloud.oracle.com/iaas/Content/Streaming/Tasks/using_a_single_consumer.htm#usingcursors), which determines the starting point from which the stream will be consumed.
@@ -4265,12 +3658,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput) ToG
 	return o
 }
 
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSource] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemSource {
 		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemSource)[vs[1].(int)]
@@ -4310,12 +3697,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceCursor] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceCursor]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray and GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayInput` via:
 //
@@ -4341,12 +3722,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceCursor] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceCursor]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) ElementType() reflect.Type {
@@ -4359,12 +3734,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) To
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceCursor] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceCursor]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -4384,12 +3753,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutpu
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceCursor] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceCursor]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceCursorArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceCursorOutput {
@@ -4439,12 +3802,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayInput` via:
 //
@@ -4470,12 +3827,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput) ElementType() reflect.Type {
@@ -4488,12 +3839,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput)
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
@@ -4525,12 +3870,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOu
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceLogSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceLogSourceOutput {
@@ -4576,12 +3915,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayInput` via:
 //
@@ -4607,12 +3940,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) ElementType() reflect.Type {
@@ -4625,12 +3952,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
@@ -4659,12 +3980,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceOutput {
@@ -4710,12 +4025,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayInput` via:
 //
@@ -4741,12 +4050,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) ElementType() reflect.Type {
@@ -4759,12 +4062,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -4793,12 +4090,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetail]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailOutput {
@@ -4844,12 +4135,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayInput` via:
 //
@@ -4875,12 +4160,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) ElementType() reflect.Type {
@@ -4893,12 +4172,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The metrics to query for the specified metric namespace.
@@ -4927,12 +4200,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespace]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceOutput {
@@ -4974,12 +4241,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray and GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayInput` via:
 //
@@ -5005,12 +4266,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ElementType() reflect.Type {
@@ -5023,12 +4278,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -5050,12 +4299,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSource
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetric]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemSourceMonitoringSourceNamespaceDetailNamespaceMetricOutput {
@@ -5157,12 +4400,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetArgs) ToGetServi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTarget] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTarget]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetArray and GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetArrayInput` via:
 //
@@ -5188,12 +4425,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetArray) ToGetServ
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTarget] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTarget]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemTargetOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) ElementType() reflect.Type {
@@ -5206,12 +4437,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) ToGetSer
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTarget] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The batch rollover size in megabytes.
@@ -5312,12 +4537,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput) ToG
 	return o
 }
 
-func (o GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTarget] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTarget]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemTargetOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetServiceConnectorsServiceConnectorCollectionItemTarget {
 		return vs[0].([]GetServiceConnectorsServiceConnectorCollectionItemTarget)[vs[1].(int)]
@@ -5361,12 +4580,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimension] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimension]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray and GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayInput` via:
 //
@@ -5392,12 +4605,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray) 
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimension] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimension]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput) ElementType() reflect.Type {
@@ -5410,12 +4617,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput)
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimension] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Instructions for extracting the value corresponding to the specified dimension key: Either extract the value as-is (static) or derive the value from a path (evaluated).
@@ -5442,12 +4643,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOu
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimension] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionOutput {
@@ -5497,12 +4692,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArray and GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayInput` via:
 //
@@ -5528,12 +4717,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput) ElementType() reflect.Type {
@@ -5546,12 +4729,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type descriminator.
@@ -5587,12 +4764,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensi
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValueOutput {
@@ -5650,12 +4821,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTaskArgs) ToGetService
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTaskOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTaskArgs) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTask] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTask]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTaskOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput is an input type that accepts GetServiceConnectorsServiceConnectorCollectionItemTaskArray and GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput values.
 // You can construct a concrete instance of `GetServiceConnectorsServiceConnectorCollectionItemTaskArrayInput` via:
 //
@@ -5681,12 +4846,6 @@ func (i GetServiceConnectorsServiceConnectorCollectionItemTaskArray) ToGetServic
 	return pulumi.ToOutputWithContext(ctx, i).(GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput)
 }
 
-func (i GetServiceConnectorsServiceConnectorCollectionItemTaskArray) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTask] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTask]{
-		OutputState: i.ToGetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetServiceConnectorsServiceConnectorCollectionItemTaskOutput struct{ *pulumi.OutputState }
 
 func (GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) ElementType() reflect.Type {
@@ -5699,12 +4858,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) ToGetServi
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTaskOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTaskOutput) ToOutput(ctx context.Context) pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTask] {
-	return pulumix.Output[GetServiceConnectorsServiceConnectorCollectionItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Size limit (kilobytes) for batch sent to invoke the function.
@@ -5744,12 +4897,6 @@ func (o GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput) ToGet
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput) ToGetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutputWithContext(ctx context.Context) GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput {
 	return o
-}
-
-func (o GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTask] {
-	return pulumix.Output[[]GetServiceConnectorsServiceConnectorCollectionItemTask]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetServiceConnectorsServiceConnectorCollectionItemTaskArrayOutput) Index(i pulumi.IntInput) GetServiceConnectorsServiceConnectorCollectionItemTaskOutput {

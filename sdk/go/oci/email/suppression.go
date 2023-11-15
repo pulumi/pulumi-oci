@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Suppression resource in Oracle Cloud Infrastructure Email service.
@@ -207,12 +206,6 @@ func (i *Suppression) ToSuppressionOutputWithContext(ctx context.Context) Suppre
 	return pulumi.ToOutputWithContext(ctx, i).(SuppressionOutput)
 }
 
-func (i *Suppression) ToOutput(ctx context.Context) pulumix.Output[*Suppression] {
-	return pulumix.Output[*Suppression]{
-		OutputState: i.ToSuppressionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SuppressionArrayInput is an input type that accepts SuppressionArray and SuppressionArrayOutput values.
 // You can construct a concrete instance of `SuppressionArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i SuppressionArray) ToSuppressionArrayOutput() SuppressionArrayOutput {
 
 func (i SuppressionArray) ToSuppressionArrayOutputWithContext(ctx context.Context) SuppressionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SuppressionArrayOutput)
-}
-
-func (i SuppressionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Suppression] {
-	return pulumix.Output[[]*Suppression]{
-		OutputState: i.ToSuppressionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SuppressionMapInput is an input type that accepts SuppressionMap and SuppressionMapOutput values.
@@ -269,12 +256,6 @@ func (i SuppressionMap) ToSuppressionMapOutputWithContext(ctx context.Context) S
 	return pulumi.ToOutputWithContext(ctx, i).(SuppressionMapOutput)
 }
 
-func (i SuppressionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Suppression] {
-	return pulumix.Output[map[string]*Suppression]{
-		OutputState: i.ToSuppressionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SuppressionOutput struct{ *pulumi.OutputState }
 
 func (SuppressionOutput) ElementType() reflect.Type {
@@ -287,12 +268,6 @@ func (o SuppressionOutput) ToSuppressionOutput() SuppressionOutput {
 
 func (o SuppressionOutput) ToSuppressionOutputWithContext(ctx context.Context) SuppressionOutput {
 	return o
-}
-
-func (o SuppressionOutput) ToOutput(ctx context.Context) pulumix.Output[*Suppression] {
-	return pulumix.Output[*Suppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
@@ -352,12 +327,6 @@ func (o SuppressionArrayOutput) ToSuppressionArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o SuppressionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Suppression] {
-	return pulumix.Output[[]*Suppression]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SuppressionArrayOutput) Index(i pulumi.IntInput) SuppressionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Suppression {
 		return vs[0].([]*Suppression)[vs[1].(int)]
@@ -376,12 +345,6 @@ func (o SuppressionMapOutput) ToSuppressionMapOutput() SuppressionMapOutput {
 
 func (o SuppressionMapOutput) ToSuppressionMapOutputWithContext(ctx context.Context) SuppressionMapOutput {
 	return o
-}
-
-func (o SuppressionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Suppression] {
-	return pulumix.Output[map[string]*Suppression]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SuppressionMapOutput) MapIndex(k pulumi.StringInput) SuppressionOutput {

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
@@ -272,12 +271,6 @@ func (i *Preauthrequest) ToPreauthrequestOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(PreauthrequestOutput)
 }
 
-func (i *Preauthrequest) ToOutput(ctx context.Context) pulumix.Output[*Preauthrequest] {
-	return pulumix.Output[*Preauthrequest]{
-		OutputState: i.ToPreauthrequestOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PreauthrequestArrayInput is an input type that accepts PreauthrequestArray and PreauthrequestArrayOutput values.
 // You can construct a concrete instance of `PreauthrequestArrayInput` via:
 //
@@ -301,12 +294,6 @@ func (i PreauthrequestArray) ToPreauthrequestArrayOutput() PreauthrequestArrayOu
 
 func (i PreauthrequestArray) ToPreauthrequestArrayOutputWithContext(ctx context.Context) PreauthrequestArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(PreauthrequestArrayOutput)
-}
-
-func (i PreauthrequestArray) ToOutput(ctx context.Context) pulumix.Output[[]*Preauthrequest] {
-	return pulumix.Output[[]*Preauthrequest]{
-		OutputState: i.ToPreauthrequestArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // PreauthrequestMapInput is an input type that accepts PreauthrequestMap and PreauthrequestMapOutput values.
@@ -334,12 +321,6 @@ func (i PreauthrequestMap) ToPreauthrequestMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PreauthrequestMapOutput)
 }
 
-func (i PreauthrequestMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Preauthrequest] {
-	return pulumix.Output[map[string]*Preauthrequest]{
-		OutputState: i.ToPreauthrequestMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PreauthrequestOutput struct{ *pulumi.OutputState }
 
 func (PreauthrequestOutput) ElementType() reflect.Type {
@@ -352,12 +333,6 @@ func (o PreauthrequestOutput) ToPreauthrequestOutput() PreauthrequestOutput {
 
 func (o PreauthrequestOutput) ToPreauthrequestOutputWithContext(ctx context.Context) PreauthrequestOutput {
 	return o
-}
-
-func (o PreauthrequestOutput) ToOutput(ctx context.Context) pulumix.Output[*Preauthrequest] {
-	return pulumix.Output[*Preauthrequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
@@ -439,12 +414,6 @@ func (o PreauthrequestArrayOutput) ToPreauthrequestArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o PreauthrequestArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Preauthrequest] {
-	return pulumix.Output[[]*Preauthrequest]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PreauthrequestArrayOutput) Index(i pulumi.IntInput) PreauthrequestOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Preauthrequest {
 		return vs[0].([]*Preauthrequest)[vs[1].(int)]
@@ -463,12 +432,6 @@ func (o PreauthrequestMapOutput) ToPreauthrequestMapOutput() PreauthrequestMapOu
 
 func (o PreauthrequestMapOutput) ToPreauthrequestMapOutputWithContext(ctx context.Context) PreauthrequestMapOutput {
 	return o
-}
-
-func (o PreauthrequestMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Preauthrequest] {
-	return pulumix.Output[map[string]*Preauthrequest]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PreauthrequestMapOutput) MapIndex(k pulumi.StringInput) PreauthrequestOutput {

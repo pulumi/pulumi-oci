@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Build Run resource in Oracle Cloud Infrastructure Devops service.
@@ -284,12 +283,6 @@ func (i *BuildRun) ToBuildRunOutputWithContext(ctx context.Context) BuildRunOutp
 	return pulumi.ToOutputWithContext(ctx, i).(BuildRunOutput)
 }
 
-func (i *BuildRun) ToOutput(ctx context.Context) pulumix.Output[*BuildRun] {
-	return pulumix.Output[*BuildRun]{
-		OutputState: i.ToBuildRunOutputWithContext(ctx).OutputState,
-	}
-}
-
 // BuildRunArrayInput is an input type that accepts BuildRunArray and BuildRunArrayOutput values.
 // You can construct a concrete instance of `BuildRunArrayInput` via:
 //
@@ -313,12 +306,6 @@ func (i BuildRunArray) ToBuildRunArrayOutput() BuildRunArrayOutput {
 
 func (i BuildRunArray) ToBuildRunArrayOutputWithContext(ctx context.Context) BuildRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(BuildRunArrayOutput)
-}
-
-func (i BuildRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*BuildRun] {
-	return pulumix.Output[[]*BuildRun]{
-		OutputState: i.ToBuildRunArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // BuildRunMapInput is an input type that accepts BuildRunMap and BuildRunMapOutput values.
@@ -346,12 +333,6 @@ func (i BuildRunMap) ToBuildRunMapOutputWithContext(ctx context.Context) BuildRu
 	return pulumi.ToOutputWithContext(ctx, i).(BuildRunMapOutput)
 }
 
-func (i BuildRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildRun] {
-	return pulumix.Output[map[string]*BuildRun]{
-		OutputState: i.ToBuildRunMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type BuildRunOutput struct{ *pulumi.OutputState }
 
 func (BuildRunOutput) ElementType() reflect.Type {
@@ -364,12 +345,6 @@ func (o BuildRunOutput) ToBuildRunOutput() BuildRunOutput {
 
 func (o BuildRunOutput) ToBuildRunOutputWithContext(ctx context.Context) BuildRunOutput {
 	return o
-}
-
-func (o BuildRunOutput) ToOutput(ctx context.Context) pulumix.Output[*BuildRun] {
-	return pulumix.Output[*BuildRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Outputs from the build.
@@ -469,12 +444,6 @@ func (o BuildRunArrayOutput) ToBuildRunArrayOutputWithContext(ctx context.Contex
 	return o
 }
 
-func (o BuildRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*BuildRun] {
-	return pulumix.Output[[]*BuildRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o BuildRunArrayOutput) Index(i pulumi.IntInput) BuildRunOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *BuildRun {
 		return vs[0].([]*BuildRun)[vs[1].(int)]
@@ -493,12 +462,6 @@ func (o BuildRunMapOutput) ToBuildRunMapOutput() BuildRunMapOutput {
 
 func (o BuildRunMapOutput) ToBuildRunMapOutputWithContext(ctx context.Context) BuildRunMapOutput {
 	return o
-}
-
-func (o BuildRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*BuildRun] {
-	return pulumix.Output[map[string]*BuildRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o BuildRunMapOutput) MapIndex(k pulumi.StringInput) BuildRunOutput {

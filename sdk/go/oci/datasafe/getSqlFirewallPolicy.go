@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -140,12 +139,6 @@ func (o LookupSqlFirewallPolicyResultOutput) ToLookupSqlFirewallPolicyResultOutp
 
 func (o LookupSqlFirewallPolicyResultOutput) ToLookupSqlFirewallPolicyResultOutputWithContext(ctx context.Context) LookupSqlFirewallPolicyResultOutput {
 	return o
-}
-
-func (o LookupSqlFirewallPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupSqlFirewallPolicyResult] {
-	return pulumix.Output[LookupSqlFirewallPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of allowed ip addresses for the SQL firewall policy.

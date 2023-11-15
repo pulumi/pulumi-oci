@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Discovery Schedule resource in Oracle Cloud Infrastructure Cloud Bridge service.
@@ -120,12 +119,6 @@ func (o LookupDiscoveryScheduleResultOutput) ToLookupDiscoveryScheduleResultOutp
 
 func (o LookupDiscoveryScheduleResultOutput) ToLookupDiscoveryScheduleResultOutputWithContext(ctx context.Context) LookupDiscoveryScheduleResultOutput {
 	return o
-}
-
-func (o LookupDiscoveryScheduleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDiscoveryScheduleResult] {
-	return pulumix.Output[LookupDiscoveryScheduleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule exists.

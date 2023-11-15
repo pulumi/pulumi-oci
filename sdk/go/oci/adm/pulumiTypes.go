@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -59,12 +58,6 @@ func (i RemediationRecipeDetectConfigurationArgs) ToRemediationRecipeDetectConfi
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeDetectConfigurationOutput)
 }
 
-func (i RemediationRecipeDetectConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeDetectConfiguration] {
-	return pulumix.Output[RemediationRecipeDetectConfiguration]{
-		OutputState: i.ToRemediationRecipeDetectConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i RemediationRecipeDetectConfigurationArgs) ToRemediationRecipeDetectConfigurationPtrOutput() RemediationRecipeDetectConfigurationPtrOutput {
 	return i.ToRemediationRecipeDetectConfigurationPtrOutputWithContext(context.Background())
 }
@@ -106,12 +99,6 @@ func (i *remediationRecipeDetectConfigurationPtrType) ToRemediationRecipeDetectC
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeDetectConfigurationPtrOutput)
 }
 
-func (i *remediationRecipeDetectConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeDetectConfiguration] {
-	return pulumix.Output[*RemediationRecipeDetectConfiguration]{
-		OutputState: i.ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRecipeDetectConfigurationOutput struct{ *pulumi.OutputState }
 
 func (RemediationRecipeDetectConfigurationOutput) ElementType() reflect.Type {
@@ -134,12 +121,6 @@ func (o RemediationRecipeDetectConfigurationOutput) ToRemediationRecipeDetectCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeDetectConfiguration) *RemediationRecipeDetectConfiguration {
 		return &v
 	}).(RemediationRecipeDetectConfigurationPtrOutput)
-}
-
-func (o RemediationRecipeDetectConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeDetectConfiguration] {
-	return pulumix.Output[RemediationRecipeDetectConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
@@ -174,12 +155,6 @@ func (o RemediationRecipeDetectConfigurationPtrOutput) ToRemediationRecipeDetect
 
 func (o RemediationRecipeDetectConfigurationPtrOutput) ToRemediationRecipeDetectConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeDetectConfigurationPtrOutput {
 	return o
-}
-
-func (o RemediationRecipeDetectConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeDetectConfiguration] {
-	return pulumix.Output[*RemediationRecipeDetectConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRecipeDetectConfigurationPtrOutput) Elem() RemediationRecipeDetectConfigurationOutput {
@@ -269,12 +244,6 @@ func (i RemediationRecipeNetworkConfigurationArgs) ToRemediationRecipeNetworkCon
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeNetworkConfigurationOutput)
 }
 
-func (i RemediationRecipeNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[RemediationRecipeNetworkConfiguration]{
-		OutputState: i.ToRemediationRecipeNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i RemediationRecipeNetworkConfigurationArgs) ToRemediationRecipeNetworkConfigurationPtrOutput() RemediationRecipeNetworkConfigurationPtrOutput {
 	return i.ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(context.Background())
 }
@@ -316,12 +285,6 @@ func (i *remediationRecipeNetworkConfigurationPtrType) ToRemediationRecipeNetwor
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeNetworkConfigurationPtrOutput)
 }
 
-func (i *remediationRecipeNetworkConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[*RemediationRecipeNetworkConfiguration]{
-		OutputState: i.ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRecipeNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (RemediationRecipeNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -346,12 +309,6 @@ func (o RemediationRecipeNetworkConfigurationOutput) ToRemediationRecipeNetworkC
 	}).(RemediationRecipeNetworkConfigurationPtrOutput)
 }
 
-func (o RemediationRecipeNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[RemediationRecipeNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
 func (o RemediationRecipeNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v RemediationRecipeNetworkConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -374,12 +331,6 @@ func (o RemediationRecipeNetworkConfigurationPtrOutput) ToRemediationRecipeNetwo
 
 func (o RemediationRecipeNetworkConfigurationPtrOutput) ToRemediationRecipeNetworkConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeNetworkConfigurationPtrOutput {
 	return o
-}
-
-func (o RemediationRecipeNetworkConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[*RemediationRecipeNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRecipeNetworkConfigurationPtrOutput) Elem() RemediationRecipeNetworkConfigurationOutput {
@@ -477,12 +428,6 @@ func (i RemediationRecipeScmConfigurationArgs) ToRemediationRecipeScmConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeScmConfigurationOutput)
 }
 
-func (i RemediationRecipeScmConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeScmConfiguration] {
-	return pulumix.Output[RemediationRecipeScmConfiguration]{
-		OutputState: i.ToRemediationRecipeScmConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i RemediationRecipeScmConfigurationArgs) ToRemediationRecipeScmConfigurationPtrOutput() RemediationRecipeScmConfigurationPtrOutput {
 	return i.ToRemediationRecipeScmConfigurationPtrOutputWithContext(context.Background())
 }
@@ -524,12 +469,6 @@ func (i *remediationRecipeScmConfigurationPtrType) ToRemediationRecipeScmConfigu
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeScmConfigurationPtrOutput)
 }
 
-func (i *remediationRecipeScmConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeScmConfiguration] {
-	return pulumix.Output[*RemediationRecipeScmConfiguration]{
-		OutputState: i.ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRecipeScmConfigurationOutput struct{ *pulumi.OutputState }
 
 func (RemediationRecipeScmConfigurationOutput) ElementType() reflect.Type {
@@ -552,12 +491,6 @@ func (o RemediationRecipeScmConfigurationOutput) ToRemediationRecipeScmConfigura
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeScmConfiguration) *RemediationRecipeScmConfiguration {
 		return &v
 	}).(RemediationRecipeScmConfigurationPtrOutput)
-}
-
-func (o RemediationRecipeScmConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeScmConfiguration] {
-	return pulumix.Output[RemediationRecipeScmConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The branch used by ADM to patch vulnerabilities.
@@ -617,12 +550,6 @@ func (o RemediationRecipeScmConfigurationPtrOutput) ToRemediationRecipeScmConfig
 
 func (o RemediationRecipeScmConfigurationPtrOutput) ToRemediationRecipeScmConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeScmConfigurationPtrOutput {
 	return o
-}
-
-func (o RemediationRecipeScmConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeScmConfiguration] {
-	return pulumix.Output[*RemediationRecipeScmConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRecipeScmConfigurationPtrOutput) Elem() RemediationRecipeScmConfigurationOutput {
@@ -794,12 +721,6 @@ func (i RemediationRecipeVerifyConfigurationArgs) ToRemediationRecipeVerifyConfi
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeVerifyConfigurationOutput)
 }
 
-func (i RemediationRecipeVerifyConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[RemediationRecipeVerifyConfiguration]{
-		OutputState: i.ToRemediationRecipeVerifyConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i RemediationRecipeVerifyConfigurationArgs) ToRemediationRecipeVerifyConfigurationPtrOutput() RemediationRecipeVerifyConfigurationPtrOutput {
 	return i.ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(context.Background())
 }
@@ -841,12 +762,6 @@ func (i *remediationRecipeVerifyConfigurationPtrType) ToRemediationRecipeVerifyC
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRecipeVerifyConfigurationPtrOutput)
 }
 
-func (i *remediationRecipeVerifyConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[*RemediationRecipeVerifyConfiguration]{
-		OutputState: i.ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRecipeVerifyConfigurationOutput struct{ *pulumi.OutputState }
 
 func (RemediationRecipeVerifyConfigurationOutput) ElementType() reflect.Type {
@@ -869,12 +784,6 @@ func (o RemediationRecipeVerifyConfigurationOutput) ToRemediationRecipeVerifyCon
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v RemediationRecipeVerifyConfiguration) *RemediationRecipeVerifyConfiguration {
 		return &v
 	}).(RemediationRecipeVerifyConfigurationPtrOutput)
-}
-
-func (o RemediationRecipeVerifyConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[RemediationRecipeVerifyConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
@@ -939,12 +848,6 @@ func (o RemediationRecipeVerifyConfigurationPtrOutput) ToRemediationRecipeVerify
 
 func (o RemediationRecipeVerifyConfigurationPtrOutput) ToRemediationRecipeVerifyConfigurationPtrOutputWithContext(ctx context.Context) RemediationRecipeVerifyConfigurationPtrOutput {
 	return o
-}
-
-func (o RemediationRecipeVerifyConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[*RemediationRecipeVerifyConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRecipeVerifyConfigurationPtrOutput) Elem() RemediationRecipeVerifyConfigurationOutput {
@@ -1106,12 +1009,6 @@ func (i RemediationRunStageArgs) ToRemediationRunStageOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunStageOutput)
 }
 
-func (i RemediationRunStageArgs) ToOutput(ctx context.Context) pulumix.Output[RemediationRunStage] {
-	return pulumix.Output[RemediationRunStage]{
-		OutputState: i.ToRemediationRunStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemediationRunStageArrayInput is an input type that accepts RemediationRunStageArray and RemediationRunStageArrayOutput values.
 // You can construct a concrete instance of `RemediationRunStageArrayInput` via:
 //
@@ -1137,12 +1034,6 @@ func (i RemediationRunStageArray) ToRemediationRunStageArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunStageArrayOutput)
 }
 
-func (i RemediationRunStageArray) ToOutput(ctx context.Context) pulumix.Output[[]RemediationRunStage] {
-	return pulumix.Output[[]RemediationRunStage]{
-		OutputState: i.ToRemediationRunStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRunStageOutput struct{ *pulumi.OutputState }
 
 func (RemediationRunStageOutput) ElementType() reflect.Type {
@@ -1155,12 +1046,6 @@ func (o RemediationRunStageOutput) ToRemediationRunStageOutput() RemediationRunS
 
 func (o RemediationRunStageOutput) ToRemediationRunStageOutputWithContext(ctx context.Context) RemediationRunStageOutput {
 	return o
-}
-
-func (o RemediationRunStageOutput) ToOutput(ctx context.Context) pulumix.Output[RemediationRunStage] {
-	return pulumix.Output[RemediationRunStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Information about the current step within the given stage.
@@ -1200,12 +1085,6 @@ func (o RemediationRunStageArrayOutput) ToRemediationRunStageArrayOutput() Remed
 
 func (o RemediationRunStageArrayOutput) ToRemediationRunStageArrayOutputWithContext(ctx context.Context) RemediationRunStageArrayOutput {
 	return o
-}
-
-func (o RemediationRunStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]RemediationRunStage] {
-	return pulumix.Output[[]RemediationRunStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRunStageArrayOutput) Index(i pulumi.IntInput) RemediationRunStageOutput {
@@ -1255,12 +1134,6 @@ func (i VulnerabilityAuditApplicationDependencyArgs) ToVulnerabilityAuditApplica
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditApplicationDependencyOutput)
 }
 
-func (i VulnerabilityAuditApplicationDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[VulnerabilityAuditApplicationDependency]{
-		OutputState: i.ToVulnerabilityAuditApplicationDependencyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VulnerabilityAuditApplicationDependencyArrayInput is an input type that accepts VulnerabilityAuditApplicationDependencyArray and VulnerabilityAuditApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditApplicationDependencyArrayInput` via:
 //
@@ -1286,12 +1159,6 @@ func (i VulnerabilityAuditApplicationDependencyArray) ToVulnerabilityAuditApplic
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditApplicationDependencyArrayOutput)
 }
 
-func (i VulnerabilityAuditApplicationDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[[]VulnerabilityAuditApplicationDependency]{
-		OutputState: i.ToVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VulnerabilityAuditApplicationDependencyOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditApplicationDependencyOutput) ElementType() reflect.Type {
@@ -1304,12 +1171,6 @@ func (o VulnerabilityAuditApplicationDependencyOutput) ToVulnerabilityAuditAppli
 
 func (o VulnerabilityAuditApplicationDependencyOutput) ToVulnerabilityAuditApplicationDependencyOutputWithContext(ctx context.Context) VulnerabilityAuditApplicationDependencyOutput {
 	return o
-}
-
-func (o VulnerabilityAuditApplicationDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[VulnerabilityAuditApplicationDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of application dependencies on which this application dependency depends, each identified by its nodeId.
@@ -1339,12 +1200,6 @@ func (o VulnerabilityAuditApplicationDependencyArrayOutput) ToVulnerabilityAudit
 
 func (o VulnerabilityAuditApplicationDependencyArrayOutput) ToVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx context.Context) VulnerabilityAuditApplicationDependencyArrayOutput {
 	return o
-}
-
-func (o VulnerabilityAuditApplicationDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[[]VulnerabilityAuditApplicationDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VulnerabilityAuditApplicationDependencyArrayOutput) Index(i pulumi.IntInput) VulnerabilityAuditApplicationDependencyOutput {
@@ -1394,12 +1249,6 @@ func (i VulnerabilityAuditConfigurationArgs) ToVulnerabilityAuditConfigurationOu
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditConfigurationOutput)
 }
 
-func (i VulnerabilityAuditConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditConfiguration] {
-	return pulumix.Output[VulnerabilityAuditConfiguration]{
-		OutputState: i.ToVulnerabilityAuditConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VulnerabilityAuditConfigurationArgs) ToVulnerabilityAuditConfigurationPtrOutput() VulnerabilityAuditConfigurationPtrOutput {
 	return i.ToVulnerabilityAuditConfigurationPtrOutputWithContext(context.Background())
 }
@@ -1441,12 +1290,6 @@ func (i *vulnerabilityAuditConfigurationPtrType) ToVulnerabilityAuditConfigurati
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditConfigurationPtrOutput)
 }
 
-func (i *vulnerabilityAuditConfigurationPtrType) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditConfiguration] {
-	return pulumix.Output[*VulnerabilityAuditConfiguration]{
-		OutputState: i.ToVulnerabilityAuditConfigurationPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VulnerabilityAuditConfigurationOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditConfigurationOutput) ElementType() reflect.Type {
@@ -1469,12 +1312,6 @@ func (o VulnerabilityAuditConfigurationOutput) ToVulnerabilityAuditConfiguration
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityAuditConfiguration) *VulnerabilityAuditConfiguration {
 		return &v
 	}).(VulnerabilityAuditConfigurationPtrOutput)
-}
-
-func (o VulnerabilityAuditConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditConfiguration] {
-	return pulumix.Output[VulnerabilityAuditConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
@@ -1504,12 +1341,6 @@ func (o VulnerabilityAuditConfigurationPtrOutput) ToVulnerabilityAuditConfigurat
 
 func (o VulnerabilityAuditConfigurationPtrOutput) ToVulnerabilityAuditConfigurationPtrOutputWithContext(ctx context.Context) VulnerabilityAuditConfigurationPtrOutput {
 	return o
-}
-
-func (o VulnerabilityAuditConfigurationPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditConfiguration] {
-	return pulumix.Output[*VulnerabilityAuditConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VulnerabilityAuditConfigurationPtrOutput) Elem() VulnerabilityAuditConfigurationOutput {
@@ -1599,12 +1430,6 @@ func (i VulnerabilityAuditSourceArgs) ToVulnerabilityAuditSourceOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditSourceOutput)
 }
 
-func (i VulnerabilityAuditSourceArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditSource] {
-	return pulumix.Output[VulnerabilityAuditSource]{
-		OutputState: i.ToVulnerabilityAuditSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i VulnerabilityAuditSourceArgs) ToVulnerabilityAuditSourcePtrOutput() VulnerabilityAuditSourcePtrOutput {
 	return i.ToVulnerabilityAuditSourcePtrOutputWithContext(context.Background())
 }
@@ -1646,12 +1471,6 @@ func (i *vulnerabilityAuditSourcePtrType) ToVulnerabilityAuditSourcePtrOutputWit
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditSourcePtrOutput)
 }
 
-func (i *vulnerabilityAuditSourcePtrType) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditSource] {
-	return pulumix.Output[*VulnerabilityAuditSource]{
-		OutputState: i.ToVulnerabilityAuditSourcePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VulnerabilityAuditSourceOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditSourceOutput) ElementType() reflect.Type {
@@ -1674,12 +1493,6 @@ func (o VulnerabilityAuditSourceOutput) ToVulnerabilityAuditSourcePtrOutputWithC
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityAuditSource) *VulnerabilityAuditSource {
 		return &v
 	}).(VulnerabilityAuditSourcePtrOutput)
-}
-
-func (o VulnerabilityAuditSourceOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditSource] {
-	return pulumix.Output[VulnerabilityAuditSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Description of the external resource source.
@@ -1712,12 +1525,6 @@ func (o VulnerabilityAuditSourcePtrOutput) ToVulnerabilityAuditSourcePtrOutput()
 
 func (o VulnerabilityAuditSourcePtrOutput) ToVulnerabilityAuditSourcePtrOutputWithContext(ctx context.Context) VulnerabilityAuditSourcePtrOutput {
 	return o
-}
-
-func (o VulnerabilityAuditSourcePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*VulnerabilityAuditSource] {
-	return pulumix.Output[*VulnerabilityAuditSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VulnerabilityAuditSourcePtrOutput) Elem() VulnerabilityAuditSourceOutput {
@@ -1808,12 +1615,6 @@ func (i VulnerabilityAuditVulnerabilityArgs) ToVulnerabilityAuditVulnerabilityOu
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityOutput)
 }
 
-func (i VulnerabilityAuditVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditVulnerability] {
-	return pulumix.Output[VulnerabilityAuditVulnerability]{
-		OutputState: i.ToVulnerabilityAuditVulnerabilityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VulnerabilityAuditVulnerabilityArrayInput is an input type that accepts VulnerabilityAuditVulnerabilityArray and VulnerabilityAuditVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `VulnerabilityAuditVulnerabilityArrayInput` via:
 //
@@ -1839,12 +1640,6 @@ func (i VulnerabilityAuditVulnerabilityArray) ToVulnerabilityAuditVulnerabilityA
 	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditVulnerabilityArrayOutput)
 }
 
-func (i VulnerabilityAuditVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditVulnerability] {
-	return pulumix.Output[[]VulnerabilityAuditVulnerability]{
-		OutputState: i.ToVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VulnerabilityAuditVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (VulnerabilityAuditVulnerabilityOutput) ElementType() reflect.Type {
@@ -1857,12 +1652,6 @@ func (o VulnerabilityAuditVulnerabilityOutput) ToVulnerabilityAuditVulnerability
 
 func (o VulnerabilityAuditVulnerabilityOutput) ToVulnerabilityAuditVulnerabilityOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityOutput {
 	return o
-}
-
-func (o VulnerabilityAuditVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[VulnerabilityAuditVulnerability] {
-	return pulumix.Output[VulnerabilityAuditVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -1897,12 +1686,6 @@ func (o VulnerabilityAuditVulnerabilityArrayOutput) ToVulnerabilityAuditVulnerab
 
 func (o VulnerabilityAuditVulnerabilityArrayOutput) ToVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx context.Context) VulnerabilityAuditVulnerabilityArrayOutput {
 	return o
-}
-
-func (o VulnerabilityAuditVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]VulnerabilityAuditVulnerability] {
-	return pulumix.Output[[]VulnerabilityAuditVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VulnerabilityAuditVulnerabilityArrayOutput) Index(i pulumi.IntInput) VulnerabilityAuditVulnerabilityOutput {
@@ -1946,12 +1729,6 @@ func (i GetKnowledgebasesFilterArgs) ToGetKnowledgebasesFilterOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesFilterOutput)
 }
 
-func (i GetKnowledgebasesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesFilter] {
-	return pulumix.Output[GetKnowledgebasesFilter]{
-		OutputState: i.ToGetKnowledgebasesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKnowledgebasesFilterArrayInput is an input type that accepts GetKnowledgebasesFilterArray and GetKnowledgebasesFilterArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesFilterArrayInput` via:
 //
@@ -1977,12 +1754,6 @@ func (i GetKnowledgebasesFilterArray) ToGetKnowledgebasesFilterArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesFilterArrayOutput)
 }
 
-func (i GetKnowledgebasesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesFilter] {
-	return pulumix.Output[[]GetKnowledgebasesFilter]{
-		OutputState: i.ToGetKnowledgebasesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKnowledgebasesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetKnowledgebasesFilterOutput) ElementType() reflect.Type {
@@ -1995,12 +1766,6 @@ func (o GetKnowledgebasesFilterOutput) ToGetKnowledgebasesFilterOutput() GetKnow
 
 func (o GetKnowledgebasesFilterOutput) ToGetKnowledgebasesFilterOutputWithContext(ctx context.Context) GetKnowledgebasesFilterOutput {
 	return o
-}
-
-func (o GetKnowledgebasesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesFilter] {
-	return pulumix.Output[GetKnowledgebasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKnowledgebasesFilterOutput) Name() pulumi.StringOutput {
@@ -2027,12 +1792,6 @@ func (o GetKnowledgebasesFilterArrayOutput) ToGetKnowledgebasesFilterArrayOutput
 
 func (o GetKnowledgebasesFilterArrayOutput) ToGetKnowledgebasesFilterArrayOutputWithContext(ctx context.Context) GetKnowledgebasesFilterArrayOutput {
 	return o
-}
-
-func (o GetKnowledgebasesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesFilter] {
-	return pulumix.Output[[]GetKnowledgebasesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKnowledgebasesFilterArrayOutput) Index(i pulumi.IntInput) GetKnowledgebasesFilterOutput {
@@ -2072,12 +1831,6 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionArgs) ToGetKnowledgebasesKnowled
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionOutput)
 }
 
-func (i GetKnowledgebasesKnowledgeBaseCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection] {
-	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection]{
-		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKnowledgebasesKnowledgeBaseCollectionArrayInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionArray and GetKnowledgebasesKnowledgeBaseCollectionArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionArrayInput` via:
 //
@@ -2103,12 +1856,6 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionArray) ToGetKnowledgebasesKnowle
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionArrayOutput)
 }
 
-func (i GetKnowledgebasesKnowledgeBaseCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection] {
-	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection]{
-		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKnowledgebasesKnowledgeBaseCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetKnowledgebasesKnowledgeBaseCollectionOutput) ElementType() reflect.Type {
@@ -2121,12 +1868,6 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToGetKnowledgebasesKnowl
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToGetKnowledgebasesKnowledgeBaseCollectionOutputWithContext(ctx context.Context) GetKnowledgebasesKnowledgeBaseCollectionOutput {
 	return o
-}
-
-func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection] {
-	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionOutput) Items() GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput {
@@ -2147,12 +1888,6 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) ToGetKnowledgebases
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) ToGetKnowledgebasesKnowledgeBaseCollectionArrayOutputWithContext(ctx context.Context) GetKnowledgebasesKnowledgeBaseCollectionArrayOutput {
 	return o
-}
-
-func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection] {
-	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionArrayOutput) Index(i pulumi.IntInput) GetKnowledgebasesKnowledgeBaseCollectionOutput {
@@ -2226,12 +1961,6 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionItemArgs) ToGetKnowledgebasesKno
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionItemOutput)
 }
 
-func (i GetKnowledgebasesKnowledgeBaseCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem] {
-	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem]{
-		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput is an input type that accepts GetKnowledgebasesKnowledgeBaseCollectionItemArray and GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetKnowledgebasesKnowledgeBaseCollectionItemArrayInput` via:
 //
@@ -2257,12 +1986,6 @@ func (i GetKnowledgebasesKnowledgeBaseCollectionItemArray) ToGetKnowledgebasesKn
 	return pulumi.ToOutputWithContext(ctx, i).(GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput)
 }
 
-func (i GetKnowledgebasesKnowledgeBaseCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem] {
-	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem]{
-		OutputState: i.ToGetKnowledgebasesKnowledgeBaseCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetKnowledgebasesKnowledgeBaseCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ElementType() reflect.Type {
@@ -2275,12 +1998,6 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToGetKnowledgebasesK
 
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToGetKnowledgebasesKnowledgeBaseCollectionItemOutputWithContext(ctx context.Context) GetKnowledgebasesKnowledgeBaseCollectionItemOutput {
 	return o
-}
-
-func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem] {
-	return pulumix.Output[GetKnowledgebasesKnowledgeBaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
@@ -2342,12 +2059,6 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) ToGetKnowledgeb
 	return o
 }
 
-func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem] {
-	return pulumix.Output[[]GetKnowledgebasesKnowledgeBaseCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetKnowledgebasesKnowledgeBaseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetKnowledgebasesKnowledgeBaseCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKnowledgebasesKnowledgeBaseCollectionItem {
 		return vs[0].([]GetKnowledgebasesKnowledgeBaseCollectionItem)[vs[1].(int)]
@@ -2399,12 +2110,6 @@ func (i GetRemediationRecipeDetectConfigurationArgs) ToGetRemediationRecipeDetec
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeDetectConfigurationOutput)
 }
 
-func (i GetRemediationRecipeDetectConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeDetectConfiguration] {
-	return pulumix.Output[GetRemediationRecipeDetectConfiguration]{
-		OutputState: i.ToGetRemediationRecipeDetectConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipeDetectConfigurationArrayInput is an input type that accepts GetRemediationRecipeDetectConfigurationArray and GetRemediationRecipeDetectConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipeDetectConfigurationArrayInput` via:
 //
@@ -2430,12 +2135,6 @@ func (i GetRemediationRecipeDetectConfigurationArray) ToGetRemediationRecipeDete
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeDetectConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipeDetectConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeDetectConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeDetectConfiguration]{
-		OutputState: i.ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipeDetectConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipeDetectConfigurationOutput) ElementType() reflect.Type {
@@ -2448,12 +2147,6 @@ func (o GetRemediationRecipeDetectConfigurationOutput) ToGetRemediationRecipeDet
 
 func (o GetRemediationRecipeDetectConfigurationOutput) ToGetRemediationRecipeDetectConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeDetectConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipeDetectConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeDetectConfiguration] {
-	return pulumix.Output[GetRemediationRecipeDetectConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
@@ -2488,12 +2181,6 @@ func (o GetRemediationRecipeDetectConfigurationArrayOutput) ToGetRemediationReci
 
 func (o GetRemediationRecipeDetectConfigurationArrayOutput) ToGetRemediationRecipeDetectConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeDetectConfigurationArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipeDetectConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeDetectConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeDetectConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipeDetectConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeDetectConfigurationOutput {
@@ -2539,12 +2226,6 @@ func (i GetRemediationRecipeNetworkConfigurationArgs) ToGetRemediationRecipeNetw
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeNetworkConfigurationOutput)
 }
 
-func (i GetRemediationRecipeNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[GetRemediationRecipeNetworkConfiguration]{
-		OutputState: i.ToGetRemediationRecipeNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipeNetworkConfigurationArrayInput is an input type that accepts GetRemediationRecipeNetworkConfigurationArray and GetRemediationRecipeNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipeNetworkConfigurationArrayInput` via:
 //
@@ -2570,12 +2251,6 @@ func (i GetRemediationRecipeNetworkConfigurationArray) ToGetRemediationRecipeNet
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeNetworkConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipeNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeNetworkConfiguration]{
-		OutputState: i.ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipeNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipeNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -2588,12 +2263,6 @@ func (o GetRemediationRecipeNetworkConfigurationOutput) ToGetRemediationRecipeNe
 
 func (o GetRemediationRecipeNetworkConfigurationOutput) ToGetRemediationRecipeNetworkConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeNetworkConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipeNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[GetRemediationRecipeNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
@@ -2618,12 +2287,6 @@ func (o GetRemediationRecipeNetworkConfigurationArrayOutput) ToGetRemediationRec
 
 func (o GetRemediationRecipeNetworkConfigurationArrayOutput) ToGetRemediationRecipeNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeNetworkConfigurationArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipeNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeNetworkConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipeNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeNetworkConfigurationOutput {
@@ -2697,12 +2360,6 @@ func (i GetRemediationRecipeScmConfigurationArgs) ToGetRemediationRecipeScmConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeScmConfigurationOutput)
 }
 
-func (i GetRemediationRecipeScmConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeScmConfiguration] {
-	return pulumix.Output[GetRemediationRecipeScmConfiguration]{
-		OutputState: i.ToGetRemediationRecipeScmConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipeScmConfigurationArrayInput is an input type that accepts GetRemediationRecipeScmConfigurationArray and GetRemediationRecipeScmConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipeScmConfigurationArrayInput` via:
 //
@@ -2728,12 +2385,6 @@ func (i GetRemediationRecipeScmConfigurationArray) ToGetRemediationRecipeScmConf
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeScmConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipeScmConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeScmConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeScmConfiguration]{
-		OutputState: i.ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipeScmConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipeScmConfigurationOutput) ElementType() reflect.Type {
@@ -2746,12 +2397,6 @@ func (o GetRemediationRecipeScmConfigurationOutput) ToGetRemediationRecipeScmCon
 
 func (o GetRemediationRecipeScmConfigurationOutput) ToGetRemediationRecipeScmConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeScmConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipeScmConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeScmConfiguration] {
-	return pulumix.Output[GetRemediationRecipeScmConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The branch used by ADM to patch vulnerabilities.
@@ -2811,12 +2456,6 @@ func (o GetRemediationRecipeScmConfigurationArrayOutput) ToGetRemediationRecipeS
 
 func (o GetRemediationRecipeScmConfigurationArrayOutput) ToGetRemediationRecipeScmConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipeScmConfigurationArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipeScmConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeScmConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeScmConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipeScmConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeScmConfigurationOutput {
@@ -2894,12 +2533,6 @@ func (i GetRemediationRecipeVerifyConfigurationArgs) ToGetRemediationRecipeVerif
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeVerifyConfigurationOutput)
 }
 
-func (i GetRemediationRecipeVerifyConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[GetRemediationRecipeVerifyConfiguration]{
-		OutputState: i.ToGetRemediationRecipeVerifyConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipeVerifyConfigurationArrayInput is an input type that accepts GetRemediationRecipeVerifyConfigurationArray and GetRemediationRecipeVerifyConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipeVerifyConfigurationArrayInput` via:
 //
@@ -2925,12 +2558,6 @@ func (i GetRemediationRecipeVerifyConfigurationArray) ToGetRemediationRecipeVeri
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipeVerifyConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipeVerifyConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeVerifyConfiguration]{
-		OutputState: i.ToGetRemediationRecipeVerifyConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipeVerifyConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipeVerifyConfigurationOutput) ElementType() reflect.Type {
@@ -2943,12 +2570,6 @@ func (o GetRemediationRecipeVerifyConfigurationOutput) ToGetRemediationRecipeVer
 
 func (o GetRemediationRecipeVerifyConfigurationOutput) ToGetRemediationRecipeVerifyConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipeVerifyConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipeVerifyConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[GetRemediationRecipeVerifyConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Additional key-value pairs passed as parameters to the build service when running an experiment.
@@ -3015,12 +2636,6 @@ func (o GetRemediationRecipeVerifyConfigurationArrayOutput) ToGetRemediationReci
 	return o
 }
 
-func (o GetRemediationRecipeVerifyConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipeVerifyConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipeVerifyConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRecipeVerifyConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipeVerifyConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipeVerifyConfiguration {
 		return vs[0].([]GetRemediationRecipeVerifyConfiguration)[vs[1].(int)]
@@ -3062,12 +2677,6 @@ func (i GetRemediationRecipesFilterArgs) ToGetRemediationRecipesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesFilterOutput)
 }
 
-func (i GetRemediationRecipesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesFilter] {
-	return pulumix.Output[GetRemediationRecipesFilter]{
-		OutputState: i.ToGetRemediationRecipesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesFilterArrayInput is an input type that accepts GetRemediationRecipesFilterArray and GetRemediationRecipesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesFilterArrayInput` via:
 //
@@ -3093,12 +2702,6 @@ func (i GetRemediationRecipesFilterArray) ToGetRemediationRecipesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesFilterArrayOutput)
 }
 
-func (i GetRemediationRecipesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesFilter] {
-	return pulumix.Output[[]GetRemediationRecipesFilter]{
-		OutputState: i.ToGetRemediationRecipesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesFilterOutput) ElementType() reflect.Type {
@@ -3111,12 +2714,6 @@ func (o GetRemediationRecipesFilterOutput) ToGetRemediationRecipesFilterOutput()
 
 func (o GetRemediationRecipesFilterOutput) ToGetRemediationRecipesFilterOutputWithContext(ctx context.Context) GetRemediationRecipesFilterOutput {
 	return o
-}
-
-func (o GetRemediationRecipesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesFilter] {
-	return pulumix.Output[GetRemediationRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesFilterOutput) Name() pulumi.StringOutput {
@@ -3143,12 +2740,6 @@ func (o GetRemediationRecipesFilterArrayOutput) ToGetRemediationRecipesFilterArr
 
 func (o GetRemediationRecipesFilterArrayOutput) ToGetRemediationRecipesFilterArrayOutputWithContext(ctx context.Context) GetRemediationRecipesFilterArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesFilter] {
-	return pulumix.Output[[]GetRemediationRecipesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesFilterOutput {
@@ -3188,12 +2779,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionArgs) ToGetRemediationRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollection] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollection]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesRemediationRecipeCollectionArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionArray and GetRemediationRecipesRemediationRecipeCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionArrayInput` via:
 //
@@ -3219,12 +2804,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionArray) ToGetRemediationR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionArrayOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesRemediationRecipeCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesRemediationRecipeCollectionOutput) ElementType() reflect.Type {
@@ -3237,12 +2816,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionOutput) ToGetRemediation
 
 func (o GetRemediationRecipesRemediationRecipeCollectionOutput) ToGetRemediationRecipesRemediationRecipeCollectionOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollection] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesRemediationRecipeCollectionOutput) Items() GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput {
@@ -3263,12 +2836,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ToGetRemedi
 
 func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesRemediationRecipeCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionOutput {
@@ -3366,12 +2933,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemArgs) ToGetRemediati
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesRemediationRecipeCollectionItemArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemArray and GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemArrayInput` via:
 //
@@ -3397,12 +2958,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemArray) ToGetRemediat
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesRemediationRecipeCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesRemediationRecipeCollectionItemOutput) ElementType() reflect.Type {
@@ -3415,12 +2970,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ToGetRemedia
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
@@ -3526,12 +3075,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) ToGetRe
 	return o
 }
 
-func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRecipesRemediationRecipeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItem {
 		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItem)[vs[1].(int)]
@@ -3583,12 +3126,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput` via:
 //
@@ -3614,12 +3151,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ElementType() reflect.Type {
@@ -3632,12 +3163,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationO
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency. An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
@@ -3680,12 +3205,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationA
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationOutput {
@@ -3731,12 +3250,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayInput` via:
 //
@@ -3762,12 +3275,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ElementType() reflect.Type {
@@ -3780,12 +3287,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of Oracle Cloud Identifiers ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) corresponding to Network Security Groups.
@@ -3814,12 +3315,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationOutput {
@@ -3893,12 +3388,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayInput` via:
 //
@@ -3924,12 +3413,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArra
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ElementType() reflect.Type {
@@ -3942,12 +3425,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutp
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The branch used by ADM to patch vulnerabilities.
@@ -4019,12 +3496,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArra
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemScmConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationOutput {
@@ -4102,12 +3573,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput is an input type that accepts GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray and GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayInput` via:
 //
@@ -4133,12 +3598,6 @@ func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationA
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput)
 }
 
-func (i GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
-		OutputState: i.ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ElementType() reflect.Type {
@@ -4151,12 +3610,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationO
 
 func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ToGetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutputWithContext(ctx context.Context) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
 	return o
-}
-
-func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
-	return pulumix.Output[GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Additional key-value pairs passed as parameters to the build service when running an experiment.
@@ -4243,12 +3696,6 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationA
 	return o
 }
 
-func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration] {
-	return pulumix.Output[[]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArrayOutput) Index(i pulumi.IntInput) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration {
 		return vs[0].([]GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration)[vs[1].(int)]
@@ -4288,12 +3735,6 @@ func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput)
 }
 
-func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
-		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray and GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayInput` via:
 //
@@ -4319,12 +3760,6 @@ func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput)
 }
 
-func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
-	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
-		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ElementType() reflect.Type {
@@ -4337,12 +3772,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
 	return o
-}
-
-func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of application recommendation summaries.
@@ -4364,12 +3793,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection] {
-	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionOutput {
@@ -4423,12 +3846,6 @@ func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput)
 }
 
-func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
-		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray and GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayInput` via:
 //
@@ -4454,12 +3871,6 @@ func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput)
 }
 
-func (i GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
-	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
-		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ElementType() reflect.Type {
@@ -4472,12 +3883,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ToGetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
 	return o
-}
-
-func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of (application dependencies) node identifiers from which this node depends.
@@ -4522,12 +3927,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependen
 	return o
 }
 
-func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem] {
-	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem {
 		return vs[0].([]GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionItem)[vs[1].(int)]
@@ -4569,12 +3968,6 @@ func (i GetRemediationRunApplicationDependencyRecommendationsFilterArgs) ToGetRe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsFilterOutput)
 }
 
-func (i GetRemediationRunApplicationDependencyRecommendationsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter]{
-		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput is an input type that accepts GetRemediationRunApplicationDependencyRecommendationsFilterArray and GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunApplicationDependencyRecommendationsFilterArrayInput` via:
 //
@@ -4600,12 +3993,6 @@ func (i GetRemediationRunApplicationDependencyRecommendationsFilterArray) ToGetR
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput)
 }
 
-func (i GetRemediationRunApplicationDependencyRecommendationsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter] {
-	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter]{
-		OutputState: i.ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunApplicationDependencyRecommendationsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ElementType() reflect.Type {
@@ -4618,12 +4005,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ToGet
 
 func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ToGetRemediationRunApplicationDependencyRecommendationsFilterOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
 	return o
-}
-
-func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter] {
-	return pulumix.Output[GetRemediationRunApplicationDependencyRecommendationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunApplicationDependencyRecommendationsFilterOutput) Name() pulumi.StringOutput {
@@ -4650,12 +4031,6 @@ func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) 
 
 func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) ToGetRemediationRunApplicationDependencyRecommendationsFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter] {
-	return pulumix.Output[[]GetRemediationRunApplicationDependencyRecommendationsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunApplicationDependencyRecommendationsFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRunApplicationDependencyRecommendationsFilterOutput {
@@ -4713,12 +4088,6 @@ func (i GetRemediationRunStageArgs) ToGetRemediationRunStageOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStageOutput)
 }
 
-func (i GetRemediationRunStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStage] {
-	return pulumix.Output[GetRemediationRunStage]{
-		OutputState: i.ToGetRemediationRunStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStageArrayInput is an input type that accepts GetRemediationRunStageArray and GetRemediationRunStageArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStageArrayInput` via:
 //
@@ -4744,12 +4113,6 @@ func (i GetRemediationRunStageArray) ToGetRemediationRunStageArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStageArrayOutput)
 }
 
-func (i GetRemediationRunStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStage] {
-	return pulumix.Output[[]GetRemediationRunStage]{
-		OutputState: i.ToGetRemediationRunStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStageOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStageOutput) ElementType() reflect.Type {
@@ -4762,12 +4125,6 @@ func (o GetRemediationRunStageOutput) ToGetRemediationRunStageOutput() GetRemedi
 
 func (o GetRemediationRunStageOutput) ToGetRemediationRunStageOutputWithContext(ctx context.Context) GetRemediationRunStageOutput {
 	return o
-}
-
-func (o GetRemediationRunStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStage] {
-	return pulumix.Output[GetRemediationRunStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Information about the current step within the given stage.
@@ -4807,12 +4164,6 @@ func (o GetRemediationRunStageArrayOutput) ToGetRemediationRunStageArrayOutput()
 
 func (o GetRemediationRunStageArrayOutput) ToGetRemediationRunStageArrayOutputWithContext(ctx context.Context) GetRemediationRunStageArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStage] {
-	return pulumix.Output[[]GetRemediationRunStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStageArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStageOutput {
@@ -4858,12 +4209,6 @@ func (i GetRemediationRunStagePipelinePropertyArgs) ToGetRemediationRunStagePipe
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePipelinePropertyOutput)
 }
 
-func (i GetRemediationRunStagePipelinePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePipelineProperty] {
-	return pulumix.Output[GetRemediationRunStagePipelineProperty]{
-		OutputState: i.ToGetRemediationRunStagePipelinePropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagePipelinePropertyArrayInput is an input type that accepts GetRemediationRunStagePipelinePropertyArray and GetRemediationRunStagePipelinePropertyArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagePipelinePropertyArrayInput` via:
 //
@@ -4889,12 +4234,6 @@ func (i GetRemediationRunStagePipelinePropertyArray) ToGetRemediationRunStagePip
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePipelinePropertyArrayOutput)
 }
 
-func (i GetRemediationRunStagePipelinePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePipelineProperty] {
-	return pulumix.Output[[]GetRemediationRunStagePipelineProperty]{
-		OutputState: i.ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagePipelinePropertyOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagePipelinePropertyOutput) ElementType() reflect.Type {
@@ -4907,12 +4246,6 @@ func (o GetRemediationRunStagePipelinePropertyOutput) ToGetRemediationRunStagePi
 
 func (o GetRemediationRunStagePipelinePropertyOutput) ToGetRemediationRunStagePipelinePropertyOutputWithContext(ctx context.Context) GetRemediationRunStagePipelinePropertyOutput {
 	return o
-}
-
-func (o GetRemediationRunStagePipelinePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePipelineProperty] {
-	return pulumix.Output[GetRemediationRunStagePipelineProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier for the pipeline or action created in the Verify stage.
@@ -4937,12 +4270,6 @@ func (o GetRemediationRunStagePipelinePropertyArrayOutput) ToGetRemediationRunSt
 
 func (o GetRemediationRunStagePipelinePropertyArrayOutput) ToGetRemediationRunStagePipelinePropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagePipelinePropertyArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStagePipelinePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePipelineProperty] {
-	return pulumix.Output[[]GetRemediationRunStagePipelineProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagePipelinePropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagePipelinePropertyOutput {
@@ -4988,12 +4315,6 @@ func (i GetRemediationRunStagePullRequestPropertyArgs) ToGetRemediationRunStageP
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePullRequestPropertyOutput)
 }
 
-func (i GetRemediationRunStagePullRequestPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePullRequestProperty] {
-	return pulumix.Output[GetRemediationRunStagePullRequestProperty]{
-		OutputState: i.ToGetRemediationRunStagePullRequestPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagePullRequestPropertyArrayInput is an input type that accepts GetRemediationRunStagePullRequestPropertyArray and GetRemediationRunStagePullRequestPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagePullRequestPropertyArrayInput` via:
 //
@@ -5019,12 +4340,6 @@ func (i GetRemediationRunStagePullRequestPropertyArray) ToGetRemediationRunStage
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagePullRequestPropertyArrayOutput)
 }
 
-func (i GetRemediationRunStagePullRequestPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePullRequestProperty] {
-	return pulumix.Output[[]GetRemediationRunStagePullRequestProperty]{
-		OutputState: i.ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagePullRequestPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagePullRequestPropertyOutput) ElementType() reflect.Type {
@@ -5037,12 +4352,6 @@ func (o GetRemediationRunStagePullRequestPropertyOutput) ToGetRemediationRunStag
 
 func (o GetRemediationRunStagePullRequestPropertyOutput) ToGetRemediationRunStagePullRequestPropertyOutputWithContext(ctx context.Context) GetRemediationRunStagePullRequestPropertyOutput {
 	return o
-}
-
-func (o GetRemediationRunStagePullRequestPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagePullRequestProperty] {
-	return pulumix.Output[GetRemediationRunStagePullRequestProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier for the pull or merge request created in the recommend stage.
@@ -5067,12 +4376,6 @@ func (o GetRemediationRunStagePullRequestPropertyArrayOutput) ToGetRemediationRu
 
 func (o GetRemediationRunStagePullRequestPropertyArrayOutput) ToGetRemediationRunStagePullRequestPropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagePullRequestPropertyArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStagePullRequestPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagePullRequestProperty] {
-	return pulumix.Output[[]GetRemediationRunStagePullRequestProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagePullRequestPropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagePullRequestPropertyOutput {
@@ -5116,12 +4419,6 @@ func (i GetRemediationRunStagesFilterArgs) ToGetRemediationRunStagesFilterOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesFilterOutput)
 }
 
-func (i GetRemediationRunStagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesFilter] {
-	return pulumix.Output[GetRemediationRunStagesFilter]{
-		OutputState: i.ToGetRemediationRunStagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagesFilterArrayInput is an input type that accepts GetRemediationRunStagesFilterArray and GetRemediationRunStagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagesFilterArrayInput` via:
 //
@@ -5147,12 +4444,6 @@ func (i GetRemediationRunStagesFilterArray) ToGetRemediationRunStagesFilterArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesFilterArrayOutput)
 }
 
-func (i GetRemediationRunStagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesFilter] {
-	return pulumix.Output[[]GetRemediationRunStagesFilter]{
-		OutputState: i.ToGetRemediationRunStagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagesFilterOutput) ElementType() reflect.Type {
@@ -5165,12 +4456,6 @@ func (o GetRemediationRunStagesFilterOutput) ToGetRemediationRunStagesFilterOutp
 
 func (o GetRemediationRunStagesFilterOutput) ToGetRemediationRunStagesFilterOutputWithContext(ctx context.Context) GetRemediationRunStagesFilterOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesFilter] {
-	return pulumix.Output[GetRemediationRunStagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesFilterOutput) Name() pulumi.StringOutput {
@@ -5197,12 +4482,6 @@ func (o GetRemediationRunStagesFilterArrayOutput) ToGetRemediationRunStagesFilte
 
 func (o GetRemediationRunStagesFilterArrayOutput) ToGetRemediationRunStagesFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesFilterArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesFilter] {
-	return pulumix.Output[[]GetRemediationRunStagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesFilterOutput {
@@ -5242,12 +4521,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionArgs) ToGetRemediati
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagesRemediationRunStageCollectionArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionArray and GetRemediationRunStagesRemediationRunStageCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionArrayInput` via:
 //
@@ -5273,12 +4546,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionArray) ToGetRemediat
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionArrayOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagesRemediationRunStageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagesRemediationRunStageCollectionOutput) ElementType() reflect.Type {
@@ -5291,12 +4558,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) ToGetRemedia
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) ToGetRemediationRunStagesRemediationRunStageCollectionOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionOutput) Items() GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput {
@@ -5317,12 +4578,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ToGetRe
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionOutput {
@@ -5412,12 +4667,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionItemArgs) ToGetRemed
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemArray and GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemArrayInput` via:
 //
@@ -5443,12 +4692,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionItemArray) ToGetReme
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagesRemediationRunStageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ElementType() reflect.Type {
@@ -5461,12 +4704,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ToGetRem
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the vulnerability audit.
@@ -5552,12 +4789,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) ToG
 	return o
 }
 
-func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunStagesRemediationRunStageCollectionItem {
 		return vs[0].([]GetRemediationRunStagesRemediationRunStageCollectionItem)[vs[1].(int)]
@@ -5601,12 +4832,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray and GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayInput` via:
 //
@@ -5632,12 +4857,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ElementType() reflect.Type {
@@ -5650,12 +4869,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier for the pipeline or action created in the Verify stage.
@@ -5684,12 +4897,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPipelineProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionItemPipelinePropertyOutput {
@@ -5735,12 +4942,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPrope
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput is an input type that accepts GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray and GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayInput` via:
 //
@@ -5766,12 +4967,6 @@ func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPrope
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput)
 }
 
-func (i GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
-		OutputState: i.ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ElementType() reflect.Type {
@@ -5784,12 +4979,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPrope
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
-	return pulumix.Output[GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Unique identifier for the pull or merge request created in the recommend stage.
@@ -5818,12 +5007,6 @@ func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPrope
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) ToGetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutputWithContext(ctx context.Context) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty] {
-	return pulumix.Output[[]GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestProperty]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyArrayOutput) Index(i pulumi.IntInput) GetRemediationRunStagesRemediationRunStageCollectionItemPullRequestPropertyOutput {
@@ -5867,12 +5050,6 @@ func (i GetRemediationRunsFilterArgs) ToGetRemediationRunsFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsFilterOutput)
 }
 
-func (i GetRemediationRunsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsFilter] {
-	return pulumix.Output[GetRemediationRunsFilter]{
-		OutputState: i.ToGetRemediationRunsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunsFilterArrayInput is an input type that accepts GetRemediationRunsFilterArray and GetRemediationRunsFilterArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunsFilterArrayInput` via:
 //
@@ -5898,12 +5075,6 @@ func (i GetRemediationRunsFilterArray) ToGetRemediationRunsFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsFilterArrayOutput)
 }
 
-func (i GetRemediationRunsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsFilter] {
-	return pulumix.Output[[]GetRemediationRunsFilter]{
-		OutputState: i.ToGetRemediationRunsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunsFilterOutput) ElementType() reflect.Type {
@@ -5916,12 +5087,6 @@ func (o GetRemediationRunsFilterOutput) ToGetRemediationRunsFilterOutput() GetRe
 
 func (o GetRemediationRunsFilterOutput) ToGetRemediationRunsFilterOutputWithContext(ctx context.Context) GetRemediationRunsFilterOutput {
 	return o
-}
-
-func (o GetRemediationRunsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsFilter] {
-	return pulumix.Output[GetRemediationRunsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunsFilterOutput) Name() pulumi.StringOutput {
@@ -5948,12 +5113,6 @@ func (o GetRemediationRunsFilterArrayOutput) ToGetRemediationRunsFilterArrayOutp
 
 func (o GetRemediationRunsFilterArrayOutput) ToGetRemediationRunsFilterArrayOutputWithContext(ctx context.Context) GetRemediationRunsFilterArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsFilter] {
-	return pulumix.Output[[]GetRemediationRunsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunsFilterArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsFilterOutput {
@@ -5993,12 +5152,6 @@ func (i GetRemediationRunsRemediationRunCollectionArgs) ToGetRemediationRunsReme
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionOutput)
 }
 
-func (i GetRemediationRunsRemediationRunCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollection] {
-	return pulumix.Output[GetRemediationRunsRemediationRunCollection]{
-		OutputState: i.ToGetRemediationRunsRemediationRunCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunsRemediationRunCollectionArrayInput is an input type that accepts GetRemediationRunsRemediationRunCollectionArray and GetRemediationRunsRemediationRunCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionArrayInput` via:
 //
@@ -6024,12 +5177,6 @@ func (i GetRemediationRunsRemediationRunCollectionArray) ToGetRemediationRunsRem
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionArrayOutput)
 }
 
-func (i GetRemediationRunsRemediationRunCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollection] {
-	return pulumix.Output[[]GetRemediationRunsRemediationRunCollection]{
-		OutputState: i.ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunsRemediationRunCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunsRemediationRunCollectionOutput) ElementType() reflect.Type {
@@ -6042,12 +5189,6 @@ func (o GetRemediationRunsRemediationRunCollectionOutput) ToGetRemediationRunsRe
 
 func (o GetRemediationRunsRemediationRunCollectionOutput) ToGetRemediationRunsRemediationRunCollectionOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionOutput {
 	return o
-}
-
-func (o GetRemediationRunsRemediationRunCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollection] {
-	return pulumix.Output[GetRemediationRunsRemediationRunCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunsRemediationRunCollectionOutput) Items() GetRemediationRunsRemediationRunCollectionItemArrayOutput {
@@ -6068,12 +5209,6 @@ func (o GetRemediationRunsRemediationRunCollectionArrayOutput) ToGetRemediationR
 
 func (o GetRemediationRunsRemediationRunCollectionArrayOutput) ToGetRemediationRunsRemediationRunCollectionArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunsRemediationRunCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollection] {
-	return pulumix.Output[[]GetRemediationRunsRemediationRunCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunsRemediationRunCollectionArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsRemediationRunCollectionOutput {
@@ -6171,12 +5306,6 @@ func (i GetRemediationRunsRemediationRunCollectionItemArgs) ToGetRemediationRuns
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemOutput)
 }
 
-func (i GetRemediationRunsRemediationRunCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItem] {
-	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItem]{
-		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunsRemediationRunCollectionItemArrayInput is an input type that accepts GetRemediationRunsRemediationRunCollectionItemArray and GetRemediationRunsRemediationRunCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionItemArrayInput` via:
 //
@@ -6202,12 +5331,6 @@ func (i GetRemediationRunsRemediationRunCollectionItemArray) ToGetRemediationRun
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemArrayOutput)
 }
 
-func (i GetRemediationRunsRemediationRunCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem] {
-	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem]{
-		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunsRemediationRunCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunsRemediationRunCollectionItemOutput) ElementType() reflect.Type {
@@ -6220,12 +5343,6 @@ func (o GetRemediationRunsRemediationRunCollectionItemOutput) ToGetRemediationRu
 
 func (o GetRemediationRunsRemediationRunCollectionItemOutput) ToGetRemediationRunsRemediationRunCollectionItemOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemOutput {
 	return o
-}
-
-func (o GetRemediationRunsRemediationRunCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItem] {
-	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
@@ -6319,12 +5436,6 @@ func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) ToGetRemediat
 	return o
 }
 
-func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem] {
-	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRemediationRunsRemediationRunCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsRemediationRunCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRemediationRunsRemediationRunCollectionItem {
 		return vs[0].([]GetRemediationRunsRemediationRunCollectionItem)[vs[1].(int)]
@@ -6380,12 +5491,6 @@ func (i GetRemediationRunsRemediationRunCollectionItemStageArgs) ToGetRemediatio
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemStageOutput)
 }
 
-func (i GetRemediationRunsRemediationRunCollectionItemStageArgs) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage] {
-	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage]{
-		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRemediationRunsRemediationRunCollectionItemStageArrayInput is an input type that accepts GetRemediationRunsRemediationRunCollectionItemStageArray and GetRemediationRunsRemediationRunCollectionItemStageArrayOutput values.
 // You can construct a concrete instance of `GetRemediationRunsRemediationRunCollectionItemStageArrayInput` via:
 //
@@ -6411,12 +5516,6 @@ func (i GetRemediationRunsRemediationRunCollectionItemStageArray) ToGetRemediati
 	return pulumi.ToOutputWithContext(ctx, i).(GetRemediationRunsRemediationRunCollectionItemStageArrayOutput)
 }
 
-func (i GetRemediationRunsRemediationRunCollectionItemStageArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage] {
-	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage]{
-		OutputState: i.ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRemediationRunsRemediationRunCollectionItemStageOutput struct{ *pulumi.OutputState }
 
 func (GetRemediationRunsRemediationRunCollectionItemStageOutput) ElementType() reflect.Type {
@@ -6429,12 +5528,6 @@ func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) ToGetRemediat
 
 func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) ToGetRemediationRunsRemediationRunCollectionItemStageOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemStageOutput {
 	return o
-}
-
-func (o GetRemediationRunsRemediationRunCollectionItemStageOutput) ToOutput(ctx context.Context) pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage] {
-	return pulumix.Output[GetRemediationRunsRemediationRunCollectionItemStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Information about the current step within the given stage.
@@ -6474,12 +5567,6 @@ func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ToGetRem
 
 func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ToGetRemediationRunsRemediationRunCollectionItemStageArrayOutputWithContext(ctx context.Context) GetRemediationRunsRemediationRunCollectionItemStageArrayOutput {
 	return o
-}
-
-func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage] {
-	return pulumix.Output[[]GetRemediationRunsRemediationRunCollectionItemStage]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRemediationRunsRemediationRunCollectionItemStageArrayOutput) Index(i pulumi.IntInput) GetRemediationRunsRemediationRunCollectionItemStageOutput {
@@ -6523,12 +5610,6 @@ func (i GetVulnerabilityAuditApplicationDependencyArgs) ToGetVulnerabilityAuditA
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependency]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyArray and GetVulnerabilityAuditApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyArrayInput` via:
 //
@@ -6554,12 +5635,6 @@ func (i GetVulnerabilityAuditApplicationDependencyArray) ToGetVulnerabilityAudit
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependency]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyOutput) ElementType() reflect.Type {
@@ -6572,12 +5647,6 @@ func (o GetVulnerabilityAuditApplicationDependencyOutput) ToGetVulnerabilityAudi
 
 func (o GetVulnerabilityAuditApplicationDependencyOutput) ToGetVulnerabilityAuditApplicationDependencyOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
@@ -6604,12 +5673,6 @@ func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) ToGetVulnerabilit
 
 func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) ToGetVulnerabilityAuditApplicationDependencyArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependency] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyOutput {
@@ -6651,12 +5714,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayInput` via:
 //
@@ -6682,12 +5739,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) ElementType() reflect.Type {
@@ -6700,12 +5751,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of vulnerability audit summaries.
@@ -6727,12 +5772,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionOutput {
@@ -6790,12 +5829,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayInput` via:
 //
@@ -6821,12 +5854,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ElementType() reflect.Type {
@@ -6839,12 +5866,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of application dependencies on which this application dependency depends, each identified by its nodeId.
@@ -6894,12 +5915,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemOutput {
@@ -6953,12 +5968,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayInput` via:
 //
@@ -6984,12 +5993,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) ElementType() reflect.Type {
@@ -7002,12 +6005,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -7052,12 +6049,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return o
 }
 
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability {
 		return vs[0].([]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability)[vs[1].(int)]
@@ -7099,12 +6090,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray and GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayInput` via:
 //
@@ -7130,12 +6115,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) ElementType() reflect.Type {
@@ -7148,12 +6127,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) T
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput) Name() pulumi.StringOutput {
@@ -7180,12 +6153,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutp
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilitiesFilterOutput {
@@ -7243,12 +6210,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs) ToGetVu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayInput` via:
 //
@@ -7274,12 +6235,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ElementType() reflect.Type {
@@ -7292,12 +6247,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ToGet
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 // List of Application Dependencies on which this Application Dependency depends, each identified by its nodeId.
@@ -7343,12 +6292,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) 
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemOutput {
@@ -7402,12 +6345,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray and GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayInput` via:
 //
@@ -7433,12 +6370,6 @@ func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput)
 }
 
-func (i GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) ElementType() reflect.Type {
@@ -7451,12 +6382,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -7497,12 +6422,6 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput) ToGetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput {
@@ -7552,12 +6471,6 @@ func (i GetVulnerabilityAuditConfigurationArgs) ToGetVulnerabilityAuditConfigura
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditConfigurationOutput)
 }
 
-func (i GetVulnerabilityAuditConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditConfiguration] {
-	return pulumix.Output[GetVulnerabilityAuditConfiguration]{
-		OutputState: i.ToGetVulnerabilityAuditConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditConfigurationArrayInput is an input type that accepts GetVulnerabilityAuditConfigurationArray and GetVulnerabilityAuditConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditConfigurationArrayInput` via:
 //
@@ -7583,12 +6496,6 @@ func (i GetVulnerabilityAuditConfigurationArray) ToGetVulnerabilityAuditConfigur
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditConfigurationArrayOutput)
 }
 
-func (i GetVulnerabilityAuditConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditConfiguration] {
-	return pulumix.Output[[]GetVulnerabilityAuditConfiguration]{
-		OutputState: i.ToGetVulnerabilityAuditConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditConfigurationOutput) ElementType() reflect.Type {
@@ -7601,12 +6508,6 @@ func (o GetVulnerabilityAuditConfigurationOutput) ToGetVulnerabilityAuditConfigu
 
 func (o GetVulnerabilityAuditConfigurationOutput) ToGetVulnerabilityAuditConfigurationOutputWithContext(ctx context.Context) GetVulnerabilityAuditConfigurationOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditConfiguration] {
-	return pulumix.Output[GetVulnerabilityAuditConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
@@ -7636,12 +6537,6 @@ func (o GetVulnerabilityAuditConfigurationArrayOutput) ToGetVulnerabilityAuditCo
 
 func (o GetVulnerabilityAuditConfigurationArrayOutput) ToGetVulnerabilityAuditConfigurationArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditConfigurationArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditConfiguration] {
-	return pulumix.Output[[]GetVulnerabilityAuditConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditConfigurationArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditConfigurationOutput {
@@ -7691,12 +6586,6 @@ func (i GetVulnerabilityAuditSourceArgs) ToGetVulnerabilityAuditSourceOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditSourceOutput)
 }
 
-func (i GetVulnerabilityAuditSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditSource] {
-	return pulumix.Output[GetVulnerabilityAuditSource]{
-		OutputState: i.ToGetVulnerabilityAuditSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditSourceArrayInput is an input type that accepts GetVulnerabilityAuditSourceArray and GetVulnerabilityAuditSourceArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditSourceArrayInput` via:
 //
@@ -7722,12 +6611,6 @@ func (i GetVulnerabilityAuditSourceArray) ToGetVulnerabilityAuditSourceArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditSourceArrayOutput)
 }
 
-func (i GetVulnerabilityAuditSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditSource] {
-	return pulumix.Output[[]GetVulnerabilityAuditSource]{
-		OutputState: i.ToGetVulnerabilityAuditSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditSourceOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditSourceOutput) ElementType() reflect.Type {
@@ -7740,12 +6623,6 @@ func (o GetVulnerabilityAuditSourceOutput) ToGetVulnerabilityAuditSourceOutput()
 
 func (o GetVulnerabilityAuditSourceOutput) ToGetVulnerabilityAuditSourceOutputWithContext(ctx context.Context) GetVulnerabilityAuditSourceOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditSource] {
-	return pulumix.Output[GetVulnerabilityAuditSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Description of the external resource source.
@@ -7775,12 +6652,6 @@ func (o GetVulnerabilityAuditSourceArrayOutput) ToGetVulnerabilityAuditSourceArr
 
 func (o GetVulnerabilityAuditSourceArrayOutput) ToGetVulnerabilityAuditSourceArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditSourceArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditSource] {
-	return pulumix.Output[[]GetVulnerabilityAuditSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditSourceArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditSourceOutput {
@@ -7834,12 +6705,6 @@ func (i GetVulnerabilityAuditVulnerabilityArgs) ToGetVulnerabilityAuditVulnerabi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityOutput)
 }
 
-func (i GetVulnerabilityAuditVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditVulnerabilityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditVulnerabilityArray and GetVulnerabilityAuditVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditVulnerabilityArrayInput` via:
 //
@@ -7865,12 +6730,6 @@ func (i GetVulnerabilityAuditVulnerabilityArray) ToGetVulnerabilityAuditVulnerab
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditVulnerabilityArrayOutput)
 }
 
-func (i GetVulnerabilityAuditVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditVulnerabilityOutput) ElementType() reflect.Type {
@@ -7883,12 +6742,6 @@ func (o GetVulnerabilityAuditVulnerabilityOutput) ToGetVulnerabilityAuditVulnera
 
 func (o GetVulnerabilityAuditVulnerabilityOutput) ToGetVulnerabilityAuditVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -7923,12 +6776,6 @@ func (o GetVulnerabilityAuditVulnerabilityArrayOutput) ToGetVulnerabilityAuditVu
 
 func (o GetVulnerabilityAuditVulnerabilityArrayOutput) ToGetVulnerabilityAuditVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditVulnerabilityArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditVulnerabilityOutput {
@@ -7972,12 +6819,6 @@ func (i GetVulnerabilityAuditsFilterArgs) ToGetVulnerabilityAuditsFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsFilterOutput)
 }
 
-func (i GetVulnerabilityAuditsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsFilter] {
-	return pulumix.Output[GetVulnerabilityAuditsFilter]{
-		OutputState: i.ToGetVulnerabilityAuditsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsFilterArrayInput is an input type that accepts GetVulnerabilityAuditsFilterArray and GetVulnerabilityAuditsFilterArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsFilterArrayInput` via:
 //
@@ -8003,12 +6844,6 @@ func (i GetVulnerabilityAuditsFilterArray) ToGetVulnerabilityAuditsFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsFilterArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsFilter] {
-	return pulumix.Output[[]GetVulnerabilityAuditsFilter]{
-		OutputState: i.ToGetVulnerabilityAuditsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsFilterOutput) ElementType() reflect.Type {
@@ -8021,12 +6856,6 @@ func (o GetVulnerabilityAuditsFilterOutput) ToGetVulnerabilityAuditsFilterOutput
 
 func (o GetVulnerabilityAuditsFilterOutput) ToGetVulnerabilityAuditsFilterOutputWithContext(ctx context.Context) GetVulnerabilityAuditsFilterOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsFilter] {
-	return pulumix.Output[GetVulnerabilityAuditsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsFilterOutput) Name() pulumi.StringOutput {
@@ -8053,12 +6882,6 @@ func (o GetVulnerabilityAuditsFilterArrayOutput) ToGetVulnerabilityAuditsFilterA
 
 func (o GetVulnerabilityAuditsFilterArrayOutput) ToGetVulnerabilityAuditsFilterArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsFilterArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsFilter] {
-	return pulumix.Output[[]GetVulnerabilityAuditsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsFilterArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsFilterOutput {
@@ -8098,12 +6921,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs) ToGetVulnerabili
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayInput` via:
 //
@@ -8129,12 +6946,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArray) ToGetVulnerabil
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ElementType() reflect.Type {
@@ -8147,12 +6958,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ToGetVulnerabi
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput) Items() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput {
@@ -8173,12 +6978,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) ToGetVuln
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionOutput {
@@ -8302,12 +7101,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs) ToGetVulnera
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayInput` via:
 //
@@ -8333,12 +7126,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray) ToGetVulner
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ElementType() reflect.Type {
@@ -8351,12 +7138,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ToGetVulne
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) ApplicationDependencies() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput {
@@ -8506,12 +7287,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput) ToGet
 	return o
 }
 
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditsVulnerabilityAuditCollectionItem {
 		return vs[0].([]GetVulnerabilityAuditsVulnerabilityAuditCollectionItem)[vs[1].(int)]
@@ -8553,12 +7328,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayInput` via:
 //
@@ -8584,12 +7353,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ElementType() reflect.Type {
@@ -8602,12 +7365,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput) ApplicationDependencyNodeIds() pulumi.StringArrayOutput {
@@ -8640,12 +7397,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDepende
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependency]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyOutput {
@@ -8695,12 +7446,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput` via:
 //
@@ -8726,12 +7471,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) ElementType() reflect.Type {
@@ -8744,12 +7483,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutpu
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A vulnerable application dependency is ignored if its name matches any of the items in `exclusions`. An asterisk (*) in the dependency pattern acts as a wildcard and matches zero or more characters.
@@ -8785,12 +7518,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationOutput {
@@ -8840,12 +7567,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs) ToGetV
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput` via:
 //
@@ -8871,12 +7592,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ElementType() reflect.Type {
@@ -8889,12 +7604,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ToGe
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Description of the external resource source.
@@ -8924,12 +7633,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput)
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput {
@@ -8983,12 +7686,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs)
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput values.
 // You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput` via:
 //
@@ -9014,12 +7711,6 @@ func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput)
 }
 
-func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
-		OutputState: i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput struct{ *pulumi.OutputState }
 
 func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) ElementType() reflect.Type {
@@ -9032,12 +7723,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutpu
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) ToOutput(ctx context.Context) pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
-	return pulumix.Output[GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Common Vulnerability Scoring System (CVSS) Version 2.
@@ -9076,12 +7761,6 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput {
 	return o
-}
-
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability] {
-	return pulumix.Output[[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput {

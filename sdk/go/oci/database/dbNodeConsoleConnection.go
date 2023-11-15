@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Db Node Console Connection resource in Oracle Cloud Infrastructure Database service.
@@ -230,12 +229,6 @@ func (i *DbNodeConsoleConnection) ToDbNodeConsoleConnectionOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeConsoleConnectionOutput)
 }
 
-func (i *DbNodeConsoleConnection) ToOutput(ctx context.Context) pulumix.Output[*DbNodeConsoleConnection] {
-	return pulumix.Output[*DbNodeConsoleConnection]{
-		OutputState: i.ToDbNodeConsoleConnectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DbNodeConsoleConnectionArrayInput is an input type that accepts DbNodeConsoleConnectionArray and DbNodeConsoleConnectionArrayOutput values.
 // You can construct a concrete instance of `DbNodeConsoleConnectionArrayInput` via:
 //
@@ -259,12 +252,6 @@ func (i DbNodeConsoleConnectionArray) ToDbNodeConsoleConnectionArrayOutput() DbN
 
 func (i DbNodeConsoleConnectionArray) ToDbNodeConsoleConnectionArrayOutputWithContext(ctx context.Context) DbNodeConsoleConnectionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeConsoleConnectionArrayOutput)
-}
-
-func (i DbNodeConsoleConnectionArray) ToOutput(ctx context.Context) pulumix.Output[[]*DbNodeConsoleConnection] {
-	return pulumix.Output[[]*DbNodeConsoleConnection]{
-		OutputState: i.ToDbNodeConsoleConnectionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DbNodeConsoleConnectionMapInput is an input type that accepts DbNodeConsoleConnectionMap and DbNodeConsoleConnectionMapOutput values.
@@ -292,12 +279,6 @@ func (i DbNodeConsoleConnectionMap) ToDbNodeConsoleConnectionMapOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(DbNodeConsoleConnectionMapOutput)
 }
 
-func (i DbNodeConsoleConnectionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbNodeConsoleConnection] {
-	return pulumix.Output[map[string]*DbNodeConsoleConnection]{
-		OutputState: i.ToDbNodeConsoleConnectionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DbNodeConsoleConnectionOutput struct{ *pulumi.OutputState }
 
 func (DbNodeConsoleConnectionOutput) ElementType() reflect.Type {
@@ -310,12 +291,6 @@ func (o DbNodeConsoleConnectionOutput) ToDbNodeConsoleConnectionOutput() DbNodeC
 
 func (o DbNodeConsoleConnectionOutput) ToDbNodeConsoleConnectionOutputWithContext(ctx context.Context) DbNodeConsoleConnectionOutput {
 	return o
-}
-
-func (o DbNodeConsoleConnectionOutput) ToOutput(ctx context.Context) pulumix.Output[*DbNodeConsoleConnection] {
-	return pulumix.Output[*DbNodeConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment to contain the console connection.
@@ -385,12 +360,6 @@ func (o DbNodeConsoleConnectionArrayOutput) ToDbNodeConsoleConnectionArrayOutput
 	return o
 }
 
-func (o DbNodeConsoleConnectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DbNodeConsoleConnection] {
-	return pulumix.Output[[]*DbNodeConsoleConnection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DbNodeConsoleConnectionArrayOutput) Index(i pulumi.IntInput) DbNodeConsoleConnectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DbNodeConsoleConnection {
 		return vs[0].([]*DbNodeConsoleConnection)[vs[1].(int)]
@@ -409,12 +378,6 @@ func (o DbNodeConsoleConnectionMapOutput) ToDbNodeConsoleConnectionMapOutput() D
 
 func (o DbNodeConsoleConnectionMapOutput) ToDbNodeConsoleConnectionMapOutputWithContext(ctx context.Context) DbNodeConsoleConnectionMapOutput {
 	return o
-}
-
-func (o DbNodeConsoleConnectionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DbNodeConsoleConnection] {
-	return pulumix.Output[map[string]*DbNodeConsoleConnection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DbNodeConsoleConnectionMapOutput) MapIndex(k pulumi.StringInput) DbNodeConsoleConnectionOutput {

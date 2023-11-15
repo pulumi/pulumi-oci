@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Plan Baseline Configuration resource in Oracle Cloud Infrastructure Database Management service.
@@ -122,12 +121,6 @@ func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ToGetManaged
 
 func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ToGetManagedDatabaseSqlPlanBaselineConfigurationResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlPlanBaselineConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselineConfigurationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The capture filters used in automatic initial plan capture.

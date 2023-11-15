@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -296,12 +295,6 @@ func (i *SqlFirewallPolicy) ToSqlFirewallPolicyOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyOutput)
 }
 
-func (i *SqlFirewallPolicy) ToOutput(ctx context.Context) pulumix.Output[*SqlFirewallPolicy] {
-	return pulumix.Output[*SqlFirewallPolicy]{
-		OutputState: i.ToSqlFirewallPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SqlFirewallPolicyArrayInput is an input type that accepts SqlFirewallPolicyArray and SqlFirewallPolicyArrayOutput values.
 // You can construct a concrete instance of `SqlFirewallPolicyArrayInput` via:
 //
@@ -325,12 +318,6 @@ func (i SqlFirewallPolicyArray) ToSqlFirewallPolicyArrayOutput() SqlFirewallPoli
 
 func (i SqlFirewallPolicyArray) ToSqlFirewallPolicyArrayOutputWithContext(ctx context.Context) SqlFirewallPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyArrayOutput)
-}
-
-func (i SqlFirewallPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*SqlFirewallPolicy] {
-	return pulumix.Output[[]*SqlFirewallPolicy]{
-		OutputState: i.ToSqlFirewallPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SqlFirewallPolicyMapInput is an input type that accepts SqlFirewallPolicyMap and SqlFirewallPolicyMapOutput values.
@@ -358,12 +345,6 @@ func (i SqlFirewallPolicyMap) ToSqlFirewallPolicyMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(SqlFirewallPolicyMapOutput)
 }
 
-func (i SqlFirewallPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlFirewallPolicy] {
-	return pulumix.Output[map[string]*SqlFirewallPolicy]{
-		OutputState: i.ToSqlFirewallPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SqlFirewallPolicyOutput struct{ *pulumi.OutputState }
 
 func (SqlFirewallPolicyOutput) ElementType() reflect.Type {
@@ -376,12 +357,6 @@ func (o SqlFirewallPolicyOutput) ToSqlFirewallPolicyOutput() SqlFirewallPolicyOu
 
 func (o SqlFirewallPolicyOutput) ToSqlFirewallPolicyOutputWithContext(ctx context.Context) SqlFirewallPolicyOutput {
 	return o
-}
-
-func (o SqlFirewallPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*SqlFirewallPolicy] {
-	return pulumix.Output[*SqlFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of allowed ip addresses for the SQL firewall policy.
@@ -506,12 +481,6 @@ func (o SqlFirewallPolicyArrayOutput) ToSqlFirewallPolicyArrayOutputWithContext(
 	return o
 }
 
-func (o SqlFirewallPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SqlFirewallPolicy] {
-	return pulumix.Output[[]*SqlFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SqlFirewallPolicyArrayOutput) Index(i pulumi.IntInput) SqlFirewallPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SqlFirewallPolicy {
 		return vs[0].([]*SqlFirewallPolicy)[vs[1].(int)]
@@ -530,12 +499,6 @@ func (o SqlFirewallPolicyMapOutput) ToSqlFirewallPolicyMapOutput() SqlFirewallPo
 
 func (o SqlFirewallPolicyMapOutput) ToSqlFirewallPolicyMapOutputWithContext(ctx context.Context) SqlFirewallPolicyMapOutput {
 	return o
-}
-
-func (o SqlFirewallPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SqlFirewallPolicy] {
-	return pulumix.Output[map[string]*SqlFirewallPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SqlFirewallPolicyMapOutput) MapIndex(k pulumi.StringInput) SqlFirewallPolicyOutput {

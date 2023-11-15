@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -130,12 +129,6 @@ func (o LookupManagedListResultOutput) ToLookupManagedListResultOutput() LookupM
 
 func (o LookupManagedListResultOutput) ToLookupManagedListResultOutputWithContext(ctx context.Context) LookupManagedListResultOutput {
 	return o
-}
-
-func (o LookupManagedListResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupManagedListResult] {
-	return pulumix.Output[LookupManagedListResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Compartment Identifier where the resource is created

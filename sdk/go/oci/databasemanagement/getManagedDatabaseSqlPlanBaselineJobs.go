@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
@@ -112,12 +111,6 @@ func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ToGetManagedDatabaseS
 
 func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ToGetManagedDatabaseSqlPlanBaselineJobsResultOutputWithContext(ctx context.Context) GetManagedDatabaseSqlPlanBaselineJobsResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlPlanBaselineJobsResult] {
-	return pulumix.Output[GetManagedDatabaseSqlPlanBaselineJobsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedDatabaseSqlPlanBaselineJobsResultOutput) Filters() GetManagedDatabaseSqlPlanBaselineJobsFilterArrayOutput {

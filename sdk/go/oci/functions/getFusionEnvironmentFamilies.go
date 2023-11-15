@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Fusion Environment Families in Oracle Cloud Infrastructure Fusion Apps service.
@@ -126,12 +125,6 @@ func (o GetFusionEnvironmentFamiliesResultOutput) ToGetFusionEnvironmentFamilies
 
 func (o GetFusionEnvironmentFamiliesResultOutput) ToGetFusionEnvironmentFamiliesResultOutputWithContext(ctx context.Context) GetFusionEnvironmentFamiliesResultOutput {
 	return o
-}
-
-func (o GetFusionEnvironmentFamiliesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetFusionEnvironmentFamiliesResult] {
-	return pulumix.Output[GetFusionEnvironmentFamiliesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment where the environment family is located.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration Plan resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -132,12 +131,6 @@ func (o LookupMigrationPlanResultOutput) ToLookupMigrationPlanResultOutput() Loo
 
 func (o LookupMigrationPlanResultOutput) ToLookupMigrationPlanResultOutputWithContext(ctx context.Context) LookupMigrationPlanResultOutput {
 	return o
-}
-
-func (o LookupMigrationPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMigrationPlanResult] {
-	return pulumix.Output[LookupMigrationPlanResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}

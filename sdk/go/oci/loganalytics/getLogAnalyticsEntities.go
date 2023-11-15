@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
@@ -178,12 +177,6 @@ func (o GetLogAnalyticsEntitiesResultOutput) ToGetLogAnalyticsEntitiesResultOutp
 
 func (o GetLogAnalyticsEntitiesResultOutput) ToGetLogAnalyticsEntitiesResultOutputWithContext(ctx context.Context) GetLogAnalyticsEntitiesResultOutput {
 	return o
-}
-
-func (o GetLogAnalyticsEntitiesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsEntitiesResult] {
-	return pulumix.Output[GetLogAnalyticsEntitiesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.

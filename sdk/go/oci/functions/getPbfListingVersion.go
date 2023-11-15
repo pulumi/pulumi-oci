@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Pbf Listing Version resource in Oracle Cloud Infrastructure Functions service.
@@ -124,12 +123,6 @@ func (o GetPbfListingVersionResultOutput) ToGetPbfListingVersionResultOutput() G
 
 func (o GetPbfListingVersionResultOutput) ToGetPbfListingVersionResultOutputWithContext(ctx context.Context) GetPbfListingVersionResultOutput {
 	return o
-}
-
-func (o GetPbfListingVersionResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPbfListingVersionResult] {
-	return pulumix.Output[GetPbfListingVersionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Details changes are included in this version.

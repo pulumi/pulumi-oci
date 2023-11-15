@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Lifecycle Environment resource in Oracle Cloud Infrastructure Os Management Hub service.
@@ -129,12 +128,6 @@ func (o LookupLifecycleEnvironmentResultOutput) ToLookupLifecycleEnvironmentResu
 
 func (o LookupLifecycleEnvironmentResultOutput) ToLookupLifecycleEnvironmentResultOutputWithContext(ctx context.Context) LookupLifecycleEnvironmentResultOutput {
 	return o
-}
-
-func (o LookupLifecycleEnvironmentResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLifecycleEnvironmentResult] {
-	return pulumix.Output[LookupLifecycleEnvironmentResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The CPU architecture of the target instances.

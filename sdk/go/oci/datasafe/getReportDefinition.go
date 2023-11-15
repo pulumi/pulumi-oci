@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
@@ -152,12 +151,6 @@ func (o LookupReportDefinitionResultOutput) ToLookupReportDefinitionResultOutput
 
 func (o LookupReportDefinitionResultOutput) ToLookupReportDefinitionResultOutputWithContext(ctx context.Context) LookupReportDefinitionResultOutput {
 	return o
-}
-
-func (o LookupReportDefinitionResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupReportDefinitionResult] {
-	return pulumix.Output[LookupReportDefinitionResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Specifies the name of the category that this report belongs to.

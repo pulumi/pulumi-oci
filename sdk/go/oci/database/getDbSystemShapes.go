@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -111,12 +110,6 @@ func (o GetDbSystemShapesResultOutput) ToGetDbSystemShapesResultOutput() GetDbSy
 
 func (o GetDbSystemShapesResultOutput) ToGetDbSystemShapesResultOutputWithContext(ctx context.Context) GetDbSystemShapesResultOutput {
 	return o
-}
-
-func (o GetDbSystemShapesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbSystemShapesResult] {
-	return pulumix.Output[GetDbSystemShapesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetDbSystemShapesResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Library Masking Formats in Oracle Cloud Infrastructure Data Safe service.
@@ -165,12 +164,6 @@ func (o GetLibraryMaskingFormatsResultOutput) ToGetLibraryMaskingFormatsResultOu
 
 func (o GetLibraryMaskingFormatsResultOutput) ToGetLibraryMaskingFormatsResultOutputWithContext(ctx context.Context) GetLibraryMaskingFormatsResultOutput {
 	return o
-}
-
-func (o GetLibraryMaskingFormatsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLibraryMaskingFormatsResult] {
-	return pulumix.Output[GetLibraryMaskingFormatsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetLibraryMaskingFormatsResultOutput) AccessLevel() pulumi.StringPtrOutput {

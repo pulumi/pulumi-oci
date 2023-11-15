@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Verify resource in Oracle Cloud Infrastructure Kms service.
@@ -244,12 +243,6 @@ func (i *Verify) ToVerifyOutputWithContext(ctx context.Context) VerifyOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VerifyOutput)
 }
 
-func (i *Verify) ToOutput(ctx context.Context) pulumix.Output[*Verify] {
-	return pulumix.Output[*Verify]{
-		OutputState: i.ToVerifyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // VerifyArrayInput is an input type that accepts VerifyArray and VerifyArrayOutput values.
 // You can construct a concrete instance of `VerifyArrayInput` via:
 //
@@ -273,12 +266,6 @@ func (i VerifyArray) ToVerifyArrayOutput() VerifyArrayOutput {
 
 func (i VerifyArray) ToVerifyArrayOutputWithContext(ctx context.Context) VerifyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(VerifyArrayOutput)
-}
-
-func (i VerifyArray) ToOutput(ctx context.Context) pulumix.Output[[]*Verify] {
-	return pulumix.Output[[]*Verify]{
-		OutputState: i.ToVerifyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // VerifyMapInput is an input type that accepts VerifyMap and VerifyMapOutput values.
@@ -306,12 +293,6 @@ func (i VerifyMap) ToVerifyMapOutputWithContext(ctx context.Context) VerifyMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(VerifyMapOutput)
 }
 
-func (i VerifyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Verify] {
-	return pulumix.Output[map[string]*Verify]{
-		OutputState: i.ToVerifyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type VerifyOutput struct{ *pulumi.OutputState }
 
 func (VerifyOutput) ElementType() reflect.Type {
@@ -324,12 +305,6 @@ func (o VerifyOutput) ToVerifyOutput() VerifyOutput {
 
 func (o VerifyOutput) ToVerifyOutputWithContext(ctx context.Context) VerifyOutput {
 	return o
-}
-
-func (o VerifyOutput) ToOutput(ctx context.Context) pulumix.Output[*Verify] {
-	return pulumix.Output[*Verify]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
@@ -389,12 +364,6 @@ func (o VerifyArrayOutput) ToVerifyArrayOutputWithContext(ctx context.Context) V
 	return o
 }
 
-func (o VerifyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Verify] {
-	return pulumix.Output[[]*Verify]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o VerifyArrayOutput) Index(i pulumi.IntInput) VerifyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Verify {
 		return vs[0].([]*Verify)[vs[1].(int)]
@@ -413,12 +382,6 @@ func (o VerifyMapOutput) ToVerifyMapOutput() VerifyMapOutput {
 
 func (o VerifyMapOutput) ToVerifyMapOutputWithContext(ctx context.Context) VerifyMapOutput {
 	return o
-}
-
-func (o VerifyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Verify] {
-	return pulumix.Output[map[string]*Verify]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o VerifyMapOutput) MapIndex(k pulumi.StringInput) VerifyOutput {

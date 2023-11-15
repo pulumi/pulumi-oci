@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Object Storage service.
@@ -108,12 +107,6 @@ func (o GetNamespaceResultOutput) ToGetNamespaceResultOutput() GetNamespaceResul
 
 func (o GetNamespaceResultOutput) ToGetNamespaceResultOutputWithContext(ctx context.Context) GetNamespaceResultOutput {
 	return o
-}
-
-func (o GetNamespaceResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNamespaceResult] {
-	return pulumix.Output[GetNamespaceResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetNamespaceResultOutput) CompartmentId() pulumi.StringPtrOutput {

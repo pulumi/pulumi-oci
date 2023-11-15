@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Cloud Autonomous Vm Cluster Resource Usage resource in Oracle Cloud Infrastructure Database service.
@@ -138,12 +137,6 @@ func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ToGetCloudAutonomo
 
 func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ToGetCloudAutonomousVmClusterResourceUsageResultOutputWithContext(ctx context.Context) GetCloudAutonomousVmClusterResourceUsageResultOutput {
 	return o
-}
-
-func (o GetCloudAutonomousVmClusterResourceUsageResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCloudAutonomousVmClusterResourceUsageResult] {
-	return pulumix.Output[GetCloudAutonomousVmClusterResourceUsageResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The data disk group size allocated for Autonomous Databases, in TBs.

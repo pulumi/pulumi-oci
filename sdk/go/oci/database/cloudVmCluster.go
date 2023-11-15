@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
@@ -659,12 +658,6 @@ func (i *CloudVmCluster) ToCloudVmClusterOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterOutput)
 }
 
-func (i *CloudVmCluster) ToOutput(ctx context.Context) pulumix.Output[*CloudVmCluster] {
-	return pulumix.Output[*CloudVmCluster]{
-		OutputState: i.ToCloudVmClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CloudVmClusterArrayInput is an input type that accepts CloudVmClusterArray and CloudVmClusterArrayOutput values.
 // You can construct a concrete instance of `CloudVmClusterArrayInput` via:
 //
@@ -688,12 +681,6 @@ func (i CloudVmClusterArray) ToCloudVmClusterArrayOutput() CloudVmClusterArrayOu
 
 func (i CloudVmClusterArray) ToCloudVmClusterArrayOutputWithContext(ctx context.Context) CloudVmClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterArrayOutput)
-}
-
-func (i CloudVmClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*CloudVmCluster] {
-	return pulumix.Output[[]*CloudVmCluster]{
-		OutputState: i.ToCloudVmClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // CloudVmClusterMapInput is an input type that accepts CloudVmClusterMap and CloudVmClusterMapOutput values.
@@ -721,12 +708,6 @@ func (i CloudVmClusterMap) ToCloudVmClusterMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(CloudVmClusterMapOutput)
 }
 
-func (i CloudVmClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudVmCluster] {
-	return pulumix.Output[map[string]*CloudVmCluster]{
-		OutputState: i.ToCloudVmClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CloudVmClusterOutput struct{ *pulumi.OutputState }
 
 func (CloudVmClusterOutput) ElementType() reflect.Type {
@@ -739,12 +720,6 @@ func (o CloudVmClusterOutput) ToCloudVmClusterOutput() CloudVmClusterOutput {
 
 func (o CloudVmClusterOutput) ToCloudVmClusterOutputWithContext(ctx context.Context) CloudVmClusterOutput {
 	return o
-}
-
-func (o CloudVmClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*CloudVmCluster] {
-	return pulumix.Output[*CloudVmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the availability domain that the cloud Exadata infrastructure resource is located in.
@@ -1010,12 +985,6 @@ func (o CloudVmClusterArrayOutput) ToCloudVmClusterArrayOutputWithContext(ctx co
 	return o
 }
 
-func (o CloudVmClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*CloudVmCluster] {
-	return pulumix.Output[[]*CloudVmCluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CloudVmClusterArrayOutput) Index(i pulumi.IntInput) CloudVmClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *CloudVmCluster {
 		return vs[0].([]*CloudVmCluster)[vs[1].(int)]
@@ -1034,12 +1003,6 @@ func (o CloudVmClusterMapOutput) ToCloudVmClusterMapOutput() CloudVmClusterMapOu
 
 func (o CloudVmClusterMapOutput) ToCloudVmClusterMapOutputWithContext(ctx context.Context) CloudVmClusterMapOutput {
 	return o
-}
-
-func (o CloudVmClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*CloudVmCluster] {
-	return pulumix.Output[map[string]*CloudVmCluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CloudVmClusterMapOutput) MapIndex(k pulumi.StringInput) CloudVmClusterOutput {

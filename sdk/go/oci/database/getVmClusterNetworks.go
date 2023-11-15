@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
@@ -127,12 +126,6 @@ func (o GetVmClusterNetworksResultOutput) ToGetVmClusterNetworksResultOutput() G
 
 func (o GetVmClusterNetworksResultOutput) ToGetVmClusterNetworksResultOutputWithContext(ctx context.Context) GetVmClusterNetworksResultOutput {
 	return o
-}
-
-func (o GetVmClusterNetworksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterNetworksResult] {
-	return pulumix.Output[GetVmClusterNetworksResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

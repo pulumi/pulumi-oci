@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
@@ -135,12 +134,6 @@ func (o LookupBootVolumeBackupResultOutput) ToLookupBootVolumeBackupResultOutput
 
 func (o LookupBootVolumeBackupResultOutput) ToLookupBootVolumeBackupResultOutputWithContext(ctx context.Context) LookupBootVolumeBackupResultOutput {
 	return o
-}
-
-func (o LookupBootVolumeBackupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupBootVolumeBackupResult] {
-	return pulumix.Output[LookupBootVolumeBackupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupBootVolumeBackupResultOutput) BootVolumeBackupId() pulumi.StringOutput {

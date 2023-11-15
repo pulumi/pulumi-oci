@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Kmsi Setting resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -1158,12 +1157,6 @@ func (i *DomainsKmsiSetting) ToDomainsKmsiSettingOutputWithContext(ctx context.C
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsKmsiSettingOutput)
 }
 
-func (i *DomainsKmsiSetting) ToOutput(ctx context.Context) pulumix.Output[*DomainsKmsiSetting] {
-	return pulumix.Output[*DomainsKmsiSetting]{
-		OutputState: i.ToDomainsKmsiSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsKmsiSettingArrayInput is an input type that accepts DomainsKmsiSettingArray and DomainsKmsiSettingArrayOutput values.
 // You can construct a concrete instance of `DomainsKmsiSettingArrayInput` via:
 //
@@ -1187,12 +1180,6 @@ func (i DomainsKmsiSettingArray) ToDomainsKmsiSettingArrayOutput() DomainsKmsiSe
 
 func (i DomainsKmsiSettingArray) ToDomainsKmsiSettingArrayOutputWithContext(ctx context.Context) DomainsKmsiSettingArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsKmsiSettingArrayOutput)
-}
-
-func (i DomainsKmsiSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsKmsiSetting] {
-	return pulumix.Output[[]*DomainsKmsiSetting]{
-		OutputState: i.ToDomainsKmsiSettingArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsKmsiSettingMapInput is an input type that accepts DomainsKmsiSettingMap and DomainsKmsiSettingMapOutput values.
@@ -1220,12 +1207,6 @@ func (i DomainsKmsiSettingMap) ToDomainsKmsiSettingMapOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsKmsiSettingMapOutput)
 }
 
-func (i DomainsKmsiSettingMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsKmsiSetting] {
-	return pulumix.Output[map[string]*DomainsKmsiSetting]{
-		OutputState: i.ToDomainsKmsiSettingMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsKmsiSettingOutput struct{ *pulumi.OutputState }
 
 func (DomainsKmsiSettingOutput) ElementType() reflect.Type {
@@ -1238,12 +1219,6 @@ func (o DomainsKmsiSettingOutput) ToDomainsKmsiSettingOutput() DomainsKmsiSettin
 
 func (o DomainsKmsiSettingOutput) ToDomainsKmsiSettingOutputWithContext(ctx context.Context) DomainsKmsiSettingOutput {
 	return o
-}
-
-func (o DomainsKmsiSettingOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsKmsiSetting] {
-	return pulumix.Output[*DomainsKmsiSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -1591,12 +1566,6 @@ func (o DomainsKmsiSettingArrayOutput) ToDomainsKmsiSettingArrayOutputWithContex
 	return o
 }
 
-func (o DomainsKmsiSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsKmsiSetting] {
-	return pulumix.Output[[]*DomainsKmsiSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsKmsiSettingArrayOutput) Index(i pulumi.IntInput) DomainsKmsiSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsKmsiSetting {
 		return vs[0].([]*DomainsKmsiSetting)[vs[1].(int)]
@@ -1615,12 +1584,6 @@ func (o DomainsKmsiSettingMapOutput) ToDomainsKmsiSettingMapOutput() DomainsKmsi
 
 func (o DomainsKmsiSettingMapOutput) ToDomainsKmsiSettingMapOutputWithContext(ctx context.Context) DomainsKmsiSettingMapOutput {
 	return o
-}
-
-func (o DomainsKmsiSettingMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsKmsiSetting] {
-	return pulumix.Output[map[string]*DomainsKmsiSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsKmsiSettingMapOutput) MapIndex(k pulumi.StringInput) DomainsKmsiSettingOutput {

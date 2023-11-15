@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Bds Instance Metastore Configs in Oracle Cloud Infrastructure Big Data Service service.
@@ -140,12 +139,6 @@ func (o GetBdsInstanceMetastoreConfigsResultOutput) ToGetBdsInstanceMetastoreCon
 
 func (o GetBdsInstanceMetastoreConfigsResultOutput) ToGetBdsInstanceMetastoreConfigsResultOutputWithContext(ctx context.Context) GetBdsInstanceMetastoreConfigsResultOutput {
 	return o
-}
-
-func (o GetBdsInstanceMetastoreConfigsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBdsInstanceMetastoreConfigsResult] {
-	return pulumix.Output[GetBdsInstanceMetastoreConfigsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The ID of BDS API Key used for metastore configuration. Set only if metastore's type is EXTERNAL.

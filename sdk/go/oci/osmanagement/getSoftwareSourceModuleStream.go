@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
@@ -125,12 +124,6 @@ func (o GetSoftwareSourceModuleStreamResultOutput) ToGetSoftwareSourceModuleStre
 
 func (o GetSoftwareSourceModuleStreamResultOutput) ToGetSoftwareSourceModuleStreamResultOutputWithContext(ctx context.Context) GetSoftwareSourceModuleStreamResultOutput {
 	return o
-}
-
-func (o GetSoftwareSourceModuleStreamResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSoftwareSourceModuleStreamResult] {
-	return pulumix.Output[GetSoftwareSourceModuleStreamResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture for which the packages in this module stream were built

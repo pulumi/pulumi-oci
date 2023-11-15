@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -942,12 +941,6 @@ func (i *DomainsMyCustomerSecretKey) ToDomainsMyCustomerSecretKeyOutputWithConte
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyCustomerSecretKeyOutput)
 }
 
-func (i *DomainsMyCustomerSecretKey) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyCustomerSecretKey] {
-	return pulumix.Output[*DomainsMyCustomerSecretKey]{
-		OutputState: i.ToDomainsMyCustomerSecretKeyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DomainsMyCustomerSecretKeyArrayInput is an input type that accepts DomainsMyCustomerSecretKeyArray and DomainsMyCustomerSecretKeyArrayOutput values.
 // You can construct a concrete instance of `DomainsMyCustomerSecretKeyArrayInput` via:
 //
@@ -971,12 +964,6 @@ func (i DomainsMyCustomerSecretKeyArray) ToDomainsMyCustomerSecretKeyArrayOutput
 
 func (i DomainsMyCustomerSecretKeyArray) ToDomainsMyCustomerSecretKeyArrayOutputWithContext(ctx context.Context) DomainsMyCustomerSecretKeyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyCustomerSecretKeyArrayOutput)
-}
-
-func (i DomainsMyCustomerSecretKeyArray) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyCustomerSecretKey] {
-	return pulumix.Output[[]*DomainsMyCustomerSecretKey]{
-		OutputState: i.ToDomainsMyCustomerSecretKeyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DomainsMyCustomerSecretKeyMapInput is an input type that accepts DomainsMyCustomerSecretKeyMap and DomainsMyCustomerSecretKeyMapOutput values.
@@ -1004,12 +991,6 @@ func (i DomainsMyCustomerSecretKeyMap) ToDomainsMyCustomerSecretKeyMapOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(DomainsMyCustomerSecretKeyMapOutput)
 }
 
-func (i DomainsMyCustomerSecretKeyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyCustomerSecretKey] {
-	return pulumix.Output[map[string]*DomainsMyCustomerSecretKey]{
-		OutputState: i.ToDomainsMyCustomerSecretKeyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DomainsMyCustomerSecretKeyOutput struct{ *pulumi.OutputState }
 
 func (DomainsMyCustomerSecretKeyOutput) ElementType() reflect.Type {
@@ -1022,12 +1003,6 @@ func (o DomainsMyCustomerSecretKeyOutput) ToDomainsMyCustomerSecretKeyOutput() D
 
 func (o DomainsMyCustomerSecretKeyOutput) ToDomainsMyCustomerSecretKeyOutputWithContext(ctx context.Context) DomainsMyCustomerSecretKeyOutput {
 	return o
-}
-
-func (o DomainsMyCustomerSecretKeyOutput) ToOutput(ctx context.Context) pulumix.Output[*DomainsMyCustomerSecretKey] {
-	return pulumix.Output[*DomainsMyCustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The access key.
@@ -1323,12 +1298,6 @@ func (o DomainsMyCustomerSecretKeyArrayOutput) ToDomainsMyCustomerSecretKeyArray
 	return o
 }
 
-func (o DomainsMyCustomerSecretKeyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DomainsMyCustomerSecretKey] {
-	return pulumix.Output[[]*DomainsMyCustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DomainsMyCustomerSecretKeyArrayOutput) Index(i pulumi.IntInput) DomainsMyCustomerSecretKeyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DomainsMyCustomerSecretKey {
 		return vs[0].([]*DomainsMyCustomerSecretKey)[vs[1].(int)]
@@ -1347,12 +1316,6 @@ func (o DomainsMyCustomerSecretKeyMapOutput) ToDomainsMyCustomerSecretKeyMapOutp
 
 func (o DomainsMyCustomerSecretKeyMapOutput) ToDomainsMyCustomerSecretKeyMapOutputWithContext(ctx context.Context) DomainsMyCustomerSecretKeyMapOutput {
 	return o
-}
-
-func (o DomainsMyCustomerSecretKeyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DomainsMyCustomerSecretKey] {
-	return pulumix.Output[map[string]*DomainsMyCustomerSecretKey]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DomainsMyCustomerSecretKeyMapOutput) MapIndex(k pulumi.StringInput) DomainsMyCustomerSecretKeyOutput {

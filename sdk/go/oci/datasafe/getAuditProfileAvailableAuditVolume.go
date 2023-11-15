@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Audit Profile Available Audit Volume resource in Oracle Cloud Infrastructure Data Safe service.
@@ -136,12 +135,6 @@ func (o GetAuditProfileAvailableAuditVolumeResultOutput) ToGetAuditProfileAvaila
 
 func (o GetAuditProfileAvailableAuditVolumeResultOutput) ToGetAuditProfileAvailableAuditVolumeResultOutputWithContext(ctx context.Context) GetAuditProfileAvailableAuditVolumeResultOutput {
 	return o
-}
-
-func (o GetAuditProfileAvailableAuditVolumeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetAuditProfileAvailableAuditVolumeResult] {
-	return pulumix.Output[GetAuditProfileAvailableAuditVolumeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the audit profile resource.

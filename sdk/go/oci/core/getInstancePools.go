@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Pools in Oracle Cloud Infrastructure Core service.
@@ -120,12 +119,6 @@ func (o GetInstancePoolsResultOutput) ToGetInstancePoolsResultOutput() GetInstan
 
 func (o GetInstancePoolsResultOutput) ToGetInstancePoolsResultOutputWithContext(ctx context.Context) GetInstancePoolsResultOutput {
 	return o
-}
-
-func (o GetInstancePoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstancePoolsResult] {
-	return pulumix.Output[GetInstancePoolsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Instance Available Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -121,12 +120,6 @@ func (o GetInstanceAvailablePluginResultOutput) ToGetInstanceAvailablePluginResu
 
 func (o GetInstanceAvailablePluginResultOutput) ToGetInstanceAvailablePluginResultOutputWithContext(ctx context.Context) GetInstanceAvailablePluginResultOutput {
 	return o
-}
-
-func (o GetInstanceAvailablePluginResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInstanceAvailablePluginResult] {
-	return pulumix.Output[GetInstanceAvailablePluginResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of available_plugins.

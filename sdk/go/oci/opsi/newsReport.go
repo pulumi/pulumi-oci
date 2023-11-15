@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
@@ -303,12 +302,6 @@ func (i *NewsReport) ToNewsReportOutputWithContext(ctx context.Context) NewsRepo
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportOutput)
 }
 
-func (i *NewsReport) ToOutput(ctx context.Context) pulumix.Output[*NewsReport] {
-	return pulumix.Output[*NewsReport]{
-		OutputState: i.ToNewsReportOutputWithContext(ctx).OutputState,
-	}
-}
-
 // NewsReportArrayInput is an input type that accepts NewsReportArray and NewsReportArrayOutput values.
 // You can construct a concrete instance of `NewsReportArrayInput` via:
 //
@@ -332,12 +325,6 @@ func (i NewsReportArray) ToNewsReportArrayOutput() NewsReportArrayOutput {
 
 func (i NewsReportArray) ToNewsReportArrayOutputWithContext(ctx context.Context) NewsReportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportArrayOutput)
-}
-
-func (i NewsReportArray) ToOutput(ctx context.Context) pulumix.Output[[]*NewsReport] {
-	return pulumix.Output[[]*NewsReport]{
-		OutputState: i.ToNewsReportArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // NewsReportMapInput is an input type that accepts NewsReportMap and NewsReportMapOutput values.
@@ -365,12 +352,6 @@ func (i NewsReportMap) ToNewsReportMapOutputWithContext(ctx context.Context) New
 	return pulumi.ToOutputWithContext(ctx, i).(NewsReportMapOutput)
 }
 
-func (i NewsReportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*NewsReport] {
-	return pulumix.Output[map[string]*NewsReport]{
-		OutputState: i.ToNewsReportMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type NewsReportOutput struct{ *pulumi.OutputState }
 
 func (NewsReportOutput) ElementType() reflect.Type {
@@ -383,12 +364,6 @@ func (o NewsReportOutput) ToNewsReportOutput() NewsReportOutput {
 
 func (o NewsReportOutput) ToNewsReportOutputWithContext(ctx context.Context) NewsReportOutput {
 	return o
-}
-
-func (o NewsReportOutput) ToOutput(ctx context.Context) pulumix.Output[*NewsReport] {
-	return pulumix.Output[*NewsReport]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier where the news report will be created.
@@ -483,12 +458,6 @@ func (o NewsReportArrayOutput) ToNewsReportArrayOutputWithContext(ctx context.Co
 	return o
 }
 
-func (o NewsReportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*NewsReport] {
-	return pulumix.Output[[]*NewsReport]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o NewsReportArrayOutput) Index(i pulumi.IntInput) NewsReportOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *NewsReport {
 		return vs[0].([]*NewsReport)[vs[1].(int)]
@@ -507,12 +476,6 @@ func (o NewsReportMapOutput) ToNewsReportMapOutput() NewsReportMapOutput {
 
 func (o NewsReportMapOutput) ToNewsReportMapOutputWithContext(ctx context.Context) NewsReportMapOutput {
 	return o
-}
-
-func (o NewsReportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*NewsReport] {
-	return pulumix.Output[map[string]*NewsReport]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o NewsReportMapOutput) MapIndex(k pulumi.StringInput) NewsReportOutput {

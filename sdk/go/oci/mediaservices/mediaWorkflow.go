@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Media Workflow resource in Oracle Cloud Infrastructure Media Services service.
@@ -267,12 +266,6 @@ func (i *MediaWorkflow) ToMediaWorkflowOutputWithContext(ctx context.Context) Me
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowOutput)
 }
 
-func (i *MediaWorkflow) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflow] {
-	return pulumix.Output[*MediaWorkflow]{
-		OutputState: i.ToMediaWorkflowOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MediaWorkflowArrayInput is an input type that accepts MediaWorkflowArray and MediaWorkflowArrayOutput values.
 // You can construct a concrete instance of `MediaWorkflowArrayInput` via:
 //
@@ -296,12 +289,6 @@ func (i MediaWorkflowArray) ToMediaWorkflowArrayOutput() MediaWorkflowArrayOutpu
 
 func (i MediaWorkflowArray) ToMediaWorkflowArrayOutputWithContext(ctx context.Context) MediaWorkflowArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowArrayOutput)
-}
-
-func (i MediaWorkflowArray) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflow] {
-	return pulumix.Output[[]*MediaWorkflow]{
-		OutputState: i.ToMediaWorkflowArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MediaWorkflowMapInput is an input type that accepts MediaWorkflowMap and MediaWorkflowMapOutput values.
@@ -329,12 +316,6 @@ func (i MediaWorkflowMap) ToMediaWorkflowMapOutputWithContext(ctx context.Contex
 	return pulumi.ToOutputWithContext(ctx, i).(MediaWorkflowMapOutput)
 }
 
-func (i MediaWorkflowMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflow] {
-	return pulumix.Output[map[string]*MediaWorkflow]{
-		OutputState: i.ToMediaWorkflowMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MediaWorkflowOutput struct{ *pulumi.OutputState }
 
 func (MediaWorkflowOutput) ElementType() reflect.Type {
@@ -347,12 +328,6 @@ func (o MediaWorkflowOutput) ToMediaWorkflowOutput() MediaWorkflowOutput {
 
 func (o MediaWorkflowOutput) ToMediaWorkflowOutputWithContext(ctx context.Context) MediaWorkflowOutput {
 	return o
-}
-
-func (o MediaWorkflowOutput) ToOutput(ctx context.Context) pulumix.Output[*MediaWorkflow] {
-	return pulumix.Output[*MediaWorkflow]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier.
@@ -437,12 +412,6 @@ func (o MediaWorkflowArrayOutput) ToMediaWorkflowArrayOutputWithContext(ctx cont
 	return o
 }
 
-func (o MediaWorkflowArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MediaWorkflow] {
-	return pulumix.Output[[]*MediaWorkflow]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MediaWorkflowArrayOutput) Index(i pulumi.IntInput) MediaWorkflowOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MediaWorkflow {
 		return vs[0].([]*MediaWorkflow)[vs[1].(int)]
@@ -461,12 +430,6 @@ func (o MediaWorkflowMapOutput) ToMediaWorkflowMapOutput() MediaWorkflowMapOutpu
 
 func (o MediaWorkflowMapOutput) ToMediaWorkflowMapOutputWithContext(ctx context.Context) MediaWorkflowMapOutput {
 	return o
-}
-
-func (o MediaWorkflowMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MediaWorkflow] {
-	return pulumix.Output[map[string]*MediaWorkflow]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MediaWorkflowMapOutput) MapIndex(k pulumi.StringInput) MediaWorkflowOutput {

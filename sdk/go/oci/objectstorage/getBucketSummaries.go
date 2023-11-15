@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
@@ -121,12 +120,6 @@ func (o GetBucketSummariesResultOutput) ToGetBucketSummariesResultOutput() GetBu
 
 func (o GetBucketSummariesResultOutput) ToGetBucketSummariesResultOutputWithContext(ctx context.Context) GetBucketSummariesResultOutput {
 	return o
-}
-
-func (o GetBucketSummariesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetBucketSummariesResult] {
-	return pulumix.Output[GetBucketSummariesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of bucket_summaries.

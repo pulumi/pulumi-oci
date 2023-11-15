@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Media Assets in Oracle Cloud Infrastructure Media Services service.
@@ -182,12 +181,6 @@ func (o GetMediaAssetsResultOutput) ToGetMediaAssetsResultOutput() GetMediaAsset
 
 func (o GetMediaAssetsResultOutput) ToGetMediaAssetsResultOutputWithContext(ctx context.Context) GetMediaAssetsResultOutput {
 	return o
-}
-
-func (o GetMediaAssetsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaAssetsResult] {
-	return pulumix.Output[GetMediaAssetsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the object storage bucket where this represented asset is located.

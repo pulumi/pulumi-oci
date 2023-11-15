@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed Database Alert Log Counts in Oracle Cloud Infrastructure Database Management service.
@@ -148,12 +147,6 @@ func (o GetManagedDatabaseAlertLogCountsResultOutput) ToGetManagedDatabaseAlertL
 
 func (o GetManagedDatabaseAlertLogCountsResultOutput) ToGetManagedDatabaseAlertLogCountsResultOutputWithContext(ctx context.Context) GetManagedDatabaseAlertLogCountsResultOutput {
 	return o
-}
-
-func (o GetManagedDatabaseAlertLogCountsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseAlertLogCountsResult] {
-	return pulumix.Output[GetManagedDatabaseAlertLogCountsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of alert_log_counts_collection.

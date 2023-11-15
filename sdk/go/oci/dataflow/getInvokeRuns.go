@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
@@ -153,12 +152,6 @@ func (o GetInvokeRunsResultOutput) ToGetInvokeRunsResultOutput() GetInvokeRunsRe
 
 func (o GetInvokeRunsResultOutput) ToGetInvokeRunsResultOutputWithContext(ctx context.Context) GetInvokeRunsResultOutput {
 	return o
-}
-
-func (o GetInvokeRunsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetInvokeRunsResult] {
-	return pulumix.Output[GetInvokeRunsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The application ID.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -410,12 +409,6 @@ func (i *DatabaseRegistration) ToDatabaseRegistrationOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseRegistrationOutput)
 }
 
-func (i *DatabaseRegistration) ToOutput(ctx context.Context) pulumix.Output[*DatabaseRegistration] {
-	return pulumix.Output[*DatabaseRegistration]{
-		OutputState: i.ToDatabaseRegistrationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DatabaseRegistrationArrayInput is an input type that accepts DatabaseRegistrationArray and DatabaseRegistrationArrayOutput values.
 // You can construct a concrete instance of `DatabaseRegistrationArrayInput` via:
 //
@@ -439,12 +432,6 @@ func (i DatabaseRegistrationArray) ToDatabaseRegistrationArrayOutput() DatabaseR
 
 func (i DatabaseRegistrationArray) ToDatabaseRegistrationArrayOutputWithContext(ctx context.Context) DatabaseRegistrationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseRegistrationArrayOutput)
-}
-
-func (i DatabaseRegistrationArray) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseRegistration] {
-	return pulumix.Output[[]*DatabaseRegistration]{
-		OutputState: i.ToDatabaseRegistrationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DatabaseRegistrationMapInput is an input type that accepts DatabaseRegistrationMap and DatabaseRegistrationMapOutput values.
@@ -472,12 +459,6 @@ func (i DatabaseRegistrationMap) ToDatabaseRegistrationMapOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(DatabaseRegistrationMapOutput)
 }
 
-func (i DatabaseRegistrationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseRegistration] {
-	return pulumix.Output[map[string]*DatabaseRegistration]{
-		OutputState: i.ToDatabaseRegistrationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DatabaseRegistrationOutput struct{ *pulumi.OutputState }
 
 func (DatabaseRegistrationOutput) ElementType() reflect.Type {
@@ -490,12 +471,6 @@ func (o DatabaseRegistrationOutput) ToDatabaseRegistrationOutput() DatabaseRegis
 
 func (o DatabaseRegistrationOutput) ToDatabaseRegistrationOutputWithContext(ctx context.Context) DatabaseRegistrationOutput {
 	return o
-}
-
-func (o DatabaseRegistrationOutput) ToOutput(ctx context.Context) pulumix.Output[*DatabaseRegistration] {
-	return pulumix.Output[*DatabaseRegistration]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Credential store alias.
@@ -640,12 +615,6 @@ func (o DatabaseRegistrationArrayOutput) ToDatabaseRegistrationArrayOutputWithCo
 	return o
 }
 
-func (o DatabaseRegistrationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DatabaseRegistration] {
-	return pulumix.Output[[]*DatabaseRegistration]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DatabaseRegistrationArrayOutput) Index(i pulumi.IntInput) DatabaseRegistrationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DatabaseRegistration {
 		return vs[0].([]*DatabaseRegistration)[vs[1].(int)]
@@ -664,12 +633,6 @@ func (o DatabaseRegistrationMapOutput) ToDatabaseRegistrationMapOutput() Databas
 
 func (o DatabaseRegistrationMapOutput) ToDatabaseRegistrationMapOutputWithContext(ctx context.Context) DatabaseRegistrationMapOutput {
 	return o
-}
-
-func (o DatabaseRegistrationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DatabaseRegistration] {
-	return pulumix.Output[map[string]*DatabaseRegistration]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DatabaseRegistrationMapOutput) MapIndex(k pulumi.StringInput) DatabaseRegistrationOutput {

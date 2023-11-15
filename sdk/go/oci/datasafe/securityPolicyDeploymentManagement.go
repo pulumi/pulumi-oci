@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 type SecurityPolicyDeploymentManagement struct {
@@ -134,12 +133,6 @@ func (i *SecurityPolicyDeploymentManagement) ToSecurityPolicyDeploymentManagemen
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyDeploymentManagementOutput)
 }
 
-func (i *SecurityPolicyDeploymentManagement) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[*SecurityPolicyDeploymentManagement]{
-		OutputState: i.ToSecurityPolicyDeploymentManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // SecurityPolicyDeploymentManagementArrayInput is an input type that accepts SecurityPolicyDeploymentManagementArray and SecurityPolicyDeploymentManagementArrayOutput values.
 // You can construct a concrete instance of `SecurityPolicyDeploymentManagementArrayInput` via:
 //
@@ -163,12 +156,6 @@ func (i SecurityPolicyDeploymentManagementArray) ToSecurityPolicyDeploymentManag
 
 func (i SecurityPolicyDeploymentManagementArray) ToSecurityPolicyDeploymentManagementArrayOutputWithContext(ctx context.Context) SecurityPolicyDeploymentManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyDeploymentManagementArrayOutput)
-}
-
-func (i SecurityPolicyDeploymentManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[[]*SecurityPolicyDeploymentManagement]{
-		OutputState: i.ToSecurityPolicyDeploymentManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // SecurityPolicyDeploymentManagementMapInput is an input type that accepts SecurityPolicyDeploymentManagementMap and SecurityPolicyDeploymentManagementMapOutput values.
@@ -196,12 +183,6 @@ func (i SecurityPolicyDeploymentManagementMap) ToSecurityPolicyDeploymentManagem
 	return pulumi.ToOutputWithContext(ctx, i).(SecurityPolicyDeploymentManagementMapOutput)
 }
 
-func (i SecurityPolicyDeploymentManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[map[string]*SecurityPolicyDeploymentManagement]{
-		OutputState: i.ToSecurityPolicyDeploymentManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type SecurityPolicyDeploymentManagementOutput struct{ *pulumi.OutputState }
 
 func (SecurityPolicyDeploymentManagementOutput) ElementType() reflect.Type {
@@ -214,12 +195,6 @@ func (o SecurityPolicyDeploymentManagementOutput) ToSecurityPolicyDeploymentMana
 
 func (o SecurityPolicyDeploymentManagementOutput) ToSecurityPolicyDeploymentManagementOutputWithContext(ctx context.Context) SecurityPolicyDeploymentManagementOutput {
 	return o
-}
-
-func (o SecurityPolicyDeploymentManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[*SecurityPolicyDeploymentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) CompartmentId() pulumi.StringOutput {
@@ -284,12 +259,6 @@ func (o SecurityPolicyDeploymentManagementArrayOutput) ToSecurityPolicyDeploymen
 	return o
 }
 
-func (o SecurityPolicyDeploymentManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[[]*SecurityPolicyDeploymentManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o SecurityPolicyDeploymentManagementArrayOutput) Index(i pulumi.IntInput) SecurityPolicyDeploymentManagementOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *SecurityPolicyDeploymentManagement {
 		return vs[0].([]*SecurityPolicyDeploymentManagement)[vs[1].(int)]
@@ -308,12 +277,6 @@ func (o SecurityPolicyDeploymentManagementMapOutput) ToSecurityPolicyDeploymentM
 
 func (o SecurityPolicyDeploymentManagementMapOutput) ToSecurityPolicyDeploymentManagementMapOutputWithContext(ctx context.Context) SecurityPolicyDeploymentManagementMapOutput {
 	return o
-}
-
-func (o SecurityPolicyDeploymentManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*SecurityPolicyDeploymentManagement] {
-	return pulumix.Output[map[string]*SecurityPolicyDeploymentManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o SecurityPolicyDeploymentManagementMapOutput) MapIndex(k pulumi.StringInput) SecurityPolicyDeploymentManagementOutput {

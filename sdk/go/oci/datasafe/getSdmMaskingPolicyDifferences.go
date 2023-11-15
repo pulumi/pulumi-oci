@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sdm Masking Policy Differences in Oracle Cloud Infrastructure Data Safe service.
@@ -146,12 +145,6 @@ func (o GetSdmMaskingPolicyDifferencesResultOutput) ToGetSdmMaskingPolicyDiffere
 
 func (o GetSdmMaskingPolicyDifferencesResultOutput) ToGetSdmMaskingPolicyDifferencesResultOutputWithContext(ctx context.Context) GetSdmMaskingPolicyDifferencesResultOutput {
 	return o
-}
-
-func (o GetSdmMaskingPolicyDifferencesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSdmMaskingPolicyDifferencesResult] {
-	return pulumix.Output[GetSdmMaskingPolicyDifferencesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment that contains the SDM masking policy difference.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Export resource in Oracle Cloud Infrastructure File Storage service.
@@ -283,12 +282,6 @@ func (i *Export) ToExportOutputWithContext(ctx context.Context) ExportOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExportOutput)
 }
 
-func (i *Export) ToOutput(ctx context.Context) pulumix.Output[*Export] {
-	return pulumix.Output[*Export]{
-		OutputState: i.ToExportOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ExportArrayInput is an input type that accepts ExportArray and ExportArrayOutput values.
 // You can construct a concrete instance of `ExportArrayInput` via:
 //
@@ -312,12 +305,6 @@ func (i ExportArray) ToExportArrayOutput() ExportArrayOutput {
 
 func (i ExportArray) ToExportArrayOutputWithContext(ctx context.Context) ExportArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ExportArrayOutput)
-}
-
-func (i ExportArray) ToOutput(ctx context.Context) pulumix.Output[[]*Export] {
-	return pulumix.Output[[]*Export]{
-		OutputState: i.ToExportArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ExportMapInput is an input type that accepts ExportMap and ExportMapOutput values.
@@ -345,12 +332,6 @@ func (i ExportMap) ToExportMapOutputWithContext(ctx context.Context) ExportMapOu
 	return pulumi.ToOutputWithContext(ctx, i).(ExportMapOutput)
 }
 
-func (i ExportMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Export] {
-	return pulumix.Output[map[string]*Export]{
-		OutputState: i.ToExportMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ExportOutput struct{ *pulumi.OutputState }
 
 func (ExportOutput) ElementType() reflect.Type {
@@ -363,12 +344,6 @@ func (o ExportOutput) ToExportOutput() ExportOutput {
 
 func (o ExportOutput) ToExportOutputWithContext(ctx context.Context) ExportOutput {
 	return o
-}
-
-func (o ExportOutput) ToOutput(ctx context.Context) pulumix.Output[*Export] {
-	return pulumix.Output[*Export]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Export options for the new export. If left unspecified, defaults to:
@@ -434,12 +409,6 @@ func (o ExportArrayOutput) ToExportArrayOutputWithContext(ctx context.Context) E
 	return o
 }
 
-func (o ExportArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Export] {
-	return pulumix.Output[[]*Export]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ExportArrayOutput) Index(i pulumi.IntInput) ExportOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Export {
 		return vs[0].([]*Export)[vs[1].(int)]
@@ -458,12 +427,6 @@ func (o ExportMapOutput) ToExportMapOutput() ExportMapOutput {
 
 func (o ExportMapOutput) ToExportMapOutputWithContext(ctx context.Context) ExportMapOutput {
 	return o
-}
-
-func (o ExportMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Export] {
-	return pulumix.Output[map[string]*Export]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ExportMapOutput) MapIndex(k pulumi.StringInput) ExportOutput {

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Byoip Range resource in Oracle Cloud Infrastructure Core service.
@@ -129,12 +128,6 @@ func (o GetByoipRangeResultOutput) ToGetByoipRangeResultOutput() GetByoipRangeRe
 
 func (o GetByoipRangeResultOutput) ToGetByoipRangeResultOutputWithContext(ctx context.Context) GetByoipRangeResultOutput {
 	return o
-}
-
-func (o GetByoipRangeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetByoipRangeResult] {
-	return pulumix.Output[GetByoipRangeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource to which the CIDR block belongs.

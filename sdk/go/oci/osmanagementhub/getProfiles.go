@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Profiles in Oracle Cloud Infrastructure Os Management Hub service.
@@ -161,12 +160,6 @@ func (o GetProfilesResultOutput) ToGetProfilesResultOutput() GetProfilesResultOu
 
 func (o GetProfilesResultOutput) ToGetProfilesResultOutputWithContext(ctx context.Context) GetProfilesResultOutput {
 	return o
-}
-
-func (o GetProfilesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetProfilesResult] {
-	return pulumix.Output[GetProfilesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The architecture type.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -55,12 +54,6 @@ func (i CertificateExtensionArgs) ToCertificateExtensionOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateExtensionOutput)
 }
 
-func (i CertificateExtensionArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateExtension] {
-	return pulumix.Output[CertificateExtension]{
-		OutputState: i.ToCertificateExtensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateExtensionArrayInput is an input type that accepts CertificateExtensionArray and CertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `CertificateExtensionArrayInput` via:
 //
@@ -86,12 +79,6 @@ func (i CertificateExtensionArray) ToCertificateExtensionArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateExtensionArrayOutput)
 }
 
-func (i CertificateExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateExtension] {
-	return pulumix.Output[[]CertificateExtension]{
-		OutputState: i.ToCertificateExtensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateExtensionOutput struct{ *pulumi.OutputState }
 
 func (CertificateExtensionOutput) ElementType() reflect.Type {
@@ -104,12 +91,6 @@ func (o CertificateExtensionOutput) ToCertificateExtensionOutput() CertificateEx
 
 func (o CertificateExtensionOutput) ToCertificateExtensionOutputWithContext(ctx context.Context) CertificateExtensionOutput {
 	return o
-}
-
-func (o CertificateExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateExtension] {
-	return pulumix.Output[CertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
@@ -139,12 +120,6 @@ func (o CertificateExtensionArrayOutput) ToCertificateExtensionArrayOutput() Cer
 
 func (o CertificateExtensionArrayOutput) ToCertificateExtensionArrayOutputWithContext(ctx context.Context) CertificateExtensionArrayOutput {
 	return o
-}
-
-func (o CertificateExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateExtension] {
-	return pulumix.Output[[]CertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateExtensionArrayOutput) Index(i pulumi.IntInput) CertificateExtensionOutput {
@@ -210,12 +185,6 @@ func (i CertificateIssuerNameArgs) ToCertificateIssuerNameOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateIssuerNameOutput)
 }
 
-func (i CertificateIssuerNameArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateIssuerName] {
-	return pulumix.Output[CertificateIssuerName]{
-		OutputState: i.ToCertificateIssuerNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateIssuerNameArrayInput is an input type that accepts CertificateIssuerNameArray and CertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `CertificateIssuerNameArrayInput` via:
 //
@@ -241,12 +210,6 @@ func (i CertificateIssuerNameArray) ToCertificateIssuerNameArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateIssuerNameArrayOutput)
 }
 
-func (i CertificateIssuerNameArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateIssuerName] {
-	return pulumix.Output[[]CertificateIssuerName]{
-		OutputState: i.ToCertificateIssuerNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateIssuerNameOutput struct{ *pulumi.OutputState }
 
 func (CertificateIssuerNameOutput) ElementType() reflect.Type {
@@ -259,12 +222,6 @@ func (o CertificateIssuerNameOutput) ToCertificateIssuerNameOutput() Certificate
 
 func (o CertificateIssuerNameOutput) ToCertificateIssuerNameOutputWithContext(ctx context.Context) CertificateIssuerNameOutput {
 	return o
-}
-
-func (o CertificateIssuerNameOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateIssuerName] {
-	return pulumix.Output[CertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -316,12 +273,6 @@ func (o CertificateIssuerNameArrayOutput) ToCertificateIssuerNameArrayOutputWith
 	return o
 }
 
-func (o CertificateIssuerNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateIssuerName] {
-	return pulumix.Output[[]CertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o CertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) CertificateIssuerNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CertificateIssuerName {
 		return vs[0].([]CertificateIssuerName)[vs[1].(int)]
@@ -369,12 +320,6 @@ func (i CertificatePublicKeyInfoArgs) ToCertificatePublicKeyInfoOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(CertificatePublicKeyInfoOutput)
 }
 
-func (i CertificatePublicKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[CertificatePublicKeyInfo] {
-	return pulumix.Output[CertificatePublicKeyInfo]{
-		OutputState: i.ToCertificatePublicKeyInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificatePublicKeyInfoArrayInput is an input type that accepts CertificatePublicKeyInfoArray and CertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `CertificatePublicKeyInfoArrayInput` via:
 //
@@ -400,12 +345,6 @@ func (i CertificatePublicKeyInfoArray) ToCertificatePublicKeyInfoArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(CertificatePublicKeyInfoArrayOutput)
 }
 
-func (i CertificatePublicKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificatePublicKeyInfo] {
-	return pulumix.Output[[]CertificatePublicKeyInfo]{
-		OutputState: i.ToCertificatePublicKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificatePublicKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (CertificatePublicKeyInfoOutput) ElementType() reflect.Type {
@@ -418,12 +357,6 @@ func (o CertificatePublicKeyInfoOutput) ToCertificatePublicKeyInfoOutput() Certi
 
 func (o CertificatePublicKeyInfoOutput) ToCertificatePublicKeyInfoOutputWithContext(ctx context.Context) CertificatePublicKeyInfoOutput {
 	return o
-}
-
-func (o CertificatePublicKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[CertificatePublicKeyInfo] {
-	return pulumix.Output[CertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm identifier and parameters for the public key.
@@ -453,12 +386,6 @@ func (o CertificatePublicKeyInfoArrayOutput) ToCertificatePublicKeyInfoArrayOutp
 
 func (o CertificatePublicKeyInfoArrayOutput) ToCertificatePublicKeyInfoArrayOutputWithContext(ctx context.Context) CertificatePublicKeyInfoArrayOutput {
 	return o
-}
-
-func (o CertificatePublicKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificatePublicKeyInfo] {
-	return pulumix.Output[[]CertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) CertificatePublicKeyInfoOutput {
@@ -524,12 +451,6 @@ func (i CertificateSubjectNameArgs) ToCertificateSubjectNameOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateSubjectNameOutput)
 }
 
-func (i CertificateSubjectNameArgs) ToOutput(ctx context.Context) pulumix.Output[CertificateSubjectName] {
-	return pulumix.Output[CertificateSubjectName]{
-		OutputState: i.ToCertificateSubjectNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // CertificateSubjectNameArrayInput is an input type that accepts CertificateSubjectNameArray and CertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `CertificateSubjectNameArrayInput` via:
 //
@@ -555,12 +476,6 @@ func (i CertificateSubjectNameArray) ToCertificateSubjectNameArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(CertificateSubjectNameArrayOutput)
 }
 
-func (i CertificateSubjectNameArray) ToOutput(ctx context.Context) pulumix.Output[[]CertificateSubjectName] {
-	return pulumix.Output[[]CertificateSubjectName]{
-		OutputState: i.ToCertificateSubjectNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type CertificateSubjectNameOutput struct{ *pulumi.OutputState }
 
 func (CertificateSubjectNameOutput) ElementType() reflect.Type {
@@ -573,12 +488,6 @@ func (o CertificateSubjectNameOutput) ToCertificateSubjectNameOutput() Certifica
 
 func (o CertificateSubjectNameOutput) ToCertificateSubjectNameOutputWithContext(ctx context.Context) CertificateSubjectNameOutput {
 	return o
-}
-
-func (o CertificateSubjectNameOutput) ToOutput(ctx context.Context) pulumix.Output[CertificateSubjectName] {
-	return pulumix.Output[CertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -628,12 +537,6 @@ func (o CertificateSubjectNameArrayOutput) ToCertificateSubjectNameArrayOutput()
 
 func (o CertificateSubjectNameArrayOutput) ToCertificateSubjectNameArrayOutputWithContext(ctx context.Context) CertificateSubjectNameArrayOutput {
 	return o
-}
-
-func (o CertificateSubjectNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]CertificateSubjectName] {
-	return pulumix.Output[[]CertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o CertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) CertificateSubjectNameOutput {
@@ -697,12 +600,6 @@ func (i HttpRedirectTargetArgs) ToHttpRedirectTargetOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectTargetOutput)
 }
 
-func (i HttpRedirectTargetArgs) ToOutput(ctx context.Context) pulumix.Output[HttpRedirectTarget] {
-	return pulumix.Output[HttpRedirectTarget]{
-		OutputState: i.ToHttpRedirectTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i HttpRedirectTargetArgs) ToHttpRedirectTargetPtrOutput() HttpRedirectTargetPtrOutput {
 	return i.ToHttpRedirectTargetPtrOutputWithContext(context.Background())
 }
@@ -744,12 +641,6 @@ func (i *httpRedirectTargetPtrType) ToHttpRedirectTargetPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectTargetPtrOutput)
 }
 
-func (i *httpRedirectTargetPtrType) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirectTarget] {
-	return pulumix.Output[*HttpRedirectTarget]{
-		OutputState: i.ToHttpRedirectTargetPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HttpRedirectTargetOutput struct{ *pulumi.OutputState }
 
 func (HttpRedirectTargetOutput) ElementType() reflect.Type {
@@ -772,12 +663,6 @@ func (o HttpRedirectTargetOutput) ToHttpRedirectTargetPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v HttpRedirectTarget) *HttpRedirectTarget {
 		return &v
 	}).(HttpRedirectTargetPtrOutput)
-}
-
-func (o HttpRedirectTargetOutput) ToOutput(ctx context.Context) pulumix.Output[HttpRedirectTarget] {
-	return pulumix.Output[HttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The host portion of the redirect.
@@ -820,12 +705,6 @@ func (o HttpRedirectTargetPtrOutput) ToHttpRedirectTargetPtrOutput() HttpRedirec
 
 func (o HttpRedirectTargetPtrOutput) ToHttpRedirectTargetPtrOutputWithContext(ctx context.Context) HttpRedirectTargetPtrOutput {
 	return o
-}
-
-func (o HttpRedirectTargetPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirectTarget] {
-	return pulumix.Output[*HttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HttpRedirectTargetPtrOutput) Elem() HttpRedirectTargetOutput {
@@ -938,12 +817,6 @@ func (i PolicyOriginArgs) ToPolicyOriginOutputWithContext(ctx context.Context) P
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginOutput)
 }
 
-func (i PolicyOriginArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOrigin] {
-	return pulumix.Output[PolicyOrigin]{
-		OutputState: i.ToPolicyOriginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginArrayInput is an input type that accepts PolicyOriginArray and PolicyOriginArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginArrayInput` via:
 //
@@ -969,12 +842,6 @@ func (i PolicyOriginArray) ToPolicyOriginArrayOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginArrayOutput)
 }
 
-func (i PolicyOriginArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOrigin] {
-	return pulumix.Output[[]PolicyOrigin]{
-		OutputState: i.ToPolicyOriginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginOutput) ElementType() reflect.Type {
@@ -987,12 +854,6 @@ func (o PolicyOriginOutput) ToPolicyOriginOutput() PolicyOriginOutput {
 
 func (o PolicyOriginOutput) ToPolicyOriginOutputWithContext(ctx context.Context) PolicyOriginOutput {
 	return o
-}
-
-func (o PolicyOriginOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOrigin] {
-	return pulumix.Output[PolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of HTTP headers to forward to your origin.
@@ -1031,12 +892,6 @@ func (o PolicyOriginArrayOutput) ToPolicyOriginArrayOutput() PolicyOriginArrayOu
 
 func (o PolicyOriginArrayOutput) ToPolicyOriginArrayOutputWithContext(ctx context.Context) PolicyOriginArrayOutput {
 	return o
-}
-
-func (o PolicyOriginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOrigin] {
-	return pulumix.Output[[]PolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginArrayOutput) Index(i pulumi.IntInput) PolicyOriginOutput {
@@ -1088,12 +943,6 @@ func (i PolicyOriginCustomHeaderArgs) ToPolicyOriginCustomHeaderOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginCustomHeaderOutput)
 }
 
-func (i PolicyOriginCustomHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginCustomHeader] {
-	return pulumix.Output[PolicyOriginCustomHeader]{
-		OutputState: i.ToPolicyOriginCustomHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginCustomHeaderArrayInput is an input type that accepts PolicyOriginCustomHeaderArray and PolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginCustomHeaderArrayInput` via:
 //
@@ -1119,12 +968,6 @@ func (i PolicyOriginCustomHeaderArray) ToPolicyOriginCustomHeaderArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginCustomHeaderArrayOutput)
 }
 
-func (i PolicyOriginCustomHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginCustomHeader] {
-	return pulumix.Output[[]PolicyOriginCustomHeader]{
-		OutputState: i.ToPolicyOriginCustomHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginCustomHeaderOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginCustomHeaderOutput) ElementType() reflect.Type {
@@ -1137,12 +980,6 @@ func (o PolicyOriginCustomHeaderOutput) ToPolicyOriginCustomHeaderOutput() Polic
 
 func (o PolicyOriginCustomHeaderOutput) ToPolicyOriginCustomHeaderOutputWithContext(ctx context.Context) PolicyOriginCustomHeaderOutput {
 	return o
-}
-
-func (o PolicyOriginCustomHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginCustomHeader] {
-	return pulumix.Output[PolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique name of the whitelist.
@@ -1170,12 +1007,6 @@ func (o PolicyOriginCustomHeaderArrayOutput) ToPolicyOriginCustomHeaderArrayOutp
 
 func (o PolicyOriginCustomHeaderArrayOutput) ToPolicyOriginCustomHeaderArrayOutputWithContext(ctx context.Context) PolicyOriginCustomHeaderArrayOutput {
 	return o
-}
-
-func (o PolicyOriginCustomHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginCustomHeader] {
-	return pulumix.Output[[]PolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) PolicyOriginCustomHeaderOutput {
@@ -1217,12 +1048,6 @@ func (i PolicyOriginGroupArgs) ToPolicyOriginGroupOutputWithContext(ctx context.
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupOutput)
 }
 
-func (i PolicyOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroup] {
-	return pulumix.Output[PolicyOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginGroupArrayInput is an input type that accepts PolicyOriginGroupArray and PolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupArrayInput` via:
 //
@@ -1248,12 +1073,6 @@ func (i PolicyOriginGroupArray) ToPolicyOriginGroupArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupArrayOutput)
 }
 
-func (i PolicyOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginGroupOutput) ElementType() reflect.Type {
@@ -1266,12 +1085,6 @@ func (o PolicyOriginGroupOutput) ToPolicyOriginGroupOutput() PolicyOriginGroupOu
 
 func (o PolicyOriginGroupOutput) ToPolicyOriginGroupOutputWithContext(ctx context.Context) PolicyOriginGroupOutput {
 	return o
-}
-
-func (o PolicyOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroup] {
-	return pulumix.Output[PolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginGroupOutput) Label() pulumi.StringOutput {
@@ -1294,12 +1107,6 @@ func (o PolicyOriginGroupArrayOutput) ToPolicyOriginGroupArrayOutput() PolicyOri
 
 func (o PolicyOriginGroupArrayOutput) ToPolicyOriginGroupArrayOutputWithContext(ctx context.Context) PolicyOriginGroupArrayOutput {
 	return o
-}
-
-func (o PolicyOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) PolicyOriginGroupOutput {
@@ -1343,12 +1150,6 @@ func (i PolicyOriginGroupOriginGroupArgs) ToPolicyOriginGroupOriginGroupOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupOriginGroupOutput)
 }
 
-func (i PolicyOriginGroupOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[PolicyOriginGroupOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyOriginGroupOriginGroupArrayInput is an input type that accepts PolicyOriginGroupOriginGroupArray and PolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `PolicyOriginGroupOriginGroupArrayInput` via:
 //
@@ -1374,12 +1175,6 @@ func (i PolicyOriginGroupOriginGroupArray) ToPolicyOriginGroupOriginGroupArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyOriginGroupOriginGroupArrayOutput)
 }
 
-func (i PolicyOriginGroupOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroupOriginGroup]{
-		OutputState: i.ToPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyOriginGroupOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (PolicyOriginGroupOriginGroupOutput) ElementType() reflect.Type {
@@ -1392,12 +1187,6 @@ func (o PolicyOriginGroupOriginGroupOutput) ToPolicyOriginGroupOriginGroupOutput
 
 func (o PolicyOriginGroupOriginGroupOutput) ToPolicyOriginGroupOriginGroupOutputWithContext(ctx context.Context) PolicyOriginGroupOriginGroupOutput {
 	return o
-}
-
-func (o PolicyOriginGroupOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[PolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
@@ -1421,12 +1210,6 @@ func (o PolicyOriginGroupOriginGroupArrayOutput) ToPolicyOriginGroupOriginGroupA
 
 func (o PolicyOriginGroupOriginGroupArrayOutput) ToPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx context.Context) PolicyOriginGroupOriginGroupArrayOutput {
 	return o
-}
-
-func (o PolicyOriginGroupOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]PolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput) PolicyOriginGroupOriginGroupOutput {
@@ -1556,12 +1339,6 @@ func (i PolicyPolicyConfigArgs) ToPolicyPolicyConfigOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigOutput)
 }
 
-func (i PolicyPolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfig] {
-	return pulumix.Output[PolicyPolicyConfig]{
-		OutputState: i.ToPolicyPolicyConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyPolicyConfigArgs) ToPolicyPolicyConfigPtrOutput() PolicyPolicyConfigPtrOutput {
 	return i.ToPolicyPolicyConfigPtrOutputWithContext(context.Background())
 }
@@ -1603,12 +1380,6 @@ func (i *policyPolicyConfigPtrType) ToPolicyPolicyConfigPtrOutputWithContext(ctx
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigPtrOutput)
 }
 
-func (i *policyPolicyConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfig] {
-	return pulumix.Output[*PolicyPolicyConfig]{
-		OutputState: i.ToPolicyPolicyConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyPolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (PolicyPolicyConfigOutput) ElementType() reflect.Type {
@@ -1631,12 +1402,6 @@ func (o PolicyPolicyConfigOutput) ToPolicyPolicyConfigPtrOutputWithContext(ctx c
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyPolicyConfig) *PolicyPolicyConfig {
 		return &v
 	}).(PolicyPolicyConfigPtrOutput)
-}
-
-func (o PolicyPolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfig] {
-	return pulumix.Output[PolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The OCID of the SSL certificate to use if HTTPS is supported.
@@ -1739,12 +1504,6 @@ func (o PolicyPolicyConfigPtrOutput) ToPolicyPolicyConfigPtrOutput() PolicyPolic
 
 func (o PolicyPolicyConfigPtrOutput) ToPolicyPolicyConfigPtrOutputWithContext(ctx context.Context) PolicyPolicyConfigPtrOutput {
 	return o
-}
-
-func (o PolicyPolicyConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfig] {
-	return pulumix.Output[*PolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyPolicyConfigPtrOutput) Elem() PolicyPolicyConfigOutput {
@@ -2006,12 +1765,6 @@ func (i PolicyPolicyConfigHealthChecksArgs) ToPolicyPolicyConfigHealthChecksOutp
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigHealthChecksOutput)
 }
 
-func (i PolicyPolicyConfigHealthChecksArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[PolicyPolicyConfigHealthChecks]{
-		OutputState: i.ToPolicyPolicyConfigHealthChecksOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyPolicyConfigHealthChecksArgs) ToPolicyPolicyConfigHealthChecksPtrOutput() PolicyPolicyConfigHealthChecksPtrOutput {
 	return i.ToPolicyPolicyConfigHealthChecksPtrOutputWithContext(context.Background())
 }
@@ -2053,12 +1806,6 @@ func (i *policyPolicyConfigHealthChecksPtrType) ToPolicyPolicyConfigHealthChecks
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigHealthChecksPtrOutput)
 }
 
-func (i *policyPolicyConfigHealthChecksPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[*PolicyPolicyConfigHealthChecks]{
-		OutputState: i.ToPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyPolicyConfigHealthChecksOutput struct{ *pulumi.OutputState }
 
 func (PolicyPolicyConfigHealthChecksOutput) ElementType() reflect.Type {
@@ -2081,12 +1828,6 @@ func (o PolicyPolicyConfigHealthChecksOutput) ToPolicyPolicyConfigHealthChecksPt
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyPolicyConfigHealthChecks) *PolicyPolicyConfigHealthChecks {
 		return &v
 	}).(PolicyPolicyConfigHealthChecksPtrOutput)
-}
-
-func (o PolicyPolicyConfigHealthChecksOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[PolicyPolicyConfigHealthChecks]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The HTTP response codes that signify a healthy state.
@@ -2165,12 +1906,6 @@ func (o PolicyPolicyConfigHealthChecksPtrOutput) ToPolicyPolicyConfigHealthCheck
 
 func (o PolicyPolicyConfigHealthChecksPtrOutput) ToPolicyPolicyConfigHealthChecksPtrOutputWithContext(ctx context.Context) PolicyPolicyConfigHealthChecksPtrOutput {
 	return o
-}
-
-func (o PolicyPolicyConfigHealthChecksPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[*PolicyPolicyConfigHealthChecks]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyPolicyConfigHealthChecksPtrOutput) Elem() PolicyPolicyConfigHealthChecksOutput {
@@ -2359,12 +2094,6 @@ func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToPolicyPolicyConfigLoadBalan
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigLoadBalancingMethodOutput)
 }
 
-func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyPolicyConfigLoadBalancingMethodArgs) ToPolicyPolicyConfigLoadBalancingMethodPtrOutput() PolicyPolicyConfigLoadBalancingMethodPtrOutput {
 	return i.ToPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(context.Background())
 }
@@ -2406,12 +2135,6 @@ func (i *policyPolicyConfigLoadBalancingMethodPtrType) ToPolicyPolicyConfigLoadB
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyPolicyConfigLoadBalancingMethodPtrOutput)
 }
 
-func (i *policyPolicyConfigLoadBalancingMethodPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyPolicyConfigLoadBalancingMethodOutput struct{ *pulumi.OutputState }
 
 func (PolicyPolicyConfigLoadBalancingMethodOutput) ElementType() reflect.Type {
@@ -2434,12 +2157,6 @@ func (o PolicyPolicyConfigLoadBalancingMethodOutput) ToPolicyPolicyConfigLoadBal
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyPolicyConfigLoadBalancingMethod) *PolicyPolicyConfigLoadBalancingMethod {
 		return &v
 	}).(PolicyPolicyConfigLoadBalancingMethodPtrOutput)
-}
-
-func (o PolicyPolicyConfigLoadBalancingMethodOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -2480,12 +2197,6 @@ func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) ToPolicyPolicyConfigLoad
 
 func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) ToPolicyPolicyConfigLoadBalancingMethodPtrOutputWithContext(ctx context.Context) PolicyPolicyConfigLoadBalancingMethodPtrOutput {
 	return o
-}
-
-func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[*PolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) Elem() PolicyPolicyConfigLoadBalancingMethodOutput {
@@ -2621,12 +2332,6 @@ func (i PolicyWafConfigArgs) ToPolicyWafConfigOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigOutput)
 }
 
-func (i PolicyWafConfigArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfig] {
-	return pulumix.Output[PolicyWafConfig]{
-		OutputState: i.ToPolicyWafConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigArgs) ToPolicyWafConfigPtrOutput() PolicyWafConfigPtrOutput {
 	return i.ToPolicyWafConfigPtrOutputWithContext(context.Background())
 }
@@ -2668,12 +2373,6 @@ func (i *policyWafConfigPtrType) ToPolicyWafConfigPtrOutputWithContext(ctx conte
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigPtrOutput)
 }
 
-func (i *policyWafConfigPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfig] {
-	return pulumix.Output[*PolicyWafConfig]{
-		OutputState: i.ToPolicyWafConfigPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigOutput) ElementType() reflect.Type {
@@ -2696,12 +2395,6 @@ func (o PolicyWafConfigOutput) ToPolicyWafConfigPtrOutputWithContext(ctx context
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfig) *PolicyWafConfig {
 		return &v
 	}).(PolicyWafConfigPtrOutput)
-}
-
-func (o PolicyWafConfigOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfig] {
-	return pulumix.Output[PolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
@@ -2778,12 +2471,6 @@ func (o PolicyWafConfigPtrOutput) ToPolicyWafConfigPtrOutput() PolicyWafConfigPt
 
 func (o PolicyWafConfigPtrOutput) ToPolicyWafConfigPtrOutputWithContext(ctx context.Context) PolicyWafConfigPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfig] {
-	return pulumix.Output[*PolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigPtrOutput) Elem() PolicyWafConfigOutput {
@@ -3027,12 +2714,6 @@ func (i PolicyWafConfigAccessRuleArgs) ToPolicyWafConfigAccessRuleOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleOutput)
 }
 
-func (i PolicyWafConfigAccessRuleArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRule] {
-	return pulumix.Output[PolicyWafConfigAccessRule]{
-		OutputState: i.ToPolicyWafConfigAccessRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigAccessRuleArrayInput is an input type that accepts PolicyWafConfigAccessRuleArray and PolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleArrayInput` via:
 //
@@ -3058,12 +2739,6 @@ func (i PolicyWafConfigAccessRuleArray) ToPolicyWafConfigAccessRuleArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleArrayOutput)
 }
 
-func (i PolicyWafConfigAccessRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRule] {
-	return pulumix.Output[[]PolicyWafConfigAccessRule]{
-		OutputState: i.ToPolicyWafConfigAccessRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAccessRuleOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAccessRuleOutput) ElementType() reflect.Type {
@@ -3076,12 +2751,6 @@ func (o PolicyWafConfigAccessRuleOutput) ToPolicyWafConfigAccessRuleOutput() Pol
 
 func (o PolicyWafConfigAccessRuleOutput) ToPolicyWafConfigAccessRuleOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRule] {
-	return pulumix.Output[PolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3189,12 +2858,6 @@ func (o PolicyWafConfigAccessRuleArrayOutput) ToPolicyWafConfigAccessRuleArrayOu
 	return o
 }
 
-func (o PolicyWafConfigAccessRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRule] {
-	return pulumix.Output[[]PolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigAccessRuleArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigAccessRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigAccessRule {
 		return vs[0].([]PolicyWafConfigAccessRule)[vs[1].(int)]
@@ -3292,12 +2955,6 @@ func (i PolicyWafConfigAccessRuleCriteriaArgs) ToPolicyWafConfigAccessRuleCriter
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleCriteriaOutput)
 }
 
-func (i PolicyWafConfigAccessRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts PolicyWafConfigAccessRuleCriteriaArray and PolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
@@ -3323,12 +2980,6 @@ func (i PolicyWafConfigAccessRuleCriteriaArray) ToPolicyWafConfigAccessRuleCrite
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-func (i PolicyWafConfigAccessRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAccessRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAccessRuleCriteriaOutput) ElementType() reflect.Type {
@@ -3341,12 +2992,6 @@ func (o PolicyWafConfigAccessRuleCriteriaOutput) ToPolicyWafConfigAccessRuleCrit
 
 func (o PolicyWafConfigAccessRuleCriteriaOutput) ToPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleCriteriaOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -3403,12 +3048,6 @@ func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) ToPolicyWafConfigAccessRul
 	return o
 }
 
-func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigAccessRuleCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigAccessRuleCriteria {
 		return vs[0].([]PolicyWafConfigAccessRuleCriteria)[vs[1].(int)]
@@ -3456,12 +3095,6 @@ func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToPolicyWafConf
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleResponseHeaderManipulationOutput)
 }
 
-func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts PolicyWafConfigAccessRuleResponseHeaderManipulationArray and PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
@@ -3487,12 +3120,6 @@ func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToPolicyWafCon
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput)
 }
 
-func (i PolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAccessRuleResponseHeaderManipulationOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ElementType() reflect.Type {
@@ -3505,12 +3132,6 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToPolicyWafCo
 
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3540,12 +3161,6 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToPolicy
 
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx context.Context) PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]PolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
@@ -3599,12 +3214,6 @@ func (i PolicyWafConfigAddressRateLimitingArgs) ToPolicyWafConfigAddressRateLimi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAddressRateLimitingOutput)
 }
 
-func (i PolicyWafConfigAddressRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[PolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToPolicyWafConfigAddressRateLimitingOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigAddressRateLimitingArgs) ToPolicyWafConfigAddressRateLimitingPtrOutput() PolicyWafConfigAddressRateLimitingPtrOutput {
 	return i.ToPolicyWafConfigAddressRateLimitingPtrOutputWithContext(context.Background())
 }
@@ -3646,12 +3255,6 @@ func (i *policyWafConfigAddressRateLimitingPtrType) ToPolicyWafConfigAddressRate
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigAddressRateLimitingPtrOutput)
 }
 
-func (i *policyWafConfigAddressRateLimitingPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[*PolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigAddressRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigAddressRateLimitingOutput) ElementType() reflect.Type {
@@ -3674,12 +3277,6 @@ func (o PolicyWafConfigAddressRateLimitingOutput) ToPolicyWafConfigAddressRateLi
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigAddressRateLimiting) *PolicyWafConfigAddressRateLimiting {
 		return &v
 	}).(PolicyWafConfigAddressRateLimitingPtrOutput)
-}
-
-func (o PolicyWafConfigAddressRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[PolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
@@ -3714,12 +3311,6 @@ func (o PolicyWafConfigAddressRateLimitingPtrOutput) ToPolicyWafConfigAddressRat
 
 func (o PolicyWafConfigAddressRateLimitingPtrOutput) ToPolicyWafConfigAddressRateLimitingPtrOutputWithContext(ctx context.Context) PolicyWafConfigAddressRateLimitingPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigAddressRateLimitingPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[*PolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigAddressRateLimitingPtrOutput) Elem() PolicyWafConfigAddressRateLimitingOutput {
@@ -3835,12 +3426,6 @@ func (i PolicyWafConfigCachingRuleArgs) ToPolicyWafConfigCachingRuleOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleOutput)
 }
 
-func (i PolicyWafConfigCachingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRule] {
-	return pulumix.Output[PolicyWafConfigCachingRule]{
-		OutputState: i.ToPolicyWafConfigCachingRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCachingRuleArrayInput is an input type that accepts PolicyWafConfigCachingRuleArray and PolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleArrayInput` via:
 //
@@ -3866,12 +3451,6 @@ func (i PolicyWafConfigCachingRuleArray) ToPolicyWafConfigCachingRuleArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleArrayOutput)
 }
 
-func (i PolicyWafConfigCachingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRule] {
-	return pulumix.Output[[]PolicyWafConfigCachingRule]{
-		OutputState: i.ToPolicyWafConfigCachingRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCachingRuleOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCachingRuleOutput) ElementType() reflect.Type {
@@ -3884,12 +3463,6 @@ func (o PolicyWafConfigCachingRuleOutput) ToPolicyWafConfigCachingRuleOutput() P
 
 func (o PolicyWafConfigCachingRuleOutput) ToPolicyWafConfigCachingRuleOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRule] {
-	return pulumix.Output[PolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -3942,12 +3515,6 @@ func (o PolicyWafConfigCachingRuleArrayOutput) ToPolicyWafConfigCachingRuleArray
 
 func (o PolicyWafConfigCachingRuleArrayOutput) ToPolicyWafConfigCachingRuleArrayOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRule] {
-	return pulumix.Output[[]PolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCachingRuleOutput {
@@ -4043,12 +3610,6 @@ func (i PolicyWafConfigCachingRuleCriteriaArgs) ToPolicyWafConfigCachingRuleCrit
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleCriteriaOutput)
 }
 
-func (i PolicyWafConfigCachingRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts PolicyWafConfigCachingRuleCriteriaArray and PolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
@@ -4074,12 +3635,6 @@ func (i PolicyWafConfigCachingRuleCriteriaArray) ToPolicyWafConfigCachingRuleCri
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
 
-func (i PolicyWafConfigCachingRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCachingRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCachingRuleCriteriaOutput) ElementType() reflect.Type {
@@ -4092,12 +3647,6 @@ func (o PolicyWafConfigCachingRuleCriteriaOutput) ToPolicyWafConfigCachingRuleCr
 
 func (o PolicyWafConfigCachingRuleCriteriaOutput) ToPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleCriteriaOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[PolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -4147,12 +3696,6 @@ func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) ToPolicyWafConfigCachingR
 
 func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) ToPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx context.Context) PolicyWafConfigCachingRuleCriteriaArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]PolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCachingRuleCriteriaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCachingRuleCriteriaOutput {
@@ -4218,12 +3761,6 @@ func (i PolicyWafConfigCaptchaArgs) ToPolicyWafConfigCaptchaOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCaptchaOutput)
 }
 
-func (i PolicyWafConfigCaptchaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCaptcha] {
-	return pulumix.Output[PolicyWafConfigCaptcha]{
-		OutputState: i.ToPolicyWafConfigCaptchaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCaptchaArrayInput is an input type that accepts PolicyWafConfigCaptchaArray and PolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCaptchaArrayInput` via:
 //
@@ -4249,12 +3786,6 @@ func (i PolicyWafConfigCaptchaArray) ToPolicyWafConfigCaptchaArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCaptchaArrayOutput)
 }
 
-func (i PolicyWafConfigCaptchaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCaptcha] {
-	return pulumix.Output[[]PolicyWafConfigCaptcha]{
-		OutputState: i.ToPolicyWafConfigCaptchaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCaptchaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCaptchaOutput) ElementType() reflect.Type {
@@ -4267,12 +3798,6 @@ func (o PolicyWafConfigCaptchaOutput) ToPolicyWafConfigCaptchaOutput() PolicyWaf
 
 func (o PolicyWafConfigCaptchaOutput) ToPolicyWafConfigCaptchaOutputWithContext(ctx context.Context) PolicyWafConfigCaptchaOutput {
 	return o
-}
-
-func (o PolicyWafConfigCaptchaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCaptcha] {
-	return pulumix.Output[PolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
@@ -4324,12 +3849,6 @@ func (o PolicyWafConfigCaptchaArrayOutput) ToPolicyWafConfigCaptchaArrayOutputWi
 	return o
 }
 
-func (o PolicyWafConfigCaptchaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCaptcha] {
-	return pulumix.Output[[]PolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCaptchaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigCaptcha {
 		return vs[0].([]PolicyWafConfigCaptcha)[vs[1].(int)]
@@ -4377,12 +3896,6 @@ func (i PolicyWafConfigCustomProtectionRuleArgs) ToPolicyWafConfigCustomProtecti
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts PolicyWafConfigCustomProtectionRuleArray and PolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
@@ -4408,12 +3921,6 @@ func (i PolicyWafConfigCustomProtectionRuleArray) ToPolicyWafConfigCustomProtect
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleArrayOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -4426,12 +3933,6 @@ func (o PolicyWafConfigCustomProtectionRuleOutput) ToPolicyWafConfigCustomProtec
 
 func (o PolicyWafConfigCustomProtectionRuleOutput) ToPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -4463,12 +3964,6 @@ func (o PolicyWafConfigCustomProtectionRuleArrayOutput) ToPolicyWafConfigCustomP
 
 func (o PolicyWafConfigCustomProtectionRuleArrayOutput) ToPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCustomProtectionRuleOutput {
@@ -4514,12 +4009,6 @@ func (i PolicyWafConfigCustomProtectionRuleExclusionArgs) ToPolicyWafConfigCusto
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleExclusionOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts PolicyWafConfigCustomProtectionRuleExclusionArray and PolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
@@ -4545,12 +4034,6 @@ func (i PolicyWafConfigCustomProtectionRuleExclusionArray) ToPolicyWafConfigCust
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigCustomProtectionRuleExclusionArrayOutput)
 }
 
-func (i PolicyWafConfigCustomProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigCustomProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigCustomProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -4563,12 +4046,6 @@ func (o PolicyWafConfigCustomProtectionRuleExclusionOutput) ToPolicyWafConfigCus
 
 func (o PolicyWafConfigCustomProtectionRuleExclusionOutput) ToPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -4593,12 +4070,6 @@ func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToPolicyWafConf
 
 func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) PolicyWafConfigCustomProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]PolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigCustomProtectionRuleExclusionOutput {
@@ -4668,12 +4139,6 @@ func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToPolicyWafConfigDeviceFi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengeOutput)
 }
 
-func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigDeviceFingerprintChallengeArgs) ToPolicyWafConfigDeviceFingerprintChallengePtrOutput() PolicyWafConfigDeviceFingerprintChallengePtrOutput {
 	return i.ToPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(context.Background())
 }
@@ -4715,12 +4180,6 @@ func (i *policyWafConfigDeviceFingerprintChallengePtrType) ToPolicyWafConfigDevi
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengePtrOutput)
 }
 
-func (i *policyWafConfigDeviceFingerprintChallengePtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigDeviceFingerprintChallengeOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigDeviceFingerprintChallengeOutput) ElementType() reflect.Type {
@@ -4743,12 +4202,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ToPolicyWafConfigDevice
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigDeviceFingerprintChallenge) *PolicyWafConfigDeviceFingerprintChallenge {
 		return &v
 	}).(PolicyWafConfigDeviceFingerprintChallengePtrOutput)
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -4805,12 +4258,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ToPolicyWafConfigDev
 
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ToPolicyWafConfigDeviceFingerprintChallengePtrOutputWithContext(ctx context.Context) PolicyWafConfigDeviceFingerprintChallengePtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) Elem() PolicyWafConfigDeviceFingerprintChallengeOutput {
@@ -4968,12 +4415,6 @@ func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 }
 
-func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput() PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
 	return i.ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(context.Background())
 }
@@ -5015,12 +4456,6 @@ func (i *policyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ToPo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
-func (i *policyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -5043,12 +4478,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToPoli
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings {
 		return &v
 	}).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -5116,12 +4545,6 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToP
 
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Elem() PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput {
@@ -5293,12 +4716,6 @@ func (i PolicyWafConfigHumanInteractionChallengeArgs) ToPolicyWafConfigHumanInte
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeOutput)
 }
 
-func (i PolicyWafConfigHumanInteractionChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigHumanInteractionChallengeArgs) ToPolicyWafConfigHumanInteractionChallengePtrOutput() PolicyWafConfigHumanInteractionChallengePtrOutput {
 	return i.ToPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(context.Background())
 }
@@ -5340,12 +4757,6 @@ func (i *policyWafConfigHumanInteractionChallengePtrType) ToPolicyWafConfigHuman
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengePtrOutput)
 }
 
-func (i *policyWafConfigHumanInteractionChallengePtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigHumanInteractionChallengeOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigHumanInteractionChallengeOutput) ElementType() reflect.Type {
@@ -5368,12 +4779,6 @@ func (o PolicyWafConfigHumanInteractionChallengeOutput) ToPolicyWafConfigHumanIn
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigHumanInteractionChallenge) *PolicyWafConfigHumanInteractionChallenge {
 		return &v
 	}).(PolicyWafConfigHumanInteractionChallengePtrOutput)
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -5442,12 +4847,6 @@ func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ToPolicyWafConfigHuma
 
 func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ToPolicyWafConfigHumanInteractionChallengePtrOutputWithContext(ctx context.Context) PolicyWafConfigHumanInteractionChallengePtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigHumanInteractionChallengePtrOutput) Elem() PolicyWafConfigHumanInteractionChallengeOutput {
@@ -5625,12 +5024,6 @@ func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToPolicyW
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
 }
 
-func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput() PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
 	return i.ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(context.Background())
 }
@@ -5672,12 +5065,6 @@ func (i *policyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ToPol
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
 }
 
-func (i *policyWafConfigHumanInteractionChallengeChallengeSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -5700,12 +5087,6 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToPolic
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *PolicyWafConfigHumanInteractionChallengeChallengeSettings {
 		return &v
 	}).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -5769,12 +5150,6 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToPo
 
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Elem() PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput {
@@ -5920,12 +5295,6 @@ func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToPolicyWafCo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
 }
 
-func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput() PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
 	return i.ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
 }
@@ -5967,12 +5336,6 @@ func (i *policyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ToPolicyW
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
 }
 
-func (i *policyWafConfigHumanInteractionChallengeSetHttpHeaderPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -5995,12 +5358,6 @@ func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToPolicyWaf
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigHumanInteractionChallengeSetHttpHeader) *PolicyWafConfigHumanInteractionChallengeSetHttpHeader {
 		return &v
 	}).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique name of the whitelist.
@@ -6028,12 +5385,6 @@ func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToPolicy
 
 func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToPolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Elem() PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
@@ -6134,12 +5485,6 @@ func (i PolicyWafConfigJsChallengeArgs) ToPolicyWafConfigJsChallengeOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeOutput)
 }
 
-func (i PolicyWafConfigJsChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallenge] {
-	return pulumix.Output[PolicyWafConfigJsChallenge]{
-		OutputState: i.ToPolicyWafConfigJsChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigJsChallengeArgs) ToPolicyWafConfigJsChallengePtrOutput() PolicyWafConfigJsChallengePtrOutput {
 	return i.ToPolicyWafConfigJsChallengePtrOutputWithContext(context.Background())
 }
@@ -6181,12 +5526,6 @@ func (i *policyWafConfigJsChallengePtrType) ToPolicyWafConfigJsChallengePtrOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengePtrOutput)
 }
 
-func (i *policyWafConfigJsChallengePtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallenge] {
-	return pulumix.Output[*PolicyWafConfigJsChallenge]{
-		OutputState: i.ToPolicyWafConfigJsChallengePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeOutput) ElementType() reflect.Type {
@@ -6209,12 +5548,6 @@ func (o PolicyWafConfigJsChallengeOutput) ToPolicyWafConfigJsChallengePtrOutputW
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigJsChallenge) *PolicyWafConfigJsChallenge {
 		return &v
 	}).(PolicyWafConfigJsChallengePtrOutput)
-}
-
-func (o PolicyWafConfigJsChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallenge] {
-	return pulumix.Output[PolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -6276,12 +5609,6 @@ func (o PolicyWafConfigJsChallengePtrOutput) ToPolicyWafConfigJsChallengePtrOutp
 
 func (o PolicyWafConfigJsChallengePtrOutput) ToPolicyWafConfigJsChallengePtrOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengePtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallenge] {
-	return pulumix.Output[*PolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigJsChallengePtrOutput) Elem() PolicyWafConfigJsChallengeOutput {
@@ -6449,12 +5776,6 @@ func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToPolicyWafConfigJsChal
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeChallengeSettingsOutput)
 }
 
-func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigJsChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigJsChallengeChallengeSettingsArgs) ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutput() PolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
 	return i.ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(context.Background())
 }
@@ -6496,12 +5817,6 @@ func (i *policyWafConfigJsChallengeChallengeSettingsPtrType) ToPolicyWafConfigJs
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
 }
 
-func (i *policyWafConfigJsChallengeChallengeSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: i.ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -6524,12 +5839,6 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) ToPolicyWafConfigJsCh
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigJsChallengeChallengeSettings) *PolicyWafConfigJsChallengeChallengeSettings {
 		return &v
 	}).(PolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -6589,12 +5898,6 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigJ
 
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToPolicyWafConfigJsChallengeChallengeSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengeChallengeSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) Elem() PolicyWafConfigJsChallengeChallengeSettingsOutput {
@@ -6788,12 +6091,6 @@ func (i PolicyWafConfigJsChallengeCriteriaArgs) ToPolicyWafConfigJsChallengeCrit
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeCriteriaOutput)
 }
 
-func (i PolicyWafConfigJsChallengeCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[PolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts PolicyWafConfigJsChallengeCriteriaArray and PolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
@@ -6819,12 +6116,6 @@ func (i PolicyWafConfigJsChallengeCriteriaArray) ToPolicyWafConfigJsChallengeCri
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeCriteriaArrayOutput)
 }
 
-func (i PolicyWafConfigJsChallengeCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]PolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeCriteriaOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeCriteriaOutput) ElementType() reflect.Type {
@@ -6837,12 +6128,6 @@ func (o PolicyWafConfigJsChallengeCriteriaOutput) ToPolicyWafConfigJsChallengeCr
 
 func (o PolicyWafConfigJsChallengeCriteriaOutput) ToPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengeCriteriaOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[PolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -6899,12 +6184,6 @@ func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) ToPolicyWafConfigJsChalle
 	return o
 }
 
-func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]PolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PolicyWafConfigJsChallengeCriteria {
 		return vs[0].([]PolicyWafConfigJsChallengeCriteria)[vs[1].(int)]
@@ -6954,12 +6233,6 @@ func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToPolicyWafConfigJsChalleng
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeSetHttpHeaderOutput)
 }
 
-func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigJsChallengeSetHttpHeaderArgs) ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutput() PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
 	return i.ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(context.Background())
 }
@@ -7001,12 +6274,6 @@ func (i *policyWafConfigJsChallengeSetHttpHeaderPtrType) ToPolicyWafConfigJsChal
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
 }
 
-func (i *policyWafConfigJsChallengeSetHttpHeaderPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigJsChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigJsChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -7029,12 +6296,6 @@ func (o PolicyWafConfigJsChallengeSetHttpHeaderOutput) ToPolicyWafConfigJsChalle
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigJsChallengeSetHttpHeader) *PolicyWafConfigJsChallengeSetHttpHeader {
 		return &v
 	}).(PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
-}
-
-func (o PolicyWafConfigJsChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The unique name of the whitelist.
@@ -7062,12 +6323,6 @@ func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToPolicyWafConfigJsCha
 
 func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToPolicyWafConfigJsChallengeSetHttpHeaderPtrOutputWithContext(ctx context.Context) PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[*PolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Elem() PolicyWafConfigJsChallengeSetHttpHeaderOutput {
@@ -7232,12 +6487,6 @@ func (i PolicyWafConfigProtectionSettingsArgs) ToPolicyWafConfigProtectionSettin
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigProtectionSettingsOutput)
 }
 
-func (i PolicyWafConfigProtectionSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[PolicyWafConfigProtectionSettings]{
-		OutputState: i.ToPolicyWafConfigProtectionSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i PolicyWafConfigProtectionSettingsArgs) ToPolicyWafConfigProtectionSettingsPtrOutput() PolicyWafConfigProtectionSettingsPtrOutput {
 	return i.ToPolicyWafConfigProtectionSettingsPtrOutputWithContext(context.Background())
 }
@@ -7279,12 +6528,6 @@ func (i *policyWafConfigProtectionSettingsPtrType) ToPolicyWafConfigProtectionSe
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigProtectionSettingsPtrOutput)
 }
 
-func (i *policyWafConfigProtectionSettingsPtrType) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[*PolicyWafConfigProtectionSettings]{
-		OutputState: i.ToPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigProtectionSettingsOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigProtectionSettingsOutput) ElementType() reflect.Type {
@@ -7307,12 +6550,6 @@ func (o PolicyWafConfigProtectionSettingsOutput) ToPolicyWafConfigProtectionSett
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v PolicyWafConfigProtectionSettings) *PolicyWafConfigProtectionSettings {
 		return &v
 	}).(PolicyWafConfigProtectionSettingsPtrOutput)
-}
-
-func (o PolicyWafConfigProtectionSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[PolicyWafConfigProtectionSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
@@ -7416,12 +6653,6 @@ func (o PolicyWafConfigProtectionSettingsPtrOutput) ToPolicyWafConfigProtectionS
 
 func (o PolicyWafConfigProtectionSettingsPtrOutput) ToPolicyWafConfigProtectionSettingsPtrOutputWithContext(ctx context.Context) PolicyWafConfigProtectionSettingsPtrOutput {
 	return o
-}
-
-func (o PolicyWafConfigProtectionSettingsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*PolicyWafConfigProtectionSettings] {
-	return pulumix.Output[*PolicyWafConfigProtectionSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigProtectionSettingsPtrOutput) Elem() PolicyWafConfigProtectionSettingsOutput {
@@ -7635,12 +6866,6 @@ func (i PolicyWafConfigWhitelistArgs) ToPolicyWafConfigWhitelistOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigWhitelistOutput)
 }
 
-func (i PolicyWafConfigWhitelistArgs) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigWhitelist] {
-	return pulumix.Output[PolicyWafConfigWhitelist]{
-		OutputState: i.ToPolicyWafConfigWhitelistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // PolicyWafConfigWhitelistArrayInput is an input type that accepts PolicyWafConfigWhitelistArray and PolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `PolicyWafConfigWhitelistArrayInput` via:
 //
@@ -7666,12 +6891,6 @@ func (i PolicyWafConfigWhitelistArray) ToPolicyWafConfigWhitelistArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(PolicyWafConfigWhitelistArrayOutput)
 }
 
-func (i PolicyWafConfigWhitelistArray) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigWhitelist] {
-	return pulumix.Output[[]PolicyWafConfigWhitelist]{
-		OutputState: i.ToPolicyWafConfigWhitelistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type PolicyWafConfigWhitelistOutput struct{ *pulumi.OutputState }
 
 func (PolicyWafConfigWhitelistOutput) ElementType() reflect.Type {
@@ -7684,12 +6903,6 @@ func (o PolicyWafConfigWhitelistOutput) ToPolicyWafConfigWhitelistOutput() Polic
 
 func (o PolicyWafConfigWhitelistOutput) ToPolicyWafConfigWhitelistOutputWithContext(ctx context.Context) PolicyWafConfigWhitelistOutput {
 	return o
-}
-
-func (o PolicyWafConfigWhitelistOutput) ToOutput(ctx context.Context) pulumix.Output[PolicyWafConfigWhitelist] {
-	return pulumix.Output[PolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
@@ -7722,12 +6935,6 @@ func (o PolicyWafConfigWhitelistArrayOutput) ToPolicyWafConfigWhitelistArrayOutp
 
 func (o PolicyWafConfigWhitelistArrayOutput) ToPolicyWafConfigWhitelistArrayOutputWithContext(ctx context.Context) PolicyWafConfigWhitelistArrayOutput {
 	return o
-}
-
-func (o PolicyWafConfigWhitelistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]PolicyWafConfigWhitelist] {
-	return pulumix.Output[[]PolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o PolicyWafConfigWhitelistArrayOutput) Index(i pulumi.IntInput) PolicyWafConfigWhitelistOutput {
@@ -7779,12 +6986,6 @@ func (i ProtectionRuleExclusionArgs) ToProtectionRuleExclusionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleExclusionOutput)
 }
 
-func (i ProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[ProtectionRuleExclusion] {
-	return pulumix.Output[ProtectionRuleExclusion]{
-		OutputState: i.ToProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ProtectionRuleExclusionArrayInput is an input type that accepts ProtectionRuleExclusionArray and ProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `ProtectionRuleExclusionArrayInput` via:
 //
@@ -7810,12 +7011,6 @@ func (i ProtectionRuleExclusionArray) ToProtectionRuleExclusionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(ProtectionRuleExclusionArrayOutput)
 }
 
-func (i ProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]ProtectionRuleExclusion] {
-	return pulumix.Output[[]ProtectionRuleExclusion]{
-		OutputState: i.ToProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (ProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -7828,12 +7023,6 @@ func (o ProtectionRuleExclusionOutput) ToProtectionRuleExclusionOutput() Protect
 
 func (o ProtectionRuleExclusionOutput) ToProtectionRuleExclusionOutputWithContext(ctx context.Context) ProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o ProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[ProtectionRuleExclusion] {
-	return pulumix.Output[ProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -7861,12 +7050,6 @@ func (o ProtectionRuleExclusionArrayOutput) ToProtectionRuleExclusionArrayOutput
 
 func (o ProtectionRuleExclusionArrayOutput) ToProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) ProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o ProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]ProtectionRuleExclusion] {
-	return pulumix.Output[[]ProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) ProtectionRuleExclusionOutput {
@@ -7940,12 +7123,6 @@ func (i GetAddressListsAddressListArgs) ToGetAddressListsAddressListOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsAddressListOutput)
 }
 
-func (i GetAddressListsAddressListArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsAddressList] {
-	return pulumix.Output[GetAddressListsAddressList]{
-		OutputState: i.ToGetAddressListsAddressListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddressListsAddressListArrayInput is an input type that accepts GetAddressListsAddressListArray and GetAddressListsAddressListArrayOutput values.
 // You can construct a concrete instance of `GetAddressListsAddressListArrayInput` via:
 //
@@ -7971,12 +7148,6 @@ func (i GetAddressListsAddressListArray) ToGetAddressListsAddressListArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsAddressListArrayOutput)
 }
 
-func (i GetAddressListsAddressListArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsAddressList] {
-	return pulumix.Output[[]GetAddressListsAddressList]{
-		OutputState: i.ToGetAddressListsAddressListArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressListsAddressListOutput struct{ *pulumi.OutputState }
 
 func (GetAddressListsAddressListOutput) ElementType() reflect.Type {
@@ -7989,12 +7160,6 @@ func (o GetAddressListsAddressListOutput) ToGetAddressListsAddressListOutput() G
 
 func (o GetAddressListsAddressListOutput) ToGetAddressListsAddressListOutputWithContext(ctx context.Context) GetAddressListsAddressListOutput {
 	return o
-}
-
-func (o GetAddressListsAddressListOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsAddressList] {
-	return pulumix.Output[GetAddressListsAddressList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The total number of unique IP addresses in the address list.
@@ -8056,12 +7221,6 @@ func (o GetAddressListsAddressListArrayOutput) ToGetAddressListsAddressListArray
 	return o
 }
 
-func (o GetAddressListsAddressListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsAddressList] {
-	return pulumix.Output[[]GetAddressListsAddressList]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAddressListsAddressListArrayOutput) Index(i pulumi.IntInput) GetAddressListsAddressListOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAddressListsAddressList {
 		return vs[0].([]GetAddressListsAddressList)[vs[1].(int)]
@@ -8103,12 +7262,6 @@ func (i GetAddressListsFilterArgs) ToGetAddressListsFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsFilterOutput)
 }
 
-func (i GetAddressListsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsFilter] {
-	return pulumix.Output[GetAddressListsFilter]{
-		OutputState: i.ToGetAddressListsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAddressListsFilterArrayInput is an input type that accepts GetAddressListsFilterArray and GetAddressListsFilterArrayOutput values.
 // You can construct a concrete instance of `GetAddressListsFilterArrayInput` via:
 //
@@ -8134,12 +7287,6 @@ func (i GetAddressListsFilterArray) ToGetAddressListsFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetAddressListsFilterArrayOutput)
 }
 
-func (i GetAddressListsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsFilter] {
-	return pulumix.Output[[]GetAddressListsFilter]{
-		OutputState: i.ToGetAddressListsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAddressListsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAddressListsFilterOutput) ElementType() reflect.Type {
@@ -8152,12 +7299,6 @@ func (o GetAddressListsFilterOutput) ToGetAddressListsFilterOutput() GetAddressL
 
 func (o GetAddressListsFilterOutput) ToGetAddressListsFilterOutputWithContext(ctx context.Context) GetAddressListsFilterOutput {
 	return o
-}
-
-func (o GetAddressListsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAddressListsFilter] {
-	return pulumix.Output[GetAddressListsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddressListsFilterOutput) Name() pulumi.StringOutput {
@@ -8184,12 +7325,6 @@ func (o GetAddressListsFilterArrayOutput) ToGetAddressListsFilterArrayOutput() G
 
 func (o GetAddressListsFilterArrayOutput) ToGetAddressListsFilterArrayOutputWithContext(ctx context.Context) GetAddressListsFilterArrayOutput {
 	return o
-}
-
-func (o GetAddressListsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAddressListsFilter] {
-	return pulumix.Output[[]GetAddressListsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAddressListsFilterArrayOutput) Index(i pulumi.IntInput) GetAddressListsFilterOutput {
@@ -8239,12 +7374,6 @@ func (i GetCertificateExtensionArgs) ToGetCertificateExtensionOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateExtensionOutput)
 }
 
-func (i GetCertificateExtensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateExtension] {
-	return pulumix.Output[GetCertificateExtension]{
-		OutputState: i.ToGetCertificateExtensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateExtensionArrayInput is an input type that accepts GetCertificateExtensionArray and GetCertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `GetCertificateExtensionArrayInput` via:
 //
@@ -8270,12 +7399,6 @@ func (i GetCertificateExtensionArray) ToGetCertificateExtensionArrayOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateExtensionArrayOutput)
 }
 
-func (i GetCertificateExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateExtension] {
-	return pulumix.Output[[]GetCertificateExtension]{
-		OutputState: i.ToGetCertificateExtensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateExtensionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateExtensionOutput) ElementType() reflect.Type {
@@ -8288,12 +7411,6 @@ func (o GetCertificateExtensionOutput) ToGetCertificateExtensionOutput() GetCert
 
 func (o GetCertificateExtensionOutput) ToGetCertificateExtensionOutputWithContext(ctx context.Context) GetCertificateExtensionOutput {
 	return o
-}
-
-func (o GetCertificateExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateExtension] {
-	return pulumix.Output[GetCertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
@@ -8323,12 +7440,6 @@ func (o GetCertificateExtensionArrayOutput) ToGetCertificateExtensionArrayOutput
 
 func (o GetCertificateExtensionArrayOutput) ToGetCertificateExtensionArrayOutputWithContext(ctx context.Context) GetCertificateExtensionArrayOutput {
 	return o
-}
-
-func (o GetCertificateExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateExtension] {
-	return pulumix.Output[[]GetCertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateExtensionArrayOutput) Index(i pulumi.IntInput) GetCertificateExtensionOutput {
@@ -8394,12 +7505,6 @@ func (i GetCertificateIssuerNameArgs) ToGetCertificateIssuerNameOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateIssuerNameOutput)
 }
 
-func (i GetCertificateIssuerNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateIssuerName] {
-	return pulumix.Output[GetCertificateIssuerName]{
-		OutputState: i.ToGetCertificateIssuerNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateIssuerNameArrayInput is an input type that accepts GetCertificateIssuerNameArray and GetCertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateIssuerNameArrayInput` via:
 //
@@ -8425,12 +7530,6 @@ func (i GetCertificateIssuerNameArray) ToGetCertificateIssuerNameArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateIssuerNameArrayOutput)
 }
 
-func (i GetCertificateIssuerNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificateIssuerName]{
-		OutputState: i.ToGetCertificateIssuerNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateIssuerNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateIssuerNameOutput) ElementType() reflect.Type {
@@ -8443,12 +7542,6 @@ func (o GetCertificateIssuerNameOutput) ToGetCertificateIssuerNameOutput() GetCe
 
 func (o GetCertificateIssuerNameOutput) ToGetCertificateIssuerNameOutputWithContext(ctx context.Context) GetCertificateIssuerNameOutput {
 	return o
-}
-
-func (o GetCertificateIssuerNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateIssuerName] {
-	return pulumix.Output[GetCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -8500,12 +7593,6 @@ func (o GetCertificateIssuerNameArrayOutput) ToGetCertificateIssuerNameArrayOutp
 	return o
 }
 
-func (o GetCertificateIssuerNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) GetCertificateIssuerNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificateIssuerName {
 		return vs[0].([]GetCertificateIssuerName)[vs[1].(int)]
@@ -8553,12 +7640,6 @@ func (i GetCertificatePublicKeyInfoArgs) ToGetCertificatePublicKeyInfoOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatePublicKeyInfoOutput)
 }
 
-func (i GetCertificatePublicKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatePublicKeyInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatePublicKeyInfoArrayInput is an input type that accepts GetCertificatePublicKeyInfoArray and GetCertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `GetCertificatePublicKeyInfoArrayInput` via:
 //
@@ -8584,12 +7665,6 @@ func (i GetCertificatePublicKeyInfoArray) ToGetCertificatePublicKeyInfoArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatePublicKeyInfoArrayOutput)
 }
 
-func (i GetCertificatePublicKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatePublicKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatePublicKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatePublicKeyInfoOutput) ElementType() reflect.Type {
@@ -8602,12 +7677,6 @@ func (o GetCertificatePublicKeyInfoOutput) ToGetCertificatePublicKeyInfoOutput()
 
 func (o GetCertificatePublicKeyInfoOutput) ToGetCertificatePublicKeyInfoOutputWithContext(ctx context.Context) GetCertificatePublicKeyInfoOutput {
 	return o
-}
-
-func (o GetCertificatePublicKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm identifier and parameters for the public key.
@@ -8637,12 +7706,6 @@ func (o GetCertificatePublicKeyInfoArrayOutput) ToGetCertificatePublicKeyInfoArr
 
 func (o GetCertificatePublicKeyInfoArrayOutput) ToGetCertificatePublicKeyInfoArrayOutputWithContext(ctx context.Context) GetCertificatePublicKeyInfoArrayOutput {
 	return o
-}
-
-func (o GetCertificatePublicKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) GetCertificatePublicKeyInfoOutput {
@@ -8708,12 +7771,6 @@ func (i GetCertificateSubjectNameArgs) ToGetCertificateSubjectNameOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateSubjectNameOutput)
 }
 
-func (i GetCertificateSubjectNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificateSubjectName] {
-	return pulumix.Output[GetCertificateSubjectName]{
-		OutputState: i.ToGetCertificateSubjectNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificateSubjectNameArrayInput is an input type that accepts GetCertificateSubjectNameArray and GetCertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificateSubjectNameArrayInput` via:
 //
@@ -8739,12 +7796,6 @@ func (i GetCertificateSubjectNameArray) ToGetCertificateSubjectNameArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificateSubjectNameArrayOutput)
 }
 
-func (i GetCertificateSubjectNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificateSubjectName]{
-		OutputState: i.ToGetCertificateSubjectNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificateSubjectNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificateSubjectNameOutput) ElementType() reflect.Type {
@@ -8757,12 +7808,6 @@ func (o GetCertificateSubjectNameOutput) ToGetCertificateSubjectNameOutput() Get
 
 func (o GetCertificateSubjectNameOutput) ToGetCertificateSubjectNameOutputWithContext(ctx context.Context) GetCertificateSubjectNameOutput {
 	return o
-}
-
-func (o GetCertificateSubjectNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificateSubjectName] {
-	return pulumix.Output[GetCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -8812,12 +7857,6 @@ func (o GetCertificateSubjectNameArrayOutput) ToGetCertificateSubjectNameArrayOu
 
 func (o GetCertificateSubjectNameArrayOutput) ToGetCertificateSubjectNameArrayOutputWithContext(ctx context.Context) GetCertificateSubjectNameArrayOutput {
 	return o
-}
-
-func (o GetCertificateSubjectNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) GetCertificateSubjectNameOutput {
@@ -8931,12 +7970,6 @@ func (i GetCertificatesCertificateArgs) ToGetCertificatesCertificateOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateOutput)
 }
 
-func (i GetCertificatesCertificateArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificate] {
-	return pulumix.Output[GetCertificatesCertificate]{
-		OutputState: i.ToGetCertificatesCertificateOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificateArrayInput is an input type that accepts GetCertificatesCertificateArray and GetCertificatesCertificateArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateArrayInput` via:
 //
@@ -8962,12 +7995,6 @@ func (i GetCertificatesCertificateArray) ToGetCertificatesCertificateArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateArrayOutput)
 }
 
-func (i GetCertificatesCertificateArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificate] {
-	return pulumix.Output[[]GetCertificatesCertificate]{
-		OutputState: i.ToGetCertificatesCertificateArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateOutput) ElementType() reflect.Type {
@@ -8980,12 +8007,6 @@ func (o GetCertificatesCertificateOutput) ToGetCertificatesCertificateOutput() G
 
 func (o GetCertificatesCertificateOutput) ToGetCertificatesCertificateOutputWithContext(ctx context.Context) GetCertificatesCertificateOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificate] {
-	return pulumix.Output[GetCertificatesCertificate]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The data of the SSL certificate.
@@ -9100,12 +8121,6 @@ func (o GetCertificatesCertificateArrayOutput) ToGetCertificatesCertificateArray
 	return o
 }
 
-func (o GetCertificatesCertificateArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificate] {
-	return pulumix.Output[[]GetCertificatesCertificate]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificate {
 		return vs[0].([]GetCertificatesCertificate)[vs[1].(int)]
@@ -9153,12 +8168,6 @@ func (i GetCertificatesCertificateExtensionArgs) ToGetCertificatesCertificateExt
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateExtensionOutput)
 }
 
-func (i GetCertificatesCertificateExtensionArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateExtension] {
-	return pulumix.Output[GetCertificatesCertificateExtension]{
-		OutputState: i.ToGetCertificatesCertificateExtensionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificateExtensionArrayInput is an input type that accepts GetCertificatesCertificateExtensionArray and GetCertificatesCertificateExtensionArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateExtensionArrayInput` via:
 //
@@ -9184,12 +8193,6 @@ func (i GetCertificatesCertificateExtensionArray) ToGetCertificatesCertificateEx
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateExtensionArrayOutput)
 }
 
-func (i GetCertificatesCertificateExtensionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateExtension] {
-	return pulumix.Output[[]GetCertificatesCertificateExtension]{
-		OutputState: i.ToGetCertificatesCertificateExtensionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateExtensionOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateExtensionOutput) ElementType() reflect.Type {
@@ -9202,12 +8205,6 @@ func (o GetCertificatesCertificateExtensionOutput) ToGetCertificatesCertificateE
 
 func (o GetCertificatesCertificateExtensionOutput) ToGetCertificatesCertificateExtensionOutputWithContext(ctx context.Context) GetCertificatesCertificateExtensionOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateExtensionOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateExtension] {
-	return pulumix.Output[GetCertificatesCertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
@@ -9237,12 +8234,6 @@ func (o GetCertificatesCertificateExtensionArrayOutput) ToGetCertificatesCertifi
 
 func (o GetCertificatesCertificateExtensionArrayOutput) ToGetCertificatesCertificateExtensionArrayOutputWithContext(ctx context.Context) GetCertificatesCertificateExtensionArrayOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateExtensionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateExtension] {
-	return pulumix.Output[[]GetCertificatesCertificateExtension]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificateExtensionArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateExtensionOutput {
@@ -9308,12 +8299,6 @@ func (i GetCertificatesCertificateIssuerNameArgs) ToGetCertificatesCertificateIs
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateIssuerNameOutput)
 }
 
-func (i GetCertificatesCertificateIssuerNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[GetCertificatesCertificateIssuerName]{
-		OutputState: i.ToGetCertificatesCertificateIssuerNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificateIssuerNameArrayInput is an input type that accepts GetCertificatesCertificateIssuerNameArray and GetCertificatesCertificateIssuerNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateIssuerNameArrayInput` via:
 //
@@ -9339,12 +8324,6 @@ func (i GetCertificatesCertificateIssuerNameArray) ToGetCertificatesCertificateI
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateIssuerNameArrayOutput)
 }
 
-func (i GetCertificatesCertificateIssuerNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificatesCertificateIssuerName]{
-		OutputState: i.ToGetCertificatesCertificateIssuerNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateIssuerNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateIssuerNameOutput) ElementType() reflect.Type {
@@ -9357,12 +8336,6 @@ func (o GetCertificatesCertificateIssuerNameOutput) ToGetCertificatesCertificate
 
 func (o GetCertificatesCertificateIssuerNameOutput) ToGetCertificatesCertificateIssuerNameOutputWithContext(ctx context.Context) GetCertificatesCertificateIssuerNameOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateIssuerNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[GetCertificatesCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -9414,12 +8387,6 @@ func (o GetCertificatesCertificateIssuerNameArrayOutput) ToGetCertificatesCertif
 	return o
 }
 
-func (o GetCertificatesCertificateIssuerNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateIssuerName] {
-	return pulumix.Output[[]GetCertificatesCertificateIssuerName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateIssuerNameArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateIssuerNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateIssuerName {
 		return vs[0].([]GetCertificatesCertificateIssuerName)[vs[1].(int)]
@@ -9467,12 +8434,6 @@ func (i GetCertificatesCertificatePublicKeyInfoArgs) ToGetCertificatesCertificat
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificatePublicKeyInfoOutput)
 }
 
-func (i GetCertificatesCertificatePublicKeyInfoArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatesCertificatePublicKeyInfoOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificatePublicKeyInfoArrayInput is an input type that accepts GetCertificatesCertificatePublicKeyInfoArray and GetCertificatesCertificatePublicKeyInfoArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificatePublicKeyInfoArrayInput` via:
 //
@@ -9498,12 +8459,6 @@ func (i GetCertificatesCertificatePublicKeyInfoArray) ToGetCertificatesCertifica
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificatePublicKeyInfoArrayOutput)
 }
 
-func (i GetCertificatesCertificatePublicKeyInfoArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: i.ToGetCertificatesCertificatePublicKeyInfoArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificatePublicKeyInfoOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificatePublicKeyInfoOutput) ElementType() reflect.Type {
@@ -9516,12 +8471,6 @@ func (o GetCertificatesCertificatePublicKeyInfoOutput) ToGetCertificatesCertific
 
 func (o GetCertificatesCertificatePublicKeyInfoOutput) ToGetCertificatesCertificatePublicKeyInfoOutputWithContext(ctx context.Context) GetCertificatesCertificatePublicKeyInfoOutput {
 	return o
-}
-
-func (o GetCertificatesCertificatePublicKeyInfoOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The algorithm identifier and parameters for the public key.
@@ -9551,12 +8500,6 @@ func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) ToGetCertificatesCer
 
 func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) ToGetCertificatesCertificatePublicKeyInfoArrayOutputWithContext(ctx context.Context) GetCertificatesCertificatePublicKeyInfoArrayOutput {
 	return o
-}
-
-func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo] {
-	return pulumix.Output[[]GetCertificatesCertificatePublicKeyInfo]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesCertificatePublicKeyInfoArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificatePublicKeyInfoOutput {
@@ -9622,12 +8565,6 @@ func (i GetCertificatesCertificateSubjectNameArgs) ToGetCertificatesCertificateS
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateSubjectNameOutput)
 }
 
-func (i GetCertificatesCertificateSubjectNameArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[GetCertificatesCertificateSubjectName]{
-		OutputState: i.ToGetCertificatesCertificateSubjectNameOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesCertificateSubjectNameArrayInput is an input type that accepts GetCertificatesCertificateSubjectNameArray and GetCertificatesCertificateSubjectNameArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesCertificateSubjectNameArrayInput` via:
 //
@@ -9653,12 +8590,6 @@ func (i GetCertificatesCertificateSubjectNameArray) ToGetCertificatesCertificate
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesCertificateSubjectNameArrayOutput)
 }
 
-func (i GetCertificatesCertificateSubjectNameArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificatesCertificateSubjectName]{
-		OutputState: i.ToGetCertificatesCertificateSubjectNameArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesCertificateSubjectNameOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesCertificateSubjectNameOutput) ElementType() reflect.Type {
@@ -9671,12 +8602,6 @@ func (o GetCertificatesCertificateSubjectNameOutput) ToGetCertificatesCertificat
 
 func (o GetCertificatesCertificateSubjectNameOutput) ToGetCertificatesCertificateSubjectNameOutputWithContext(ctx context.Context) GetCertificatesCertificateSubjectNameOutput {
 	return o
-}
-
-func (o GetCertificatesCertificateSubjectNameOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[GetCertificatesCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The fully qualified domain name used for DNS lookups of the server.
@@ -9728,12 +8653,6 @@ func (o GetCertificatesCertificateSubjectNameArrayOutput) ToGetCertificatesCerti
 	return o
 }
 
-func (o GetCertificatesCertificateSubjectNameArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesCertificateSubjectName] {
-	return pulumix.Output[[]GetCertificatesCertificateSubjectName]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCertificatesCertificateSubjectNameArrayOutput) Index(i pulumi.IntInput) GetCertificatesCertificateSubjectNameOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCertificatesCertificateSubjectName {
 		return vs[0].([]GetCertificatesCertificateSubjectName)[vs[1].(int)]
@@ -9777,12 +8696,6 @@ func (i GetCertificatesFilterArgs) ToGetCertificatesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterOutput)
 }
 
-func (i GetCertificatesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCertificatesFilterArrayInput is an input type that accepts GetCertificatesFilterArray and GetCertificatesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCertificatesFilterArrayInput` via:
 //
@@ -9808,12 +8721,6 @@ func (i GetCertificatesFilterArray) ToGetCertificatesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetCertificatesFilterArrayOutput)
 }
 
-func (i GetCertificatesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: i.ToGetCertificatesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCertificatesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCertificatesFilterOutput) ElementType() reflect.Type {
@@ -9826,12 +8733,6 @@ func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutput() GetCertific
 
 func (o GetCertificatesFilterOutput) ToGetCertificatesFilterOutputWithContext(ctx context.Context) GetCertificatesFilterOutput {
 	return o
-}
-
-func (o GetCertificatesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCertificatesFilter] {
-	return pulumix.Output[GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The certificate extension name.
@@ -9859,12 +8760,6 @@ func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutput() G
 
 func (o GetCertificatesFilterArrayOutput) ToGetCertificatesFilterArrayOutputWithContext(ctx context.Context) GetCertificatesFilterArrayOutput {
 	return o
-}
-
-func (o GetCertificatesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCertificatesFilter] {
-	return pulumix.Output[[]GetCertificatesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetCertificatesFilterOutput {
@@ -9942,12 +8837,6 @@ func (i GetCustomProtectionRulesCustomProtectionRuleArgs) ToGetCustomProtectionR
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesCustomProtectionRuleOutput)
 }
 
-func (i GetCustomProtectionRulesCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: i.ToGetCustomProtectionRulesCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCustomProtectionRulesCustomProtectionRuleArrayInput is an input type that accepts GetCustomProtectionRulesCustomProtectionRuleArray and GetCustomProtectionRulesCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesCustomProtectionRuleArrayInput` via:
 //
@@ -9973,12 +8862,6 @@ func (i GetCustomProtectionRulesCustomProtectionRuleArray) ToGetCustomProtection
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesCustomProtectionRuleArrayOutput)
 }
 
-func (i GetCustomProtectionRulesCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: i.ToGetCustomProtectionRulesCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomProtectionRulesCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetCustomProtectionRulesCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -9991,12 +8874,6 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) ToGetCustomProtectio
 
 func (o GetCustomProtectionRulesCustomProtectionRuleOutput) ToGetCustomProtectionRulesCustomProtectionRuleOutputWithContext(ctx context.Context) GetCustomProtectionRulesCustomProtectionRuleOutput {
 	return o
-}
-
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -10063,12 +8940,6 @@ func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) ToGetCustomProt
 	return o
 }
 
-func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule] {
-	return pulumix.Output[[]GetCustomProtectionRulesCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetCustomProtectionRulesCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetCustomProtectionRulesCustomProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomProtectionRulesCustomProtectionRule {
 		return vs[0].([]GetCustomProtectionRulesCustomProtectionRule)[vs[1].(int)]
@@ -10110,12 +8981,6 @@ func (i GetCustomProtectionRulesFilterArgs) ToGetCustomProtectionRulesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesFilterOutput)
 }
 
-func (i GetCustomProtectionRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesFilter] {
-	return pulumix.Output[GetCustomProtectionRulesFilter]{
-		OutputState: i.ToGetCustomProtectionRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetCustomProtectionRulesFilterArrayInput is an input type that accepts GetCustomProtectionRulesFilterArray and GetCustomProtectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetCustomProtectionRulesFilterArrayInput` via:
 //
@@ -10141,12 +9006,6 @@ func (i GetCustomProtectionRulesFilterArray) ToGetCustomProtectionRulesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetCustomProtectionRulesFilterArrayOutput)
 }
 
-func (i GetCustomProtectionRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesFilter] {
-	return pulumix.Output[[]GetCustomProtectionRulesFilter]{
-		OutputState: i.ToGetCustomProtectionRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetCustomProtectionRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetCustomProtectionRulesFilterOutput) ElementType() reflect.Type {
@@ -10159,12 +9018,6 @@ func (o GetCustomProtectionRulesFilterOutput) ToGetCustomProtectionRulesFilterOu
 
 func (o GetCustomProtectionRulesFilterOutput) ToGetCustomProtectionRulesFilterOutputWithContext(ctx context.Context) GetCustomProtectionRulesFilterOutput {
 	return o
-}
-
-func (o GetCustomProtectionRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetCustomProtectionRulesFilter] {
-	return pulumix.Output[GetCustomProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomProtectionRulesFilterOutput) Name() pulumi.StringOutput {
@@ -10191,12 +9044,6 @@ func (o GetCustomProtectionRulesFilterArrayOutput) ToGetCustomProtectionRulesFil
 
 func (o GetCustomProtectionRulesFilterArrayOutput) ToGetCustomProtectionRulesFilterArrayOutputWithContext(ctx context.Context) GetCustomProtectionRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetCustomProtectionRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetCustomProtectionRulesFilter] {
-	return pulumix.Output[[]GetCustomProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetCustomProtectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetCustomProtectionRulesFilterOutput {
@@ -10246,12 +9093,6 @@ func (i GetEdgeSubnetsEdgeSubnetArgs) ToGetEdgeSubnetsEdgeSubnetOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsEdgeSubnetOutput)
 }
 
-func (i GetEdgeSubnetsEdgeSubnetArgs) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[GetEdgeSubnetsEdgeSubnet]{
-		OutputState: i.ToGetEdgeSubnetsEdgeSubnetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEdgeSubnetsEdgeSubnetArrayInput is an input type that accepts GetEdgeSubnetsEdgeSubnetArray and GetEdgeSubnetsEdgeSubnetArrayOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsEdgeSubnetArrayInput` via:
 //
@@ -10277,12 +9118,6 @@ func (i GetEdgeSubnetsEdgeSubnetArray) ToGetEdgeSubnetsEdgeSubnetArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsEdgeSubnetArrayOutput)
 }
 
-func (i GetEdgeSubnetsEdgeSubnetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[[]GetEdgeSubnetsEdgeSubnet]{
-		OutputState: i.ToGetEdgeSubnetsEdgeSubnetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEdgeSubnetsEdgeSubnetOutput struct{ *pulumi.OutputState }
 
 func (GetEdgeSubnetsEdgeSubnetOutput) ElementType() reflect.Type {
@@ -10295,12 +9130,6 @@ func (o GetEdgeSubnetsEdgeSubnetOutput) ToGetEdgeSubnetsEdgeSubnetOutput() GetEd
 
 func (o GetEdgeSubnetsEdgeSubnetOutput) ToGetEdgeSubnetsEdgeSubnetOutputWithContext(ctx context.Context) GetEdgeSubnetsEdgeSubnetOutput {
 	return o
-}
-
-func (o GetEdgeSubnetsEdgeSubnetOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[GetEdgeSubnetsEdgeSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An edge node subnet. This can include /24 or /8 addresses.
@@ -10330,12 +9159,6 @@ func (o GetEdgeSubnetsEdgeSubnetArrayOutput) ToGetEdgeSubnetsEdgeSubnetArrayOutp
 
 func (o GetEdgeSubnetsEdgeSubnetArrayOutput) ToGetEdgeSubnetsEdgeSubnetArrayOutputWithContext(ctx context.Context) GetEdgeSubnetsEdgeSubnetArrayOutput {
 	return o
-}
-
-func (o GetEdgeSubnetsEdgeSubnetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsEdgeSubnet] {
-	return pulumix.Output[[]GetEdgeSubnetsEdgeSubnet]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEdgeSubnetsEdgeSubnetArrayOutput) Index(i pulumi.IntInput) GetEdgeSubnetsEdgeSubnetOutput {
@@ -10379,12 +9202,6 @@ func (i GetEdgeSubnetsFilterArgs) ToGetEdgeSubnetsFilterOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsFilterOutput)
 }
 
-func (i GetEdgeSubnetsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsFilter] {
-	return pulumix.Output[GetEdgeSubnetsFilter]{
-		OutputState: i.ToGetEdgeSubnetsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetEdgeSubnetsFilterArrayInput is an input type that accepts GetEdgeSubnetsFilterArray and GetEdgeSubnetsFilterArrayOutput values.
 // You can construct a concrete instance of `GetEdgeSubnetsFilterArrayInput` via:
 //
@@ -10410,12 +9227,6 @@ func (i GetEdgeSubnetsFilterArray) ToGetEdgeSubnetsFilterArrayOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(GetEdgeSubnetsFilterArrayOutput)
 }
 
-func (i GetEdgeSubnetsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsFilter] {
-	return pulumix.Output[[]GetEdgeSubnetsFilter]{
-		OutputState: i.ToGetEdgeSubnetsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetEdgeSubnetsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetEdgeSubnetsFilterOutput) ElementType() reflect.Type {
@@ -10428,12 +9239,6 @@ func (o GetEdgeSubnetsFilterOutput) ToGetEdgeSubnetsFilterOutput() GetEdgeSubnet
 
 func (o GetEdgeSubnetsFilterOutput) ToGetEdgeSubnetsFilterOutputWithContext(ctx context.Context) GetEdgeSubnetsFilterOutput {
 	return o
-}
-
-func (o GetEdgeSubnetsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetEdgeSubnetsFilter] {
-	return pulumix.Output[GetEdgeSubnetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEdgeSubnetsFilterOutput) Name() pulumi.StringOutput {
@@ -10460,12 +9265,6 @@ func (o GetEdgeSubnetsFilterArrayOutput) ToGetEdgeSubnetsFilterArrayOutput() Get
 
 func (o GetEdgeSubnetsFilterArrayOutput) ToGetEdgeSubnetsFilterArrayOutputWithContext(ctx context.Context) GetEdgeSubnetsFilterArrayOutput {
 	return o
-}
-
-func (o GetEdgeSubnetsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetEdgeSubnetsFilter] {
-	return pulumix.Output[[]GetEdgeSubnetsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetEdgeSubnetsFilterArrayOutput) Index(i pulumi.IntInput) GetEdgeSubnetsFilterOutput {
@@ -10523,12 +9322,6 @@ func (i GetHttpRedirectTargetArgs) ToGetHttpRedirectTargetOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectTargetOutput)
 }
 
-func (i GetHttpRedirectTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpRedirectTargetArrayInput is an input type that accepts GetHttpRedirectTargetArray and GetHttpRedirectTargetArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectTargetArrayInput` via:
 //
@@ -10554,12 +9347,6 @@ func (i GetHttpRedirectTargetArray) ToGetHttpRedirectTargetArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectTargetArrayOutput)
 }
 
-func (i GetHttpRedirectTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectTargetOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectTargetOutput) ElementType() reflect.Type {
@@ -10572,12 +9359,6 @@ func (o GetHttpRedirectTargetOutput) ToGetHttpRedirectTargetOutput() GetHttpRedi
 
 func (o GetHttpRedirectTargetOutput) ToGetHttpRedirectTargetOutputWithContext(ctx context.Context) GetHttpRedirectTargetOutput {
 	return o
-}
-
-func (o GetHttpRedirectTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The host portion of the redirect.
@@ -10617,12 +9398,6 @@ func (o GetHttpRedirectTargetArrayOutput) ToGetHttpRedirectTargetArrayOutput() G
 
 func (o GetHttpRedirectTargetArrayOutput) ToGetHttpRedirectTargetArrayOutputWithContext(ctx context.Context) GetHttpRedirectTargetArrayOutput {
 	return o
-}
-
-func (o GetHttpRedirectTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpRedirectTargetArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectTargetOutput {
@@ -10666,12 +9441,6 @@ func (i GetHttpRedirectsFilterArgs) ToGetHttpRedirectsFilterOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsFilterOutput)
 }
 
-func (i GetHttpRedirectsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsFilter] {
-	return pulumix.Output[GetHttpRedirectsFilter]{
-		OutputState: i.ToGetHttpRedirectsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpRedirectsFilterArrayInput is an input type that accepts GetHttpRedirectsFilterArray and GetHttpRedirectsFilterArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsFilterArrayInput` via:
 //
@@ -10697,12 +9466,6 @@ func (i GetHttpRedirectsFilterArray) ToGetHttpRedirectsFilterArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsFilterArrayOutput)
 }
 
-func (i GetHttpRedirectsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsFilter] {
-	return pulumix.Output[[]GetHttpRedirectsFilter]{
-		OutputState: i.ToGetHttpRedirectsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectsFilterOutput) ElementType() reflect.Type {
@@ -10715,12 +9478,6 @@ func (o GetHttpRedirectsFilterOutput) ToGetHttpRedirectsFilterOutput() GetHttpRe
 
 func (o GetHttpRedirectsFilterOutput) ToGetHttpRedirectsFilterOutputWithContext(ctx context.Context) GetHttpRedirectsFilterOutput {
 	return o
-}
-
-func (o GetHttpRedirectsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsFilter] {
-	return pulumix.Output[GetHttpRedirectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpRedirectsFilterOutput) Name() pulumi.StringOutput {
@@ -10747,12 +9504,6 @@ func (o GetHttpRedirectsFilterArrayOutput) ToGetHttpRedirectsFilterArrayOutput()
 
 func (o GetHttpRedirectsFilterArrayOutput) ToGetHttpRedirectsFilterArrayOutputWithContext(ctx context.Context) GetHttpRedirectsFilterArrayOutput {
 	return o
-}
-
-func (o GetHttpRedirectsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsFilter] {
-	return pulumix.Output[[]GetHttpRedirectsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpRedirectsFilterArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectsFilterOutput {
@@ -10830,12 +9581,6 @@ func (i GetHttpRedirectsHttpRedirectArgs) ToGetHttpRedirectsHttpRedirectOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectOutput)
 }
 
-func (i GetHttpRedirectsHttpRedirectArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirect]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpRedirectsHttpRedirectArrayInput is an input type that accepts GetHttpRedirectsHttpRedirectArray and GetHttpRedirectsHttpRedirectArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsHttpRedirectArrayInput` via:
 //
@@ -10861,12 +9606,6 @@ func (i GetHttpRedirectsHttpRedirectArray) ToGetHttpRedirectsHttpRedirectArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectArrayOutput)
 }
 
-func (i GetHttpRedirectsHttpRedirectArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirect]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectsHttpRedirectOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectsHttpRedirectOutput) ElementType() reflect.Type {
@@ -10879,12 +9618,6 @@ func (o GetHttpRedirectsHttpRedirectOutput) ToGetHttpRedirectsHttpRedirectOutput
 
 func (o GetHttpRedirectsHttpRedirectOutput) ToGetHttpRedirectsHttpRedirectOutputWithContext(ctx context.Context) GetHttpRedirectsHttpRedirectOutput {
 	return o
-}
-
-func (o GetHttpRedirectsHttpRedirectOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirect]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -10951,12 +9684,6 @@ func (o GetHttpRedirectsHttpRedirectArrayOutput) ToGetHttpRedirectsHttpRedirectA
 	return o
 }
 
-func (o GetHttpRedirectsHttpRedirectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirect] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirect]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetHttpRedirectsHttpRedirectArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectsHttpRedirectOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetHttpRedirectsHttpRedirect {
 		return vs[0].([]GetHttpRedirectsHttpRedirect)[vs[1].(int)]
@@ -11012,12 +9739,6 @@ func (i GetHttpRedirectsHttpRedirectTargetArgs) ToGetHttpRedirectsHttpRedirectTa
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectTargetOutput)
 }
 
-func (i GetHttpRedirectsHttpRedirectTargetArgs) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectTargetOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetHttpRedirectsHttpRedirectTargetArrayInput is an input type that accepts GetHttpRedirectsHttpRedirectTargetArray and GetHttpRedirectsHttpRedirectTargetArrayOutput values.
 // You can construct a concrete instance of `GetHttpRedirectsHttpRedirectTargetArrayInput` via:
 //
@@ -11043,12 +9764,6 @@ func (i GetHttpRedirectsHttpRedirectTargetArray) ToGetHttpRedirectsHttpRedirectT
 	return pulumi.ToOutputWithContext(ctx, i).(GetHttpRedirectsHttpRedirectTargetArrayOutput)
 }
 
-func (i GetHttpRedirectsHttpRedirectTargetArray) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: i.ToGetHttpRedirectsHttpRedirectTargetArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetHttpRedirectsHttpRedirectTargetOutput struct{ *pulumi.OutputState }
 
 func (GetHttpRedirectsHttpRedirectTargetOutput) ElementType() reflect.Type {
@@ -11061,12 +9776,6 @@ func (o GetHttpRedirectsHttpRedirectTargetOutput) ToGetHttpRedirectsHttpRedirect
 
 func (o GetHttpRedirectsHttpRedirectTargetOutput) ToGetHttpRedirectsHttpRedirectTargetOutputWithContext(ctx context.Context) GetHttpRedirectsHttpRedirectTargetOutput {
 	return o
-}
-
-func (o GetHttpRedirectsHttpRedirectTargetOutput) ToOutput(ctx context.Context) pulumix.Output[GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The host portion of the redirect.
@@ -11106,12 +9815,6 @@ func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) ToGetHttpRedirectsHttpRed
 
 func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) ToGetHttpRedirectsHttpRedirectTargetArrayOutputWithContext(ctx context.Context) GetHttpRedirectsHttpRedirectTargetArrayOutput {
 	return o
-}
-
-func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget] {
-	return pulumix.Output[[]GetHttpRedirectsHttpRedirectTarget]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetHttpRedirectsHttpRedirectTargetArrayOutput) Index(i pulumi.IntInput) GetHttpRedirectsHttpRedirectTargetOutput {
@@ -11157,12 +9860,6 @@ func (i GetProtectionRuleExclusionArgs) ToGetProtectionRuleExclusionOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRuleExclusionOutput)
 }
 
-func (i GetProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionRuleExclusionArrayInput is an input type that accepts GetProtectionRuleExclusionArray and GetProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRuleExclusionArrayInput` via:
 //
@@ -11188,12 +9885,6 @@ func (i GetProtectionRuleExclusionArray) ToGetProtectionRuleExclusionArrayOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -11206,12 +9897,6 @@ func (o GetProtectionRuleExclusionOutput) ToGetProtectionRuleExclusionOutput() G
 
 func (o GetProtectionRuleExclusionOutput) ToGetProtectionRuleExclusionOutputWithContext(ctx context.Context) GetProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o GetProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -11236,12 +9921,6 @@ func (o GetProtectionRuleExclusionArrayOutput) ToGetProtectionRuleExclusionArray
 
 func (o GetProtectionRuleExclusionArrayOutput) ToGetProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) GetProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o GetProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetProtectionRuleExclusionOutput {
@@ -11287,12 +9966,6 @@ func (i GetProtectionRulesFilterArgs) ToGetProtectionRulesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesFilterOutput)
 }
 
-func (i GetProtectionRulesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesFilter] {
-	return pulumix.Output[GetProtectionRulesFilter]{
-		OutputState: i.ToGetProtectionRulesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionRulesFilterArrayInput is an input type that accepts GetProtectionRulesFilterArray and GetProtectionRulesFilterArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesFilterArrayInput` via:
 //
@@ -11318,12 +9991,6 @@ func (i GetProtectionRulesFilterArray) ToGetProtectionRulesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesFilterArrayOutput)
 }
 
-func (i GetProtectionRulesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesFilter] {
-	return pulumix.Output[[]GetProtectionRulesFilter]{
-		OutputState: i.ToGetProtectionRulesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRulesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRulesFilterOutput) ElementType() reflect.Type {
@@ -11336,12 +10003,6 @@ func (o GetProtectionRulesFilterOutput) ToGetProtectionRulesFilterOutput() GetPr
 
 func (o GetProtectionRulesFilterOutput) ToGetProtectionRulesFilterOutputWithContext(ctx context.Context) GetProtectionRulesFilterOutput {
 	return o
-}
-
-func (o GetProtectionRulesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesFilter] {
-	return pulumix.Output[GetProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The name of the protection rule.
@@ -11369,12 +10030,6 @@ func (o GetProtectionRulesFilterArrayOutput) ToGetProtectionRulesFilterArrayOutp
 
 func (o GetProtectionRulesFilterArrayOutput) ToGetProtectionRulesFilterArrayOutputWithContext(ctx context.Context) GetProtectionRulesFilterArrayOutput {
 	return o
-}
-
-func (o GetProtectionRulesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesFilter] {
-	return pulumix.Output[[]GetProtectionRulesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionRulesFilterArrayOutput) Index(i pulumi.IntInput) GetProtectionRulesFilterOutput {
@@ -11444,12 +10099,6 @@ func (i GetProtectionRulesProtectionRuleArgs) ToGetProtectionRulesProtectionRule
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleOutput)
 }
 
-func (i GetProtectionRulesProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRule] {
-	return pulumix.Output[GetProtectionRulesProtectionRule]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionRulesProtectionRuleArrayInput is an input type that accepts GetProtectionRulesProtectionRuleArray and GetProtectionRulesProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesProtectionRuleArrayInput` via:
 //
@@ -11475,12 +10124,6 @@ func (i GetProtectionRulesProtectionRuleArray) ToGetProtectionRulesProtectionRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleArrayOutput)
 }
 
-func (i GetProtectionRulesProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRule] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRule]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRulesProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRulesProtectionRuleOutput) ElementType() reflect.Type {
@@ -11493,12 +10136,6 @@ func (o GetProtectionRulesProtectionRuleOutput) ToGetProtectionRulesProtectionRu
 
 func (o GetProtectionRulesProtectionRuleOutput) ToGetProtectionRulesProtectionRuleOutputWithContext(ctx context.Context) GetProtectionRulesProtectionRuleOutput {
 	return o
-}
-
-func (o GetProtectionRulesProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRule] {
-	return pulumix.Output[GetProtectionRulesProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Filter rules using a list of actions.
@@ -11557,12 +10194,6 @@ func (o GetProtectionRulesProtectionRuleArrayOutput) ToGetProtectionRulesProtect
 	return o
 }
 
-func (o GetProtectionRulesProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRule] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetProtectionRulesProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetProtectionRulesProtectionRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProtectionRulesProtectionRule {
 		return vs[0].([]GetProtectionRulesProtectionRule)[vs[1].(int)]
@@ -11606,12 +10237,6 @@ func (i GetProtectionRulesProtectionRuleExclusionArgs) ToGetProtectionRulesProte
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleExclusionOutput)
 }
 
-func (i GetProtectionRulesProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetProtectionRulesProtectionRuleExclusionArrayInput is an input type that accepts GetProtectionRulesProtectionRuleExclusionArray and GetProtectionRulesProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetProtectionRulesProtectionRuleExclusionArrayInput` via:
 //
@@ -11637,12 +10262,6 @@ func (i GetProtectionRulesProtectionRuleExclusionArray) ToGetProtectionRulesProt
 	return pulumi.ToOutputWithContext(ctx, i).(GetProtectionRulesProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetProtectionRulesProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: i.ToGetProtectionRulesProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetProtectionRulesProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetProtectionRulesProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -11655,12 +10274,6 @@ func (o GetProtectionRulesProtectionRuleExclusionOutput) ToGetProtectionRulesPro
 
 func (o GetProtectionRulesProtectionRuleExclusionOutput) ToGetProtectionRulesProtectionRuleExclusionOutputWithContext(ctx context.Context) GetProtectionRulesProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o GetProtectionRulesProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -11685,12 +10298,6 @@ func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) ToGetProtectionRul
 
 func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) ToGetProtectionRulesProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) GetProtectionRulesProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion] {
-	return pulumix.Output[[]GetProtectionRulesProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetProtectionRulesProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetProtectionRulesProtectionRuleExclusionOutput {
@@ -11736,12 +10343,6 @@ func (i GetWaasPoliciesFilterArgs) ToGetWaasPoliciesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesFilterOutput)
 }
 
-func (i GetWaasPoliciesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesFilter] {
-	return pulumix.Output[GetWaasPoliciesFilter]{
-		OutputState: i.ToGetWaasPoliciesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesFilterArrayInput is an input type that accepts GetWaasPoliciesFilterArray and GetWaasPoliciesFilterArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesFilterArrayInput` via:
 //
@@ -11767,12 +10368,6 @@ func (i GetWaasPoliciesFilterArray) ToGetWaasPoliciesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesFilterArrayOutput)
 }
 
-func (i GetWaasPoliciesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesFilter] {
-	return pulumix.Output[[]GetWaasPoliciesFilter]{
-		OutputState: i.ToGetWaasPoliciesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesFilterOutput) ElementType() reflect.Type {
@@ -11785,12 +10380,6 @@ func (o GetWaasPoliciesFilterOutput) ToGetWaasPoliciesFilterOutput() GetWaasPoli
 
 func (o GetWaasPoliciesFilterOutput) ToGetWaasPoliciesFilterOutputWithContext(ctx context.Context) GetWaasPoliciesFilterOutput {
 	return o
-}
-
-func (o GetWaasPoliciesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesFilter] {
-	return pulumix.Output[GetWaasPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -11818,12 +10407,6 @@ func (o GetWaasPoliciesFilterArrayOutput) ToGetWaasPoliciesFilterArrayOutput() G
 
 func (o GetWaasPoliciesFilterArrayOutput) ToGetWaasPoliciesFilterArrayOutputWithContext(ctx context.Context) GetWaasPoliciesFilterArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesFilter] {
-	return pulumix.Output[[]GetWaasPoliciesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesFilterArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesFilterOutput {
@@ -11917,12 +10500,6 @@ func (i GetWaasPoliciesWaasPolicyArgs) ToGetWaasPoliciesWaasPolicyOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicy]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyArray and GetWaasPoliciesWaasPolicyArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyArrayInput` via:
 //
@@ -11948,12 +10525,6 @@ func (i GetWaasPoliciesWaasPolicyArray) ToGetWaasPoliciesWaasPolicyArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicy]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOutput) ElementType() reflect.Type {
@@ -11966,12 +10537,6 @@ func (o GetWaasPoliciesWaasPolicyOutput) ToGetWaasPoliciesWaasPolicyOutput() Get
 
 func (o GetWaasPoliciesWaasPolicyOutput) ToGetWaasPoliciesWaasPolicyOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of additional domains for this web application.
@@ -12058,12 +10623,6 @@ func (o GetWaasPoliciesWaasPolicyArrayOutput) ToGetWaasPoliciesWaasPolicyArrayOu
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicy] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicy {
 		return vs[0].([]GetWaasPoliciesWaasPolicy)[vs[1].(int)]
@@ -12117,12 +10676,6 @@ func (i GetWaasPoliciesWaasPolicyOriginArgs) ToGetWaasPoliciesWaasPolicyOriginOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyOriginArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginArray and GetWaasPoliciesWaasPolicyOriginArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginArrayInput` via:
 //
@@ -12148,12 +10701,6 @@ func (i GetWaasPoliciesWaasPolicyOriginArray) ToGetWaasPoliciesWaasPolicyOriginA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginOutput) ElementType() reflect.Type {
@@ -12166,12 +10713,6 @@ func (o GetWaasPoliciesWaasPolicyOriginOutput) ToGetWaasPoliciesWaasPolicyOrigin
 
 func (o GetWaasPoliciesWaasPolicyOriginOutput) ToGetWaasPoliciesWaasPolicyOriginOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of HTTP headers to forward to your origin.
@@ -12212,12 +10753,6 @@ func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) ToGetWaasPoliciesWaasPolicyO
 
 func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) ToGetWaasPoliciesWaasPolicyOriginArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyOriginArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginOutput {
@@ -12263,12 +10798,6 @@ func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ToGetWaasPoliciesWaasPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginCustomHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginCustomHeaderArray and GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayInput` via:
 //
@@ -12294,12 +10823,6 @@ func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArray) ToGetWaasPoliciesWaasP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginCustomHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ElementType() reflect.Type {
@@ -12312,12 +10835,6 @@ func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ToGetWaasPoliciesWaas
 
 func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ToGetWaasPoliciesWaasPolicyOriginCustomHeaderOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -12342,12 +10859,6 @@ func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) ToGetWaasPolicie
 
 func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) ToGetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginCustomHeaderOutput {
@@ -12389,12 +10900,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupArgs) ToGetWaasPoliciesWaasPolicyOri
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyOriginGroupArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupArray and GetWaasPoliciesWaasPolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginGroupArrayInput` via:
 //
@@ -12420,12 +10925,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupArray) ToGetWaasPoliciesWaasPolicyOr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginGroupOutput) ElementType() reflect.Type {
@@ -12438,12 +10937,6 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) ToGetWaasPoliciesWaasPolicyO
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) ToGetWaasPoliciesWaasPolicyOriginGroupOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginGroupOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupOutput) Label() pulumi.StringOutput {
@@ -12468,12 +10961,6 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) ToGetWaasPoliciesWaasPo
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) ToGetWaasPoliciesWaasPolicyOriginGroupArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginGroupArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginGroupOutput {
@@ -12517,12 +11004,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPoliciesWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray and GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayInput` via:
 //
@@ -12548,12 +11029,6 @@ func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray) ToGetWaasPoliciesW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ElementType() reflect.Type {
@@ -12566,12 +11041,6 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ToGetWaasPolicies
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
@@ -12595,12 +11064,6 @@ func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) ToGetWaasPol
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) ToGetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyOriginGroupOriginGroupOutput {
@@ -12704,12 +11167,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigArgs) ToGetWaasPoliciesWaasPolicyPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyPolicyConfigArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigArray and GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigArrayInput` via:
 //
@@ -12735,12 +11192,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigArray) ToGetWaasPoliciesWaasPolicyP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyPolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigOutput) ElementType() reflect.Type {
@@ -12753,12 +11204,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ToGetWaasPoliciesWaasPolicy
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ToGetWaasPoliciesWaasPolicyPolicyConfigOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyPolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the SSL certificate to use if HTTPS is supported.
@@ -12854,12 +11299,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput) ToGetWaasPoliciesWaasP
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyPolicyConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyPolicyConfigOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyPolicyConfig {
 		return vs[0].([]GetWaasPoliciesWaasPolicyPolicyConfig)[vs[1].(int)]
@@ -12953,12 +11392,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ToGetWaasPoliciesW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray and GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayInput` via:
 //
@@ -12984,12 +11417,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray) ToGetWaasPolicies
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ElementType() reflect.Type {
@@ -13002,12 +11429,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ToGetWaasPolicie
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ToGetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The HTTP response codes that signify a healthy state.
@@ -13086,12 +11507,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) ToGetWaasPo
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck {
 		return vs[0].([]GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck)[vs[1].(int)]
@@ -13149,12 +11564,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray and GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayInput` via:
 //
@@ -13180,12 +11589,6 @@ func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray) ToGetWaas
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ElementType() reflect.Type {
@@ -13198,12 +11601,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaa
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -13241,12 +11638,6 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) ToG
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) ToGetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyPolicyConfigLoadBalancingMethodOutput {
@@ -13332,12 +11723,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigArgs) ToGetWaasPoliciesWaasPolicyWafCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigArray and GetWaasPoliciesWaasPolicyWafConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigArrayInput` via:
 //
@@ -13363,12 +11748,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigArray) ToGetWaasPoliciesWaasPolicyWafC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigOutput) ElementType() reflect.Type {
@@ -13381,12 +11760,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigOutput) ToGetWaasPoliciesWaasPolicyWaf
 
 func (o GetWaasPoliciesWaasPolicyWafConfigOutput) ToGetWaasPoliciesWaasPolicyWafConfigOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
@@ -13481,12 +11854,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) ToGetWaasPoliciesWaasPoli
 
 func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigOutput {
@@ -13600,12 +11967,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPoliciesWaasP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayInput` via:
 //
@@ -13631,12 +11992,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray) ToGetWaasPoliciesWaas
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ElementType() reflect.Type {
@@ -13649,12 +12004,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ToGetWaasPoliciesWaa
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -13761,12 +12110,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) ToGetWaasPolici
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAccessRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigAccessRule {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigAccessRule)[vs[1].(int)]
@@ -13846,12 +12189,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
@@ -13877,12 +12214,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray) ToGetWaasPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ElementType() reflect.Type {
@@ -13895,12 +12226,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPol
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -13946,12 +12271,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToGetWa
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAccessRuleCriteriaOutput {
@@ -14001,12 +12320,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray and GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
@@ -14032,12 +12345,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ElementType() reflect.Type {
@@ -14050,12 +12357,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOu
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -14085,12 +12386,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationAr
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
@@ -14144,12 +12439,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray and GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayInput` via:
 //
@@ -14175,12 +12464,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ElementType() reflect.Type {
@@ -14193,12 +12476,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPo
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
@@ -14233,12 +12510,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) ToGetW
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigAddressRateLimitingOutput {
@@ -14304,12 +12575,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPoliciesWaas
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray and GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayInput` via:
 //
@@ -14335,12 +12600,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray) ToGetWaasPoliciesWaa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ElementType() reflect.Type {
@@ -14353,12 +12612,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ToGetWaasPoliciesWa
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -14410,12 +12663,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPolic
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCachingRuleOutput {
@@ -14493,12 +12740,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
@@ -14524,12 +12765,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ElementType() reflect.Type {
@@ -14542,12 +12777,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPo
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -14588,12 +12817,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToGetW
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCachingRuleCriteriaOutput {
@@ -14659,12 +12882,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ToGetWaasPoliciesWaasPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCaptchaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCaptchaArray and GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayInput` via:
 //
@@ -14690,12 +12907,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArray) ToGetWaasPoliciesWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCaptchaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ElementType() reflect.Type {
@@ -14708,12 +12919,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ToGetWaasPoliciesWaasPo
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ToGetWaasPoliciesWaasPolicyWafConfigCaptchaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
@@ -14765,12 +12970,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) ToGetWaasPoliciesW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCaptchaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigCaptcha {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigCaptcha)[vs[1].(int)]
@@ -14818,12 +13017,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
@@ -14849,12 +13042,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray) ToGetWaasPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -14867,12 +13054,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ToGetWaasP
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -14904,12 +13085,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToGet
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleOutput {
@@ -14955,12 +13130,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToG
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray and GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
@@ -14986,12 +13155,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -15004,12 +13167,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) T
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -15034,12 +13191,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutp
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
@@ -15109,12 +13260,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayInput` via:
 //
@@ -15140,12 +13285,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ElementType() reflect.Type {
@@ -15158,12 +13297,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGe
 
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -15226,12 +13359,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput)
 
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
@@ -15305,12 +13432,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayInput` via:
 //
@@ -15336,12 +13457,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) ElementType() reflect.Type {
@@ -15354,12 +13469,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) ToGetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -15439,12 +13548,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSet
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSetting)[vs[1].(int)]
@@ -15520,12 +13623,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayInput` via:
 //
@@ -15551,12 +13648,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ElementType() reflect.Type {
@@ -15569,12 +13660,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGet
 
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -15651,12 +13736,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) 
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallenge)[vs[1].(int)]
@@ -15728,12 +13807,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayInput` via:
 //
@@ -15759,12 +13832,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) ElementType() reflect.Type {
@@ -15777,12 +13844,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -15862,12 +13923,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSett
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting)[vs[1].(int)]
@@ -15911,12 +13966,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray and GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayInput` via:
 //
@@ -15942,12 +13991,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -15960,12 +14003,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -15992,12 +14029,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader
 
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
@@ -16071,12 +14102,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPoliciesWaas
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayInput` via:
 //
@@ -16102,12 +14127,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray) ToGetWaasPoliciesWaa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ElementType() reflect.Type {
@@ -16120,12 +14139,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPoliciesWa
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -16191,12 +14204,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) ToGetWaasPolic
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeOutput {
@@ -16270,12 +14277,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayInput` via:
 //
@@ -16301,12 +14302,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ElementType() reflect.Type {
@@ -16319,12 +14314,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ToG
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -16392,12 +14381,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeChallengeSettingOutput {
@@ -16479,12 +14462,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPoli
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
@@ -16510,12 +14487,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray) ToGetWaasPol
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ElementType() reflect.Type {
@@ -16528,12 +14499,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPo
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -16581,12 +14546,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToGetW
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria)[vs[1].(int)]
@@ -16630,12 +14589,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray and GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayInput` via:
 //
@@ -16661,12 +14614,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray) ToGetWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -16679,12 +14626,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetW
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -16709,12 +14650,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) T
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
@@ -16804,12 +14739,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ToGetWaasPolici
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray and GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayInput` via:
 //
@@ -16835,12 +14764,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray) ToGetWaasPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ElementType() reflect.Type {
@@ -16853,12 +14776,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ToGetWaasPoli
 
 func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ToGetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
@@ -16942,12 +14859,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput) ToGetWaa
 	return o
 }
 
-func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPoliciesWaasPolicyWafConfigProtectionSettingArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigProtectionSettingOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPoliciesWaasPolicyWafConfigProtectionSetting {
 		return vs[0].([]GetWaasPoliciesWaasPolicyWafConfigProtectionSetting)[vs[1].(int)]
@@ -16995,12 +14906,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ToGetWaasPoliciesWaasPo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigWhitelistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayInput is an input type that accepts GetWaasPoliciesWaasPolicyWafConfigWhitelistArray and GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayInput` via:
 //
@@ -17026,12 +14931,6 @@ func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArray) ToGetWaasPoliciesWaasP
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput)
 }
 
-func (i GetWaasPoliciesWaasPolicyWafConfigWhitelistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ElementType() reflect.Type {
@@ -17044,12 +14943,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ToGetWaasPoliciesWaas
 
 func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ToGetWaasPoliciesWaasPolicyWafConfigWhitelistOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
@@ -17079,12 +14972,6 @@ func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPolicie
 
 func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx context.Context) GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput {
 	return o
-}
-
-func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPoliciesWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPoliciesWaasPolicyWafConfigWhitelistArrayOutput) Index(i pulumi.IntInput) GetWaasPoliciesWaasPolicyWafConfigWhitelistOutput {
@@ -17140,12 +15027,6 @@ func (i GetWaasPolicyOriginArgs) ToGetWaasPolicyOriginOutputWithContext(ctx cont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginOutput)
 }
 
-func (i GetWaasPolicyOriginArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPolicyOriginOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyOriginArrayInput is an input type that accepts GetWaasPolicyOriginArray and GetWaasPolicyOriginArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginArrayInput` via:
 //
@@ -17171,12 +15052,6 @@ func (i GetWaasPolicyOriginArray) ToGetWaasPolicyOriginArrayOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginArrayOutput)
 }
 
-func (i GetWaasPolicyOriginArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPolicyOrigin]{
-		OutputState: i.ToGetWaasPolicyOriginArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginOutput) ElementType() reflect.Type {
@@ -17189,12 +15064,6 @@ func (o GetWaasPolicyOriginOutput) ToGetWaasPolicyOriginOutput() GetWaasPolicyOr
 
 func (o GetWaasPolicyOriginOutput) ToGetWaasPolicyOriginOutputWithContext(ctx context.Context) GetWaasPolicyOriginOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOrigin] {
-	return pulumix.Output[GetWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of HTTP headers to forward to your origin.
@@ -17233,12 +15102,6 @@ func (o GetWaasPolicyOriginArrayOutput) ToGetWaasPolicyOriginArrayOutput() GetWa
 
 func (o GetWaasPolicyOriginArrayOutput) ToGetWaasPolicyOriginArrayOutputWithContext(ctx context.Context) GetWaasPolicyOriginArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOrigin] {
-	return pulumix.Output[[]GetWaasPolicyOrigin]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyOriginArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginOutput {
@@ -17284,12 +15147,6 @@ func (i GetWaasPolicyOriginCustomHeaderArgs) ToGetWaasPolicyOriginCustomHeaderOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginCustomHeaderOutput)
 }
 
-func (i GetWaasPolicyOriginCustomHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPolicyOriginCustomHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyOriginCustomHeaderArrayInput is an input type that accepts GetWaasPolicyOriginCustomHeaderArray and GetWaasPolicyOriginCustomHeaderArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginCustomHeaderArrayInput` via:
 //
@@ -17315,12 +15172,6 @@ func (i GetWaasPolicyOriginCustomHeaderArray) ToGetWaasPolicyOriginCustomHeaderA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginCustomHeaderArrayOutput)
 }
 
-func (i GetWaasPolicyOriginCustomHeaderArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPolicyOriginCustomHeader]{
-		OutputState: i.ToGetWaasPolicyOriginCustomHeaderArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginCustomHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginCustomHeaderOutput) ElementType() reflect.Type {
@@ -17333,12 +15184,6 @@ func (o GetWaasPolicyOriginCustomHeaderOutput) ToGetWaasPolicyOriginCustomHeader
 
 func (o GetWaasPolicyOriginCustomHeaderOutput) ToGetWaasPolicyOriginCustomHeaderOutputWithContext(ctx context.Context) GetWaasPolicyOriginCustomHeaderOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginCustomHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[GetWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -17363,12 +15208,6 @@ func (o GetWaasPolicyOriginCustomHeaderArrayOutput) ToGetWaasPolicyOriginCustomH
 
 func (o GetWaasPolicyOriginCustomHeaderArrayOutput) ToGetWaasPolicyOriginCustomHeaderArrayOutputWithContext(ctx context.Context) GetWaasPolicyOriginCustomHeaderArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginCustomHeaderArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginCustomHeader] {
-	return pulumix.Output[[]GetWaasPolicyOriginCustomHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyOriginCustomHeaderArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginCustomHeaderOutput {
@@ -17410,12 +15249,6 @@ func (i GetWaasPolicyOriginGroupArgs) ToGetWaasPolicyOriginGroupOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupOutput)
 }
 
-func (i GetWaasPolicyOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyOriginGroupArrayInput is an input type that accepts GetWaasPolicyOriginGroupArray and GetWaasPolicyOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginGroupArrayInput` via:
 //
@@ -17441,12 +15274,6 @@ func (i GetWaasPolicyOriginGroupArray) ToGetWaasPolicyOriginGroupArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupArrayOutput)
 }
 
-func (i GetWaasPolicyOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginGroupOutput) ElementType() reflect.Type {
@@ -17459,12 +15286,6 @@ func (o GetWaasPolicyOriginGroupOutput) ToGetWaasPolicyOriginGroupOutput() GetWa
 
 func (o GetWaasPolicyOriginGroupOutput) ToGetWaasPolicyOriginGroupOutputWithContext(ctx context.Context) GetWaasPolicyOriginGroupOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyOriginGroupOutput) Label() pulumi.StringOutput {
@@ -17487,12 +15308,6 @@ func (o GetWaasPolicyOriginGroupArrayOutput) ToGetWaasPolicyOriginGroupArrayOutp
 
 func (o GetWaasPolicyOriginGroupArrayOutput) ToGetWaasPolicyOriginGroupArrayOutputWithContext(ctx context.Context) GetWaasPolicyOriginGroupArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginGroupOutput {
@@ -17536,12 +15351,6 @@ func (i GetWaasPolicyOriginGroupOriginGroupArgs) ToGetWaasPolicyOriginGroupOrigi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupOriginGroupOutput)
 }
 
-func (i GetWaasPolicyOriginGroupOriginGroupArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyOriginGroupOriginGroupArrayInput is an input type that accepts GetWaasPolicyOriginGroupOriginGroupArray and GetWaasPolicyOriginGroupOriginGroupArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyOriginGroupOriginGroupArrayInput` via:
 //
@@ -17567,12 +15376,6 @@ func (i GetWaasPolicyOriginGroupOriginGroupArray) ToGetWaasPolicyOriginGroupOrig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyOriginGroupOriginGroupArrayOutput)
 }
 
-func (i GetWaasPolicyOriginGroupOriginGroupArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: i.ToGetWaasPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyOriginGroupOriginGroupOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyOriginGroupOriginGroupOutput) ElementType() reflect.Type {
@@ -17585,12 +15388,6 @@ func (o GetWaasPolicyOriginGroupOriginGroupOutput) ToGetWaasPolicyOriginGroupOri
 
 func (o GetWaasPolicyOriginGroupOriginGroupOutput) ToGetWaasPolicyOriginGroupOriginGroupOutputWithContext(ctx context.Context) GetWaasPolicyOriginGroupOriginGroupOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginGroupOriginGroupOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
@@ -17614,12 +15411,6 @@ func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) ToGetWaasPolicyOriginGro
 
 func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) ToGetWaasPolicyOriginGroupOriginGroupArrayOutputWithContext(ctx context.Context) GetWaasPolicyOriginGroupOriginGroupArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup] {
-	return pulumix.Output[[]GetWaasPolicyOriginGroupOriginGroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyOriginGroupOriginGroupArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyOriginGroupOriginGroupOutput {
@@ -17723,12 +15514,6 @@ func (i GetWaasPolicyPolicyConfigArgs) ToGetWaasPolicyPolicyConfigOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyPolicyConfigArrayInput is an input type that accepts GetWaasPolicyPolicyConfigArray and GetWaasPolicyPolicyConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyPolicyConfigArrayInput` via:
 //
@@ -17754,12 +15539,6 @@ func (i GetWaasPolicyPolicyConfigArray) ToGetWaasPolicyPolicyConfigArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigArrayOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPolicyPolicyConfig]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyPolicyConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyPolicyConfigOutput) ElementType() reflect.Type {
@@ -17772,12 +15551,6 @@ func (o GetWaasPolicyPolicyConfigOutput) ToGetWaasPolicyPolicyConfigOutput() Get
 
 func (o GetWaasPolicyPolicyConfigOutput) ToGetWaasPolicyPolicyConfigOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigOutput {
 	return o
-}
-
-func (o GetWaasPolicyPolicyConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[GetWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the SSL certificate to use if HTTPS is supported.
@@ -17869,12 +15642,6 @@ func (o GetWaasPolicyPolicyConfigArrayOutput) ToGetWaasPolicyPolicyConfigArrayOu
 
 func (o GetWaasPolicyPolicyConfigArrayOutput) ToGetWaasPolicyPolicyConfigArrayOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyPolicyConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyPolicyConfig] {
-	return pulumix.Output[[]GetWaasPolicyPolicyConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyPolicyConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyPolicyConfigOutput {
@@ -17970,12 +15737,6 @@ func (i GetWaasPolicyPolicyConfigHealthChecksArgs) ToGetWaasPolicyPolicyConfigHe
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigHealthChecksOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigHealthChecksArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigHealthChecksOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyPolicyConfigHealthChecksOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyPolicyConfigHealthChecksOutput) ElementType() reflect.Type {
@@ -17988,12 +15749,6 @@ func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToGetWaasPolicyPolicyConfig
 
 func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToGetWaasPolicyPolicyConfigHealthChecksOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigHealthChecksOutput {
 	return o
-}
-
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigHealthChecks]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The HTTP response codes that signify a healthy state.
@@ -18109,12 +15864,6 @@ func (i GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToGetWaasPolicyPolicyC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyPolicyConfigLoadBalancingMethodOutput)
 }
 
-func (i GetWaasPolicyPolicyConfigLoadBalancingMethodArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: i.ToGetWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyPolicyConfigLoadBalancingMethodOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ElementType() reflect.Type {
@@ -18127,12 +15876,6 @@ func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaasPolicyPolic
 
 func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToGetWaasPolicyPolicyConfigLoadBalancingMethodOutputWithContext(ctx context.Context) GetWaasPolicyPolicyConfigLoadBalancingMethodOutput {
 	return o
-}
-
-func (o GetWaasPolicyPolicyConfigLoadBalancingMethodOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod] {
-	return pulumix.Output[GetWaasPolicyPolicyConfigLoadBalancingMethod]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The domain for which the cookie is set, defaults to WAAS policy domain.
@@ -18235,12 +15978,6 @@ func (i GetWaasPolicyWafConfigArgs) ToGetWaasPolicyWafConfigOutputWithContext(ct
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigOutput)
 }
 
-func (i GetWaasPolicyWafConfigArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPolicyWafConfigOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigArrayInput is an input type that accepts GetWaasPolicyWafConfigArray and GetWaasPolicyWafConfigArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigArrayInput` via:
 //
@@ -18266,12 +16003,6 @@ func (i GetWaasPolicyWafConfigArray) ToGetWaasPolicyWafConfigArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPolicyWafConfig]{
-		OutputState: i.ToGetWaasPolicyWafConfigArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigOutput) ElementType() reflect.Type {
@@ -18284,12 +16015,6 @@ func (o GetWaasPolicyWafConfigOutput) ToGetWaasPolicyWafConfigOutput() GetWaasPo
 
 func (o GetWaasPolicyWafConfigOutput) ToGetWaasPolicyWafConfigOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfig] {
-	return pulumix.Output[GetWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
@@ -18370,12 +16095,6 @@ func (o GetWaasPolicyWafConfigArrayOutput) ToGetWaasPolicyWafConfigArrayOutput()
 
 func (o GetWaasPolicyWafConfigArrayOutput) ToGetWaasPolicyWafConfigArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfig] {
-	return pulumix.Output[[]GetWaasPolicyWafConfig]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigOutput {
@@ -18489,12 +16208,6 @@ func (i GetWaasPolicyWafConfigAccessRuleArgs) ToGetWaasPolicyWafConfigAccessRule
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigAccessRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleArray and GetWaasPolicyWafConfigAccessRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleArrayInput` via:
 //
@@ -18520,12 +16233,6 @@ func (i GetWaasPolicyWafConfigAccessRuleArray) ToGetWaasPolicyWafConfigAccessRul
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAccessRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAccessRuleOutput) ElementType() reflect.Type {
@@ -18538,12 +16245,6 @@ func (o GetWaasPolicyWafConfigAccessRuleOutput) ToGetWaasPolicyWafConfigAccessRu
 
 func (o GetWaasPolicyWafConfigAccessRuleOutput) ToGetWaasPolicyWafConfigAccessRuleOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -18650,12 +16351,6 @@ func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) ToGetWaasPolicyWafConfigAcc
 	return o
 }
 
-func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRule]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigAccessRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigAccessRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigAccessRule {
 		return vs[0].([]GetWaasPolicyWafConfigAccessRule)[vs[1].(int)]
@@ -18735,12 +16430,6 @@ func (i GetWaasPolicyWafConfigAccessRuleCriteriaArgs) ToGetWaasPolicyWafConfigAc
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleCriteriaOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleCriteriaArray and GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleCriteriaArrayInput` via:
 //
@@ -18766,12 +16455,6 @@ func (i GetWaasPolicyWafConfigAccessRuleCriteriaArray) ToGetWaasPolicyWafConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAccessRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ElementType() reflect.Type {
@@ -18784,12 +16467,6 @@ func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPolicyWafConfig
 
 func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ToGetWaasPolicyWafConfigAccessRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -18835,12 +16512,6 @@ func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToGetWaasPolicyWafC
 
 func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToGetWaasPolicyWafConfigAccessRuleCriteriaArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigAccessRuleCriteriaOutput {
@@ -18890,12 +16561,6 @@ func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToGetWaa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput is an input type that accepts GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray and GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayInput` via:
 //
@@ -18921,12 +16586,6 @@ func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToGetWa
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: i.ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ElementType() reflect.Type {
@@ -18939,12 +16598,6 @@ func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToGetW
 
 func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -18974,12 +16627,6 @@ func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) T
 
 func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToGetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulationOutput {
@@ -19033,12 +16680,6 @@ func (i GetWaasPolicyWafConfigAddressRateLimitingArgs) ToGetWaasPolicyWafConfigA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigAddressRateLimitingOutput)
 }
 
-func (i GetWaasPolicyWafConfigAddressRateLimitingArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: i.ToGetWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigAddressRateLimitingOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigAddressRateLimitingOutput) ElementType() reflect.Type {
@@ -19051,12 +16692,6 @@ func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPolicyWafConfi
 
 func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToGetWaasPolicyWafConfigAddressRateLimitingOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigAddressRateLimitingOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigAddressRateLimitingOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting] {
-	return pulumix.Output[GetWaasPolicyWafConfigAddressRateLimiting]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
@@ -19136,12 +16771,6 @@ func (i GetWaasPolicyWafConfigCachingRuleArgs) ToGetWaasPolicyWafConfigCachingRu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigCachingRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleArray and GetWaasPolicyWafConfigCachingRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleArrayInput` via:
 //
@@ -19167,12 +16796,6 @@ func (i GetWaasPolicyWafConfigCachingRuleArray) ToGetWaasPolicyWafConfigCachingR
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCachingRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCachingRuleOutput) ElementType() reflect.Type {
@@ -19185,12 +16808,6 @@ func (o GetWaasPolicyWafConfigCachingRuleOutput) ToGetWaasPolicyWafConfigCaching
 
 func (o GetWaasPolicyWafConfigCachingRuleOutput) ToGetWaasPolicyWafConfigCachingRuleOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCachingRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -19242,12 +16859,6 @@ func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPolicyWafConfigCa
 
 func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) ToGetWaasPolicyWafConfigCachingRuleArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCachingRuleOutput {
@@ -19325,12 +16936,6 @@ func (i GetWaasPolicyWafConfigCachingRuleCriteriaArgs) ToGetWaasPolicyWafConfigC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleCriteriaOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigCachingRuleCriteriaArray and GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCachingRuleCriteriaArrayInput` via:
 //
@@ -19356,12 +16961,6 @@ func (i GetWaasPolicyWafConfigCachingRuleCriteriaArray) ToGetWaasPolicyWafConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCachingRuleCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCachingRuleCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ElementType() reflect.Type {
@@ -19374,12 +16973,6 @@ func (o GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPolicyWafConfi
 
 func (o GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ToGetWaasPolicyWafConfigCachingRuleCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCachingRuleCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -19420,12 +17013,6 @@ func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToGetWaasPolicyWaf
 
 func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToGetWaasPolicyWafConfigCachingRuleCriteriaArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCachingRuleCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigCachingRuleCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCachingRuleCriteriaOutput {
@@ -19491,12 +17078,6 @@ func (i GetWaasPolicyWafConfigCaptchaArgs) ToGetWaasPolicyWafConfigCaptchaOutput
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCaptchaOutput)
 }
 
-func (i GetWaasPolicyWafConfigCaptchaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPolicyWafConfigCaptchaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigCaptchaArrayInput is an input type that accepts GetWaasPolicyWafConfigCaptchaArray and GetWaasPolicyWafConfigCaptchaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCaptchaArrayInput` via:
 //
@@ -19522,12 +17103,6 @@ func (i GetWaasPolicyWafConfigCaptchaArray) ToGetWaasPolicyWafConfigCaptchaArray
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCaptchaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCaptchaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCaptcha]{
-		OutputState: i.ToGetWaasPolicyWafConfigCaptchaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCaptchaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCaptchaOutput) ElementType() reflect.Type {
@@ -19540,12 +17115,6 @@ func (o GetWaasPolicyWafConfigCaptchaOutput) ToGetWaasPolicyWafConfigCaptchaOutp
 
 func (o GetWaasPolicyWafConfigCaptchaOutput) ToGetWaasPolicyWafConfigCaptchaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCaptchaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCaptchaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[GetWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The text to show when incorrect CAPTCHA text is entered. If unspecified, defaults to `The CAPTCHA was incorrect. Try again.`
@@ -19597,12 +17166,6 @@ func (o GetWaasPolicyWafConfigCaptchaArrayOutput) ToGetWaasPolicyWafConfigCaptch
 	return o
 }
 
-func (o GetWaasPolicyWafConfigCaptchaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCaptcha] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCaptcha]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCaptchaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigCaptcha {
 		return vs[0].([]GetWaasPolicyWafConfigCaptcha)[vs[1].(int)]
@@ -19650,12 +17213,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleArgs) ToGetWaasPolicyWafConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleOutput)
 }
 
-func (i GetWaasPolicyWafConfigCustomProtectionRuleArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigCustomProtectionRuleArrayInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleArray and GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCustomProtectionRuleArrayInput` via:
 //
@@ -19681,12 +17238,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleArray) ToGetWaasPolicyWafConfi
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCustomProtectionRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCustomProtectionRuleOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCustomProtectionRuleOutput) ElementType() reflect.Type {
@@ -19699,12 +17250,6 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) ToGetWaasPolicyWafConf
 
 func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) ToGetWaasPolicyWafConfigCustomProtectionRuleOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCustomProtectionRuleOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCustomProtectionRuleOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -19736,12 +17281,6 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToGetWaasPolicyWa
 
 func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToGetWaasPolicyWafConfigCustomProtectionRuleArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigCustomProtectionRuleArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCustomProtectionRuleOutput {
@@ -19787,12 +17326,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToGetWaasPolicy
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput)
 }
 
-func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput is an input type that accepts GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray and GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayInput` via:
 //
@@ -19818,12 +17351,6 @@ func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray) ToGetWaasPolic
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigCustomProtectionRuleExclusionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: i.ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ElementType() reflect.Type {
@@ -19836,12 +17363,6 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToGetWaasPoli
 
 func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
@@ -19866,12 +17387,6 @@ func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToGetWaa
 
 func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToGetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigCustomProtectionRuleExclusion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigCustomProtectionRuleExclusionOutput {
@@ -19941,12 +17456,6 @@ func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToGetWaasPolicyWaf
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput)
 }
 
-func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ElementType() reflect.Type {
@@ -19959,12 +17468,6 @@ func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGetWaasPolicyW
 
 func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -20078,12 +17581,6 @@ func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) T
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -20096,12 +17593,6 @@ func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 
 func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -20234,12 +17725,6 @@ func (i GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ToGetWaasPolicyWafC
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeOutput)
 }
 
-func (i GetWaasPolicyWafConfigHumanInteractionChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: i.ToGetWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigHumanInteractionChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ElementType() reflect.Type {
@@ -20252,12 +17737,6 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGetWaasPolicyWa
 
 func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -20381,12 +17860,6 @@ func (i GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -20399,12 +17872,6 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) 
 
 func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -20503,12 +17970,6 @@ func (i GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToGetW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
 }
 
-func (i GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -20521,12 +17982,6 @@ func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToGe
 
 func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToGetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -20604,12 +18059,6 @@ func (i GetWaasPolicyWafConfigJsChallengeArgs) ToGetWaasPolicyWafConfigJsChallen
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallenge]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigJsChallengeOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigJsChallengeOutput) ElementType() reflect.Type {
@@ -20622,12 +18071,6 @@ func (o GetWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPolicyWafConfigJsChall
 
 func (o GetWaasPolicyWafConfigJsChallengeOutput) ToGetWaasPolicyWafConfigJsChallengeOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigJsChallengeOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallenge] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallenge]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
@@ -20746,12 +18189,6 @@ func (i GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ToGetWaasPolicyW
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeChallengeSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ElementType() reflect.Type {
@@ -20764,12 +18201,6 @@ func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToGetWaasPolic
 
 func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToGetWaasPolicyWafConfigJsChallengeChallengeSettingsOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigJsChallengeChallengeSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeChallengeSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
@@ -20890,12 +18321,6 @@ func (i GetWaasPolicyWafConfigJsChallengeCriteriaArgs) ToGetWaasPolicyWafConfigJ
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeCriteriaOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeCriteriaArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput is an input type that accepts GetWaasPolicyWafConfigJsChallengeCriteriaArray and GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigJsChallengeCriteriaArrayInput` via:
 //
@@ -20921,12 +18346,6 @@ func (i GetWaasPolicyWafConfigJsChallengeCriteriaArray) ToGetWaasPolicyWafConfig
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeCriteriaArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeCriteriaArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigJsChallengeCriteriaOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ElementType() reflect.Type {
@@ -20939,12 +18358,6 @@ func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPolicyWafConfi
 
 func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ToGetWaasPolicyWafConfigJsChallengeCriteriaOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigJsChallengeCriteriaOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
@@ -20992,12 +18405,6 @@ func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToGetWaasPolicyWaf
 	return o
 }
 
-func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigJsChallengeCriteria]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetWaasPolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigJsChallengeCriteriaOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWaasPolicyWafConfigJsChallengeCriteria {
 		return vs[0].([]GetWaasPolicyWafConfigJsChallengeCriteria)[vs[1].(int)]
@@ -21041,12 +18448,6 @@ func (i GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToGetWaasPolicyWafCo
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput)
 }
 
-func (i GetWaasPolicyWafConfigJsChallengeSetHttpHeaderArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: i.ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ElementType() reflect.Type {
@@ -21059,12 +18460,6 @@ func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetWaasPolicyWaf
 
 func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToGetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigJsChallengeSetHttpHeaderOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader] {
-	return pulumix.Output[GetWaasPolicyWafConfigJsChallengeSetHttpHeader]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The unique name of the whitelist.
@@ -21158,12 +18553,6 @@ func (i GetWaasPolicyWafConfigProtectionSettingsArgs) ToGetWaasPolicyWafConfigPr
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigProtectionSettingsOutput)
 }
 
-func (i GetWaasPolicyWafConfigProtectionSettingsArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigProtectionSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigProtectionSettings]{
-		OutputState: i.ToGetWaasPolicyWafConfigProtectionSettingsOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigProtectionSettingsOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigProtectionSettingsOutput) ElementType() reflect.Type {
@@ -21176,12 +18565,6 @@ func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToGetWaasPolicyWafConfig
 
 func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToGetWaasPolicyWafConfigProtectionSettingsOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigProtectionSettingsOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigProtectionSettingsOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigProtectionSettings] {
-	return pulumix.Output[GetWaasPolicyWafConfigProtectionSettings]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the "Restrict HTTP Request Methods" rule (key: 911100).
@@ -21290,12 +18673,6 @@ func (i GetWaasPolicyWafConfigWhitelistArgs) ToGetWaasPolicyWafConfigWhitelistOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigWhitelistOutput)
 }
 
-func (i GetWaasPolicyWafConfigWhitelistArgs) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPolicyWafConfigWhitelistOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetWaasPolicyWafConfigWhitelistArrayInput is an input type that accepts GetWaasPolicyWafConfigWhitelistArray and GetWaasPolicyWafConfigWhitelistArrayOutput values.
 // You can construct a concrete instance of `GetWaasPolicyWafConfigWhitelistArrayInput` via:
 //
@@ -21321,12 +18698,6 @@ func (i GetWaasPolicyWafConfigWhitelistArray) ToGetWaasPolicyWafConfigWhitelistA
 	return pulumi.ToOutputWithContext(ctx, i).(GetWaasPolicyWafConfigWhitelistArrayOutput)
 }
 
-func (i GetWaasPolicyWafConfigWhitelistArray) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigWhitelist]{
-		OutputState: i.ToGetWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetWaasPolicyWafConfigWhitelistOutput struct{ *pulumi.OutputState }
 
 func (GetWaasPolicyWafConfigWhitelistOutput) ElementType() reflect.Type {
@@ -21339,12 +18710,6 @@ func (o GetWaasPolicyWafConfigWhitelistOutput) ToGetWaasPolicyWafConfigWhitelist
 
 func (o GetWaasPolicyWafConfigWhitelistOutput) ToGetWaasPolicyWafConfigWhitelistOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigWhitelistOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigWhitelistOutput) ToOutput(ctx context.Context) pulumix.Output[GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[GetWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IP address lists to include in the whitelist.
@@ -21374,12 +18739,6 @@ func (o GetWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPolicyWafConfigWhit
 
 func (o GetWaasPolicyWafConfigWhitelistArrayOutput) ToGetWaasPolicyWafConfigWhitelistArrayOutputWithContext(ctx context.Context) GetWaasPolicyWafConfigWhitelistArrayOutput {
 	return o
-}
-
-func (o GetWaasPolicyWafConfigWhitelistArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetWaasPolicyWafConfigWhitelist] {
-	return pulumix.Output[[]GetWaasPolicyWafConfigWhitelist]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetWaasPolicyWafConfigWhitelistArrayOutput) Index(i pulumi.IntInput) GetWaasPolicyWafConfigWhitelistOutput {

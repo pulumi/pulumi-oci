@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -136,12 +135,6 @@ func (o LookupMaskingPoliciesMaskingColumnResultOutput) ToLookupMaskingPoliciesM
 
 func (o LookupMaskingPoliciesMaskingColumnResultOutput) ToLookupMaskingPoliciesMaskingColumnResultOutputWithContext(ctx context.Context) LookupMaskingPoliciesMaskingColumnResultOutput {
 	return o
-}
-
-func (o LookupMaskingPoliciesMaskingColumnResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupMaskingPoliciesMaskingColumnResult] {
-	return pulumix.Output[LookupMaskingPoliciesMaskingColumnResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An array of child columns that are in referential relationship with the masking column.

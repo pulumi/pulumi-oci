@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific External Exadata Storage Server Iorm Plan resource in Oracle Cloud Infrastructure Database Management service.
@@ -106,12 +105,6 @@ func (o GetExternalExadataStorageServerIormPlanResultOutput) ToGetExternalExadat
 
 func (o GetExternalExadataStorageServerIormPlanResultOutput) ToGetExternalExadataStorageServerIormPlanResultOutputWithContext(ctx context.Context) GetExternalExadataStorageServerIormPlanResultOutput {
 	return o
-}
-
-func (o GetExternalExadataStorageServerIormPlanResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExternalExadataStorageServerIormPlanResult] {
-	return pulumix.Output[GetExternalExadataStorageServerIormPlanResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The resource allocation directives must all use the share attribute, or they must all use the level and allocation attributes. If you use the share attribute to allocate I/O resources, then the database plan can have a maximum of 1024 directives. If you use the level and allocation attributes to allocate I/O resources, then the database plan can have a maximum of 32 directives. Only one directive is allowed for each database name and each profile name.

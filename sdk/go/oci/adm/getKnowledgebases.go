@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure ADM service.
@@ -126,12 +125,6 @@ func (o GetKnowledgebasesResultOutput) ToGetKnowledgebasesResultOutput() GetKnow
 
 func (o GetKnowledgebasesResultOutput) ToGetKnowledgebasesResultOutputWithContext(ctx context.Context) GetKnowledgebasesResultOutput {
 	return o
-}
-
-func (o GetKnowledgebasesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetKnowledgebasesResult] {
-	return pulumix.Output[GetKnowledgebasesResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.

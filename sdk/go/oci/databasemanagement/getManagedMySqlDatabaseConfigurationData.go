@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
@@ -105,12 +104,6 @@ func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) ToGetManagedMySqlD
 
 func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) ToGetManagedMySqlDatabaseConfigurationDataResultOutputWithContext(ctx context.Context) GetManagedMySqlDatabaseConfigurationDataResultOutput {
 	return o
-}
-
-func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedMySqlDatabaseConfigurationDataResult] {
-	return pulumix.Output[GetManagedMySqlDatabaseConfigurationDataResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetManagedMySqlDatabaseConfigurationDataResultOutput) Filters() GetManagedMySqlDatabaseConfigurationDataFilterArrayOutput {

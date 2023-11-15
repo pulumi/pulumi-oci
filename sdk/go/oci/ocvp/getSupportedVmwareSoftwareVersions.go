@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -106,12 +105,6 @@ func (o GetSupportedVmwareSoftwareVersionsResultOutput) ToGetSupportedVmwareSoft
 
 func (o GetSupportedVmwareSoftwareVersionsResultOutput) ToGetSupportedVmwareSoftwareVersionsResultOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsResultOutput {
 	return o
-}
-
-func (o GetSupportedVmwareSoftwareVersionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSupportedVmwareSoftwareVersionsResult] {
-	return pulumix.Output[GetSupportedVmwareSoftwareVersionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetSupportedVmwareSoftwareVersionsResultOutput) CompartmentId() pulumi.StringOutput {

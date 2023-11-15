@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
@@ -120,12 +119,6 @@ func (o GetPublicIpPoolsResultOutput) ToGetPublicIpPoolsResultOutput() GetPublic
 
 func (o GetPublicIpPoolsResultOutput) ToGetPublicIpPoolsResultOutputWithContext(ctx context.Context) GetPublicIpPoolsResultOutput {
 	return o
-}
-
-func (o GetPublicIpPoolsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetPublicIpPoolsResult] {
-	return pulumix.Output[GetPublicIpPoolsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetPublicIpPoolsResultOutput) ByoipRangeId() pulumi.StringPtrOutput {

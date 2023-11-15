@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
@@ -106,12 +105,6 @@ func (o GetDrgsResultOutput) ToGetDrgsResultOutput() GetDrgsResultOutput {
 
 func (o GetDrgsResultOutput) ToGetDrgsResultOutputWithContext(ctx context.Context) GetDrgsResultOutput {
 	return o
-}
-
-func (o GetDrgsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgsResult] {
-	return pulumix.Output[GetDrgsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG.

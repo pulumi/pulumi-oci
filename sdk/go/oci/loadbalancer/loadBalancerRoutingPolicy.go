@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -207,12 +206,6 @@ func (i *LoadBalancerRoutingPolicy) ToLoadBalancerRoutingPolicyOutputWithContext
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyOutput)
 }
 
-func (i *LoadBalancerRoutingPolicy) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[*LoadBalancerRoutingPolicy]{
-		OutputState: i.ToLoadBalancerRoutingPolicyOutputWithContext(ctx).OutputState,
-	}
-}
-
 // LoadBalancerRoutingPolicyArrayInput is an input type that accepts LoadBalancerRoutingPolicyArray and LoadBalancerRoutingPolicyArrayOutput values.
 // You can construct a concrete instance of `LoadBalancerRoutingPolicyArrayInput` via:
 //
@@ -236,12 +229,6 @@ func (i LoadBalancerRoutingPolicyArray) ToLoadBalancerRoutingPolicyArrayOutput()
 
 func (i LoadBalancerRoutingPolicyArray) ToLoadBalancerRoutingPolicyArrayOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyArrayOutput)
-}
-
-func (i LoadBalancerRoutingPolicyArray) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[[]*LoadBalancerRoutingPolicy]{
-		OutputState: i.ToLoadBalancerRoutingPolicyArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // LoadBalancerRoutingPolicyMapInput is an input type that accepts LoadBalancerRoutingPolicyMap and LoadBalancerRoutingPolicyMapOutput values.
@@ -269,12 +256,6 @@ func (i LoadBalancerRoutingPolicyMap) ToLoadBalancerRoutingPolicyMapOutputWithCo
 	return pulumi.ToOutputWithContext(ctx, i).(LoadBalancerRoutingPolicyMapOutput)
 }
 
-func (i LoadBalancerRoutingPolicyMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[map[string]*LoadBalancerRoutingPolicy]{
-		OutputState: i.ToLoadBalancerRoutingPolicyMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type LoadBalancerRoutingPolicyOutput struct{ *pulumi.OutputState }
 
 func (LoadBalancerRoutingPolicyOutput) ElementType() reflect.Type {
@@ -287,12 +268,6 @@ func (o LoadBalancerRoutingPolicyOutput) ToLoadBalancerRoutingPolicyOutput() Loa
 
 func (o LoadBalancerRoutingPolicyOutput) ToLoadBalancerRoutingPolicyOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyOutput) ToOutput(ctx context.Context) pulumix.Output[*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[*LoadBalancerRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The version of the language in which `condition` of `rules` are composed.
@@ -336,12 +311,6 @@ func (o LoadBalancerRoutingPolicyArrayOutput) ToLoadBalancerRoutingPolicyArrayOu
 	return o
 }
 
-func (o LoadBalancerRoutingPolicyArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[[]*LoadBalancerRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LoadBalancerRoutingPolicyArrayOutput) Index(i pulumi.IntInput) LoadBalancerRoutingPolicyOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *LoadBalancerRoutingPolicy {
 		return vs[0].([]*LoadBalancerRoutingPolicy)[vs[1].(int)]
@@ -360,12 +329,6 @@ func (o LoadBalancerRoutingPolicyMapOutput) ToLoadBalancerRoutingPolicyMapOutput
 
 func (o LoadBalancerRoutingPolicyMapOutput) ToLoadBalancerRoutingPolicyMapOutputWithContext(ctx context.Context) LoadBalancerRoutingPolicyMapOutput {
 	return o
-}
-
-func (o LoadBalancerRoutingPolicyMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*LoadBalancerRoutingPolicy] {
-	return pulumix.Output[map[string]*LoadBalancerRoutingPolicy]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LoadBalancerRoutingPolicyMapOutput) MapIndex(k pulumi.StringInput) LoadBalancerRoutingPolicyOutput {

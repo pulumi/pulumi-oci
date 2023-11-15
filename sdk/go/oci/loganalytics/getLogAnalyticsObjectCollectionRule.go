@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -156,12 +155,6 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) ToLookupLogAnalytics
 
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) ToLookupLogAnalyticsObjectCollectionRuleResultOutputWithContext(ctx context.Context) LookupLogAnalyticsObjectCollectionRuleResultOutput {
 	return o
-}
-
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLogAnalyticsObjectCollectionRuleResult] {
-	return pulumix.Output[LookupLogAnalyticsObjectCollectionRuleResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.

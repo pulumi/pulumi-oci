@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Migration Plan Available Shape resource in Oracle Cloud Infrastructure Cloud Migrations service.
@@ -127,12 +126,6 @@ func (o GetMigrationPlanAvailableShapeResultOutput) ToGetMigrationPlanAvailableS
 
 func (o GetMigrationPlanAvailableShapeResultOutput) ToGetMigrationPlanAvailableShapeResultOutputWithContext(ctx context.Context) GetMigrationPlanAvailableShapeResultOutput {
 	return o
-}
-
-func (o GetMigrationPlanAvailableShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMigrationPlanAvailableShapeResult] {
-	return pulumix.Output[GetMigrationPlanAvailableShapeResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Availability domain of the shape.

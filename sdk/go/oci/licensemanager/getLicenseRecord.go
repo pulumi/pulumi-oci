@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific License Record resource in Oracle Cloud Infrastructure License Manager service.
@@ -134,12 +133,6 @@ func (o LookupLicenseRecordResultOutput) ToLookupLicenseRecordResultOutput() Loo
 
 func (o LookupLicenseRecordResultOutput) ToLookupLicenseRecordResultOutputWithContext(ctx context.Context) LookupLicenseRecordResultOutput {
 	return o
-}
-
-func (o LookupLicenseRecordResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupLicenseRecordResult] {
-	return pulumix.Output[LookupLicenseRecordResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.

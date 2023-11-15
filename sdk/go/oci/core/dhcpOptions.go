@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Dhcp Options resource in Oracle Cloud Infrastructure Core service.
@@ -221,12 +220,6 @@ func (i *DhcpOptions) ToDhcpOptionsOutputWithContext(ctx context.Context) DhcpOp
 	return pulumi.ToOutputWithContext(ctx, i).(DhcpOptionsOutput)
 }
 
-func (i *DhcpOptions) ToOutput(ctx context.Context) pulumix.Output[*DhcpOptions] {
-	return pulumix.Output[*DhcpOptions]{
-		OutputState: i.ToDhcpOptionsOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DhcpOptionsArrayInput is an input type that accepts DhcpOptionsArray and DhcpOptionsArrayOutput values.
 // You can construct a concrete instance of `DhcpOptionsArrayInput` via:
 //
@@ -250,12 +243,6 @@ func (i DhcpOptionsArray) ToDhcpOptionsArrayOutput() DhcpOptionsArrayOutput {
 
 func (i DhcpOptionsArray) ToDhcpOptionsArrayOutputWithContext(ctx context.Context) DhcpOptionsArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DhcpOptionsArrayOutput)
-}
-
-func (i DhcpOptionsArray) ToOutput(ctx context.Context) pulumix.Output[[]*DhcpOptions] {
-	return pulumix.Output[[]*DhcpOptions]{
-		OutputState: i.ToDhcpOptionsArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DhcpOptionsMapInput is an input type that accepts DhcpOptionsMap and DhcpOptionsMapOutput values.
@@ -283,12 +270,6 @@ func (i DhcpOptionsMap) ToDhcpOptionsMapOutputWithContext(ctx context.Context) D
 	return pulumi.ToOutputWithContext(ctx, i).(DhcpOptionsMapOutput)
 }
 
-func (i DhcpOptionsMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DhcpOptions] {
-	return pulumix.Output[map[string]*DhcpOptions]{
-		OutputState: i.ToDhcpOptionsMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DhcpOptionsOutput struct{ *pulumi.OutputState }
 
 func (DhcpOptionsOutput) ElementType() reflect.Type {
@@ -301,12 +282,6 @@ func (o DhcpOptionsOutput) ToDhcpOptionsOutput() DhcpOptionsOutput {
 
 func (o DhcpOptionsOutput) ToDhcpOptionsOutputWithContext(ctx context.Context) DhcpOptionsOutput {
 	return o
-}
-
-func (o DhcpOptionsOutput) ToOutput(ctx context.Context) pulumix.Output[*DhcpOptions] {
-	return pulumix.Output[*DhcpOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the set of DHCP options.
@@ -371,12 +346,6 @@ func (o DhcpOptionsArrayOutput) ToDhcpOptionsArrayOutputWithContext(ctx context.
 	return o
 }
 
-func (o DhcpOptionsArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DhcpOptions] {
-	return pulumix.Output[[]*DhcpOptions]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o DhcpOptionsArrayOutput) Index(i pulumi.IntInput) DhcpOptionsOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *DhcpOptions {
 		return vs[0].([]*DhcpOptions)[vs[1].(int)]
@@ -395,12 +364,6 @@ func (o DhcpOptionsMapOutput) ToDhcpOptionsMapOutput() DhcpOptionsMapOutput {
 
 func (o DhcpOptionsMapOutput) ToDhcpOptionsMapOutputWithContext(ctx context.Context) DhcpOptionsMapOutput {
 	return o
-}
-
-func (o DhcpOptionsMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DhcpOptions] {
-	return pulumix.Output[map[string]*DhcpOptions]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DhcpOptionsMapOutput) MapIndex(k pulumi.StringInput) DhcpOptionsOutput {

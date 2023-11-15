@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -438,12 +437,6 @@ func (i *MonitoredResource) ToMonitoredResourceOutputWithContext(ctx context.Con
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceOutput)
 }
 
-func (i *MonitoredResource) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResource] {
-	return pulumix.Output[*MonitoredResource]{
-		OutputState: i.ToMonitoredResourceOutputWithContext(ctx).OutputState,
-	}
-}
-
 // MonitoredResourceArrayInput is an input type that accepts MonitoredResourceArray and MonitoredResourceArrayOutput values.
 // You can construct a concrete instance of `MonitoredResourceArrayInput` via:
 //
@@ -467,12 +460,6 @@ func (i MonitoredResourceArray) ToMonitoredResourceArrayOutput() MonitoredResour
 
 func (i MonitoredResourceArray) ToMonitoredResourceArrayOutputWithContext(ctx context.Context) MonitoredResourceArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceArrayOutput)
-}
-
-func (i MonitoredResourceArray) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResource] {
-	return pulumix.Output[[]*MonitoredResource]{
-		OutputState: i.ToMonitoredResourceArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // MonitoredResourceMapInput is an input type that accepts MonitoredResourceMap and MonitoredResourceMapOutput values.
@@ -500,12 +487,6 @@ func (i MonitoredResourceMap) ToMonitoredResourceMapOutputWithContext(ctx contex
 	return pulumi.ToOutputWithContext(ctx, i).(MonitoredResourceMapOutput)
 }
 
-func (i MonitoredResourceMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResource] {
-	return pulumix.Output[map[string]*MonitoredResource]{
-		OutputState: i.ToMonitoredResourceMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type MonitoredResourceOutput struct{ *pulumi.OutputState }
 
 func (MonitoredResourceOutput) ElementType() reflect.Type {
@@ -518,12 +499,6 @@ func (o MonitoredResourceOutput) ToMonitoredResourceOutput() MonitoredResourceOu
 
 func (o MonitoredResourceOutput) ToMonitoredResourceOutputWithContext(ctx context.Context) MonitoredResourceOutput {
 	return o
-}
-
-func (o MonitoredResourceOutput) ToOutput(ctx context.Context) pulumix.Output[*MonitoredResource] {
-	return pulumix.Output[*MonitoredResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
@@ -662,12 +637,6 @@ func (o MonitoredResourceArrayOutput) ToMonitoredResourceArrayOutputWithContext(
 	return o
 }
 
-func (o MonitoredResourceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*MonitoredResource] {
-	return pulumix.Output[[]*MonitoredResource]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o MonitoredResourceArrayOutput) Index(i pulumi.IntInput) MonitoredResourceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *MonitoredResource {
 		return vs[0].([]*MonitoredResource)[vs[1].(int)]
@@ -686,12 +655,6 @@ func (o MonitoredResourceMapOutput) ToMonitoredResourceMapOutput() MonitoredReso
 
 func (o MonitoredResourceMapOutput) ToMonitoredResourceMapOutputWithContext(ctx context.Context) MonitoredResourceMapOutput {
 	return o
-}
-
-func (o MonitoredResourceMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*MonitoredResource] {
-	return pulumix.Output[map[string]*MonitoredResource]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o MonitoredResourceMapOutput) MapIndex(k pulumi.StringInput) MonitoredResourceOutput {

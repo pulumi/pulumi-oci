@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Protection Policy resource in Oracle Cloud Infrastructure Recovery service.
@@ -128,12 +127,6 @@ func (o LookupProtectionPolicyResultOutput) ToLookupProtectionPolicyResultOutput
 
 func (o LookupProtectionPolicyResultOutput) ToLookupProtectionPolicyResultOutputWithContext(ctx context.Context) LookupProtectionPolicyResultOutput {
 	return o
-}
-
-func (o LookupProtectionPolicyResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupProtectionPolicyResult] {
-	return pulumix.Output[LookupProtectionPolicyResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The maximum number of days to retain backups for a protected database. Specify a period ranging from a minimum 14 days to a maximum 95 days. For example, specify the value 55 if you want to retain backups for 55 days.

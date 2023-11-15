@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Iam Work Request resource in Oracle Cloud Infrastructure Identity service.
@@ -120,12 +119,6 @@ func (o GetIamWorkRequestResultOutput) ToGetIamWorkRequestResultOutput() GetIamW
 
 func (o GetIamWorkRequestResultOutput) ToGetIamWorkRequestResultOutputWithContext(ctx context.Context) GetIamWorkRequestResultOutput {
 	return o
-}
-
-func (o GetIamWorkRequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetIamWorkRequestResult] {
-	return pulumix.Output[GetIamWorkRequestResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The OCID of the compartment containing this IAM work request.

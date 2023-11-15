@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Notifications service.
@@ -115,12 +114,6 @@ func (o GetSubscriptionsResultOutput) ToGetSubscriptionsResultOutput() GetSubscr
 
 func (o GetSubscriptionsResultOutput) ToGetSubscriptionsResultOutputWithContext(ctx context.Context) GetSubscriptionsResultOutput {
 	return o
-}
-
-func (o GetSubscriptionsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSubscriptionsResult] {
-	return pulumix.Output[GetSubscriptionsResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the subscription.
